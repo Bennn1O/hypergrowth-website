@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Application Next.js
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hypergrowth-web
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - hypergrowth-network
+
+  # Service de développement (optionnel)
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deps
+    container_name: hypergrowth-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+    networks:
+      - hypergrowth-network
+
+networks:
+  hypergrowth-network:
+    driver: bridge

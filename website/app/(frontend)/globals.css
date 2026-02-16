@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo Italic';
+  src: url('/fonts/archivo-italic-variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument';
+  src: url('/fonts/instrument-serif-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Italic';
+  src: url('/fonts/instrument-serif-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --hpg-color-night: #180a22;
+  --hpg-color-white: #ffffff;
+  --hpg-color-orchid: #f285f0;
+  --hpg-color-violet: #803fab;
+  --hpg-color-silver: #cfcfcf;
+  --hpg-color-stealth: #414141;
+
+  --hpg-font-archivo: 'Archivo', Arial, sans-serif;
+  --hpg-font-archivo-italic: 'Archivo Italic', Arial, sans-serif;
+  --hpg-font-instrument: 'Instrument', 'Palatino Linotype', sans-serif;
+  --hpg-font-instrument-italic: 'Instrument Italic', 'Palatino Linotype', sans-serif;
+}
+
+@theme {
+  --font-archivo: var(--hpg-font-archivo);
+  --font-archivo-italic: var(--hpg-font-archivo-italic);
+  --font-instrument: var(--hpg-font-instrument);
+  --font-instrument-italic: var(--hpg-font-instrument-italic);
+
+  --color-hpg-night: var(--hpg-color-night);
+  --color-hpg-violet: var(--hpg-color-violet);
+  --color-hpg-orchid: var(--hpg-color-orchid);
+  --color-hpg-silver: var(--hpg-color-silver);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--hpg-color-night);
+  color: var(--hpg-color-white);
+  font-family: var(--hpg-font-archivo);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(242 133 240 / 0.9);
+  outline-offset: 2px;
+}
+
+@keyframes hpg-scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
