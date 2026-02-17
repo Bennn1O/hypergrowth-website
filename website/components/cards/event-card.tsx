@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { Event } from '@/data/events'
+import type { Event } from '@/lib/events'
 
 interface EventCardProps {
   event: Event

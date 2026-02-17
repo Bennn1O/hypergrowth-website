@@ -8,7 +8,7 @@
  */
 
 import { render, screen } from '@testing-library/react';
-import { NotFoundSection } from '@/app/(frontend)/components/not-found-section';
+import { NotFoundSection } from '@/src/app/(frontend)/components/not-found-section';
 import '@testing-library/jest-dom';
 
 describe('NotFoundSection Component', () => {

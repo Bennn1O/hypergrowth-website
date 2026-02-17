@@ -4,7 +4,7 @@
  */
 
 import { render, screen } from '@testing-library/react';
-import CaseStudiesPage from '@/app/(frontend)/concept/case-studies/page';
+import CaseStudiesPage from '@/src/app/(frontend)/concept/case-studies/page';
 
 /**
  * Note: Adapter selon votre setup de testing

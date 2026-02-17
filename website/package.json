@@ -1,23 +1,23 @@
 {
   "name": "website",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "seed:directus": "node scripts/seed-directus.mjs"
   },
   "dependencies": {
-    "@payloadcms/db-postgres": "^3.76.1",
-    "@payloadcms/next": "^3.76.1",
-    "@payloadcms/richtext-lexical": "^3.76.1",
+    "@directus/sdk": "^21.1.0",
+    "@vercel/blob": "^2.2.0",
     "graphql": "^16.12.0",
     "hugeicons-react": "^0.4.0",
     "motion": "^12.34.0",
     "next": "^15.4.11",
-    "payload": "^3.76.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

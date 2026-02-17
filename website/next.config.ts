@@ -1,9 +1,7 @@
-import { withPayload } from "@payloadcms/next/withPayload";
-import { withPayload } from "@payloadcms/next/withPayload";
-import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -27,16 +25,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/evenements/charity-gala-2023',
-        destination: '/evenements/charity-gala-winter-2023',
-        permanent: true,
-      },
-      {
-        source: '/concept/case-studies/pureva',
-        destination: '/case-studies/etude-de-cas-pureva',
-        permanent: true,
-      },
       {
         source: '/operating-partners/ulysse-l-sher-operating-partner',
         destination: '/operating-partners/ulysselsher-operating-partner',
@@ -71,4 +59,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withPayload(withPayload(withPayload(nextConfig)))
+export default nextConfig

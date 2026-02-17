@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { eventTypes } from '@/data/events'
+import { eventTypes } from '@/lib/events'
 
 export function EventTypesSection() {
   return (

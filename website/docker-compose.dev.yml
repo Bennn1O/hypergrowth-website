@@ -1,32 +1,39 @@
 services:
-  web:
+  web-dev:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: hypergrowth-web
+      target: deps
+    working_dir: /app
+    command: npm run dev -- --hostname 0.0.0.0 --port 3000
     ports:
       - "${WEB_PORT:-3000}:3000"
     environment:
-      NODE_ENV: "production"
+      NODE_ENV: "development"
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
       NEXT_PUBLIC_DIRECTUS_URL: "${NEXT_PUBLIC_DIRECTUS_URL:-http://localhost:8055}"
-      DIRECTUS_URL: "${DIRECTUS_URL:-http://directus:8055}"
-      DIRECTUS_SEED_URL: "${DIRECTUS_URL:-http://directus:8055}"
+      DIRECTUS_URL: "http://directus-dev:8055"
+      DIRECTUS_SEED_URL: "http://directus-dev:8055"
+    volumes:
+      - .:/app
+      - node_modules_dev:/app/node_modules
+      - next_cache_dev:/app/.next
     depends_on:
-      directus:
+      directus-dev:
         condition: service_healthy
     restart: unless-stopped
     networks:
-      - hypergrowth-network
+      - hypergrowth-dev-network
 
-  database:
+  database-dev:
     image: postgis/postgis:${POSTGIS_VERSION:-13-master}
-    container_name: hypergrowth-db
-    volumes:
-      - ./data/database:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: "${POSTGRES_USER:-directus}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-directus}"
       POSTGRES_DB: "${POSTGRES_DB:-directus}"
+    volumes:
+      - ./data/database:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "--host=localhost", "--username=${POSTGRES_USER:-directus}"]
       interval: 10s
@@ -35,11 +42,10 @@ services:
       start_period: 30s
     restart: unless-stopped
     networks:
-      - hypergrowth-network
+      - hypergrowth-dev-network
 
-  cache:
+  cache-dev:
     image: redis:${REDIS_VERSION:-6}
-    container_name: hypergrowth-redis
     command: redis-server --appendonly yes
     volumes:
       - ./data/redis:/data
@@ -51,27 +57,26 @@ services:
       start_period: 30s
     restart: unless-stopped
     networks:
-      - hypergrowth-network
+      - hypergrowth-dev-network
 
-  directus:
+  directus-dev:
     image: directus/directus:${DIRECTUS_VERSION:-11.4.0}
-    container_name: hypergrowth-directus
     ports:
       - "${DIRECTUS_PORT:-8055}:8055"
     volumes:
       - ./uploads:/directus/uploads
       - ./extensions:/directus/extensions
     depends_on:
-      database:
+      database-dev:
         condition: service_healthy
-      cache:
+      cache-dev:
         condition: service_healthy
     environment:
-      KEY: "${DIRECTUS_KEY:-replace-this-with-a-random-key}"
-      SECRET: "${DIRECTUS_SECRET:-replace-this-with-a-random-secret}"
+      KEY: "${DIRECTUS_KEY:-replace-with-a-long-random-key}"
+      SECRET: "${DIRECTUS_SECRET:-replace-with-a-long-random-secret}"
 
       DB_CLIENT: "pg"
-      DB_HOST: "database"
+      DB_HOST: "database-dev"
       DB_PORT: "5432"
       DB_DATABASE: "${POSTGRES_DB:-directus}"
       DB_USER: "${POSTGRES_USER:-directus}"
@@ -80,13 +85,13 @@ services:
       CACHE_ENABLED: "true"
       CACHE_AUTO_PURGE: "true"
       CACHE_STORE: "redis"
-      REDIS: "redis://cache:6379"
+      REDIS: "redis://cache-dev:6379"
 
       ADMIN_EMAIL: "${DIRECTUS_ADMIN_EMAIL:-admin@example.com}"
       ADMIN_PASSWORD: "${DIRECTUS_ADMIN_PASSWORD:-change-me-now}"
 
       PUBLIC_URL: "${DIRECTUS_PUBLIC_URL:-http://localhost:8055}"
-      CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC: "'self' http://localhost:3000 http://web:3000"
+      CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC: "'self' http://localhost:3000 http://web-dev:3000"
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8055/server/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
       interval: 15s
@@ -95,8 +100,12 @@ services:
       start_period: 60s
     restart: unless-stopped
     networks:
-      - hypergrowth-network
+      - hypergrowth-dev-network
 
 networks:
-  hypergrowth-network:
+  hypergrowth-dev-network:
     driver: bridge
+
+volumes:
+  node_modules_dev:
+  next_cache_dev:

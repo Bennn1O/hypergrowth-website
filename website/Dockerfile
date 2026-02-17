@@ -1,6 +1,6 @@
 # Dockerfile multi-stage pour Next.js avec optimisation de production
 
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 
 # Installation des dépendances uniquement quand nécessaire
 FROM base AS deps
