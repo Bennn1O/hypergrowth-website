@@ -22,7 +22,7 @@ export function CommunitySection() {
           <div className="sticky top-[120px] flex flex-col items-start gap-5 py-4 max-[767px]:static">
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">Communauté</span>
 
-            <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">Une <span className="font-instrument-italic italic text-[#f285f0]">communauté</span> qui vous comprend</h2>
+            <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-medium leading-[1.08]">Une <span className="font-instrument-italic italic text-[#f285f0]">communauté</span> qui vous comprend</h2>
 
             <p className="text-[0.95rem] font-thin leading-[1.7] text-[#cfcfcf]">
               En rejoignant HyperGrowth, vous intégrez un collectif engagé, qui vous fait avancer plus vite,

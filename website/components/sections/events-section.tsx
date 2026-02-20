@@ -59,7 +59,7 @@ export function EventsSection() {
   return (
     <section className="mx-auto py-10">
       <div className={containerClass}>
-        <main className="flex flex-col gap-12 overflow-hidden rounded-[12px]">
+        <main className="flex flex-col gap-12 overflow-hidden">
           <div className="flex w-[60%] flex-col items-start justify-center gap-4 max-[991px]:w-full">
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">Communauté</span>
 
