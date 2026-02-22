@@ -1,4 +1,8 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'motion/react'
+import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
 const logos = [
   { src: '/images/68f246d99c0f71325b0fa8c9_10.avif', width: 120 },
@@ -18,13 +22,17 @@ const logos = [
 ]
 
 const containerClass =
-  'mx-auto block max-w-[1300px] overflow-hidden px-[5rem] py-[2.5rem] max-[991px]:w-[95vw] max-[991px]:max-w-[95vw] max-[991px]:px-[2.5rem] max-[767px]:px-4 max-[479px]:w-[95vw] max-[479px]:max-w-[95vw] max-[479px]:px-0'
+  'mx-auto block max-w-[var(--width-container)] overflow-hidden px-20 py-10 max-[991px]:w-[95vw] max-[991px]:max-w-[95vw] max-[991px]:px-10 max-[767px]:px-4 max-[479px]:w-[95vw] max-[479px]:max-w-[95vw] max-[479px]:px-0'
 
 export function HeroSection() {
+  const { ref, isInView } = useScrollReveal()
   const marqueeLogos = [...logos, ...logos]
 
   return (
-    <section className="relative mb-6 overflow-hidden pt-[clamp(5.4rem,10vw,7.5rem)] max-[767px]:mb-4 max-[767px]:pt-26 md:mb-10">
+    <section
+      ref={ref}
+      className="relative mb-6 overflow-hidden pt-[clamp(5.4rem,10vw,7.5rem)] max-[767px]:mb-4 max-[767px]:pt-26 md:mb-10"
+    >
       {/* Gradient glow - orchid top-left */}
       <div
         aria-hidden="true"
@@ -43,22 +51,37 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0 bg-[url('/images/68f5e45298cd778cac552b86_HPG_website_gradient-2.avif')] bg-cover bg-center bg-no-repeat opacity-30 mix-blend-screen"
       />
       <div className={containerClass}>
-        <main className="flex flex-col items-center justify-between gap-[clamp(3rem,6vw,5rem)] py-[clamp(1.1rem,3vw,2.5rem)] max-[767px]:gap-16 max-[479px]:px-4">
+        <div className="flex flex-col items-center justify-between gap-[clamp(3rem,6vw,5rem)] py-[clamp(1.1rem,3vw,2.5rem)] max-[767px]:gap-16 max-[479px]:px-4">
           <header className="flex w-full items-center justify-center max-[991px]:flex-col">
             <div className="flex min-h-[clamp(14rem,44vh,28rem)] flex-col items-center justify-center gap-6 text-center max-[991px]:min-h-[clamp(12rem,36vh,22rem)] max-[767px]:min-h-0 max-[767px]:gap-4">
-              <span className="text-[0.85rem] font-archivo leading-[1.3] tracking-[0.06em] text-[#cfcfcf] max-[479px]:text-[0.75rem] md:text-base">
+              <motion.span
+                initial={{ opacity: 0, y: 24 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="text-[0.85rem] font-archivo leading-[1.3] tracking-[0.06em] text-hpg-silver max-[479px]:text-[0.75rem] md:text-base"
+              >
                 OPERATING, YOUR WAY.
-              </span>
-              <h1 className="mx-auto max-w-[22ch] text-center text-[clamp(3rem,7vw,4.8rem)] font-bold leading-[0.96] tracking-[-0.025em] max-[991px]:max-w-[20ch] max-[991px]:text-[clamp(2.2rem,6vw,3.2rem)] max-[991px]:leading-[1.03] max-[767px]:max-w-[18ch] max-[767px]:text-[clamp(2.25rem,8.5vw,2.75rem)] max-[767px]:leading-[1.1]">
+              </motion.span>
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                className="mx-auto max-w-[22ch] text-center text-[clamp(3rem,7vw,4.8rem)] font-bold leading-[0.96] tracking-[-0.025em] max-[991px]:max-w-[20ch] max-[991px]:text-[clamp(2.2rem,6vw,3.2rem)] max-[991px]:leading-[1.03] max-[767px]:max-w-[18ch] max-[767px]:text-[clamp(2.25rem,8.5vw,2.75rem)] max-[767px]:leading-[1.1]"
+              >
                 Nous accompagnons les dirigeants{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">ambitieux</span> pour transformer leur{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">hypercroissance</span> en{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">scaling contrôlé.</span>
-              </h1>
+                <span className="font-instrument-italic italic text-hpg-orchid">ambitieux</span> pour transformer leur{' '}
+                <span className="font-instrument-italic italic text-hpg-orchid">hypercroissance</span> en{' '}
+                <span className="font-instrument-italic italic text-hpg-orchid">scaling contrôlé.</span>
+              </motion.h1>
             </div>
           </header>
 
-          <header className="flex w-full flex-col items-center justify-center gap-2 overflow-hidden md:gap-3">
+          <motion.header
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="flex w-full flex-col items-center justify-center gap-2 overflow-hidden md:gap-3"
+          >
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40 max-[479px]:text-[0.65rem]">Ils nous font confiance</span>
 
             <div className="w-full overflow-hidden mask-[linear-gradient(90deg,transparent_0,#000_6%,#000_94%,transparent_100%)]">
@@ -75,8 +98,8 @@ export function HeroSection() {
                 ))}
               </div>
             </div>
-          </header>
-        </main>
+          </motion.header>
+        </div>
       </div>
     </section>
   )

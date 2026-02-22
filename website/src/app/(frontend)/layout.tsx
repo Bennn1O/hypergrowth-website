@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { LenisProvider } from './providers/lenis-provider'
 
 export const metadata: Metadata = {
   title: 'Scaling stratégique et conseil pour dirigeants ambitieux | HyperGrowth',
@@ -31,12 +32,14 @@ export default function RootLayout({
         <link rel="icon" href="/images/68df88f2746392ab1ec9141b_HPG_website_fav-icon.png" />
         <link rel="apple-touch-icon" href="/images/68df88f650217f54f596a7c6_HPG_website_webclip.png" />
       </head>
-      <body className="min-h-screen overflow-x-hidden bg-[#180a22] text-white antialiased">
-        <div className="-mt-[100px] max-[991px]:-mt-[84px] max-[767px]:-mt-[70px]">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+      <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white antialiased">
+        <LenisProvider>
+          <div className="isolate -mt-[100px] max-[991px]:-mt-[84px] max-[767px]:-mt-[70px]">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </LenisProvider>
       </body>
     </html>
   )

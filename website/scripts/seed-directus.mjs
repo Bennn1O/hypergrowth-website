@@ -91,9 +91,10 @@ const FRONTEND_URL =
   'http://localhost:3000'
 
 const articlesCollection = process.env.DIRECTUS_ARTICLES_COLLECTION ?? 'articles'
+const eventsCollection = process.env.DIRECTUS_EVENTS_COLLECTION ?? 'events'
 const teamCollection = process.env.DIRECTUS_TEAM_COLLECTION ?? 'team_members'
 const useCasesCollection = process.env.DIRECTUS_USE_CASES_COLLECTION ?? 'use_cases'
-const deprecatedCollections = ['events', 'evenements']
+const deprecatedCollections = ['evenements']
 
 const COLLECTION_DEFINITIONS = [
   {
@@ -142,6 +143,123 @@ const COLLECTION_DEFINITIONS = [
           width: 'half',
           note: STATUS_NOTE,
         },
+      },
+      {
+        field: 'published_at',
+        type: 'dateTime',
+        meta: { interface: 'datetime', width: 'half' },
+      },
+    ],
+  },
+  {
+    collection: eventsCollection,
+    meta: {
+      icon: 'event',
+      note: 'HyperGrowth events (upcoming and past)',
+      accountability: 'all',
+      hidden: false,
+      singleton: false,
+      versioning: true,
+    },
+    fields: [
+      {
+        field: 'title',
+        type: 'string',
+        meta: { interface: 'input', required: true, width: 'full' },
+      },
+      {
+        field: 'slug',
+        type: 'string',
+        meta: { interface: 'input', required: true, width: 'half' },
+      },
+      {
+        field: 'href',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'category',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'status',
+        type: 'string',
+        meta: {
+          interface: 'input',
+          required: true,
+          width: 'half',
+          note: 'Recommended values: open, candidature, members, past',
+        },
+      },
+      {
+        field: 'access_mode',
+        type: 'string',
+        meta: {
+          interface: 'input',
+          width: 'half',
+          note: 'Examples: Sur inscription, Ouvert au public',
+        },
+      },
+      {
+        field: 'is_past',
+        type: 'boolean',
+        meta: { interface: 'boolean', width: 'half' },
+      },
+      {
+        field: 'date',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'date_end',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'location',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'country',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'description',
+        type: 'text',
+        meta: { interface: 'input-multiline', width: 'full' },
+      },
+      {
+        field: 'long_description',
+        type: 'text',
+        meta: { interface: 'input-multiline', width: 'full' },
+      },
+      {
+        field: 'format',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'target_audience',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'image_url',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'cta_label',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
+      },
+      {
+        field: 'cta_url',
+        type: 'string',
+        meta: { interface: 'input', width: 'half' },
       },
       {
         field: 'published_at',
@@ -360,6 +478,80 @@ const SEED_ITEMS = {
         "Le micro-management n'est pas un problème de contrôle, c'est un signal d'organisation saturée.\n\nQuand chaque arbitrage remonte au CEO, la vitesse chute, la clarté s'effondre et l'équipe perd en autonomie.\n\nL'enjeu n'est pas de lâcher prise aveuglément, mais de reconfigurer les rôles, les responsabilités et les boucles de décision.",
       status: 'published',
       published_at: '2025-11-29T08:00:00.000Z',
+    },
+  ],
+  [eventsCollection]: [
+    {
+      title: 'Café Croissance Lille',
+      slug: 'cafe-croissance-lille',
+      href: '/evenements/cafe-croissance-lille',
+      category: 'Café Croissance',
+      status: 'past',
+      access_mode: 'Sur inscription',
+      is_past: true,
+      date: 'December 17, 2025',
+      date_end: null,
+      location: 'Lille',
+      country: 'FRANCE',
+      description:
+        "Un format Hotseat. De 8h à 15h, vous placez votre projet face à 10 entrepreneurs et dirigeants confirmés et repartez avec un plan d'action.",
+      long_description:
+        'Café Croissance est un cercle de 10-15 entrepreneurs qui viennent résoudre un vrai blocage business ou personnel grâce à un hot seat guidé et à l’intelligence collective. Pendant deux heures, chacun repart avec plus de clarté, des angles morts révélés et un plan d’action concret. Le prochain a lieu le 21 novembre, à L’Hôtel L’Arbre Voyageur à Lille.',
+      format: 'Hotseat (8h à 15h)',
+      target_audience: 'Dirigeants et entrepreneurs en croissance',
+      image_url:
+        'https://cdn.prod.website-files.com/68d56b17b598c54a4e9c8d9d/68f5e452cca6813a53397562_HPG_website_gradient-3.avif',
+      cta_label: "S'inscrire à l'évènement",
+      cta_url: '/',
+      published_at: '2025-12-17T08:00:00.000Z',
+    },
+    {
+      title: 'Mastermind Sri Lanka',
+      slug: 'mastermind-srilanka',
+      href: '/evenements/mastermind-srilanka',
+      category: 'Mastermind',
+      status: 'past',
+      access_mode: 'Sur inscription',
+      is_past: true,
+      date: 'November 29, 2025',
+      date_end: 'December 7, 2025',
+      location: 'Weligama',
+      country: 'SRI LANKA',
+      description:
+        "De 4 à 10 jours dans un lieu privé, à l'étranger, activités, moments d'échange et de networking. Vous vous créez un réseau solide et vivez une aventure avec d'autres dirigeants.",
+      long_description:
+        "Le Mastermind Hypergrowth est un cercle restreint de 10-20 entrepreneurs en hyper-croissance, réunis pour scaler plus vite grâce à un environnement d'exigence et de clarté. Le principe : l'entreprise ne peut pas aller plus loin que le dirigeant, donc on travaille sur les deux en parallèle.",
+      format: 'Immersion (4 à 10 jours)',
+      target_audience: 'Entrepreneurs en hyper-croissance',
+      image_url:
+        'https://cdn.prod.website-files.com/68de656a1e43b8bb511a7784/6921379f82977e6bf5b9dcc3_Tangalle-Sri-Lanka-Aerial.avif',
+      cta_label: "S'inscrire à l'évènement",
+      cta_url: '/',
+      published_at: '2025-11-29T08:00:00.000Z',
+    },
+    {
+      title: 'Café Croissance Bordeaux',
+      slug: 'charity-gala-winter-2023',
+      href: '/evenements/charity-gala-winter-2023',
+      category: 'Café Croissance',
+      status: 'past',
+      access_mode: 'Ouvert au public',
+      is_past: true,
+      date: 'November 14, 2025',
+      date_end: null,
+      location: 'Bordeaux',
+      country: 'FRANCE',
+      description:
+        "Un format Hotseat. De 8h à 15h, vous placez votre projet face à 10 entrepreneurs et dirigeants confirmés et repartez avec un plan d'action.",
+      long_description:
+        'Le Café Croissance est un cercle d’entrepreneurs en croissance où chacun met sur la table un problème réel et repart avec un plan clair. Format hot seat : une personne expose sa situation, le groupe décortique, challenge, apporte des angles morts et des solutions concrètes. L’objectif est simple : résoudre en 2 heures ce que tu rumines depuis 2 mois, grâce à la puissance du collectif et à un cadre exigeant.',
+      format: 'Hotseat (8h à 15h)',
+      target_audience: 'Dirigeants et entrepreneurs en croissance',
+      image_url:
+        'https://cdn.prod.website-files.com/68de656a1e43b8bb511a7784/69171efbd9f015da9a2384d3__LRG2592.avif',
+      cta_label: "S'inscrire à l'évènement",
+      cta_url: '/',
+      published_at: '2025-11-14T08:00:00.000Z',
     },
   ],
   [teamCollection]: [
@@ -609,13 +801,14 @@ const SEED_ITEMS = {
       title: 'Étude de cas Pureva',
       slug: 'etude-de-cas-pureva',
       client_name: 'Pureva',
-      summary: "Structuration et scaling d'une plateforme innovante.",
+      summary:
+        'Comment structurer une startup en hypercroissance sans en brider la dynamique ?',
       challenge:
-        "L'équipe dirigeante devait passer d'une croissance opportuniste à une trajectoire structurée, avec plus de lisibilité sur la priorisation et la performance.",
+        "Avant HyperGrowth — Les désirs du client : Structurer la croissance et stabiliser l'entreprise. Adrien & Vincent voulaient un cadre stratégique clair (finance, RH, pilotage) pour absorber leur hypercroissance sans perdre en qualité.\n\nProblèmes et challenges : Hypercroissance non pilotée. Trésorerie sous pression, modèle 100 % externalisé difficile à coordonner, décisions lentes, absence de pilotage financier et manque d'expertise tech pour la suite.",
       approach:
-        'Mise en place de rituels de pilotage, clarification des responsabilités, structuration des priorités business et accompagnement stratégique du CEO.',
+        "Avec HyperGrowth — Les désirs du client : Structuration & pilotage complet. Mise en place d'un système financier robuste, optimisation du BFR, structuration des process, gouvernance fondée, intégration de prestataires clés et activation d'un comité scientifique.\n\nRésultats : Clarté, alignement et puissance décisionnelle. Dirigeants alignés, organisation fluide, vision long terme assumée, écosystème de partenaires structuré et moteur de croissance réactivé.",
       outcomes:
-        "Une exécution plus fluide, des décisions plus rapides et une organisation plus robuste pour soutenir l'hypercroissance.",
+        'Témoignage : "Killian possède des qualités d\'analyse humaines et structurelles qui peuvent faire changer grandement les choses sur une entreprise en croissance. Il est à la fois votre accélérateur et le pilier d\'une structure organisée et surtout efficace !" — Vincent Mongis & Adrien Charles-Nicolas, CEO @Pureva\n\n+230% : Croissance de l\'ARR depuis le début de l\'accompagnement.\n+100K€ : Trésorerie récupérée via optimisation financière.',
       status: 'published',
       published_at: '2025-09-10T09:00:00.000Z',
       cta_label: 'Parler à un OP',
