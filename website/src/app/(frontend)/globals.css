@@ -56,6 +56,14 @@
   --color-hpg-violet: var(--hpg-color-violet);
   --color-hpg-orchid: var(--hpg-color-orchid);
   --color-hpg-silver: var(--hpg-color-silver);
+  --color-hpg-stealth: var(--hpg-color-stealth);
+  --color-hpg-violet-border: #9a59c5;
+  --color-hpg-violet-dark: #1a0d28;
+
+  --width-container: 81.25rem;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 * {

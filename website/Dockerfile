@@ -1,30 +1,27 @@
-# Dockerfile multi-stage pour Next.js avec optimisation de production
+# Dockerfile multi-stage pour Next.js avec bun
 
-FROM node:22-alpine AS base
+FROM oven/bun:1-alpine AS base
 
 # Installation des dépendances uniquement quand nécessaire
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Copier les fichiers de dépendances
-COPY package.json package-lock.json* ./
-RUN npm ci
+COPY package.json bun.lock* ./
+RUN bun install --frozen-lockfile
 
-# Rebuild des dépendances natives si nécessaire
+# Build de l'application
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Variables d'environnement pour le build
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Build de l'application
-RUN npm run build
+RUN bun run build
 
 # Image de production, copie uniquement les fichiers nécessaires
-FROM base AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -33,10 +30,8 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copier les fichiers publics
 COPY --from=builder /app/public ./public
 
-# Copier les fichiers de build
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 

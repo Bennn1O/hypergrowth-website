@@ -184,7 +184,7 @@ export default function CommunauteEvenementsPage() {
                 <div className="flex items-center gap-6 max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-2">
                   <span className="text-[1rem] font-medium">{event.title}</span>
                   <span className="text-[0.8rem] text-[#cfcfcf]">
-                    {'dateRange' in event
+                    {'dateRange' in event && event.dateRange
                       ? `Du ${event.dateRange[0]} au ${event.dateRange[1]}`
                       : event.date}
                   </span>
