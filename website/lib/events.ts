@@ -66,26 +66,6 @@ const fallbackEvents: Event[] = [
     href: '/evenements/mastermind-srilanka',
     publishedAt: '2025-11-29T08:00:00.000Z',
   },
-  {
-    id: 'charity-gala-winter-2023',
-    slug: 'charity-gala-winter-2023',
-    title: 'Café Croissance Bordeaux',
-    category: 'Café Croissance',
-    status: 'past',
-    accessMode: 'Ouvert au public',
-    isPast: true,
-    date: 'November 14, 2025',
-    location: 'Bordeaux',
-    country: 'FRANCE',
-    description:
-      "Un format hot seat de 8h à 15h. Vous présentez votre projet face à 10 entrepreneurs et dirigeants confirmés, repartez avec une analyse claire et un plan d'action structuré.",
-    longDescription:
-      "Le Café Croissance est un cercle d'entrepreneurs en croissance où chacun met sur la table un problème réel et repart avec un plan clair. Format hot seat : une personne expose sa situation, le groupe décortique, challenge, apporte des angles morts et des solutions concrètes.",
-    format: 'Hotseat en groupe',
-    targetAudience: 'Entrepreneurs et dirigeants',
-    href: '/evenements/charity-gala-winter-2023',
-    publishedAt: '2025-11-14T08:00:00.000Z',
-  },
 ]
 
 export const eventTypes = [
