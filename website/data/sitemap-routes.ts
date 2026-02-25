@@ -18,7 +18,6 @@ export const STATIC_SITEMAP_PATHS = [
   '/ressources/deleguer-sans-lacher-prise',
   '/ressources/quand-tout-repose-sur-vous-le-piege-du-micro-management',
   '/evenements/cafe-croissance-lille',
-  '/evenements/charity-gala-winter-2023',
   '/evenements/mastermind-srilanka',
 ] as const
 
@@ -37,35 +36,8 @@ export const OPERATING_PARTNER_SLUGS = [
   'ulysselsher-operating-partner',
 ] as const
 
-export const EXPERTISE_SLUGS = [
-  'comptabilite-finances',
-  'crm-email-marketing',
-  'design-graphique',
-  'direction-artistique',
-  'identite-verbale',
-  'lead-generation-skills',
-  'live-events-webinaires',
-  'nutrition-sante',
-  'process-expertise',
-  'sales-marketing-strategy',
-  'scalability-expertise',
-  'software-development-expertise',
-  'ux-ui',
-  'web-design',
-] as const
-
-export const TESTIMONIAL_SLUGS = [
-  'adrien-charles-testimonial',
-  'gabriel-girardon-pazienza',
-  'guillaume-vilain',
-  'jerome-girard',
-  'marion-carneiro',
-] as const
-
 export const DYNAMIC_SITEMAP_PATHS = [
   ...OPERATING_PARTNER_SLUGS.map((slug) => `/operating-partners/${slug}`),
-  ...EXPERTISE_SLUGS.map((slug) => `/expertises/${slug}`),
-  ...TESTIMONIAL_SLUGS.map((slug) => `/temoignages/${slug}`),
 ] as const
 
 export const ALL_SITEMAP_PATHS = [
