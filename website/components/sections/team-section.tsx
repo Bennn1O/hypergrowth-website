@@ -65,7 +65,7 @@ export function TeamSection() {
               if (cell === 'killian') {
                 return (
                   <motion.div key={cell} {...motionProps} className={`flex flex-col items-start justify-center gap-16 rounded-xl p-8 ${glassClass}`}>
-                    <Image src="/images/portrait-killian.png" alt="Portrait du fondateur Killian Palermo" width={70} height={70} className="rounded-[10px]" />
+                    <Image src="/images/portrait-killian.webp" alt="Portrait du fondateur Killian Palermo" width={70} height={70} className="rounded-[10px]" />
                     <div className="flex flex-col gap-2">
                       <h3 className="text-2xl leading-[1.2]">Killian Palermo</h3>
                       <div className="font-thin text-hpg-silver">Founder &amp; Chief OP</div>
@@ -77,7 +77,7 @@ export function TeamSection() {
               if (cell === 'ulysse') {
                 return (
                   <motion.div key={cell} {...motionProps} className={`flex flex-col items-start justify-center gap-16 rounded-xl p-8 ${glassClass}`}>
-                    <Image src="/images/portrait-ulysse-square.png" alt="Portrait de l'Operating Partner Ulysse El Sherbeeny" width={70} height={70} className="rounded-[10px]" />
+                    <Image src="/images/portrait-ulysse-square.webp" alt="Portrait de l'Operating Partner Ulysse El Sherbeeny" width={70} height={70} className="rounded-[10px]" />
                     <div className="flex flex-col gap-2">
                       <h3 className="text-2xl leading-[1.2]">Ulysse El Sherbeeny</h3>
                       <div className="font-thin text-hpg-silver">CEO &amp; OP scaling perso</div>

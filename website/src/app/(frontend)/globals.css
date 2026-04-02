@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Archivo';
-  src: url('/fonts/archivo-variable.ttf') format('truetype');
+  src: url('/fonts/archivo-variable.woff2') format('woff2'), url('/fonts/archivo-variable.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Archivo Italic';
-  src: url('/fonts/archivo-italic-variable.ttf') format('truetype');
+  src: url('/fonts/archivo-italic-variable.woff2') format('woff2'), url('/fonts/archivo-italic-variable.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Instrument';
-  src: url('/fonts/instrument-serif-regular.ttf') format('truetype');
+  src: url('/fonts/instrument-serif-regular.woff2') format('woff2'), url('/fonts/instrument-serif-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: 'Instrument Italic';
-  src: url('/fonts/instrument-serif-italic.ttf') format('truetype');
+  src: url('/fonts/instrument-serif-italic.woff2') format('woff2'), url('/fonts/instrument-serif-italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -110,6 +110,36 @@ a {
 :focus-visible {
   outline: 2px solid rgb(242 133 240 / 0.9);
   outline-offset: 2px;
+}
+
+@keyframes hpg-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hpg-hero-animate {
+  animation: hpg-fade-up 0.7s var(--ease-expo) both;
+  will-change: transform, opacity;
+}
+
+.hpg-hero-animate-1 { animation-delay: 0ms; }
+.hpg-hero-animate-2 { animation-delay: 80ms; }
+.hpg-hero-animate-3 { animation-delay: 160ms; }
+.hpg-hero-animate-4 { animation-delay: 240ms; }
+.hpg-hero-animate-5 { animation-delay: 320ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hpg-hero-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes hpg-scroll-logos {

@@ -29,6 +29,8 @@ export default function RootLayout({
   return (
     <html lang="fr-FR">
       <head>
+        <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="icon" href="/images/68df88f2746392ab1ec9141b_HPG_website_fav-icon.png" />
         <link rel="apple-touch-icon" href="/images/68df88f650217f54f596a7c6_HPG_website_webclip.png" />
       </head>

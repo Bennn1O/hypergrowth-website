@@ -1,10 +1,6 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
-import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
 const logos = [
   { src: '/images/68f246d99c0f71325b0fa8c9_10.avif', width: 120 },
@@ -29,18 +25,14 @@ const stats = [
   { value: '12 mois', label: 'pour que ça tienne' },
 ]
 
-const easeExpo = [0.16, 1, 0.3, 1] as const
-
 const containerClass =
   'mx-auto block max-w-[var(--width-container)] overflow-hidden px-20 py-10 max-[991px]:w-[95vw] max-[991px]:max-w-[95vw] max-[991px]:px-10 max-[767px]:px-4 max-[479px]:w-[95vw] max-[479px]:max-w-[95vw] max-[479px]:px-0'
 
 export function HeroSection() {
-  const { ref, isInView } = useScrollReveal()
   const marqueeLogos = [...logos, ...logos]
 
   return (
     <section
-      ref={ref}
       className="relative mb-6 overflow-hidden pt-[clamp(5.4rem,10vw,7.5rem)] max-[767px]:mb-4 max-[767px]:pt-26 md:mb-10"
     >
       {/* Gradient glow - orchid top-left */}
@@ -73,43 +65,23 @@ export function HeroSection() {
           <div className="flex w-full flex-col items-center gap-8 text-center max-[767px]:gap-6">
 
             {/* Tagline */}
-            <motion.span
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-              transition={{ duration: 0.6, ease: easeExpo }}
-              className="text-[0.85rem] font-archivo leading-[1.3] tracking-[0.06em] text-hpg-silver max-[479px]:text-[0.75rem] md:text-base"
-            >
+            <span className="hpg-hero-animate hpg-hero-animate-1 text-[0.85rem] font-archivo leading-[1.3] tracking-[0.06em] text-hpg-silver max-[479px]:text-[0.75rem] md:text-base">
               OPERATING, YOUR WAY.
-            </motion.span>
+            </span>
 
             {/* H1 */}
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: easeExpo, delay: 0.08 }}
-              className="mx-auto max-w-[22ch] text-center text-[clamp(2.6rem,6vw,4.4rem)] font-bold leading-[1.0] tracking-[-0.025em] max-[991px]:text-[clamp(2.2rem,5.5vw,3.2rem)] max-[991px]:leading-[1.05] max-[767px]:text-[clamp(2rem,7.5vw,2.6rem)] max-[767px]:leading-[1.1]"
-            >
+            <h1 className="hpg-hero-animate hpg-hero-animate-2 mx-auto max-w-[22ch] text-center text-[clamp(2.6rem,6vw,4.4rem)] font-bold leading-[1.0] tracking-[-0.025em] max-[991px]:text-[clamp(2.2rem,5.5vw,3.2rem)] max-[991px]:leading-[1.05] max-[767px]:text-[clamp(2rem,7.5vw,2.6rem)] max-[767px]:leading-[1.1]">
               Votre organisation doit scaler.{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">Sans que tout repose sur vous.</span>
-            </motion.h1>
+            </h1>
 
             {/* Sub-copy */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: easeExpo, delay: 0.16 }}
-              className="mx-auto max-w-[52ch] text-[clamp(0.95rem,1.4vw,1.1rem)] leading-[1.65] text-hpg-silver/80 max-[767px]:max-w-[40ch]"
-            >
+            <p className="hpg-hero-animate hpg-hero-animate-3 mx-auto max-w-[52ch] text-[clamp(0.95rem,1.4vw,1.1rem)] leading-[1.65] text-hpg-silver/80 max-[767px]:max-w-[40ch]">
               Ce n&apos;est pas du conseil. C&apos;est un système de pilotage vivant, jusqu&apos;à ce que votre organisation tienne sans nous.
-            </motion.p>
+            </p>
 
             {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: easeExpo, delay: 0.24 }}
-              className="flex items-center gap-3 max-[479px]:flex-col max-[479px]:w-full"
-            >
+            <div className="hpg-hero-animate hpg-hero-animate-4 flex items-center gap-3 max-[479px]:flex-col max-[479px]:w-full">
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-3 rounded-xl border border-hpg-violet-border bg-hpg-violet px-6 py-3.5 text-[0.9rem] font-semibold tracking-[0.01em] text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_14px_30px_rgb(25_8_40_/_0.45)] transition-colors hover:border-hpg-orchid hover:bg-hpg-violet-dark hover:text-hpg-orchid max-[479px]:w-full max-[479px]:justify-center"
@@ -123,15 +95,10 @@ export function HeroSection() {
               >
                 Tester ma scalabilité
               </Link>
-            </motion.div>
+            </div>
 
             {/* Stats strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-              transition={{ duration: 0.7, ease: easeExpo, delay: 0.32 }}
-              className="flex items-center gap-8 max-[479px]:gap-5"
-            >
+            <div className="hpg-hero-animate hpg-hero-animate-5 flex items-center gap-8 max-[479px]:gap-5">
               {stats.map((stat, i) => (
                 <div key={stat.value} className="flex items-center gap-8 max-[479px]:gap-5">
                   <div className="text-center">
@@ -147,16 +114,11 @@ export function HeroSection() {
                   )}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Logos marquee */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: easeExpo, delay: 0.2 }}
-            className="flex w-full flex-col items-center justify-center gap-2 overflow-hidden md:gap-3"
-          >
+          <div className="hpg-hero-animate hpg-hero-animate-4 flex w-full flex-col items-center justify-center gap-2 overflow-hidden md:gap-3">
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40 max-[479px]:text-[0.65rem]">Ils nous font confiance</span>
             <div className="w-full overflow-hidden mask-[linear-gradient(90deg,transparent_0,#000_6%,#000_94%,transparent_100%)]">
               <div className="flex w-max items-center justify-start gap-[clamp(1.1rem,4vw,3.8rem)] py-[0.9rem] [animation:hpg-scroll-logos_30s_linear_infinite] [will-change:transform] hover:[animation-play-state:paused] motion-reduce:[animation:none] max-[767px]:[animation-duration:24s]">
@@ -172,7 +134,7 @@ export function HeroSection() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
