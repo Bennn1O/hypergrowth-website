@@ -7,18 +7,24 @@ import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
 const eventTypes = [
   {
+    num: '01',
     title: 'Café Croissance',
     status: 'OUVERT AU PUBLIC',
+    statusColor: 'text-emerald-400/80',
     description: "Un format hot seat de 8h à 15h. Vous présentez votre projet face à 10 entrepreneurs et dirigeants confirmés, repartez avec une analyse claire et un plan d'action structuré.",
   },
   {
+    num: '02',
     title: 'Mastermind',
     status: 'SUR CANDIDATURE',
+    statusColor: 'text-hpg-orchid/80',
     description: "De 4 à 10 jours dans un lieu privé à l'étranger. Activités, ateliers, échanges et networking. Vous créez un réseau solide et vivez une expérience unique avec d'autres dirigeants.",
   },
   {
+    num: '03',
     title: 'Dîners HyperClub',
     status: 'RÉSERVÉ AUX MEMBRES',
+    statusColor: 'text-amber-400/80',
     description: "Un dîner d'exception avec 6 à 8 entrepreneurs et dirigeants confirmés. Un moment exclusif pour échanger, créer des synergies et tisser des relations fortes autour d'une belle table.",
   },
 ]
@@ -75,9 +81,12 @@ export function EventsSection() {
           >
             <span className="text-xs font-medium uppercase tracking-[0.1em] text-white/40">Communauté</span>
             <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-              <span className="font-instrument-italic italic text-hpg-orchid">Évènements</span> &amp; lives
+              Trois formats,{' '}
+              <span className="font-instrument-italic italic text-hpg-orchid">une communauté.</span>
             </h2>
-            <p className="hidden">Chaque année...</p>
+            <p className="max-w-[52ch] text-[0.95rem] leading-[1.7] text-hpg-silver">
+              Des formats pensés pour des dirigeants qui veulent progresser, se connecter et passer un cap, pas juste assister à un événement.
+            </p>
           </motion.div>
 
           <div
@@ -87,16 +96,19 @@ export function EventsSection() {
             {eventTypes.map((event, index) => (
               <motion.div
                 key={event.title}
-                className={`flex w-1/3 flex-col items-start justify-start gap-12 rounded-xl p-8 max-[991px]:w-full ${glassClass}`}
+                className={`flex w-1/3 flex-col items-start justify-between gap-6 rounded-xl p-8 max-[991px]:w-full ${glassClass}`}
                 initial={{ opacity: 0, y: 24 }}
                 animate={cardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
                 transition={{ duration: 0.7, ease: easeExpo, delay: index * 0.1 }}
               >
-                <div className="flex flex-col items-start justify-between gap-4 self-stretch">
-                  <h3 className="text-2xl leading-[1.2]">{event.title}</h3>
-                  <div className="text-[0.8rem] leading-[1.3] text-hpg-orchid">{event.status}</div>
+                <div className="flex w-full flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-instrument text-[2.8rem] leading-none text-white/10">{event.num}</span>
+                    <span className={`text-[0.7rem] font-semibold uppercase tracking-[0.12em] ${event.statusColor}`}>{event.status}</span>
+                  </div>
+                  <h3 className="text-[1.25rem] font-semibold leading-[1.2]">{event.title}</h3>
                 </div>
-                <div className="text-[0.9rem] font-thin leading-[1.5] text-hpg-silver">{event.description}</div>
+                <p className="text-[0.88rem] font-thin leading-[1.6] text-hpg-silver">{event.description}</p>
               </motion.div>
             ))}
           </div>

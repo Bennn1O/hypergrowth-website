@@ -80,10 +80,10 @@ export function Navigation({ isOpen, onClose }: NavigationProps) {
       </nav>
 
       <Link
-        href="/concept/test-de-scalabilite"
+        href="/contact"
         className="inline-flex items-center gap-2.5 rounded-[10px] border border-[#be7be4] bg-[linear-gradient(145deg,#9e55cb,#6f369f)] px-5 py-[0.65rem] text-[0.88rem] font-medium text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_10px_22px_rgb(14_3_21_/_0.35)] group transition-all hover:-translate-y-0.5 hover:border-hpg-orchid hover:bg-none hover:bg-hpg-violet-dark hover:text-hpg-orchid max-[991px]:hidden"
       >
-        <span>Testez votre scalabilité</span>
+        <span>Prendre contact</span>
         <ArrowUpRight01Icon size={16} className="transition-transform duration-200 group-hover:-rotate-45" />
       </Link>
 
@@ -114,11 +114,11 @@ export function Navigation({ isOpen, onClose }: NavigationProps) {
         </div>
 
         <Link
-          href="/concept/test-de-scalabilite"
+          href="/contact"
           onClick={onClose}
           className="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-[#be7be4] bg-[linear-gradient(145deg,#9e55cb,#6f369f)] px-6 py-3 text-[0.9rem] font-medium text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_14px_28px_rgb(14_3_21_/_0.4)] group transition-all hover:-translate-y-0.5 hover:border-hpg-orchid hover:bg-hpg-violet-dark hover:text-hpg-orchid"
         >
-          <span>Votre score de scalabilité</span>
+          <span>Prendre contact</span>
           <ArrowUpRight01Icon size={16} className="transition-transform duration-200 group-hover:-rotate-45" />
         </Link>
       </div>

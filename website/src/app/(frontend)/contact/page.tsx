@@ -1,160 +1,115 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Contact | HyperGrowth',
+  title: 'Réserver un appel | HyperGrowth',
   description:
-    "Découvrez comment rejoindre l'écosystème HyperGrowth. Candidatez, échangez avec un Operating Partner, et construisez votre plan de scaling.",
+    'Réservez un appel avec un Operating Partner HyperGrowth. 30 minutes pour évaluer votre contexte et voir si le fit est là.',
 }
 
 const containerClass =
   'mx-auto block max-w-[1300px] px-[5rem] py-[2.5rem] max-[991px]:max-w-[95vw] max-[991px]:px-[2.5rem] max-[767px]:px-4 max-[479px]:max-w-[95vw] max-[479px]:px-0'
 
-const glassClass =
-  'border border-white/12 bg-[rgb(35_20_46_/_0.52)] backdrop-blur-[26px] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.08),0_24px_52px_rgb(4_2_8_/_0.28)]'
-
-const btnViolet =
-  'group inline-flex items-center justify-center gap-3 rounded-[12px] border border-[#9a59c5] bg-[#7d3fab] px-6 py-[0.85rem] text-[0.9rem] font-medium tracking-[0.02em] text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_14px_30px_rgb(25_8_40_/_0.45)] transition-colors hover:border-[#f285f0] hover:bg-[#1a0d28] hover:text-[#f285f0]'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
-
 const steps = [
   {
     num: '01',
-    title: 'Vous candidatez',
-    description:
-      'Remplissez le questionnaire de scalabilité en décrivant votre contexte, vos enjeux et vos objectifs de croissance.',
+    title: 'Vous réservez',
+    description: 'Choisissez un créneau directement dans l\'agenda. Pas de formulaire intermédiaire, pas d\'attente.',
   },
   {
     num: '02',
-    title: 'On échange',
-    description:
-      'Un Operating Partner prend contact avec vous pour un premier échange de 30 minutes, sans engagement.',
+    title: 'On échange 30 min',
+    description: 'Un Operating Partner analyse votre contexte, vos enjeux, votre phase de croissance.',
   },
   {
     num: '03',
-    title: 'On construit votre plan',
-    description:
-      "Si le fit est là, on construit ensemble un plan d'accompagnement personnalisé selon votre phase.",
+    title: 'On construit la suite',
+    description: 'Si le fit est là, on pose ensemble les bases d\'un plan d\'accompagnement sur-mesure.',
   },
 ]
 
 export default function ContactPage() {
   return (
     <main className="flex flex-col items-stretch">
+
       {/* Hero */}
-      <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
+      <section className="relative overflow-hidden pt-[180px] pb-10 max-[767px]:pt-[130px]">
         <div
-          className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
+          className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-20"
           style={{ background: 'radial-gradient(ellipse at 80% 0%, #7d3fab 0%, transparent 65%)' }}
         />
         <div className={containerClass}>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 max-w-[640px]">
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-              Contact
+              Réserver un appel
             </span>
-            <h1 className="text-[clamp(4rem,9vw,7.5rem)] font-bold leading-[1]">
+            <h1 className="text-[clamp(3rem,7vw,5.5rem)] font-bold leading-[1.02] tracking-[-0.025em]">
               Parlons de votre{' '}
-              <span className="font-instrument-italic italic text-[#f285f0]">croissance</span>
+              <span className="font-instrument-italic italic text-[#f285f0]">croissance.</span>
             </h1>
-            <p className="max-w-[520px] font-thin leading-[1.7] text-[#cfcfcf]">
-              La première étape pour rejoindre l&apos;écosystème HyperGrowth,
-              c&apos;est de faire le point sur votre situation actuelle.
+            <p className="max-w-[480px] text-[0.95rem] font-thin leading-[1.7] text-[#cfcfcf]">
+              30 minutes. Un Operating Partner. Pas de pitch, pas d&apos;engagement. On regarde ensemble si le contexte s&apos;y prête.
             </p>
-            <div>
-              <Link href="/concept/test-de-scalabilite" className={btnViolet}>
-                Faire le test de scalabilité
-                <Arrow />
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="mx-auto w-full pb-8">
+      {/* Booking + Killian */}
+      <section className="mx-auto w-full pb-10">
         <div className={containerClass}>
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-3">
-              <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-                Comment ça marche
-              </span>
-              <h2 className="text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.1]">
-                3 étapes pour{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">démarrer</span>
-              </h2>
-            </div>
-            <div className="grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
-              {steps.map((step) => (
-                <div
-                  key={step.num}
-                  className={`flex flex-col gap-4 rounded-[16px] p-8 ${glassClass}`}
-                >
-                  <span className="font-instrument-italic text-[2.5rem] italic leading-none text-[#f285f0] opacity-50">
-                    {step.num}
-                  </span>
-                  <h3 className="text-[1.1rem] font-medium">{step.title}</h3>
-                  <p className="font-thin leading-[1.7] text-[#cfcfcf]">
-                    {step.description}
+          <div className="flex items-start gap-10 max-[991px]:flex-col">
+
+            {/* Killian card */}
+            <div className="flex w-[300px] shrink-0 flex-col gap-6 max-[991px]:w-full max-[991px]:flex-row max-[767px]:flex-col">
+              <div className="overflow-hidden rounded-[12px] border border-white/10 bg-[rgb(35_20_46_/_0.52)] backdrop-blur-[26px]">
+                <Image
+                  src="/images/68dfda277a4f4332ebf28661_OP3.avif"
+                  alt="Killian Palermo, fondateur HyperGrowth"
+                  width={300}
+                  height={220}
+                  className="h-[220px] w-full object-cover object-[50%_20%]"
+                />
+                <div className="flex flex-col gap-2 p-5">
+                  <span className="font-medium">Killian Palermo</span>
+                  <span className="text-[0.75rem] font-thin text-hpg-orchid/80">Fondateur, Operating Partner</span>
+                  <p className="mt-1 text-[0.82rem] font-thin leading-[1.6] text-[#cfcfcf]">
+                    &ldquo;On ne travaille pas avec tout le monde. On sélectionne les dirigeants avec qui le fit est réel et l&apos;ambition partagée.&rdquo;
                   </p>
                 </div>
-              ))}
+              </div>
+
+              {/* Steps */}
+              <div className="flex flex-col gap-4">
+                {steps.map((step) => (
+                  <div key={step.num} className="flex gap-4">
+                    <span className="font-instrument-italic mt-0.5 shrink-0 text-[1.1rem] italic leading-none text-[#f285f0] opacity-50">
+                      {step.num}
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[0.88rem] font-medium">{step.title}</span>
+                      <span className="text-[0.8rem] font-thin leading-[1.6] text-[#cfcfcf]">{step.description}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            {/* HubSpot embed */}
+            <div className="flex-1 overflow-hidden rounded-[16px] border border-white/10 bg-[rgb(35_20_46_/_0.3)] backdrop-blur-[14px] max-[991px]:w-full">
+              <iframe
+                src="https://meetings-eu1.hubspot.com/kpalermo?embed=true"
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Réserver un appel avec Killian Palermo"
+                style={{ display: 'block' }}
+              />
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Killian + CTA */}
-      <section className="mx-auto w-full pb-16">
-        <div className={containerClass}>
-          <div className="flex items-center gap-10 max-[767px]:flex-col">
-            <div className={`shrink-0 overflow-hidden rounded-[12px] ${glassClass}`}>
-              <Image
-                src="/images/68dfda277a4f4332ebf28661_OP3.avif"
-                alt="Killian Palermo"
-                width={300}
-                height={200}
-                className="h-[200px] w-[300px] object-cover object-[50%_20%] max-[767px]:w-full"
-              />
-              <div className="flex flex-col gap-2 p-5">
-                <span className="font-medium">Killian Palermo</span>
-                <span className="text-[0.8rem] font-thin text-[#cfcfcf]">
-                  Fondateur HyperGrowth
-                </span>
-                <p className="text-[0.8rem] font-thin leading-[1.6] text-[#cfcfcf]">
-                  &ldquo;On ne travaille pas avec tout le monde. On sélectionne les dirigeants
-                  avec qui le fit est réel et l&apos;ambition partagée.&rdquo;
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-5">
-              <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-                Votre projet est-il{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">scalable</span> ?
-              </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-[#cfcfcf]">
-                Remplissez le questionnaire en moins de 5 minutes et faites un état des
-                lieux concret sur votre situation.
-              </p>
-              <div>
-                <Link href="/concept/test-de-scalabilite" className={btnViolet}>
-                  Découvrir mon score
-                  <Arrow />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

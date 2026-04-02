@@ -31,7 +31,7 @@ const stats = [
   { value: '150+', label: 'Dirigeants accompagnés' },
   { value: '97%', label: 'Taux de satisfaction' },
   { value: '15M€', label: 'de CA annuel cumulé' },
-  { value: '20+', label: 'Expert·e·s et OP prêt·e·s à piloter' },
+  { value: '20+', label: 'Experts et OP mobilisables' },
 ]
 
 const galleryImages = [
@@ -90,66 +90,6 @@ export default function AProposPage() {
                 </span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Killian ──────────────────────────────────────────────── */}
-      <section className="mx-auto w-full">
-        <div className={containerClass}>
-          <div className="flex items-start gap-10 max-[767px]:flex-col">
-            <div className="w-[45%] shrink-0 overflow-hidden rounded-[16px] max-[767px]:w-full">
-              <Image
-                src="/images/68dfda277a4f4332ebf28661_OP3.avif"
-                alt="Killian Palermo debout face à une table"
-                width={800}
-                height={900}
-                className="w-full object-cover"
-              />
-            </div>
-            <div className="sticky top-[120px] flex flex-col gap-6 py-4 max-[767px]:static">
-              <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-                Le Fondateur
-              </span>
-              <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-                15 projets créés, 7{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">échecs</span>,
-                des millions générés
-              </h2>
-              <p className="font-thin leading-[1.7] text-[#cfcfcf]">
-                J&apos;ai lancé plus de 15 boîtes, j&apos;en ai planté 7 et d&apos;autres ont
-                généré des millions, ce qui m&apos;a permis de comprendre que le vrai défi,
-                ce n&apos;est pas de démarrer, c&apos;est de scaler.
-              </p>
-              <p className="font-thin leading-[1.7] text-[#cfcfcf]">
-                J&apos;ai donc créé un modèle simple et efficace : un Operating Partner qui
-                avance avec toi, soutenu par des experts métiers. Pas de théorie — juste du
-                concret, de l&apos;exécution et de la croissance maîtrisée.
-              </p>
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/images/68f5ef368161d2b06039a184_Killian-carré.png"
-                  alt="Killian Palermo"
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-[0.9rem] font-medium">Killian Palermo</p>
-                  <p className="text-[0.8rem] text-[#f285f0]">Founder &amp; Chief OP</p>
-                </div>
-              </div>
-              <div className="flex gap-8 border-t border-white/10 pt-6">
-                <div>
-                  <p className="font-instrument-italic italic text-[2.5rem] leading-none text-[#f285f0]">12+</p>
-                  <p className="text-[0.8rem] text-white/60">Projets montés</p>
-                </div>
-                <div>
-                  <p className="font-instrument-italic italic text-[2.5rem] leading-none text-[#f285f0]">25M€</p>
-                  <p className="text-[0.8rem] text-white/60">Générés across the board</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -289,38 +229,29 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* ── Score scalabilité ────────────────────────────────────── */}
+      {/* ── CTA Réserver un appel ────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div
-            className="relative overflow-hidden rounded-[16px] p-12 max-[767px]:p-8"
+            className="relative overflow-hidden rounded-[20px] p-12 text-center max-[767px]:p-8"
             style={{
-              background:
-                'linear-gradient(135deg, #1a0d28 0%, #2d1245 50%, #1a0d28 100%)',
-              border: '1px solid rgb(255 255 255 / 0.1)',
+              background: 'radial-gradient(ellipse at 50% 0%, rgba(125,63,171,0.35) 0%, rgba(10,4,16,0.95) 70%)',
+              border: '1px solid rgba(242,133,240,0.15)',
             }}
           >
-            <div
-              className="pointer-events-none absolute right-0 top-0 h-full w-[60%] opacity-30"
-              style={{
-                background: 'radial-gradient(ellipse at 80% 20%, #f285f0 0%, transparent 60%)',
-              }}
-            />
-            <div className="relative z-10 flex flex-col gap-6 max-w-[500px]">
+            <div className="flex flex-col items-center gap-5">
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-                Le score de scalabilité
+                Prochaine étape
               </span>
-              <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-                Votre projet est-il{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">scalable</span> ?
+              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.08]">
+                Vous voulez un Operating Partner{' '}
+                <span className="font-instrument-italic italic text-[#f285f0]">à vos côtés ?</span>
               </h2>
-              <p className="font-thin leading-[1.7] text-[#cfcfcf]">
-                Nous avons créé ce questionnaire pour aider les founders à faire un état des
-                lieux. Remplissez le en moins de 5 minutes et faites enfin un état des lieux
-                concret sur votre situation.
+              <p className="max-w-[480px] font-thin leading-[1.7] text-[#cfcfcf]">
+                Un appel de 30 minutes avec Killian pour évaluer votre contexte et voir si le fit est là.
               </p>
-              <Link href="/concept/test-de-scalabilite" className={`self-start ${btnViolet}`}>
-                Découvrir mon score
+              <Link href="/contact" className={btnViolet}>
+                Réserver un appel
                 <Arrow />
               </Link>
             </div>

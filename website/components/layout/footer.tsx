@@ -11,13 +11,13 @@ const footerEvents = ['Café Croissance Bordeaux', 'Mastermind Sri Lanka', 'Caf�
 
 export function Footer() {
   return (
-      <footer className="mx-auto mt-20 flex w-full flex-col gap-8 rounded-xl bg-hpg-violet bg-[radial-gradient(circle_farthest-corner_at_20%_50%,var(--hpg-color-night),#803fab00),url('https://cdn.prod.website-files.com/68d56b17b598c54a4e9c8d9d/68de97f25b726628c7d71e1c_HPG_brand-elements_trait-16-9.avif')] bg-[length:auto,cover] bg-[position:0_0,0_0] bg-no-repeat px-8 py-4 max-[767px]:px-4 max-[479px]:m-0 max-[479px]:py-[1.1rem]">
+      <footer className="mx-auto mt-20 flex w-full flex-col gap-8 rounded-xl bg-hpg-violet bg-[radial-gradient(circle_farthest-corner_at_20%_50%,var(--hpg-color-night),#803fab00),url('/images/hpg-brand-trait-16-9.avif')] bg-[length:auto,cover] bg-[position:0_0,0_0] bg-no-repeat px-8 py-4 max-[767px]:px-4 max-[479px]:m-0 max-[479px]:py-[1.1rem]">
         <div className="flex items-stretch gap-8 py-8 max-[991px]:flex-col">
           <div className="flex w-1/2 flex-col items-start justify-center gap-8 max-[991px]:w-full max-[479px]:px-4">
             <div className="flex flex-col gap-8">
               <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">Votre projet est-il <span className="font-instrument-italic italic text-hpg-orchid">scalable</span> ?</h2>
               <div className="font-thin">
-                Nous avons créé ce questionnaire pour aider les founders à faire un état des lieux. Remplissez le en
+                Nous avons créé ce questionnaire pour aider les founders à faire un état des lieux. Remplissez-le en
                 moins de 5 minutes et faites enfin un état des lieux concret sur votre situation.
               </div>
             </div>

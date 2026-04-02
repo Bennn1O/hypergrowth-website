@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'motion/react'
+import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
 const logos = [
@@ -20,6 +22,14 @@ const logos = [
   { src: '/images/690b518c1b1be138f398eb4e_HPG_web_logos-partenaires_13.avif', width: 100 },
   { src: '/images/690b518ce5274c3996037d83_HPG_web_logos-partenaires_11.avif', width: 150 },
 ]
+
+const stats = [
+  { value: '400M€', label: 'valeur créée' },
+  { value: '150+', label: 'dirigeants accompagnés' },
+  { value: '12 mois', label: 'pour que ça tienne' },
+]
+
+const easeExpo = [0.16, 1, 0.3, 1] as const
 
 const containerClass =
   'mx-auto block max-w-[var(--width-container)] overflow-hidden px-20 py-10 max-[991px]:w-[95vw] max-[991px]:max-w-[95vw] max-[991px]:px-10 max-[767px]:px-4 max-[479px]:w-[95vw] max-[479px]:max-w-[95vw] max-[479px]:px-0'
@@ -50,40 +60,104 @@ export function HeroSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[url('/images/68f5e45298cd778cac552b86_HPG_website_gradient-2.avif')] bg-cover bg-center bg-no-repeat opacity-30 mix-blend-screen"
       />
+      {/* Brand trait overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/hpg-brand-trait-16-9.avif')] bg-cover bg-center bg-no-repeat opacity-[0.06] mix-blend-screen"
+      />
+
       <div className={containerClass}>
         <div className="flex flex-col items-center justify-between gap-[clamp(3rem,6vw,5rem)] py-[clamp(1.1rem,3vw,2.5rem)] max-[767px]:gap-16 max-[479px]:px-4">
-          <header className="flex w-full items-center justify-center max-[991px]:flex-col">
-            <div className="flex min-h-[clamp(14rem,44vh,28rem)] flex-col items-center justify-center gap-6 text-center max-[991px]:min-h-[clamp(12rem,36vh,22rem)] max-[767px]:min-h-0 max-[767px]:gap-4">
-              <motion.span
-                initial={{ opacity: 0, y: 24 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[0.85rem] font-archivo leading-[1.3] tracking-[0.06em] text-hpg-silver max-[479px]:text-[0.75rem] md:text-base"
-              >
-                OPERATING, YOUR WAY.
-              </motion.span>
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                className="mx-auto max-w-[22ch] text-center text-[clamp(3rem,7vw,4.8rem)] font-bold leading-[0.96] tracking-[-0.025em] max-[991px]:max-w-[20ch] max-[991px]:text-[clamp(2.2rem,6vw,3.2rem)] max-[991px]:leading-[1.03] max-[767px]:max-w-[18ch] max-[767px]:text-[clamp(2.25rem,8.5vw,2.75rem)] max-[767px]:leading-[1.1]"
-              >
-                Nous accompagnons les dirigeants{' '}
-                <span className="font-instrument-italic italic text-hpg-orchid">ambitieux</span> pour transformer leur{' '}
-                <span className="font-instrument-italic italic text-hpg-orchid">hypercroissance</span> en{' '}
-                <span className="font-instrument-italic italic text-hpg-orchid">scaling contrôlé.</span>
-              </motion.h1>
-            </div>
-          </header>
 
-          <motion.header
+          {/* Main hero content */}
+          <div className="flex w-full flex-col items-center gap-8 text-center max-[767px]:gap-6">
+
+            {/* Tagline */}
+            <motion.span
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.6, ease: easeExpo }}
+              className="text-[0.85rem] font-archivo leading-[1.3] tracking-[0.06em] text-hpg-silver max-[479px]:text-[0.75rem] md:text-base"
+            >
+              OPERATING, YOUR WAY.
+            </motion.span>
+
+            {/* H1 */}
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.7, ease: easeExpo, delay: 0.08 }}
+              className="mx-auto max-w-[22ch] text-center text-[clamp(2.6rem,6vw,4.4rem)] font-bold leading-[1.0] tracking-[-0.025em] max-[991px]:text-[clamp(2.2rem,5.5vw,3.2rem)] max-[991px]:leading-[1.05] max-[767px]:text-[clamp(2rem,7.5vw,2.6rem)] max-[767px]:leading-[1.1]"
+            >
+              Votre organisation doit scaler.{' '}
+              <span className="font-instrument-italic italic text-hpg-orchid">Sans que tout repose sur vous.</span>
+            </motion.h1>
+
+            {/* Sub-copy */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.7, ease: easeExpo, delay: 0.16 }}
+              className="mx-auto max-w-[52ch] text-[clamp(0.95rem,1.4vw,1.1rem)] leading-[1.65] text-hpg-silver/80 max-[767px]:max-w-[40ch]"
+            >
+              Ce n&apos;est pas du conseil. C&apos;est un système de pilotage vivant, jusqu&apos;à ce que votre organisation tienne sans nous.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.7, ease: easeExpo, delay: 0.24 }}
+              className="flex items-center gap-3 max-[479px]:flex-col max-[479px]:w-full"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 rounded-xl border border-hpg-violet-border bg-hpg-violet px-6 py-3.5 text-[0.9rem] font-semibold tracking-[0.01em] text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_14px_30px_rgb(25_8_40_/_0.45)] transition-colors hover:border-hpg-orchid hover:bg-hpg-violet-dark hover:text-hpg-orchid max-[479px]:w-full max-[479px]:justify-center"
+              >
+                Réserver un appel
+                <ArrowUpRight01Icon size={18} className="transition-transform duration-200 group-hover:-rotate-45" />
+              </Link>
+              <Link
+                href="/concept/test-de-scalabilite"
+                className="inline-flex items-center gap-3 rounded-xl border border-white/20 px-6 py-3.5 text-[0.9rem] font-medium tracking-[0.01em] text-white/80 transition-colors hover:border-white/40 hover:text-white max-[479px]:w-full max-[479px]:justify-center"
+              >
+                Tester ma scalabilité
+              </Link>
+            </motion.div>
+
+            {/* Stats strip */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.7, ease: easeExpo, delay: 0.32 }}
+              className="flex items-center gap-8 max-[479px]:gap-5"
+            >
+              {stats.map((stat, i) => (
+                <div key={stat.value} className="flex items-center gap-8 max-[479px]:gap-5">
+                  <div className="text-center">
+                    <div className="text-[1.15rem] font-bold tracking-[-0.02em] text-white max-[479px]:text-[1rem]">
+                      {stat.value}
+                    </div>
+                    <div className="text-[0.7rem] font-medium uppercase tracking-[0.08em] text-white/35 max-[479px]:text-[0.6rem]">
+                      {stat.label}
+                    </div>
+                  </div>
+                  {i < stats.length - 1 && (
+                    <div className="h-6 w-px bg-white/10" />
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Logos marquee */}
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            transition={{ duration: 0.7, ease: easeExpo, delay: 0.2 }}
             className="flex w-full flex-col items-center justify-center gap-2 overflow-hidden md:gap-3"
           >
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40 max-[479px]:text-[0.65rem]">Ils nous font confiance</span>
-
             <div className="w-full overflow-hidden mask-[linear-gradient(90deg,transparent_0,#000_6%,#000_94%,transparent_100%)]">
               <div className="flex w-max items-center justify-start gap-[clamp(1.1rem,4vw,3.8rem)] py-[0.9rem] [animation:hpg-scroll-logos_30s_linear_infinite] [will-change:transform] hover:[animation-play-state:paused] motion-reduce:[animation:none] max-[767px]:[animation-duration:24s]">
                 {marqueeLogos.map((logo, index) => (
@@ -98,7 +172,8 @@ export function HeroSection() {
                 ))}
               </div>
             </div>
-          </motion.header>
+          </motion.div>
+
         </div>
       </div>
     </section>

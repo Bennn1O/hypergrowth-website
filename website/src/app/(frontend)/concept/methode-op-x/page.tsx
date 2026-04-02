@@ -125,8 +125,8 @@ export default function MethodeOpXPage() {
             <p className="max-w-[500px] text-[1rem] font-thin leading-[1.7] text-[#cfcfcf]">
               Accélérez sans chaos, sans surcharge, sans perte de vision grâce à la méthode OP-X
             </p>
-            <Link href="/contact" className={btnOutline}>
-              Contact
+            <Link href="/contact" className={btnViolet}>
+              Réserver un appel
               <Arrow />
             </Link>
           </div>
@@ -243,15 +243,12 @@ export default function MethodeOpXPage() {
             <p className="max-w-[560px] text-[0.95rem] font-thin leading-[1.7] text-[#cfcfcf]">
               Rejoindre HyperGrowth, c'est intégrer un cercle d'entrepreneurs partageant défis et
               succès. En plus de votre OP et des leurs experts, l'entraide et les retours
-              d'expérience font naître une force collective innarêtable.
+              d'expérience font naître une force collective inarrêtable.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/concept/test-de-scalabilite" className={btnViolet}>
-                <span>Découvrir votre score de scalabilité</span>
+              <Link href="/contact" className={btnViolet}>
+                <span>Réserver un appel</span>
                 <Arrow />
-              </Link>
-              <Link href="/contact" className={btnOutline}>
-                Contact
               </Link>
             </div>
           </div>
@@ -270,7 +267,7 @@ export default function MethodeOpXPage() {
                 </span>
                 <div className="flex flex-col gap-3">
                   <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium leading-[1.12]">
-                    1 Operating Partner prêt.e à piloter avec vous
+                    1 Operating Partner prêt à piloter avec vous
                   </h2>
                   <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
                     Un expert du scale qui rejoint votre équipe dirigeante pour piloter la
@@ -310,7 +307,7 @@ export default function MethodeOpXPage() {
                 </span>
                 <div className="flex flex-col gap-3">
                   <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium leading-[1.12]">
-                    20 experts A-players prêts à éxecuter pour vous
+                    20 experts A-players prêts à exécuter pour vous
                   </h2>
                   <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
                     20 experts activés selon votre feuille de route, uniquement quand c'est
@@ -460,7 +457,7 @@ export default function MethodeOpXPage() {
                 Au travers de nos case studies, nous vous livrons une vision chiffrée de l'impact
                 que nous avons eu sur certains de nos clients.
               </h2>
-              <Link href="/case-studies" className={`self-start mt-2 ${btnViolet}`}>
+              <Link href="/concept/case-studies" className={`self-start mt-2 ${btnViolet}`}>
                 <span>Nos études de cas</span>
                 <Arrow />
               </Link>

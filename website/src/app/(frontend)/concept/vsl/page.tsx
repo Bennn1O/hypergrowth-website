@@ -79,15 +79,10 @@ export default function VslPage() {
               discuter de votre situation et de vos objectifs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://calendly.com/hypergrowth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={btnViolet}
-              >
-                Prendre rendez-vous 1:1
+              <Link href="/contact" className={btnViolet}>
+                Réserver un appel
                 <Arrow />
-              </a>
+              </Link>
               <Link
                 href="/concept/methode-op-x"
                 className="group inline-flex items-center justify-center gap-3 rounded-[12px] border border-white/15 px-6 py-[0.85rem] text-[0.9rem] font-medium tracking-[0.02em] text-white/80 transition-colors hover:border-white/30 hover:text-white"

@@ -57,10 +57,10 @@ export default function ConceptCaseStudiesPage() {
               Case Studies
             </h1>
             <p className="max-w-[500px] text-[1rem] font-thin leading-[1.7] text-[#cfcfcf]">
-              Quelques exemples des projets que nous avons réalisés avec nos clients.
+              400M€ de valeur créée, 150+ dirigeants accompagnés. Voici ce que ça donne concrètement.
             </p>
             <Link href="/contact" className={`self-start ${btnViolet}`}>
-              Contact
+              Réserver un appel
               <Arrow />
             </Link>
 
@@ -89,82 +89,149 @@ export default function ConceptCaseStudiesPage() {
       {/* ── Liste des case studies ────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6">
             {/* Card Pureva */}
-            <div className="flex flex-col gap-4">
-              <Link
-                href="/case-studies/etude-de-cas-pureva"
-                className="group block overflow-hidden rounded-[16px] transition-opacity hover:opacity-90"
-              >
+            <Link
+              href="/case-studies/etude-de-cas-pureva"
+              className={`group flex gap-0 overflow-hidden rounded-[16px] transition hover:-translate-y-0.5 hover:border-[#f285f040] max-[767px]:flex-col ${glassClass}`}
+            >
+              <div className="w-[45%] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[240px]">
                 <Image
                   src="/images/691ef6d06b58b6bb2805b595_Frame_427322191.avif"
                   alt="Pureva — filtre à eau installé sur un robinet"
-                  width={1300}
-                  height={680}
-                  className="w-full max-h-[520px] object-cover"
+                  width={600}
+                  height={440}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                   priority
                 />
-              </Link>
-              <div className="flex items-center justify-between gap-4 px-1 max-[479px]:flex-col max-[479px]:items-start">
-                <Link
-                  href="/case-studies/etude-de-cas-pureva"
-                  className="text-[1rem] font-bold transition-colors hover:text-[#f285f0]"
-                >
-                  Pureva
-                </Link>
-                <a
-                  href="https://www.linkedin.com/in/adrien-charles-nicolas-b819b6157/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/li flex items-center gap-2 text-[0.85rem] text-white/60 transition-colors hover:text-white"
-                >
-                  Adrien Charles-Nicolas &amp; Vincent Mongis
-                  <Image
-                    src="/images/68e3f507fcac1b8c934d1e24_icons8-linkedin-250.svg"
-                    alt="LinkedIn"
-                    width={16}
-                    height={16}
-                    className="opacity-50"
-                  />
-                </a>
+              </div>
+              <div className="flex flex-1 flex-col justify-between gap-6 p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
+                      Scale-up B2C
+                    </span>
+                    <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
+                      Accompagnement OP-X
+                    </span>
+                  </div>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Pureva</h2>
+                  <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
+                    Startup deeptech dans la filtration d&apos;eau. Organisation en tension, trésorerie sous pression, croissance bloquée. En 12 mois, l&apos;entreprise a doublé son ARR et récupéré 100k€ de trésorerie via optimisation financière.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+230%</div>
+                      <div className="text-[0.75rem] text-white/50">Croissance ARR</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+100k€</div>
+                      <div className="text-[0.75rem] text-white/50">Trésorerie récupérée</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-[0.82rem] text-white/40">
+                    <span>Adrien Charles-Nicolas & Vincent Mongis</span>
+                    <span>·</span>
+                    <span className="font-instrument-italic italic text-hpg-orchid/70">CEO @ Pureva</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Card Nophone */}
+            <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
+              <div
+                className="w-[45%] shrink-0 max-[767px]:w-full max-[767px]:h-[200px]"
+                style={{
+                  background: 'linear-gradient(135deg, rgb(35 20 46 / 0.9) 0%, rgb(20 10 30 / 0.95) 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <span className="font-instrument-italic italic text-[3.5rem] leading-none text-white/10">
+                  Nophone
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col justify-between gap-6 p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
+                      Scale-up B2C
+                    </span>
+                    <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
+                      Accompagnement OP-X
+                    </span>
+                  </div>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Nophone</h2>
+                  <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
+                    Marque B2C en forte croissance. En 3 mois, 6 experts mobilisés sur la refonte site, la stratégie produit et la préparation d&apos;une ouverture internationale avec levée de fonds à la clé.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+25%</div>
+                      <div className="text-[0.75rem] text-white/50">Demandes entrantes</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">6</div>
+                      <div className="text-[0.75rem] text-white/50">Experts mobilisés</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">3 mois</div>
+                      <div className="text-[0.75rem] text-white/50">Durée d&apos;intervention</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── Score de scalabilité ─────────────────────────────────── */}
-      <section className="mx-auto w-full">
-        <div className={containerClass}>
-          <div className="flex items-center gap-16 max-[991px]:flex-col max-[991px]:gap-8">
-            <div className="flex flex-1 flex-col gap-6">
-              <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-                Le score de scalabilité
-              </span>
-              <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-                Votre projet est-il <span className="font-instrument-italic italic text-[#f285f0]">scalable</span> ?
-              </h2>
-              <Link href="/concept/test-de-scalabilite" className={`self-start ${btnViolet}`}>
-                Découvrir votre scalabilité
-                <Arrow />
-              </Link>
-              <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
-                Comprendre le potentiel de scalabilité de votre projet est la meilleure manière de
-                commencer à prendre les bonnes décisions business dès aujourd'hui.
-              </p>
-              <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
-                Répondez au questionnaire et découvrez votre score, pour vous faire une idée du
-                potentiel concret de votre entreprise.
-              </p>
-            </div>
-            <div className="w-[420px] shrink-0 overflow-hidden rounded-[16px] max-[991px]:w-full">
-              <Image
-                src="/images/68f091a6c74395c7e1f6dbd6__LRG5128.avif"
-                alt="Photo de 3 Operating Partners travaillant en extérieur"
-                width={840}
-                height={620}
-                className="w-full object-cover"
-              />
+            {/* Card Coco Combucha */}
+            <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
+              <div
+                className="w-[45%] shrink-0 max-[767px]:w-full max-[767px]:h-[200px]"
+                style={{
+                  background: 'linear-gradient(135deg, rgb(35 20 46 / 0.9) 0%, rgb(20 10 30 / 0.95) 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <span className="font-instrument-italic italic text-[3rem] leading-none text-white/10 text-center px-4">
+                  Coco Combucha
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col justify-between gap-6 p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
+                      Scale-up B2C
+                    </span>
+                    <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
+                      Accompagnement OP-X
+                    </span>
+                  </div>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Coco Combucha</h2>
+                  <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
+                    Marque food & beverage avec un produit fort mais une organisation non structurée pour accélérer. En 2 mois d&apos;accompagnement, croissance record sur pic de saison.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+160%</div>
+                      <div className="text-[0.75rem] text-white/50">Croissance sur pic</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">2 mois</div>
+                      <div className="text-[0.75rem] text-white/50">Durée d&apos;intervention</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -182,7 +249,7 @@ export default function ConceptCaseStudiesPage() {
                 Le modèle <span className="font-instrument-italic italic text-[#f285f0]">OP-X</span>
               </h2>
               <p className="max-w-[580px] text-base font-medium leading-[1.6] text-[#cfcfcf]">
-                1 Operating Partner pour vous accompagner, +20 Experts pour éxecuter à vos côtés.
+                1 Operating Partner pour vous accompagner, +20 Experts pour exécuter à vos côtés.
               </p>
             </div>
 
@@ -229,7 +296,7 @@ export default function ConceptCaseStudiesPage() {
             </div>
 
             <Link href="/concept/methode-op-x" className={btnViolet}>
-              En savoir plus
+              Découvrir la méthode OP-X
               <Arrow />
             </Link>
           </div>

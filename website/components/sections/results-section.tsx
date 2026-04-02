@@ -10,7 +10,7 @@ const stats = [
   { value: '400M€', label: "de chiffre d'affaire piloté" },
   { value: '150+', label: 'dirigeants accompagnés' },
   { value: '80+', label: "membres de l'HyperClub" },
-  { value: '+7', label: "millions d'euros levés" },
+  { value: '+7M€', label: 'levés par nos clients' },
 ]
 
 const containerClass =
@@ -44,7 +44,7 @@ export function ResultsSection() {
                   Nos <span className="font-instrument-italic italic text-hpg-orchid">résultats</span>
                 </h2>
                 <p className="text-base font-medium leading-[1.6] text-hpg-silver">
-                  Au travers de nos case studies, nous vous livrons une vision chiffrée de l'impact que nous avons eu sur certains de nos clients.
+                  Des chiffres réels, sur des entreprises réelles. Ce que nous construisons avec nos clients — en transparence.
                 </p>
               </div>
 
@@ -130,14 +130,14 @@ export function ResultsSection() {
                 <div className="flex flex-col gap-0.5">
                   <div className="flex items-center gap-2">
                     <span className="text-[0.9rem] font-medium">Vincent Mongis & Adrien Charles-Nicolas</span>
-                    <Link href="#" className="transition hover:opacity-70">
+                    <a href="https://www.linkedin.com/company/pureva/" target="_blank" rel="noopener noreferrer" className="transition hover:opacity-70">
                       <Image
                         src="/images/68e76c318862de30ebd604fd_HPG_website_icon_in.svg"
                         alt="LinkedIn"
                         width={16}
                         height={16}
                       />
-                    </Link>
+                    </a>
                   </div>
                   <div className="flex items-center gap-1.5 text-[0.8rem] text-hpg-silver">
                     <span className="font-instrument-italic italic text-hpg-orchid">CEO</span>
