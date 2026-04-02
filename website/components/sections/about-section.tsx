@@ -37,15 +37,10 @@ export function AboutSection() {
               15 projets créés, 7 <span className="font-instrument-italic italic text-hpg-orchid">échecs</span>, des millions générés : j&apos;ai appris par l&apos;<span className="font-instrument-italic italic text-hpg-orchid">expérience.</span>
             </h2>
             <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
-              J&apos;ai lancé plus de 15 boîtes, j&apos;en ai planté 7 et d&apos;autres ont généré des millions, ce qui m&apos;a
-              permis de comprendre que le vrai défi, ce n&apos;est pas de démarrer, c&apos;est de scaler.
+              15 boîtes lancées, 7 plantées, des millions générés. Ce parcours m&apos;a appris une chose : le vrai défi n&apos;est pas de démarrer, c&apos;est de construire une organisation qui tient sans vous.
             </p>
             <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
-              J&apos;ai donc créé un modèle simple et efficace : un Operating Partner qui avance avec toi, soutenu par
-              des experts métiers.
-            </p>
-            <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
-              Pas de théorie juste du concret, de l&apos;exécution et de la croissance maîtrisée.
+              C&apos;est pour ça qu&apos;existe le modèle OP-X. Un Operating Partner qui entre dans votre cockpit, orchestre les bons experts, structure les décisions, et sort quand l&apos;organisation n&apos;a plus besoin de lui.
             </p>
             <Link
               href="/lecurie/a-propos"

@@ -113,65 +113,32 @@ export default function EcurieRessourcesPage() {
         </div>
       </section>
 
-      {/* ── About Killian ────────────────────────────────────────── */}
-      <section className="mx-auto w-full">
+{/* ── CTA Réserver un appel ────────────────────────────────── */}
+      <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
-          <div className="flex items-start gap-10 max-[767px]:flex-col">
-            <div className="w-[40%] shrink-0 overflow-hidden rounded-[12px] max-[767px]:w-full">
-              <Image
-                src="/images/68dfda277a4f4332ebf28661_OP3.avif"
-                alt="Killian Palermo"
-                width={700}
-                height={700}
-                className="h-[380px] w-full object-cover"
-              />
-            </div>
-            <div className="sticky top-[120px] flex flex-col gap-5 py-4 max-[767px]:static">
+          <div
+            className="relative overflow-hidden rounded-[20px] p-12 text-center max-[767px]:p-8"
+            style={{
+              background: 'radial-gradient(ellipse at 50% 0%, rgba(125,63,171,0.35) 0%, rgba(10,4,16,0.95) 70%)',
+              border: '1px solid rgba(242,133,240,0.15)',
+            }}
+          >
+            <div className="flex flex-col items-center gap-5">
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-                L&apos;écurie
+                Prochaine étape
               </span>
-              <h2 className="text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.08]">
-                15 projets créés, 7{' '}
-                <span className="font-instrument-italic italic text-[#f285f0]">échecs</span>,
-                des millions générés
+              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.08]">
+                Les ressources ne suffisent pas.{' '}
+                <span className="font-instrument-italic italic text-[#f285f0]">L&apos;accompagnement, si.</span>
               </h2>
-              <p className="font-thin leading-[1.7] text-[#cfcfcf]">
-                J&apos;ai lancé plus de 15 boîtes, j&apos;en ai planté 7 et d&apos;autres ont
-                généré des millions, ce qui m&apos;a permis de comprendre que le vrai défi,
-                ce n&apos;est pas de démarrer, c&apos;est de scaler.
+              <p className="max-w-[480px] font-thin leading-[1.7] text-[#cfcfcf]">
+                Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement, juste de la clarté.
               </p>
-              <p className="font-thin leading-[1.7] text-[#cfcfcf]">
-                Pas de théorie — juste du concret, de l&apos;exécution et de la croissance
-                maîtrisée.
-              </p>
-              <Link href="/lecurie/a-propos" className={`self-start ${btnViolet}`}>
-                À propos
+              <Link href="/contact" className={btnViolet}>
+                Réserver un appel
                 <Arrow />
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Score scalabilité ────────────────────────────────────── */}
-      <section className="mx-auto w-full pb-16">
-        <div className={containerClass}>
-          <div className="flex flex-col items-center gap-6 text-center">
-            <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-              Le score de scalabilité
-            </span>
-            <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-              Votre projet est-il{' '}
-              <span className="font-instrument-italic italic text-[#f285f0]">scalable</span> ?
-            </h2>
-            <p className="max-w-[520px] font-thin leading-[1.7] text-[#cfcfcf]">
-              Remplissez le questionnaire en moins de 5 minutes et faites enfin un état des
-              lieux concret sur votre situation.
-            </p>
-            <Link href="/concept/test-de-scalabilite" className={btnViolet}>
-              Découvrir mon score
-              <Arrow />
-            </Link>
           </div>
         </div>
       </section>

@@ -29,7 +29,7 @@ export function ScalabilityTestSection() {
 
             <p className="text-[0.95rem] leading-[1.7] text-hpg-silver">
               Comprendre le potentiel de scalabilité de votre projet est la meilleure manière de commencer à prendre
-              les bonnes décisions business dés aujourd'hui. Répondez au questionnaire et découvrez votre score.
+              les bonnes décisions business dès aujourd'hui. Répondez au questionnaire et découvrez votre score.
             </p>
 
             <Link

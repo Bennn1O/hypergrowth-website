@@ -254,7 +254,7 @@ export default function LesOpPage() {
             </div>
             <div className="mt-4 flex justify-center">
               <Link href="/contact" className={btnViolet}>
-                Travailler avec nous
+                Réserver un appel
                 <Arrow />
               </Link>
             </div>

@@ -214,44 +214,40 @@ export default function PurevaCaseStudyPage() {
         </div>
       </section>
 
-      {/* ── Ces études de cas pourraient vous intéresser ─────────── */}
+      {/* ── CTA ─────────────────────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
-          <div className="flex flex-col gap-8">
-            <h2 className="text-[1.1rem] font-medium">
-              Ces études de cas pourraient vous intéresser
-            </h2>
-            <div className="flex gap-4 max-[767px]:flex-col">
-              <Link
-                href="/case-studies"
-                className={`group flex items-center justify-between gap-6 rounded-[12px] p-6 ${glassClass} transition-colors hover:border-[#f285f040] hover:bg-[rgb(24_10_34_/_0.3)]`}
-              >
-                <div className="overflow-hidden rounded-[8px] w-[120px] shrink-0">
-                  <Image
-                    src="/images/691ef6d06b58b6bb2805b595_Frame_427322191.avif"
-                    alt="Pureva"
-                    width={240}
-                    height={160}
-                    className="h-20 w-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col gap-1">
-                  <span className="text-[0.75rem] text-white/40">Étude de cas</span>
-                  <span className="text-[0.95rem] font-medium">Pureva</span>
-                </div>
-                <Image
-                  src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="opacity-40 transition-transform duration-200 group-hover:-rotate-45"
-                />
-              </Link>
+          <div
+            className="relative overflow-hidden rounded-[20px] p-12 text-center max-[767px]:p-8"
+            style={{
+              background: 'radial-gradient(ellipse at 50% 0%, rgba(125,63,171,0.35) 0%, rgba(10,4,16,0.95) 70%)',
+              border: '1px solid rgba(242,133,240,0.15)',
+            }}
+          >
+            <div className="flex flex-col items-center gap-5">
+              <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
+                Prochaine étape
+              </span>
+              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.08]">
+                Et si c&apos;était votre{' '}
+                <span className="font-instrument-italic italic text-[#f285f0]">tour ?</span>
+              </h2>
+              <p className="max-w-[480px] font-thin leading-[1.7] text-[#cfcfcf]">
+                Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement, juste de la clarté.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link href="/contact" className={btnViolet}>
+                  Réserver un appel
+                  <Arrow />
+                </Link>
+                <Link
+                  href="/concept/case-studies"
+                  className="inline-flex items-center justify-center gap-3 rounded-[12px] border border-white/15 px-6 py-[0.85rem] text-[0.9rem] font-medium text-white/70 transition hover:border-white/30 hover:text-white"
+                >
+                  Voir tous les cas clients
+                </Link>
+              </div>
             </div>
-            <Link href="/case-studies" className={`self-start ${btnViolet}`}>
-              <span>Voir toutes les études de cas</span>
-              <Arrow />
-            </Link>
           </div>
         </div>
       </section>

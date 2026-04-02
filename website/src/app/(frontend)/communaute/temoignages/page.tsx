@@ -243,25 +243,32 @@ export default function TemoignagesPage() {
         </div>
       </section>
 
-      {/* ── Score scalabilité ────────────────────────────────────── */}
+      {/* ── CTA Réserver un appel ────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
-          <div className="flex flex-col items-center gap-6 text-center">
-            <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
-              Le score de scalabilité
-            </span>
-            <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
-              Votre projet est-il{' '}
-              <span className="font-instrument-italic italic text-[#f285f0]">scalable</span> ?
-            </h2>
-            <p className="max-w-[520px] font-thin leading-[1.7] text-[#cfcfcf]">
-              Nous avons créé ce questionnaire pour aider les founders à faire un état des
-              lieux. Remplissez le en moins de 5 minutes.
-            </p>
-            <Link href="/concept/test-de-scalabilite" className={btnViolet}>
-              Découvrir mon score
-              <Arrow />
-            </Link>
+          <div
+            className="relative overflow-hidden rounded-[20px] p-12 text-center max-[767px]:p-8"
+            style={{
+              background: 'radial-gradient(ellipse at 50% 0%, rgba(125,63,171,0.35) 0%, rgba(10,4,16,0.95) 70%)',
+              border: '1px solid rgba(242,133,240,0.15)',
+            }}
+          >
+            <div className="flex flex-col items-center gap-5">
+              <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
+                Prochaine étape
+              </span>
+              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.08]">
+                C&apos;est votre tour{' '}
+                <span className="font-instrument-italic italic text-[#f285f0]">maintenant.</span>
+              </h2>
+              <p className="max-w-[480px] font-thin leading-[1.7] text-[#cfcfcf]">
+                Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement, juste de la clarté.
+              </p>
+              <Link href="/contact" className={btnViolet}>
+                Réserver un appel
+                <Arrow />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
