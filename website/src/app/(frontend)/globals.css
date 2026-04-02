@@ -1,37 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Archivo';
-  src: url('/fonts/archivo-variable.woff2') format('woff2'), url('/fonts/archivo-variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Archivo Italic';
-  src: url('/fonts/archivo-italic-variable.woff2') format('woff2'), url('/fonts/archivo-italic-variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Instrument';
-  src: url('/fonts/instrument-serif-regular.woff2') format('woff2'), url('/fonts/instrument-serif-regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Instrument Italic';
-  src: url('/fonts/instrument-serif-italic.woff2') format('woff2'), url('/fonts/instrument-serif-italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
 :root {
   --hpg-color-night: #180a22;
   --hpg-color-white: #ffffff;
@@ -40,10 +8,10 @@
   --hpg-color-silver: #cfcfcf;
   --hpg-color-stealth: #414141;
 
-  --hpg-font-archivo: 'Archivo', Arial, sans-serif;
-  --hpg-font-archivo-italic: 'Archivo Italic', Arial, sans-serif;
-  --hpg-font-instrument: 'Instrument', 'Palatino Linotype', sans-serif;
-  --hpg-font-instrument-italic: 'Instrument Italic', 'Palatino Linotype', sans-serif;
+  --hpg-font-archivo: var(--archivo), Arial, sans-serif;
+  --hpg-font-archivo-italic: var(--archivo-italic), Arial, sans-serif;
+  --hpg-font-instrument: var(--instrument), 'Palatino Linotype', sans-serif;
+  --hpg-font-instrument-italic: var(--instrument-italic), 'Palatino Linotype', sans-serif;
 }
 
 @theme {

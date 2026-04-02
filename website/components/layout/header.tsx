@@ -48,6 +48,7 @@ export function Header() {
               width={80}
               height={80}
               priority
+              fetchPriority="high"
               className="h-auto w-[78px] max-[991px]:w-[60px]"
             />
           </Link>
