@@ -118,16 +118,14 @@ export function EventsSection() {
                     href={event.href}
                     className={`relative flex items-center justify-between gap-6 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] px-6 py-5 transition max-[991px]:flex-col max-[991px]:items-start ${past ? 'opacity-50 grayscale-[30%]' : 'hover:-translate-y-0.5 hover:border-[#f285f040] hover:bg-[rgb(24_10_34_/_0.3)]'}`}
                   >
-                    {past && (
-                      <div className="absolute inset-0 z-10 flex items-center justify-center bg-[rgb(24_10_34_/_0.5)]">
-                        <span className="rounded-full border border-white/20 bg-[rgb(24_10_34_/_0.8)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-white/60">Événement passé</span>
-                      </div>
-                    )}
                     <div className="flex items-center gap-6 max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-2">
                       <div className="text-[1rem] font-medium">{event.title}</div>
                       <div className="text-[0.8rem] text-hpg-silver">
                         {event.dateRange ? `Du ${event.dateRange[0]} au ${event.dateRange[1]}` : event.date}
                       </div>
+                      {past && (
+                        <span className="rounded-full border border-white/20 bg-white/[0.04] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-white/50">Événement passé</span>
+                      )}
                     </div>
                     <div className="flex items-center gap-3 max-[991px]:gap-2">
                       <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs">{event.type}</span>

@@ -148,7 +148,7 @@ export default function ConceptCaseStudiesPage() {
                   alt="Nophone — pochette anti-ondes"
                   width={600}
                   height={440}
-                  className="h-full w-full object-cover transition duration-500"
+                  className="h-full w-full object-cover object-center transition duration-500"
                 />
               </div>
               <div className="flex flex-1 flex-col justify-between gap-6 p-8">
@@ -187,13 +187,13 @@ export default function ConceptCaseStudiesPage() {
 
             {/* Card Koko Kombucha */}
             <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
-              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden bg-[#e8e4e0] max-[767px]:w-full max-[767px]:h-[200px]">
                 <Image
                   src="/images/koko-kombucha.webp"
                   alt="Koko Kombucha — canette produit"
                   width={600}
                   height={440}
-                  className="h-full w-full object-cover transition duration-500"
+                  className="h-full w-full object-contain transition duration-500"
                 />
               </div>
               <div className="flex flex-1 flex-col justify-between gap-6 p-8">
@@ -234,7 +234,7 @@ export default function ConceptCaseStudiesPage() {
                   alt="Net & Connect — Lucas Lopez, fondateur"
                   width={600}
                   height={440}
-                  className="h-full w-full object-cover transition duration-500"
+                  className="h-full w-full object-cover object-[50%_20%] transition duration-500"
                 />
               </div>
               <div className="flex flex-1 flex-col justify-between gap-6 p-8">
@@ -275,7 +275,7 @@ export default function ConceptCaseStudiesPage() {
                   alt="Minastorm — marque de mode féminine"
                   width={600}
                   height={440}
-                  className="h-full w-full object-cover transition duration-500"
+                  className="h-full w-full object-cover object-top transition duration-500"
                 />
               </div>
               <div className="flex flex-1 flex-col justify-between gap-6 p-8">
