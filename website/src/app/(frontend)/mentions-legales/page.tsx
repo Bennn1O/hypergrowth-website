@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 const containerClass =
-  'mx-auto block max-w-[960px] px-[5rem] py-[2.5rem] max-[991px]:max-w-[95vw] max-[991px]:px-[2.5rem] max-[767px]:px-4 max-[479px]:max-w-[95vw] max-[479px]:px-0'
+  'mx-auto block max-w-[960px] px-[5rem] py-[2.5rem] max-[991px]:max-w-[95vw] max-[991px]:px-[2.5rem] max-[767px]:px-4 max-[479px]:max-w-[95vw] max-[479px]:px-4'
 
 export default function MentionsLegalesPage() {
   return (

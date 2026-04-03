@@ -10,7 +10,7 @@ export function AboutSection() {
 
   return (
     <section className="mx-auto">
-      <div className="mx-auto flex max-w-[var(--width-container)] flex-col items-center justify-center px-8 py-4 max-[767px]:px-4 max-[479px]:mx-0 max-[479px]:px-0">
+      <div className="mx-auto flex max-w-[var(--width-container)] flex-col items-center justify-center px-8 py-4 max-[767px]:px-4 max-[479px]:mx-0 max-[479px]:px-4">
         <div className="flex items-start gap-10 max-[767px]:flex-col max-[767px]:gap-6">
           <div className="w-[50%] shrink-0 overflow-hidden rounded-xl max-[767px]:w-full">
             <Image

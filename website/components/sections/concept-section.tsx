@@ -6,7 +6,7 @@ import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
 const containerClass =
-  'mx-auto block max-w-[var(--width-container)] overflow-auto px-20 py-10 max-[991px]:w-[95vw] max-[991px]:max-w-[95vw] max-[991px]:px-10 max-[767px]:px-4 max-[479px]:w-[95vw] max-[479px]:max-w-[95vw] max-[479px]:px-0'
+  'mx-auto block max-w-[var(--width-container)] overflow-auto px-20 py-10 max-[991px]:w-[95vw] max-[991px]:max-w-[95vw] max-[991px]:px-10 max-[767px]:px-4 max-[479px]:w-[95vw] max-[479px]:max-w-[95vw] max-[479px]:px-4'
 
 const glassCardClass =
   'relative isolate flex min-h-[300px] flex-col items-start justify-between gap-6 self-stretch rounded-xl border border-white/12 bg-[rgb(35_20_46_/_0.52)] p-8 backdrop-blur-[26px] transition hover:-translate-y-0.5 hover:border-hpg-orchid/35 hover:shadow-[0_24px_40px_rgb(7_2_12_/_0.35)] max-[479px]:min-h-[240px]'
