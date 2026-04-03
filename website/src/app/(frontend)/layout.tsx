@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { CookieBanner } from '@/components/layout/cookie-banner'
 import { LenisProvider } from './providers/lenis-provider'
 
 const archivo = localFont({
@@ -82,6 +83,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </LenisProvider>
+        <CookieBanner />
       </body>
     </html>
   )
