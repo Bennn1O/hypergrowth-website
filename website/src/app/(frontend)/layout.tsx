@@ -66,8 +66,17 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/68df88f650217f54f596a7c6_HPG_website_webclip.png" />
       </head>
       <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white antialiased">
+        <div
+          className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
+          style={{
+            backgroundImage: "url('/images/hpg-brand-trait-16-9.avif')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
         <LenisProvider>
-          <div className="isolate -mt-[100px] max-[991px]:-mt-[84px] max-[767px]:-mt-[70px]">
+          <div className="relative isolate z-10 -mt-[100px] max-[991px]:-mt-[84px] max-[767px]:-mt-[70px]">
             <Header />
             {children}
             <Footer />

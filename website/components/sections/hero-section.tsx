@@ -52,11 +52,6 @@ export function HeroSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[url('/images/68f5e45298cd778cac552b86_HPG_website_gradient-2.avif')] bg-cover bg-center bg-no-repeat opacity-30 mix-blend-screen"
       />
-      {/* Brand trait overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/images/hpg-brand-trait-16-9.avif')] bg-cover bg-center bg-no-repeat opacity-[0.06] mix-blend-screen"
-      />
 
       <div className={containerClass}>
         <div className="flex flex-col items-center justify-between gap-[clamp(3rem,6vw,5rem)] py-[clamp(1.1rem,3vw,2.5rem)] max-[767px]:gap-16 max-[479px]:px-4">
