@@ -7,7 +7,6 @@ const footerSections = [
   { title: "L'écurie", links: [ { label: 'À Propos', href: '/lecurie/a-propos' }, { label: "L'équipe", href: '/lecurie/les-op' }, { label: 'Ressources', href: '/lecurie/ressources' } ] },
 ]
 
-const footerEvents = ['Café Croissance Bordeaux', 'Mastermind Sri Lanka', 'Café Croissance Lille']
 
 export function Footer() {
   return (
@@ -45,16 +44,6 @@ export function Footer() {
               </div>
             ))}
 
-            <div>
-              <div className="mb-4 text-xs font-medium uppercase tracking-[0.08em] text-white/40">Les Évènements</div>
-              <div className="flex flex-col gap-3">
-                {footerEvents.map((eventName) => (
-                  <div key={eventName} className="text-[0.85rem] leading-[1.3] text-white">
-                    {eventName}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
