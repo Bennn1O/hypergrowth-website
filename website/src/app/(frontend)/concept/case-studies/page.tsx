@@ -95,7 +95,7 @@ export default function ConceptCaseStudiesPage() {
               href="/case-studies/etude-de-cas-pureva"
               className={`group flex gap-0 overflow-hidden rounded-[16px] transition hover:-translate-y-0.5 hover:border-[#f285f040] max-[767px]:flex-col ${glassClass}`}
             >
-              <div className="w-[45%] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[240px]">
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
                 <Image
                   src="/images/691ef6d06b58b6bb2805b595_Frame_427322191.avif"
                   alt="Pureva — filtre à eau installé sur un robinet"
@@ -142,24 +142,20 @@ export default function ConceptCaseStudiesPage() {
 
             {/* Card Nophone */}
             <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
-              <div
-                className="w-[45%] shrink-0 max-[767px]:w-full max-[767px]:h-[200px]"
-                style={{
-                  background: 'linear-gradient(135deg, rgb(35 20 46 / 0.9) 0%, rgb(20 10 30 / 0.95) 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <span className="font-instrument-italic italic text-[3.5rem] leading-none text-white/10">
-                  Nophone
-                </span>
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
+                <Image
+                  src="/images/nophone-pochette.avif"
+                  alt="Nophone — pochette anti-ondes"
+                  width={600}
+                  height={440}
+                  className="h-full w-full object-cover transition duration-500"
+                />
               </div>
               <div className="flex flex-1 flex-col justify-between gap-6 p-8">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
-                      Scale-up B2C
+                      E-commerce BtoB
                     </span>
                     <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
                       Accompagnement OP-X
@@ -167,67 +163,186 @@ export default function ConceptCaseStudiesPage() {
                   </div>
                   <h2 className="text-[1.6rem] font-bold leading-[1.1]">Nophone</h2>
                   <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
-                    Marque B2C en forte croissance. En 3 mois, 6 experts mobilisés sur la refonte site, la stratégie produit et la préparation d&apos;une ouverture internationale avec levée de fonds à la clé.
+                    Marque e-commerce de pochettes anti-ondes à 100K€/mois mais une organisation qui menaçait de s&apos;effondrer sous son propre poids. Équipes mal cadrées, fondateur englué dans l&apos;opérationnel, levée internationale en jeu.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
                     <div>
-                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+25%</div>
-                      <div className="text-[0.75rem] text-white/50">Demandes entrantes</div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+50%</div>
+                      <div className="text-[0.75rem] text-white/50">CA (100K → 150K/mois)</div>
                     </div>
                     <div>
-                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">6</div>
-                      <div className="text-[0.75rem] text-white/50">Experts mobilisés</div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">3x moins</div>
+                      <div className="text-[0.75rem] text-white/50">De temps opérationnel</div>
                     </div>
                     <div>
-                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">3 mois</div>
-                      <div className="text-[0.75rem] text-white/50">Durée d&apos;intervention</div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">5-10M€</div>
+                      <div className="text-[0.75rem] text-white/50">Levée en cours</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Card Coco Combucha */}
+            {/* Card Koko Kombucha */}
             <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
-              <div
-                className="w-[45%] shrink-0 max-[767px]:w-full max-[767px]:h-[200px]"
-                style={{
-                  background: 'linear-gradient(135deg, rgb(35 20 46 / 0.9) 0%, rgb(20 10 30 / 0.95) 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <span className="font-instrument-italic italic text-[3rem] leading-none text-white/10 text-center px-4">
-                  Coco Combucha
-                </span>
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
+                <Image
+                  src="/images/koko-kombucha.webp"
+                  alt="Koko Kombucha — canette produit"
+                  width={600}
+                  height={440}
+                  className="h-full w-full object-cover transition duration-500"
+                />
               </div>
               <div className="flex flex-1 flex-col justify-between gap-6 p-8">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
-                      Scale-up B2C
+                      E-commerce BtoC
                     </span>
                     <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
                       Accompagnement OP-X
                     </span>
                   </div>
-                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Coco Combucha</h2>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Koko Kombucha</h2>
                   <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
-                    Marque food & beverage avec un produit fort mais une organisation non structurée pour accélérer. En 2 mois d&apos;accompagnement, croissance record sur pic de saison.
+                    Marque de boissons avec une CEO voulant sortir de l&apos;opérationnel, une croissance à piloter et une réflexion de fond sur l&apos;avenir de l&apos;entreprise. CA passé aux 6 chiffres mensuels, croissance maîtrisée et pilotée.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
                     <div>
-                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">+160%</div>
-                      <div className="text-[0.75rem] text-white/50">Croissance sur pic</div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">6 chiffres</div>
+                      <div className="text-[0.75rem] text-white/50">CA mensuel atteint</div>
                     </div>
                     <div>
-                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">2 mois</div>
-                      <div className="text-[0.75rem] text-white/50">Durée d&apos;intervention</div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">CEO sortie</div>
+                      <div className="text-[0.75rem] text-white/50">De l&apos;opérationnel</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Net & Connect */}
+            <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
+                <Image
+                  src="/images/netandconnect.jpg"
+                  alt="Net & Connect — Lucas Lopez, fondateur"
+                  width={600}
+                  height={440}
+                  className="h-full w-full object-cover transition duration-500"
+                />
+              </div>
+              <div className="flex flex-1 flex-col justify-between gap-6 p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
+                      Club d&apos;entrepreneurs
+                    </span>
+                    <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
+                      Accompagnement OP-X
+                    </span>
+                  </div>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Net & Connect</h2>
+                  <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
+                    Club d&apos;entrepreneurs autour du padel B2B : belle croissance, zéro process pour la maîtriser. Leads non traités, fondateur englué dans l&apos;opérationnel, croissance qui génère autant de chaos que d&apos;opportunités. Structuration complète et nouvelles verticales lancées.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">6 chiffres</div>
+                      <div className="text-[0.75rem] text-white/50">CA mensuel atteint</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">Levée</div>
+                      <div className="text-[0.75rem] text-white/50">En cours</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Minastorm */}
+            <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
+                <Image
+                  src="/images/minastorm.webp"
+                  alt="Minastorm — marque de mode féminine"
+                  width={600}
+                  height={440}
+                  className="h-full w-full object-cover transition duration-500"
+                />
+              </div>
+              <div className="flex flex-1 flex-col justify-between gap-6 p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
+                      E-commerce, Mode
+                    </span>
+                    <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
+                      Accompagnement OP-X
+                    </span>
+                  </div>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">Minastorm</h2>
+                  <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
+                    Marque de mode féminine à 7 chiffres avec une CEO trop dans le cambouis. Sans visibilité sur sa zone de génie, la posture gestion primait sur la croissance. Repositionnement marketing, activation de leviers sans augmenter la charge.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">7 chiffres</div>
+                      <div className="text-[0.75rem] text-white/50">CA maintenu et soutenu</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">CEO libérée</div>
+                      <div className="text-[0.75rem] text-white/50">Travaille beaucoup moins</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card La Draft */}
+            <div className={`flex gap-0 overflow-hidden rounded-[16px] max-[767px]:flex-col ${glassClass}`}>
+              <div className="w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px]">
+                <Image
+                  src="/images/ladraft-team.jpeg"
+                  alt="La Draft — équipe agence RPO"
+                  width={600}
+                  height={440}
+                  className="h-full w-full object-cover transition duration-500"
+                />
+              </div>
+              <div className="flex flex-1 flex-col justify-between gap-6 p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
+                      Agence RPO
+                    </span>
+                    <span className="rounded-full border border-hpg-orchid/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-hpg-orchid/70">
+                      Accompagnement OP-X
+                    </span>
+                  </div>
+                  <h2 className="text-[1.6rem] font-bold leading-[1.1]">La Draft</h2>
+                  <p className="text-[0.9rem] font-thin leading-[1.7] text-[#cfcfcf]">
+                    Agence RPO spécialisée profils de niche industrielle et technique. Potentiel évident, mais dirigeants pas encore dans leur zone de génie, process inexistants, blocage sur la capacité à investir. CA aux 6 chiffres mensuels et lancement d&apos;un SaaS accompagné.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-6 border-t border-white/[0.06] pt-4 max-[479px]:flex-col max-[479px]:gap-3">
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">6 chiffres</div>
+                      <div className="text-[0.75rem] text-white/50">CA mensuel atteint</div>
+                    </div>
+                    <div>
+                      <div className="font-instrument-italic italic text-[2rem] leading-none text-hpg-orchid">SaaS lancé</div>
+                      <div className="text-[0.75rem] text-white/50">Frontliner accompagné</div>
                     </div>
                   </div>
                 </div>
