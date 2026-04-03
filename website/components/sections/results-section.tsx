@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
@@ -23,21 +22,16 @@ export function ResultsSection() {
     <section ref={ref} className="mx-auto py-10">
       <div className={containerClass}>
         <div className="flex flex-col items-stretch justify-start gap-3 max-[479px]:items-center">
-          <motion.span
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40"
+          <span
+            className={`reveal${isInView ? ' in-view' : ''} text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40`}
           >
             Nos cas clients
-          </motion.span>
+          </span>
 
           <div className="flex w-full flex-row gap-8 max-[991px]:flex-col max-[479px]:items-center max-[479px]:px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="flex w-1/2 flex-col items-start justify-between gap-8 max-[991px]:w-full max-[479px]:items-center"
+            <div
+              className={`reveal${isInView ? ' in-view' : ''} flex w-1/2 flex-col items-start justify-between gap-8 max-[991px]:w-full max-[479px]:items-center`}
+              style={{ '--d': '0.1s' } as React.CSSProperties}
             >
               <div className="flex flex-col gap-4">
                 <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
@@ -57,29 +51,25 @@ export function ResultsSection() {
                   <ArrowUpRight01Icon size={20} className="transition-transform duration-200 group-hover:-rotate-45" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
 
             <div className="grid w-1/2 grid-cols-2 gap-4 max-[991px]:w-full max-[479px]:grid-cols-1">
               {stats.map((stat, index) => (
-                <motion.figure
+                <figure
                   key={stat.label}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 + index * 0.1 }}
-                  className="flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-[8px]"
+                  className={`reveal${isInView ? ' in-view' : ''} flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-[8px]`}
+                  style={{ '--d': `${0.1 + index * 0.1}s` } as React.CSSProperties}
                 >
                   <div className="font-instrument text-[4.5rem] leading-[1] text-hpg-orchid">{stat.value}</div>
                   <div className="text-[0.8rem] font-medium leading-[1.3] text-white">{stat.label}</div>
-                </motion.figure>
+                </figure>
               ))}
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="mt-8"
+          <div
+            className={`reveal${isInView ? ' in-view' : ''} mt-8`}
+            style={{ '--d': '0.5s' } as React.CSSProperties}
           >
             <div className="flex w-full flex-col gap-6 rounded-xl border border-white/10 bg-white/[0.02] p-8 max-[479px]:p-6">
               <div className="flex items-center justify-between">
@@ -154,7 +144,7 @@ export function ResultsSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

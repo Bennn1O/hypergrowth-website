@@ -1,11 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
-
-const easeExpo = [0.16, 1, 0.3, 1] as const
 
 export function ClosingCtaSection() {
   const { ref, isInView } = useScrollReveal()
@@ -22,38 +19,30 @@ export function ClosingCtaSection() {
       <div className="mx-auto max-w-[var(--width-container)] px-20 max-[991px]:px-10 max-[767px]:px-6 max-[479px]:px-4">
         <div className="flex flex-col items-center gap-8 text-center">
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            transition={{ duration: 0.6, ease: easeExpo }}
-            className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40"
+          <p
+            className={`reveal${isInView ? ' in-view' : ''} text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40`}
           >
             Prochaine étape
-          </motion.p>
+          </p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.8, ease: easeExpo, delay: 0.08 }}
-            className="mx-auto max-w-[18ch] text-[clamp(2.4rem,5.5vw,4rem)] font-bold leading-[1.06] tracking-[-0.025em]"
+          <h2
+            className={`reveal${isInView ? ' in-view' : ''} mx-auto max-w-[18ch] text-[clamp(2.4rem,5.5vw,4rem)] font-bold leading-[1.06] tracking-[-0.025em]`}
+            style={{ '--d': '0.08s' } as React.CSSProperties}
           >
             Votre organisation peut tenir{' '}
             <span className="font-instrument-italic italic text-hpg-orchid">sans nous.</span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.7, ease: easeExpo, delay: 0.16 }}
-            className="mx-auto max-w-[48ch] text-[clamp(0.95rem,1.4vw,1.05rem)] leading-[1.7] text-hpg-silver/80"
+          <p
+            className={`reveal${isInView ? ' in-view' : ''} mx-auto max-w-[48ch] text-[clamp(0.95rem,1.4vw,1.05rem)] leading-[1.7] text-hpg-silver/80`}
+            style={{ '--d': '0.16s' } as React.CSSProperties}
           >
             C&apos;est l&apos;objectif. On entre, on structure, on scale, on sort. Un appel pour voir si le contexte s&apos;y prête.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            transition={{ duration: 0.7, ease: easeExpo, delay: 0.24 }}
+          <div
+            className={`reveal${isInView ? ' in-view' : ''}`}
+            style={{ '--d': '0.24s' } as React.CSSProperties}
           >
             <Link
               href="/contact"
@@ -62,7 +51,7 @@ export function ClosingCtaSection() {
               Réserver un appel
               <ArrowUpRight01Icon size={20} className="transition-transform duration-200 group-hover:-rotate-45" />
             </Link>
-          </motion.div>
+          </div>
 
         </div>
       </div>

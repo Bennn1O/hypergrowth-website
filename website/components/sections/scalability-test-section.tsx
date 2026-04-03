@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
@@ -16,11 +15,8 @@ export function ScalabilityTestSection() {
     >
       <div className="mx-auto w-full max-w-none overflow-visible px-0">
         <div className="mx-auto flex max-w-[1400px] flex-row items-center justify-center gap-20 px-[clamp(1rem,5vw,5rem)] max-[991px]:flex-col max-[991px]:gap-12 max-[479px]:px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-1 flex-col items-start gap-5 text-left max-[991px]:w-full"
+          <div
+            className={`reveal${isInView ? ' in-view' : ''} flex flex-1 flex-col items-start gap-5 text-left max-[991px]:w-full`}
           >
             <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">Le score de scalabilité</span>
             <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
@@ -39,13 +35,11 @@ export function ScalabilityTestSection() {
               <div>Découvrir votre scalabilité</div>
               <ArrowUpRight01Icon size={20} className="transition-transform duration-200 group-hover:-rotate-45" />
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            className="flex w-[500px] shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 shadow-[0_26px_48px_rgb(6_2_10_/_0.35)] max-[991px]:w-full"
+          <div
+            className={`reveal${isInView ? ' in-view' : ''} flex w-[500px] shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 shadow-[0_26px_48px_rgb(6_2_10_/_0.35)] max-[991px]:w-full`}
+            style={{ '--d': '0.15s' } as React.CSSProperties}
           >
             <Image
               src="/images/68f091a6c74395c7e1f6dbd6__LRG5128.avif"
@@ -54,7 +48,7 @@ export function ScalabilityTestSection() {
               height={690}
               className="block aspect-[4/3] w-full object-cover object-[45%_50%]"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

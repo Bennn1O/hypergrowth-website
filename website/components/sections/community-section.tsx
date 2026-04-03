@@ -2,11 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
-
-const easeExpo = [0.16, 1, 0.3, 1] as const
 
 export function CommunitySection() {
   const { ref, isInView } = useScrollReveal()
@@ -25,12 +22,9 @@ export function CommunitySection() {
             />
           </div>
 
-          <motion.div
+          <div
             ref={ref}
-            className="sticky top-[120px] flex flex-col items-start gap-5 py-4 max-[767px]:static"
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.7, ease: easeExpo }}
+            className={`reveal-x${isInView ? ' in-view' : ''} sticky top-[120px] flex flex-col items-start gap-5 py-4 max-[767px]:static`}
           >
             <span className="text-xs font-medium uppercase tracking-[0.1em] text-white/40">Communauté</span>
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-medium leading-[1.08]">
@@ -47,7 +41,7 @@ export function CommunitySection() {
               <div>HyperClub</div>
               <ArrowUpRight01Icon size={20} className="transition-transform duration-200 group-hover:-rotate-45" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,18 +1,26 @@
 'use client'
 
-import { useRef } from 'react'
-import { useInView } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
 
-interface ScrollRevealOptions {
-  once?: boolean
-  amount?: number | 'some' | 'all'
-}
+export function useScrollReveal() {
+  const ref = useRef<HTMLElement>(null)
+  const [isInView, setIsInView] = useState(false)
 
-export function useScrollReveal(options?: ScrollRevealOptions) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, {
-    once: options?.once ?? true,
-    amount: options?.amount ?? 0.15,
-  })
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return { ref, isInView }
 }

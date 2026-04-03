@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'motion/react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
 export function StatementSection() {
@@ -14,15 +13,12 @@ export function StatementSection() {
         style={{ background: 'radial-gradient(circle, #803fab, transparent 70%)' }}
       />
       <div className="mx-auto max-w-[var(--width-container)] px-20 max-[991px]:px-10 max-[767px]:px-6 max-[479px]:px-4">
-        <motion.p
-          initial={{ opacity: 0, y: 32 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto max-w-[22ch] text-center text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.08] tracking-[-0.02em] max-[767px]:max-w-[20ch]"
+        <p
+          className={`reveal${isInView ? ' in-view' : ''} mx-auto max-w-[22ch] text-center text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.08] tracking-[-0.02em] max-[767px]:max-w-[20ch]`}
         >
           On ne scale pas un chaos élégant.{' '}
           <span className="font-instrument-italic italic text-hpg-orchid">On le structure d&apos;abord.</span>
-        </motion.p>
+        </p>
       </div>
     </section>
   )

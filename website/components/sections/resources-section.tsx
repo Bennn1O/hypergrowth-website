@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
@@ -42,8 +41,6 @@ const containerClass =
 const glassClass =
   'border border-white/10 bg-[rgb(31_18_43_/_0.44)] backdrop-blur-[14px] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.11),0_24px_52px_rgb(4_2_8_/_0.33)]'
 
-const easeExpo = [0.16, 1, 0.3, 1] as const
-
 export function ResourcesSection() {
   const { ref: headerRef, isInView: headerInView } = useScrollReveal()
   const { ref: featuredRef, isInView: featuredInView } = useScrollReveal()
@@ -54,26 +51,20 @@ export function ResourcesSection() {
     <section className="mx-auto py-10">
       <div className={containerClass}>
         <div className="flex flex-col gap-12 overflow-hidden rounded-xl border border-white/10 bg-transparent p-4 max-[479px]:px-4">
-          <motion.div
+          <div
             ref={headerRef}
-            className="flex flex-col items-start justify-center gap-3"
-            initial={{ opacity: 0, y: 24 }}
-            animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: easeExpo }}
+            className={`reveal${headerInView ? ' in-view' : ''} flex flex-col items-start justify-center gap-3`}
           >
             <span className="text-xs font-medium uppercase tracking-[0.1em] text-white/40">L&apos;écurie</span>
             <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
               <span className="font-instrument-italic italic text-hpg-orchid">Ressources</span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="flex gap-6 max-[991px]:flex-col">
-            <motion.div
+            <div
               ref={featuredRef}
-              initial={{ opacity: 0, y: 24 }}
-              animate={featuredInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: easeExpo }}
-              className="w-1/2 max-[991px]:w-full"
+              className={`reveal${featuredInView ? ' in-view' : ''} w-1/2 max-[991px]:w-full`}
             >
               <Link
                 href={featuredArticle.href}
@@ -91,15 +82,14 @@ export function ResourcesSection() {
 
                 <div className="text-[0.8rem] uppercase underline decoration-hpg-orchid decoration-[0.005px] underline-offset-[10px]">Lire l&apos;article</div>
               </Link>
-            </motion.div>
+            </div>
 
             <div ref={listRef} className="flex w-1/2 flex-col gap-4 max-[991px]:w-full">
               {articles.map((article, index) => (
-                <motion.div
+                <div
                   key={article.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={listInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, ease: easeExpo, delay: index * 0.1 }}
+                  className={`reveal${listInView ? ' in-view' : ''}`}
+                  style={{ '--d': `${index * 0.1}s` } as React.CSSProperties}
                 >
                   <Link
                     href={article.href}
@@ -121,17 +111,14 @@ export function ResourcesSection() {
                       <div className="text-[0.8rem] uppercase underline decoration-hpg-orchid decoration-[0.005px] underline-offset-[10px]">Lire l&apos;article</div>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
-          <motion.div
+          <div
             ref={ctaRef}
-            className="flex items-center justify-end pt-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            transition={{ duration: 0.6, ease: easeExpo }}
+            className={`reveal${ctaInView ? ' in-view' : ''} flex items-center justify-end pt-4`}
           >
             <Link
               href="/lecurie/ressources"
@@ -140,7 +127,7 @@ export function ResourcesSection() {
               <div>Tout voir</div>
               <ArrowUpRight01Icon size={20} />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

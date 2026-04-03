@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
@@ -11,8 +10,6 @@ const containerClass =
 
 const glassCardClass =
   'relative isolate flex min-h-[300px] flex-col items-start justify-between gap-6 self-stretch rounded-xl border border-white/12 bg-[rgb(35_20_46_/_0.52)] p-8 backdrop-blur-[26px] transition hover:-translate-y-0.5 hover:border-hpg-orchid/35 hover:shadow-[0_24px_40px_rgb(7_2_12_/_0.35)] max-[479px]:min-h-[240px]'
-
-const easeExpo = [0.16, 1, 0.3, 1] as const
 
 const cards = [
   {
@@ -49,23 +46,18 @@ export function ConceptSection() {
       <div className={containerClass}>
         <div className="flex flex-col items-center justify-center gap-3 max-[479px]:px-4">
 
-          <motion.span
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: easeExpo }}
-            className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40"
+          <span
+            className={`reveal${isInView ? ' in-view' : ''} text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40`}
           >
             Le Concept
-          </motion.span>
+          </span>
 
           <div className="flex w-full flex-col items-center justify-center gap-12">
 
             {/* Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: easeExpo, delay: 0.1 }}
-              className="flex w-[70%] flex-col items-center gap-5 p-4 text-center max-[991px]:w-auto"
+            <div
+              className={`reveal${isInView ? ' in-view' : ''} flex w-[70%] flex-col items-center gap-5 p-4 text-center max-[991px]:w-auto`}
+              style={{ '--d': '0.1s' } as React.CSSProperties}
             >
               <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
                 Le modèle <span className="font-instrument-italic italic text-hpg-orchid">OP-X</span>
@@ -73,17 +65,15 @@ export function ConceptSection() {
               <p className="max-w-[52ch] text-[0.95rem] leading-[1.7] text-hpg-silver">
                 OP-X n&apos;est pas un framework. C&apos;est une architecture d&apos;intervention conçue pour tenir dans la durée, transformer une entreprise sans créer de dépendance à celui qui l&apos;aide.
               </p>
-            </motion.div>
+            </div>
 
             {/* 3 cards */}
             <div className="flex w-full flex-row items-stretch justify-start gap-4 max-[767px]:flex-col">
               {cards.map((card, index) => (
-                <motion.div
+                <div
                   key={card.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-                  transition={{ duration: 0.7, ease: easeExpo, delay: 0.2 + index * 0.08 }}
-                  className={`${glassCardClass} flex-1`}
+                  className={`${glassCardClass} reveal${isInView ? ' in-view' : ''} flex-1`}
+                  style={{ '--d': `${0.2 + index * 0.08}s` } as React.CSSProperties}
                 >
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-3">
@@ -110,15 +100,14 @@ export function ConceptSection() {
                   <p className="text-[0.88rem] font-thin leading-[1.7] text-hpg-silver">
                     {card.description}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.7, ease: easeExpo, delay: 0.4 }}
+            <div
+              className={`reveal${isInView ? ' in-view' : ''}`}
+              style={{ '--d': '0.4s' } as React.CSSProperties}
             >
               <Link
                 href="/concept/methode-op-x"
@@ -127,7 +116,7 @@ export function ConceptSection() {
                 <div>Découvrir la méthode OP-X</div>
                 <ArrowUpRight01Icon size={20} className="transition-transform duration-200 group-hover:-rotate-45" />
               </Link>
-            </motion.div>
+            </div>
 
           </div>
         </div>

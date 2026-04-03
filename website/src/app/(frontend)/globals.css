@@ -102,6 +102,35 @@ a {
 .hpg-hero-animate-4 { animation-delay: 240ms; }
 .hpg-hero-animate-5 { animation-delay: 320ms; }
 
+/* Scroll-reveal — CSS transitions (replaces Framer Motion on main thread) */
+.reveal,
+.reveal-x {
+  will-change: transform, opacity;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.reveal-x {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+.reveal.in-view,
+.reveal-x.in-view {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-x {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hpg-hero-animate {
     animation: none;

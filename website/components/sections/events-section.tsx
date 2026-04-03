@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'motion/react'
 import { ArrowUpRight01Icon } from 'hugeicons-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
@@ -60,8 +59,6 @@ const containerClass =
 const glassClass =
   'border border-white/10 bg-[rgb(31_18_43_/_0.44)] backdrop-blur-[14px] shadow-[inset_0_1px_0_rgb(255_255_255_/_0.11),0_24px_52px_rgb(4_2_8_/_0.33)]'
 
-const easeExpo = [0.16, 1, 0.3, 1] as const
-
 export function EventsSection() {
   const { ref: headerRef, isInView: headerInView } = useScrollReveal()
   const { ref: cardsRef, isInView: cardsInView } = useScrollReveal()
@@ -72,12 +69,9 @@ export function EventsSection() {
     <section className="mx-auto py-10">
       <div className={containerClass}>
         <div className="flex flex-col gap-12 overflow-hidden">
-          <motion.div
+          <div
             ref={headerRef}
-            className="flex w-[60%] flex-col items-start justify-center gap-4 max-[991px]:w-full"
-            initial={{ opacity: 0, y: 24 }}
-            animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, ease: easeExpo }}
+            className={`reveal${headerInView ? ' in-view' : ''} flex w-[60%] flex-col items-start justify-center gap-4 max-[991px]:w-full`}
           >
             <span className="text-xs font-medium uppercase tracking-[0.1em] text-white/40">Communauté</span>
             <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
@@ -87,19 +81,17 @@ export function EventsSection() {
             <p className="max-w-[52ch] text-[0.95rem] leading-[1.7] text-hpg-silver">
               Des formats pensés pour des dirigeants qui veulent progresser, se connecter et passer un cap, pas juste assister à un événement.
             </p>
-          </motion.div>
+          </div>
 
           <div
             ref={cardsRef}
             className="flex items-stretch justify-between gap-4 max-[991px]:flex-col"
           >
             {eventTypes.map((event, index) => (
-              <motion.div
+              <div
                 key={event.title}
-                className={`flex w-1/3 flex-col items-start justify-between gap-6 rounded-xl p-8 max-[991px]:w-full ${glassClass}`}
-                initial={{ opacity: 0, y: 24 }}
-                animate={cardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-                transition={{ duration: 0.7, ease: easeExpo, delay: index * 0.1 }}
+                className={`reveal${cardsInView ? ' in-view' : ''} flex w-1/3 flex-col items-start justify-between gap-6 rounded-xl p-8 max-[991px]:w-full ${glassClass}`}
+                style={{ '--d': `${index * 0.1}s` } as React.CSSProperties}
               >
                 <div className="flex w-full flex-col gap-4">
                   <div className="flex items-center justify-between">
@@ -109,7 +101,7 @@ export function EventsSection() {
                   <h3 className="text-[1.25rem] font-semibold leading-[1.2]">{event.title}</h3>
                 </div>
                 <p className="text-[0.88rem] font-thin leading-[1.6] text-hpg-silver">{event.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -117,11 +109,10 @@ export function EventsSection() {
             {eventList.map((event, index) => {
               const past = isEventPast(event)
               return (
-                <motion.div
+                <div
                   key={event.href}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={listInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                  transition={{ duration: 0.6, ease: easeExpo, delay: index * 0.1 }}
+                  className={`reveal${listInView ? ' in-view' : ''}`}
+                  style={{ '--d': `${index * 0.1}s` } as React.CSSProperties}
                 >
                   <Link
                     href={event.href}
@@ -144,17 +135,14 @@ export function EventsSection() {
                       <ArrowUpRight01Icon size={16} className="opacity-40" />
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               )
             })}
           </div>
 
-          <motion.div
+          <div
             ref={ctaRef}
-            className="flex justify-center"
-            initial={{ opacity: 0, y: 16 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            transition={{ duration: 0.6, ease: easeExpo }}
+            className={`reveal${ctaInView ? ' in-view' : ''} flex justify-center`}
           >
             <Link
               href="/communaute/evenements"
@@ -163,7 +151,7 @@ export function EventsSection() {
               <div>Voir tous les évènements</div>
               <ArrowUpRight01Icon size={20} className="transition-transform duration-200 group-hover:-rotate-45" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
