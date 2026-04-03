@@ -38,12 +38,14 @@ export default function MentionsLegalesPage() {
                 Le site hypergrowth.fr est édité par :
               </p>
               <ul className="flex flex-col gap-1 pl-5">
-                <li>Raison sociale : [A COMPLÉTER]</li>
-                <li>Forme juridique : [A COMPLÉTER]</li>
-                <li>Capital social : [A COMPLÉTER]</li>
-                <li>SIRET : [A COMPLÉTER]</li>
-                <li>RCS : [A COMPLÉTER]</li>
-                <li>Siège social : [A COMPLÉTER]</li>
+                <li>Raison sociale : HyperGrowth</li>
+                <li>Forme juridique : Société par actions simplifiée (SAS)</li>
+                <li>Capital social : 1 000 €</li>
+                <li>SIRET : 979 194 503 00012</li>
+                <li>SIREN : 979 194 503</li>
+                <li>N° TVA intracommunautaire : FR19979194503</li>
+                <li>Code NAF : 7022Z — Conseil pour les affaires et autres conseils de gestion</li>
+                <li>Siège social : 9 Rue de Condé, 33000 Bordeaux</li>
                 <li>Directeur de la publication : Killian Palermo</li>
                 <li>
                   Contact :{' '}
@@ -63,9 +65,9 @@ export default function MentionsLegalesPage() {
                 Hébergeur
               </h2>
               <ul className="flex flex-col gap-1 pl-5">
-                <li>Raison sociale : [A COMPLÉTER]</li>
-                <li>Adresse : [A COMPLÉTER]</li>
-                <li>Téléphone : [A COMPLÉTER]</li>
+                <li>Raison sociale : Vercel Inc.</li>
+                <li>Adresse : 340 Pine Street, Suite 900, San Francisco, CA 94104, États-Unis</li>
+                <li>Site web : vercel.com</li>
               </ul>
             </div>
 
