@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Couleurs ─────────────────────────────────────────────── */
+  --color-hpg-night:         #180a22;
+  --color-hpg-orchid:        #f285f0;
+  --color-hpg-violet:        #803fab;
+  --color-hpg-violet-btn:    #7d3fab;
+  --color-hpg-violet-border: #9a59c5;
+  --color-hpg-violet-dark:   #1a0d28;
+  --color-hpg-silver:        #cfcfcf;
+  --color-hpg-stealth:       #414141;
+  --color-hpg-metal:         #737373;
+
+  /* ─── Typographie ───────────────────────────────────────────── */
+  --font-archivo:           var(--archivo), Arial, sans-serif;
+  --font-archivo-italic:    var(--archivo-italic), Arial, sans-serif;
+  --font-instrument:        var(--instrument), 'Palatino Linotype', serif;
+  --font-instrument-italic: var(--instrument-italic), 'Palatino Linotype', serif;
+
+  /* ─── Layout ────────────────────────────────────────────────── */
+  --width-container: 81.25rem;
+
+  /* ─── Easing ────────────────────────────────────────────────── */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Composants réutilisables ──────────────────────────────── */
+@layer components {
+  /* Conteneur page (max 1300px, padding responsive) */
+  .hpg-container {
+    @apply mx-auto block max-w-[var(--width-container)] px-[5rem] py-[2.5rem];
+    @apply max-[991px]:max-w-[95vw] max-[991px]:px-[2.5rem];
+    @apply max-[767px]:px-4;
+    @apply max-[479px]:max-w-[95vw] max-[479px]:px-4;
+  }
+
+  /* Glass standard — violet profond */
+  .hpg-glass {
+    @apply border border-white/12 backdrop-blur-[26px];
+    background: rgb(35 20 46 / 0.52);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08), 0 24px 52px rgb(4 2 8 / 0.28);
+  }
+
+  /* Glass soft — fond légèrement plus clair */
+  .hpg-glass-soft {
+    @apply border border-white/10 backdrop-blur-[14px];
+    background: rgb(31 18 43 / 0.44);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.11), 0 24px 52px rgb(4 2 8 / 0.33);
+  }
+
+  /* Bouton violet principal */
+  .hpg-btn-violet {
+    @apply inline-flex items-center justify-center gap-3 rounded-[12px];
+    @apply border border-hpg-violet-border bg-hpg-violet-btn;
+    @apply px-6 py-[0.85rem] text-[0.9rem] font-medium tracking-[0.02em] text-white;
+    @apply transition-colors;
+    @apply hover:border-hpg-orchid hover:bg-hpg-violet-dark hover:text-hpg-orchid;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2), 0 14px 30px rgb(25 8 40 / 0.45);
+  }
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-hpg-night);
+  color: white;
+  font-family: var(--font-archivo);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(242 133 240 / 0.9);
+  outline-offset: 2px;
+}
+
+/* ─── Animations ────────────────────────────────────────────── */
+@keyframes hpg-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hpg-scroll-logos {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.hpg-hero-animate {
+  animation: hpg-fade-up 0.7s var(--ease-expo) both;
+  will-change: transform, opacity;
+}
+
+.hpg-hero-animate-1 { animation-delay: 0ms; }
+.hpg-hero-animate-2 { animation-delay: 80ms; }
+.hpg-hero-animate-3 { animation-delay: 160ms; }
+.hpg-hero-animate-4 { animation-delay: 240ms; }
+.hpg-hero-animate-5 { animation-delay: 320ms; }
+
+/* ─── Scroll reveal ─────────────────────────────────────────── */
+.reveal,
+.reveal-x {
+  will-change: transform, opacity;
+  transition:
+    opacity 0.7s var(--ease-expo) var(--d, 0s),
+    transform 0.7s var(--ease-expo) var(--d, 0s);
+}
+.reveal   { opacity: 0; transform: translateY(24px); }
+.reveal-x { opacity: 0; transform: translateX(-24px); }
+.reveal.in-view,
+.reveal-x.in-view { opacity: 1; transform: translate(0, 0); }
+
+/* ─── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .hpg-hero-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal, .reveal-x {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
