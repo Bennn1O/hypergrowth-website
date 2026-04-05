@@ -40,3 +40,6 @@ next-env.d.ts
 /data/database/
 /data/redis/
 /uploads/
+
+# Sentry Config File
+.env.sentry-build-plugin
