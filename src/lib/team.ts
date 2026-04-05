@@ -1,7 +1,23 @@
-import {
-  OPERATING_PARTNER_SLUGS,
-  slugToLabel,
-} from '@/data/sitemap-routes'
+const OPERATING_PARTNER_SLUGS = [
+  'anthony-diochon',
+  'ben-bremont-operating-partner',
+  'elise-hetsch',
+  'evan-riquelme-operating-partner',
+  'gabriel-girardon',
+  'guillaume-pesnel',
+  'julie-ducourau-operating-partner',
+  'julie-simon-operating-partner',
+  'killian-palermo',
+  'manon-werquin-operating-partner',
+  'samuel-fernandes',
+  'ulysselsher-operating-partner',
+] as const
+
+function slugToLabel(slug: string): string {
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+}
 
 export interface PartnerProfile {
   name: string
@@ -177,6 +193,9 @@ const partnerProfiles: Record<string, PartnerProfile> = {
   },
 }
 
+import { client } from '@/sanity/lib/client'
+import { ALL_PARTNERS_QUERY, PARTNER_BY_SLUG_QUERY, PARTNER_SLUGS_QUERY } from '@/sanity/lib/queries'
+
 function toFallbackName(slug: string): string {
   return (
     fallbackPartnerNameOverrides[slug] ??
@@ -185,16 +204,16 @@ function toFallbackName(slug: string): string {
 }
 
 export async function getOperatingPartnerSlugs(): Promise<string[]> {
-  return [...OPERATING_PARTNER_SLUGS]
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return [...OPERATING_PARTNER_SLUGS]
+  const data = await client.fetch(PARTNER_SLUGS_QUERY)
+  const sanitySlugs = data?.map((d: { slug: string }) => d.slug).filter(Boolean) ?? []
+  return sanitySlugs.length ? sanitySlugs : [...OPERATING_PARTNER_SLUGS]
 }
 
 export async function getOperatingPartnerProfileBySlug(slug: string): Promise<PartnerProfile | null> {
-  if (!OPERATING_PARTNER_SLUGS.includes(slug as (typeof OPERATING_PARTNER_SLUGS)[number])) {
-    return null
-  }
-
-  return (
-    partnerProfiles[slug] ?? {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    if (!OPERATING_PARTNER_SLUGS.includes(slug as (typeof OPERATING_PARTNER_SLUGS)[number])) return null
+    return partnerProfiles[slug] ?? {
       name: toFallbackName(slug),
       title: 'Operating Partner',
       shortDescription: "Profil en cours d'intégration.",
@@ -205,17 +224,43 @@ export async function getOperatingPartnerProfileBySlug(slug: string): Promise<Pa
       youtubeUrl: null,
       expertiseTags: [],
     }
-  )
+  }
+  const data = await client.fetch(PARTNER_BY_SLUG_QUERY, { slug })
+  if (data) return data as PartnerProfile
+  return partnerProfiles[slug] ?? null
 }
 
 export async function getAllOperatingPartnerProfiles(): Promise<(PartnerProfile & { slug: string })[]> {
-  const slugs = await getOperatingPartnerSlugs()
-  const profiles = await Promise.all(
-    slugs.map(async (slug) => {
-      const profile = await getOperatingPartnerProfileBySlug(slug)
-      return profile ? { ...profile, slug } : null
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return OPERATING_PARTNER_SLUGS.map((slug) => ({
+      ...(partnerProfiles[slug] ?? {
+        name: toFallbackName(slug),
+        title: 'Operating Partner',
+        shortDescription: "Profil en cours d'intégration.",
+        imageUrl: null,
+        websiteUrl: null,
+        linkedinUrl: null,
+        instagramUrl: null,
+        youtubeUrl: null,
+        expertiseTags: [],
+      }),
+      slug,
+    }))
+  }
+  const data = await client.fetch(ALL_PARTNERS_QUERY)
+  if (data?.length) return data as (PartnerProfile & { slug: string })[]
+  return OPERATING_PARTNER_SLUGS.map((slug) => ({
+    ...(partnerProfiles[slug] ?? {
+      name: toFallbackName(slug),
+      title: 'Operating Partner',
+      shortDescription: "Profil en cours d'intégration.",
+      imageUrl: null,
+      websiteUrl: null,
+      linkedinUrl: null,
+      instagramUrl: null,
+      youtubeUrl: null,
+      expertiseTags: [],
     }),
-  )
-
-  return profiles.filter((p): p is PartnerProfile & { slug: string } => p !== null)
+    slug,
+  }))
 }

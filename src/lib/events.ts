@@ -218,6 +218,9 @@ export const eventTypes = [
   },
 ]
 
+import { client } from '@/sanity/lib/client'
+import { ALL_EVENTS_QUERY, EVENT_BY_SLUG_QUERY, EVENT_SLUGS_QUERY } from '@/sanity/lib/queries'
+
 function sortEvents(events: Event[]): Event[] {
   return [...events].sort((a, b) => {
     if (a.publishedAt && b.publishedAt) {
@@ -230,13 +233,25 @@ function sortEvents(events: Event[]): Event[] {
 }
 
 export async function getAllEvents(): Promise<Event[]> {
-  return sortEvents(staticEvents)
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return sortEvents(staticEvents)
+  const data = await client.fetch(ALL_EVENTS_QUERY)
+  return data?.length ? (data as Event[]) : sortEvents(staticEvents)
 }
 
 export async function getEventBySlug(slug: string): Promise<Event | null> {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return staticEvents.find((event) => event.slug === slug) ?? null
+  }
+  const data = await client.fetch(EVENT_BY_SLUG_QUERY, { slug })
+  if (data) return data as Event
   return staticEvents.find((event) => event.slug === slug) ?? null
 }
 
 export async function getEventSlugs(): Promise<string[]> {
-  return staticEvents.map((event) => event.slug)
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return staticEvents.map((event) => event.slug)
+  }
+  const data = await client.fetch(EVENT_SLUGS_QUERY)
+  const sanitySlugs = data?.map((d: { slug: string }) => d.slug).filter(Boolean) ?? []
+  return sanitySlugs.length ? sanitySlugs : staticEvents.map((event) => event.slug)
 }

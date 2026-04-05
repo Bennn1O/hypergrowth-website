@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { NotFoundSection } from './components/not-found-section'
-import { SplineCanvas } from './components/spline-viewer'
+import { NotFoundSection } from '@/components/not-found-section'
+import { SplineCanvas } from '@/components/spline-viewer'
 
 export default function NotFound() {
   return (

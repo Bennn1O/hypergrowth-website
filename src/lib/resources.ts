@@ -1,3 +1,6 @@
+import { client } from '@/sanity/lib/client'
+import { RESSOURCE_BY_SLUG_QUERY, RESSOURCE_SLUGS_QUERY } from '@/sanity/lib/queries'
+
 export interface ResourceArticle {
   id: string
   slug: string
@@ -6,6 +9,8 @@ export interface ResourceArticle {
   content: string
   publishedAt: string | null
 }
+
+// ── Fallback statique ─────────────────────────────────────────────────────────
 
 const staticArticles: Record<string, ResourceArticle> = {
   'deleguer-sans-lacher-prise': {
@@ -76,6 +81,22 @@ Le résultat : un dirigeant qui retrouve de la clarté, une équipe qui gagne en
   },
 }
 
+// ── Fonctions publiques ────────────────────────────────────────────────────────
+
 export async function getPublishedResourceBySlug(slug: string): Promise<ResourceArticle | null> {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return staticArticles[slug] ?? null
+  }
+  const data = await client.fetch(RESSOURCE_BY_SLUG_QUERY, { slug })
+  if (data) return data as ResourceArticle
   return staticArticles[slug] ?? null
+}
+
+export async function getResourceSlugs(): Promise<string[]> {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    return Object.keys(staticArticles)
+  }
+  const data = await client.fetch(RESSOURCE_SLUGS_QUERY)
+  const sanitySlugs = data?.map((d: { slug: string }) => d.slug).filter(Boolean) ?? []
+  return sanitySlugs.length ? sanitySlugs : Object.keys(staticArticles)
 }
