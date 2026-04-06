@@ -1,6 +1,23 @@
 import { defineQuery } from 'next-sanity'
 
-// ── Case Studies ──────────────────────────────────────────────────────────────
+export const CASE_STUDIES_LIST_QUERY = defineQuery(`
+  *[_type == "caseStudy"] | order(_createdAt asc) {
+    "id": _id,
+    "slug": slug.current,
+    title,
+    category,
+    description,
+    "image": coalesce(image.asset->url, imageUrl),
+    "imageAlt": coalesce(image.alt, title),
+    imageObjectClass,
+    imageBgClass,
+    stats,
+    attribution,
+    linkedinName,
+    linkedinUrl,
+    companyUrl
+  }
+`)
 
 export const ALL_CASE_STUDIES_QUERY = defineQuery(`
   *[_type == "caseStudy"] | order(_createdAt asc) {
@@ -78,8 +95,6 @@ export const CASE_STUDY_BY_SLUG_QUERY = defineQuery(`
   }
 `)
 
-// ── Ressources (Blog) ─────────────────────────────────────────────────────────
-
 export const RESSOURCE_BY_SLUG_QUERY = defineQuery(`
   *[_type == "ressource" && slug.current == $slug][0] {
     "id": _id,
@@ -96,8 +111,6 @@ export const RESSOURCE_SLUGS_QUERY = defineQuery(`
     "slug": slug.current
   }
 `)
-
-// ── Événements ────────────────────────────────────────────────────────────────
 
 export const ALL_EVENTS_QUERY = defineQuery(`
   *[_type == "evenement"] | order(date desc) {
@@ -158,8 +171,6 @@ export const EVENT_BY_SLUG_QUERY = defineQuery(`
     "photos": photos[] { "src": asset->url, alt }
   }
 `)
-
-// ── Operating Partners ────────────────────────────────────────────────────────
 
 export const ALL_PARTNERS_QUERY = defineQuery(`
   *[_type == "operatingPartner"] | order(name asc) {

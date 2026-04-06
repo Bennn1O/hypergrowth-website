@@ -49,7 +49,6 @@ const galleryImages = [
 export default function AProposPage() {
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -72,8 +71,6 @@ export default function AProposPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Stats ────────────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="grid grid-cols-4 gap-4 max-[767px]:grid-cols-2 max-[479px]:grid-cols-1">
@@ -93,8 +90,6 @@ export default function AProposPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Mission ──────────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col items-center gap-6 text-center">
@@ -114,8 +109,6 @@ export default function AProposPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Concept OP ───────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex items-start gap-10 max-[767px]:flex-col">
@@ -155,8 +148,6 @@ export default function AProposPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Galerie photos ───────────────────────────────────────── */}
       <section className="mx-auto w-full overflow-hidden">
         <div className={containerClass}>
           <div className="grid grid-cols-3 gap-3 max-[767px]:grid-cols-2 max-[479px]:grid-cols-1">
@@ -174,8 +165,6 @@ export default function AProposPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Les équipes ──────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-8">
@@ -228,8 +217,6 @@ export default function AProposPage() {
           </div>
         </div>
       </section>
-
-      {/* ── CTA Réserver un appel ────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div

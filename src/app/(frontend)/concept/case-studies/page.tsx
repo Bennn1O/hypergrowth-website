@@ -40,7 +40,6 @@ export default async function ConceptCaseStudiesPage() {
 
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-20 max-[767px]:pt-[130px] max-[767px]:pb-12">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-30"
@@ -61,8 +60,6 @@ export default async function ConceptCaseStudiesPage() {
               Réserver un appel
               <Arrow />
             </Link>
-
-            {/* Logos clients */}
             <div className="mt-4 flex flex-col gap-4">
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
                 Ils nous font confiance
@@ -83,8 +80,6 @@ export default async function ConceptCaseStudiesPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Liste des case studies ────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-6">
@@ -148,8 +143,6 @@ export default async function ConceptCaseStudiesPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Modèle OP-X ──────────────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div className="flex flex-col items-center gap-10 text-center">

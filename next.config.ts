@@ -3,16 +3,18 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  poweredByHeader: false,
   images: {
-    formats: ['image/webp'],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
+        hostname: 'cdn.sanity.io',
       },
       {
         protocol: 'https',
-        hostname: 'wubflow-shield.NOCODEXPORT.DEV',
+        hostname: 'cdn.prod.website-files.com',
       },
     ],
   },

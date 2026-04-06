@@ -13,7 +13,6 @@ const containerClass =
 export default function MentionsLegalesPage() {
   return (
     <main className="flex flex-col items-stretch">
-      {/* Hero */}
       <section className="relative overflow-hidden pt-[180px] pb-8 max-[767px]:pt-[130px]">
         <div className={containerClass}>
           <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
@@ -24,12 +23,9 @@ export default function MentionsLegalesPage() {
           </h1>
         </div>
       </section>
-
-      {/* Contenu */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div className="flex flex-col gap-10 text-[0.95rem] font-thin leading-[1.8] text-hpg-silver">
-            {/* Éditeur */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Éditeur du site
@@ -58,8 +54,6 @@ export default function MentionsLegalesPage() {
                 </li>
               </ul>
             </div>
-
-            {/* Hébergeur */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Hébergeur
@@ -70,8 +64,6 @@ export default function MentionsLegalesPage() {
                 <li>Site web : vercel.com</li>
               </ul>
             </div>
-
-            {/* Propriété intellectuelle */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Propriété intellectuelle
@@ -95,8 +87,6 @@ export default function MentionsLegalesPage() {
                 articles L.335-2 et suivants du Code de la Propriété Intellectuelle.
               </p>
             </div>
-
-            {/* Cookies */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Cookies
@@ -118,8 +108,6 @@ export default function MentionsLegalesPage() {
                 marketing (Facebook Pixel).
               </p>
             </div>
-
-            {/* Données personnelles */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Données personnelles
@@ -145,8 +133,6 @@ export default function MentionsLegalesPage() {
                 </a>
               </p>
             </div>
-
-            {/* Limitations de responsabilité */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Limitations de responsabilité
@@ -163,8 +149,6 @@ export default function MentionsLegalesPage() {
                 l&apos;impossibilité d&apos;y accéder.
               </p>
             </div>
-
-            {/* Design */}
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Conception du site
@@ -181,8 +165,6 @@ export default function MentionsLegalesPage() {
                 </a>
               </p>
             </div>
-
-            {/* Retour */}
             <div className="pt-4">
               <Link
                 href="/"

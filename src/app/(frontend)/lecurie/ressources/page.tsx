@@ -48,7 +48,6 @@ const articles = [
 export default function EcurieRessourcesPage() {
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -68,8 +67,6 @@ export default function EcurieRessourcesPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Articles ─────────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-6">
@@ -112,8 +109,6 @@ export default function EcurieRessourcesPage() {
           </div>
         </div>
       </section>
-
-{/* ── CTA Réserver un appel ────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div

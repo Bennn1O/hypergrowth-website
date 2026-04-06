@@ -1,6 +1,6 @@
-import { client } from '@/sanity/lib/client'
+import { cachedClient } from '@/sanity/lib/client'
 import {
-  ALL_CASE_STUDIES_QUERY,
+  CASE_STUDIES_LIST_QUERY,
   CASE_STUDY_BY_SLUG_QUERY,
   CASE_STUDY_SLUGS_QUERY,
 } from '@/sanity/lib/queries'
@@ -60,7 +60,6 @@ export interface ClientLogo {
   width: number
 }
 
-// ── Fallback statique (affiché tant que Sanity est vide) ──────────────────────
 
 const staticCaseStudies: CaseStudy[] = [
   {
@@ -218,20 +217,18 @@ export const clientLogos: ClientLogo[] = [
   { src: '/images/logos/logo-14.avif', alt: 'Logo client 14', width: 150 },
 ]
 
-// ── Fonctions publiques ────────────────────────────────────────────────────────
-
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return staticCaseStudies
-  const data = await client.fetch(ALL_CASE_STUDIES_QUERY)
-  return data?.length ? (data as CaseStudy[]) : staticCaseStudies
+  const data = await cachedClient.fetch<CaseStudy[]>(CASE_STUDIES_LIST_QUERY)
+  return data?.length ? data : staticCaseStudies
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     return staticCaseStudies.find((cs) => cs.slug === slug) ?? null
   }
-  const data = await client.fetch(CASE_STUDY_BY_SLUG_QUERY, { slug })
-  if (data) return data as CaseStudy
+  const data = await cachedClient.fetch<CaseStudy | null>(CASE_STUDY_BY_SLUG_QUERY, { slug })
+  if (data) return data
   return staticCaseStudies.find((cs) => cs.slug === slug) ?? null
 }
 
@@ -239,7 +236,7 @@ export async function getCaseStudySlugs(): Promise<string[]> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     return staticCaseStudies.map((cs) => cs.slug)
   }
-  const data = await client.fetch(CASE_STUDY_SLUGS_QUERY)
-  const sanityslugs = data?.map((d: { slug: string }) => d.slug).filter(Boolean) ?? []
+  const data = await cachedClient.fetch<{ slug: string }[]>(CASE_STUDY_SLUGS_QUERY)
+  const sanityslugs = data?.map((d) => d.slug).filter(Boolean) ?? []
   return sanityslugs.length ? sanityslugs : staticCaseStudies.map((cs) => cs.slug)
 }

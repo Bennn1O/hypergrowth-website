@@ -31,8 +31,6 @@ const steps = [
 export default function ContactPage() {
   return (
     <main className="flex flex-col items-stretch">
-
-      {/* Hero */}
       <section className="relative overflow-hidden pt-[180px] pb-10 max-[767px]:pt-[130px]">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-20"
@@ -53,13 +51,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Booking + Killian */}
       <section className="mx-auto w-full pb-10">
         <div className={containerClass}>
           <div className="flex items-start gap-10 max-[991px]:flex-col">
-
-            {/* Killian card */}
             <div className="flex w-[300px] shrink-0 flex-col gap-6 max-[991px]:w-full max-[991px]:flex-row max-[767px]:flex-col">
               <div className="overflow-hidden rounded-[12px] border border-white/10 bg-[rgb(35_20_46_/_0.52)] backdrop-blur-[26px]">
                 <Image
@@ -77,8 +71,6 @@ export default function ContactPage() {
                   </p>
                 </div>
               </div>
-
-              {/* Steps */}
               <div className="flex flex-col gap-4">
                 {steps.map((step) => (
                   <div key={step.num} className="flex gap-4">
@@ -93,8 +85,6 @@ export default function ContactPage() {
                 ))}
               </div>
             </div>
-
-            {/* HubSpot embed */}
             <div className="flex-1 overflow-hidden rounded-[16px] border border-white/10 bg-[rgb(35_20_46_/_0.3)] backdrop-blur-[14px] max-[991px]:w-full">
               <iframe
                 src="https://meetings-eu1.hubspot.com/kpalermo?embed=true"

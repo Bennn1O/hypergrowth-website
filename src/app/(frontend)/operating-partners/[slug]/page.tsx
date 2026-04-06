@@ -142,7 +142,6 @@ export default async function OperatingPartnerPage({ params }: Props) {
 
   return (
     <main className="flex flex-col items-stretch">
-      {/* Hero */}
       <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -150,7 +149,6 @@ export default async function OperatingPartnerPage({ params }: Props) {
         />
         <div className={containerClass}>
           <div className="flex gap-12 max-[767px]:flex-col max-[767px]:gap-8">
-            {/* Photo */}
             {partner.imageUrl && (
               <div className="shrink-0">
                 <Image
@@ -163,8 +161,6 @@ export default async function OperatingPartnerPage({ params }: Props) {
                 />
               </div>
             )}
-
-            {/* Infos */}
             <div className="flex flex-1 flex-col justify-center gap-5">
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
                 L&apos;Écurie
@@ -178,8 +174,6 @@ export default async function OperatingPartnerPage({ params }: Props) {
               <p className="max-w-[560px] font-thin leading-[1.7] text-hpg-silver">
                 {partner.shortDescription}
               </p>
-
-              {/* Tags */}
               {partner.expertiseTags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {partner.expertiseTags.map((tag) => (
@@ -192,15 +186,11 @@ export default async function OperatingPartnerPage({ params }: Props) {
                   ))}
                 </div>
               )}
-
-              {/* Social */}
               <SocialLinks partner={partner} />
             </div>
           </div>
         </div>
       </section>
-
-      {/* L'équipe */}
       <section className="mx-auto w-full pb-8">
         <div className={containerClass}>
           <div className="flex flex-col gap-8">
@@ -220,8 +210,6 @@ export default async function OperatingPartnerPage({ params }: Props) {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div

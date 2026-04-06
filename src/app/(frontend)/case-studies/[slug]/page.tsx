@@ -50,7 +50,6 @@ export default async function CaseStudyPage({
 
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-12 max-[767px]:pt-[130px]">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[50vw] opacity-25"
@@ -70,8 +69,6 @@ export default async function CaseStudyPage({
           </div>
         </div>
       </section>
-
-      {/* ── Image hero ───────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className={`overflow-hidden rounded-[16px] ${cs.imageBgClass ?? ''}`}>
@@ -89,7 +86,6 @@ export default async function CaseStudyPage({
 
       {detail ? (
         <>
-          {/* ── Avant HyperGrowth ─────────────────────────────────── */}
           <section className="mx-auto w-full">
             <div className={containerClass}>
               <div className="flex items-start gap-8 max-[767px]:flex-col">
@@ -123,8 +119,6 @@ export default async function CaseStudyPage({
               </div>
             </div>
           </section>
-
-          {/* ── Avec HyperGrowth ──────────────────────────────────── */}
           <section className="mx-auto w-full">
             <div className={containerClass}>
               <div className="flex items-start gap-8 max-[767px]:flex-col">
@@ -158,8 +152,6 @@ export default async function CaseStudyPage({
               </div>
             </div>
           </section>
-
-          {/* ── Résultats ─────────────────────────────────────────── */}
           <section className="mx-auto w-full">
             <div className={containerClass}>
               <div className="flex gap-8 max-[767px]:flex-col">
@@ -222,7 +214,6 @@ export default async function CaseStudyPage({
           </section>
         </>
       ) : (
-        /* ── Stats (cas sans détail complet) ─────────────────────── */
         <section className="mx-auto w-full">
           <div className={containerClass}>
             <div className="flex flex-wrap gap-4">
@@ -240,8 +231,6 @@ export default async function CaseStudyPage({
           </div>
         </section>
       )}
-
-      {/* ── CTA ─────────────────────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div

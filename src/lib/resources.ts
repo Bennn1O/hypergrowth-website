@@ -10,7 +10,6 @@ export interface ResourceArticle {
   publishedAt: string | null
 }
 
-// ── Fallback statique ─────────────────────────────────────────────────────────
 
 const staticArticles: Record<string, ResourceArticle> = {
   'deleguer-sans-lacher-prise': {
@@ -80,8 +79,6 @@ Le résultat : un dirigeant qui retrouve de la clarté, une équipe qui gagne en
     publishedAt: '2025-11-29T08:00:00.000Z',
   },
 }
-
-// ── Fonctions publiques ────────────────────────────────────────────────────────
 
 export async function getPublishedResourceBySlug(slug: string): Promise<ResourceArticle | null> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {

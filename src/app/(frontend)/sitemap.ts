@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllCaseStudies } from '@/lib/case-studies'
+import { getCaseStudySlugs } from '@/lib/case-studies'
 import { getEventSlugs } from '@/lib/events'
 import { getOperatingPartnerSlugs } from '@/lib/team'
 
@@ -31,15 +31,15 @@ const RESOURCE_SLUGS = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
 
-  const [caseStudies, eventSlugs, partnerSlugs] = await Promise.all([
-    getAllCaseStudies(),
+  const [caseStudySlugs, eventSlugs, partnerSlugs] = await Promise.all([
+    getCaseStudySlugs(),
     getEventSlugs(),
     getOperatingPartnerSlugs(),
   ])
 
   const allPaths = [
     ...STATIC_PATHS,
-    ...caseStudies.map((cs) => `/case-studies/${cs.slug}`),
+    ...caseStudySlugs.map((slug) => `/case-studies/${slug}`),
     ...eventSlugs.map((slug) => `/evenements/${slug}`),
     ...partnerSlugs.map((slug) => `/operating-partners/${slug}`),
     ...RESOURCE_SLUGS.map((slug) => `/ressources/${slug}`),

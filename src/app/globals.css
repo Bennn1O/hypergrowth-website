@@ -115,7 +115,6 @@ a {
 
 .hpg-hero-animate {
   animation: hpg-fade-up 0.7s var(--ease-expo) both;
-  will-change: transform, opacity;
 }
 
 .hpg-hero-animate-1 { animation-delay: 0ms; }
@@ -135,7 +134,7 @@ a {
 .reveal   { opacity: 0; transform: translateY(24px); }
 .reveal-x { opacity: 0; transform: translateX(-24px); }
 .reveal.in-view,
-.reveal-x.in-view { opacity: 1; transform: translate(0, 0); }
+.reveal-x.in-view { opacity: 1; transform: translate(0, 0); will-change: auto; }
 
 /* ─── Reduced motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

@@ -44,7 +44,6 @@ export interface Event {
   imageUrl?: string
   href: string
   publishedAt?: string | null
-  // Rich page content
   heroImage?: string
   details?: EventDetail[]
   conceptPanel?: EventConceptPanel
@@ -218,7 +217,7 @@ export const eventTypes = [
   },
 ]
 
-import { client } from '@/sanity/lib/client'
+import { cachedClient } from '@/sanity/lib/client'
 import { ALL_EVENTS_QUERY, EVENT_BY_SLUG_QUERY, EVENT_SLUGS_QUERY } from '@/sanity/lib/queries'
 
 function sortEvents(events: Event[]): Event[] {
@@ -234,16 +233,16 @@ function sortEvents(events: Event[]): Event[] {
 
 export async function getAllEvents(): Promise<Event[]> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return sortEvents(staticEvents)
-  const data = await client.fetch(ALL_EVENTS_QUERY)
-  return data?.length ? (data as Event[]) : sortEvents(staticEvents)
+  const data = await cachedClient.fetch<Event[]>(ALL_EVENTS_QUERY)
+  return data?.length ? data : sortEvents(staticEvents)
 }
 
 export async function getEventBySlug(slug: string): Promise<Event | null> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     return staticEvents.find((event) => event.slug === slug) ?? null
   }
-  const data = await client.fetch(EVENT_BY_SLUG_QUERY, { slug })
-  if (data) return data as Event
+  const data = await cachedClient.fetch<Event | null>(EVENT_BY_SLUG_QUERY, { slug })
+  if (data) return data
   return staticEvents.find((event) => event.slug === slug) ?? null
 }
 
@@ -251,7 +250,7 @@ export async function getEventSlugs(): Promise<string[]> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     return staticEvents.map((event) => event.slug)
   }
-  const data = await client.fetch(EVENT_SLUGS_QUERY)
-  const sanitySlugs = data?.map((d: { slug: string }) => d.slug).filter(Boolean) ?? []
+  const data = await cachedClient.fetch<{ slug: string }[]>(EVENT_SLUGS_QUERY)
+  const sanitySlugs = data?.map((d) => d.slug).filter(Boolean) ?? []
   return sanitySlugs.length ? sanitySlugs : staticEvents.map((event) => event.slug)
 }

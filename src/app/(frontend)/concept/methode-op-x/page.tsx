@@ -107,7 +107,6 @@ const partnerLogos = [
 export default function MethodeOpXPage() {
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-20 max-[767px]:pt-[130px] max-[767px]:pb-12">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[65vh] w-[55vw] opacity-30"
@@ -130,8 +129,6 @@ export default function MethodeOpXPage() {
               <Arrow />
             </Link>
           </div>
-
-          {/* Logos partenaires */}
           <div className="mt-16 flex flex-col gap-5">
             <p className="text-center text-[0.7rem] font-medium uppercase tracking-[0.12em] text-white/30">
               Ils nous font confiance
@@ -151,8 +148,6 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Problématique ────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-12">
@@ -197,8 +192,6 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Vidéo concept ────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className={`flex flex-col gap-8 rounded-[12px] p-10 ${glassClass} max-[767px]:p-6`}>
@@ -226,8 +219,6 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Messages / Communauté ────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div
@@ -254,12 +245,9 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── OP×X ─────────────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col">
-            {/* OP */}
             <div className="flex items-center gap-16 py-16 max-[991px]:flex-col max-[991px]:gap-8 max-[767px]:py-10">
               <div className="flex flex-1 flex-col gap-8">
                 <span className="font-instrument-italic italic text-[5.5rem] leading-none text-hpg-orchid max-[767px]:text-[4rem]">
@@ -298,8 +286,6 @@ export default function MethodeOpXPage() {
             </div>
 
             <div className="h-px bg-white/10" />
-
-            {/* X */}
             <div className="flex items-center gap-16 py-16 max-[991px]:flex-col max-[991px]:gap-8 max-[767px]:py-10">
               <div className="flex flex-1 flex-col gap-8">
                 <span className="font-instrument-italic italic text-[5.5rem] leading-none text-hpg-orchid max-[767px]:text-[4rem]">
@@ -339,12 +325,9 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── 7 Raisons ────────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
-            {/* Header card violet — col-span-2 */}
             <div className="relative col-span-2 flex flex-col justify-between gap-6 overflow-hidden rounded-[12px] bg-hpg-violet-btn p-10 max-[767px]:col-span-1 max-[767px]:p-8">
               <span
                 className="pointer-events-none absolute right-2 bottom-[-1rem] select-none text-[12rem] font-medium leading-none text-white/10 max-[767px]:text-[8rem]"
@@ -376,8 +359,6 @@ export default function MethodeOpXPage() {
                 />
               </Link>
             </div>
-
-            {/* Cards 001–007 */}
             {benefits.map((b) => (
               <div
                 key={b.num}
@@ -393,8 +374,6 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Score de scalabilité ─────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div
@@ -444,8 +423,6 @@ export default function MethodeOpXPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Résultats ────────────────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div className="flex flex-col gap-10">
@@ -462,8 +439,6 @@ export default function MethodeOpXPage() {
                 <Arrow />
               </Link>
             </div>
-
-            {/* Stats */}
             <div className="grid grid-cols-4 gap-4 max-[991px]:grid-cols-2 max-[479px]:grid-cols-1">
               {[
                 { value: '400M€', label: "de chiffre d'affaire piloté" },
@@ -480,8 +455,6 @@ export default function MethodeOpXPage() {
                 </div>
               ))}
             </div>
-
-            {/* Témoignage Pureva */}
             <div
               className={`flex gap-8 rounded-[12px] p-10 ${glassClass} max-[767px]:flex-col max-[767px]:p-8`}
             >

@@ -124,6 +124,8 @@ export function HeroSection() {
                     alt={index < logos.length ? 'Logo partenaire' : ''}
                     width={logo.width}
                     height={60}
+                    sizes="(max-width: 479px) 130px, (max-width: 767px) 180px, 190px"
+                    loading={index < logos.length ? 'eager' : 'lazy'}
                     className="block h-auto max-h-[60px] w-auto max-w-[clamp(90px,24vw,180px)] shrink-0 object-contain opacity-80 transition hover:-translate-y-0.5 hover:opacity-100 max-[479px]:max-h-[44px] max-[479px]:max-w-[clamp(64px,20vw,130px)] md:max-h-[76px] md:max-w-[clamp(100px,18vw,190px)]"
                   />
                 ))}

@@ -193,7 +193,7 @@ const partnerProfiles: Record<string, PartnerProfile> = {
   },
 }
 
-import { client } from '@/sanity/lib/client'
+import { cachedClient } from '@/sanity/lib/client'
 import { ALL_PARTNERS_QUERY, PARTNER_BY_SLUG_QUERY, PARTNER_SLUGS_QUERY } from '@/sanity/lib/queries'
 
 function toFallbackName(slug: string): string {
@@ -203,64 +203,41 @@ function toFallbackName(slug: string): string {
   )
 }
 
+const fallbackProfile = (slug: string): PartnerProfile => ({
+  name: toFallbackName(slug),
+  title: 'Operating Partner',
+  shortDescription: "Profil en cours d'intégration.",
+  imageUrl: null,
+  websiteUrl: null,
+  linkedinUrl: null,
+  instagramUrl: null,
+  youtubeUrl: null,
+  expertiseTags: [],
+})
+
 export async function getOperatingPartnerSlugs(): Promise<string[]> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return [...OPERATING_PARTNER_SLUGS]
-  const data = await client.fetch(PARTNER_SLUGS_QUERY)
-  const sanitySlugs = data?.map((d: { slug: string }) => d.slug).filter(Boolean) ?? []
+  const data = await cachedClient.fetch<{ slug: string }[]>(PARTNER_SLUGS_QUERY)
+  const sanitySlugs = data?.map((d) => d.slug).filter(Boolean) ?? []
   return sanitySlugs.length ? sanitySlugs : [...OPERATING_PARTNER_SLUGS]
 }
 
 export async function getOperatingPartnerProfileBySlug(slug: string): Promise<PartnerProfile | null> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     if (!OPERATING_PARTNER_SLUGS.includes(slug as (typeof OPERATING_PARTNER_SLUGS)[number])) return null
-    return partnerProfiles[slug] ?? {
-      name: toFallbackName(slug),
-      title: 'Operating Partner',
-      shortDescription: "Profil en cours d'intégration.",
-      imageUrl: null,
-      websiteUrl: null,
-      linkedinUrl: null,
-      instagramUrl: null,
-      youtubeUrl: null,
-      expertiseTags: [],
-    }
+    return partnerProfiles[slug] ?? fallbackProfile(slug)
   }
-  const data = await client.fetch(PARTNER_BY_SLUG_QUERY, { slug })
-  if (data) return data as PartnerProfile
+  const data = await cachedClient.fetch<PartnerProfile | null>(PARTNER_BY_SLUG_QUERY, { slug })
+  if (data) return data
   return partnerProfiles[slug] ?? null
 }
 
 export async function getAllOperatingPartnerProfiles(): Promise<(PartnerProfile & { slug: string })[]> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-    return OPERATING_PARTNER_SLUGS.map((slug) => ({
-      ...(partnerProfiles[slug] ?? {
-        name: toFallbackName(slug),
-        title: 'Operating Partner',
-        shortDescription: "Profil en cours d'intégration.",
-        imageUrl: null,
-        websiteUrl: null,
-        linkedinUrl: null,
-        instagramUrl: null,
-        youtubeUrl: null,
-        expertiseTags: [],
-      }),
-      slug,
-    }))
-  }
-  const data = await client.fetch(ALL_PARTNERS_QUERY)
-  if (data?.length) return data as (PartnerProfile & { slug: string })[]
-  return OPERATING_PARTNER_SLUGS.map((slug) => ({
-    ...(partnerProfiles[slug] ?? {
-      name: toFallbackName(slug),
-      title: 'Operating Partner',
-      shortDescription: "Profil en cours d'intégration.",
-      imageUrl: null,
-      websiteUrl: null,
-      linkedinUrl: null,
-      instagramUrl: null,
-      youtubeUrl: null,
-      expertiseTags: [],
-    }),
+  const staticFallback = OPERATING_PARTNER_SLUGS.map((slug) => ({
+    ...(partnerProfiles[slug] ?? fallbackProfile(slug)),
     slug,
   }))
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return staticFallback
+  const data = await cachedClient.fetch<(PartnerProfile & { slug: string })[]>(ALL_PARTNERS_QUERY)
+  return data?.length ? data : staticFallback
 }

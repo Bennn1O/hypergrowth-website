@@ -6,3 +6,8 @@ export const client = createClient({
   apiVersion: '2026-04-05',
   useCdn: true,
 })
+
+export const cachedClient = {
+  fetch: <T>(query: string, params: Record<string, unknown> = {}) =>
+    client.fetch<T>(query, params, { next: { revalidate: 3600 } }),
+}

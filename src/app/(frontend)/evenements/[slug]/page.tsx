@@ -294,7 +294,6 @@ export default async function EventPage({ params }: Props) {
 
   return (
     <main className="flex flex-col items-stretch">
-      {/* Hero */}
       <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -323,8 +322,6 @@ export default async function EventPage({ params }: Props) {
           </div>
         </div>
       </section>
-
-      {/* Hero image */}
       {event.heroImage && (
         <section className="mx-auto w-full">
           <div className={containerClass}>

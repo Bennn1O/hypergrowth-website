@@ -1,18 +1,3 @@
-/**
- * SplineViewer Component
- *
- * Composant pour afficher les scènes Spline 3D de manière optimisée.
- * Charge le script Spline dynamiquement et gère les erreurs.
- *
- * @example
- * ```tsx
- * <SplineViewer
- *   splineUrl="https://prod.spline.design/LPJMuZUqQ2mfwrP5/scene.splinecode"
- *   className="h-96"
- * />
- * ```
- */
-
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -35,14 +20,10 @@ export function SplineViewer({
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Load Spline script dynamically
     const script = document.createElement('script');
     script.src = 'https://prod.spline.design/spline.js';
     script.async = true;
-    script.onload = () => {
-      setIsLoading(false);
-      // Spline script is now available globally
-    };
+    script.onload = () => setIsLoading(false);
     script.onerror = () => {
       setHasError(true);
       setIsLoading(false);
@@ -51,10 +32,7 @@ export function SplineViewer({
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup script if needed
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      if (script.parentNode) script.parentNode.removeChild(script);
     };
   }, []);
 
@@ -89,10 +67,6 @@ export function SplineViewer({
   );
 }
 
-/**
- * Composant hérité pour compatibilité avec le canvas 404
- * Utilise le même pattern que l'HTML Webflow original
- */
 export function SplineCanvas({
   splineUrl = 'https://prod.spline.design/LPJMuZUqQ2mfwrP5/scene.splinecode',
   className = 'h-96 md:h-full',

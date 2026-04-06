@@ -56,8 +56,6 @@ const stats = [
 export default function TestScalabilitePage() {
   return (
     <main className="flex flex-col items-stretch">
-
-      {/* Hero */}
       <section className="relative overflow-hidden pt-[180px] pb-10 max-[767px]:pt-[130px]">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -78,8 +76,6 @@ export default function TestScalabilitePage() {
           </div>
         </div>
       </section>
-
-      {/* Stats */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="grid grid-cols-4 gap-4 max-[767px]:grid-cols-2 max-[479px]:grid-cols-1">
@@ -97,8 +93,6 @@ export default function TestScalabilitePage() {
           </div>
         </div>
       </section>
-
-      {/* Typeform embed */}
       <section id="test" className="mx-auto w-full">
         <div className={containerClass}>
           <div className={`overflow-hidden rounded-[16px] ${glassClass}`}>
@@ -114,8 +108,6 @@ export default function TestScalabilitePage() {
           </div>
         </div>
       </section>
-
-      {/* 6 dimensions */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-8">
@@ -144,8 +136,6 @@ export default function TestScalabilitePage() {
           </div>
         </div>
       </section>
-
-      {/* Closing CTA */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div
