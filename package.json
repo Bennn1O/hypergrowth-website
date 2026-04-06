@@ -24,6 +24,7 @@
     "react-dom": "^19.2.4",
     "sanity": "^5.19.0"
   },
+  "browserslist": ["> 0.5%", "last 2 versions", "not dead", "not ie 11"],
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.3.0",

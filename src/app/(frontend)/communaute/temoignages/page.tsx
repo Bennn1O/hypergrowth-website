@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getAllTestimonials } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
   title: 'Témoignages clients | HyperGrowth',
@@ -8,11 +9,9 @@ export const metadata: Metadata = {
     'Ce que nos clients disent de leur accompagnement HyperGrowth. 150+ dirigeants accompagnés, 97% de satisfaction.',
 }
 
-const containerClass =
-  'hpg-container'
+const containerClass = 'hpg-container'
 
-const btnViolet =
-  'hpg-btn-violet group'
+const btnViolet = 'hpg-btn-violet group'
 
 const Arrow = () => (
   <Image
@@ -41,60 +40,9 @@ const clientLogos = [
   { src: '/images/690b518ce5274c3996037d83_HPG_web_logos-partenaires_11.avif', alt: '' },
 ]
 
-const testimonials = [
-  {
-    name: 'Gabriel Girardon Pazienza',
-    role: 'CEO',
-    company: 'Bleue Citadelle',
-    companyUrl: 'https://bleuecitadelle.com',
-    linkedin: 'https://www.linkedin.com/in/gabriel-girardon/',
-    photo: '/images/694a7ec9e29d606df2d8a44a_1632819833484.avif',
-    quote:
-      "L'équipe HG a su s'adapter à ma posture d'agence particulière et me proposer un plan de scaling efficace et ultra personnalisé. En alliant le perso et le pro, mon projet a pris une toute autre envergure tout en m'évitant un surménage qui me semblait inévitable. Un énorme contraste avec les vendeurs de rêve qui pullulent dans la sphère du consulting, grâce à leur mélange de théorie et de concret. Je recommande chaudement à tous les entrepreneurs/dirigeants qui cherchent à passer un cap tout en restant lean et orientés action !",
-  },
-  {
-    name: 'Jérôme Girard',
-    role: 'Co-Fondateur',
-    company: 'La Draft',
-    companyUrl: 'https://ladraft.co/',
-    linkedin: 'https://www.linkedin.com/in/jerome-girard-789b3b86/',
-    photo: '/images/69496827d7541b3e2da5264b_1718637287531.avif',
-    quote:
-      "Cela fait maintenant 1 an que nous sommes accompagnés par Killian et son équipe et je peux dire sans hésitation que c'est l'une des meilleures décisions que nous avons prises pour notre business. Dès le début, il a su cerner nos besoins, je recommande !",
-  },
-  {
-    name: 'Guillaume Vilain',
-    role: 'CEO & Fondateur',
-    company: 'Nophone',
-    companyUrl: 'https://nophone.fr/',
-    linkedin: 'https://www.linkedin.com/in/guillaumevilain/',
-    photo: '/images/692a4d1a157b842ff1c96414_guillaume-vilain.avif',
-    quote:
-      "Je travaille avec HyperGrowth, principalement avec Killian et Julie depuis plusieurs mois et le moins que je puisse dire, c'est que l'accompagnement a carrément changé ma manière de piloter mon entreprise. Killian joue un véritable rôle de co-CEO : il m'aide à prendre du recul, à clarifier mes priorités et à identifier les bons leviers de croissance. On ne parle pas seulement de stratégie sur le papier, mais de mise en œuvre concrète, avec des systèmes, des process et des metrics qui me permettent enfin de visualiser pour piloter l'hypercroissance sans la subir.",
-  },
-  {
-    name: 'Marion Carneiro',
-    role: 'CEO',
-    company: 'My Name Is Bond',
-    companyUrl: 'https://mynameisbond.co/',
-    linkedin: 'https://www.linkedin.com/in/marion-carneiro/',
-    photo: '/images/691ef3e19b06a667ffe4e9e3_1761652261110.avif',
-    quote:
-      "Je recommande vivement Killian pour toute personne cherchant à faire passer son business au niveau supérieur. Quand j'étais confrontée à des défis majeurs qui freinaient la croissance de mon agence My Name Is Bond, Killian a su identifier rapidement ce qui n'allait pas en se basant sur de la data. Grâce à son expertise et à sa vision claire, il m'a aidé à comprendre ce qui limitait notre progression.",
-  },
-  {
-    name: 'Adrien Charles-Nicolas',
-    role: 'Co-Founder',
-    company: 'Pureva',
-    companyUrl: 'https://pureva.com',
-    linkedin: 'https://www.linkedin.com/in/adrien-charles-nicolas-b819b6157/',
-    photo: '/images/691ef31be310bc7c21652011_1707318975322.avif',
-    quote:
-      "Killian possède des qualités d'analyse humaines et structurelles qui peuvent faire changer grandement les choses sur une entreprise en croissance. Il est à la fois votre accélérateur et le pilier d'une structure organisée et surtout efficace !",
-  },
-]
+export default async function TemoignagesPage() {
+  const testimonials = await getAllTestimonials()
 
-export default function TemoignagesPage() {
   return (
     <main className="flex flex-col items-stretch">
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -111,7 +59,7 @@ export default function TemoignagesPage() {
             <h1 className="text-[clamp(4rem,9vw,7.5rem)] font-bold leading-[1]">
               Témoignages
             </h1>
-            <p className="max-w-[500px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[500px] font-normal leading-[1.7] text-hpg-silver">
               Ce que nos clients disent de leur accompagnement.
             </p>
           </div>
@@ -145,65 +93,81 @@ export default function TemoignagesPage() {
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-4">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="flex flex-col gap-6 rounded-[12px] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-[8px] max-[767px]:p-6"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <span className="text-[0.75rem] font-medium uppercase tracking-[0.08em] text-hpg-orchid">
-                    Témoignage
-                  </span>
-                  <Image
-                    src="/images/68f62f2bf8f3beee3f75c9cb_HPG_website_icon_quote_blanc.svg"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="shrink-0 opacity-20"
-                  />
-                </div>
-                <p className="text-[0.95rem] leading-[1.75] text-hpg-silver">{t.quote}</p>
-                <div className="flex items-center gap-4 border-t border-white/[0.06] pt-6">
-                  <Image
-                    src={t.photo}
-                    alt={t.name}
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 shrink-0 rounded-full object-cover object-top"
-                  />
-                  <div className="flex flex-1 flex-col gap-0.5">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[0.9rem] font-medium">{t.name}</span>
-                      <a
-                        href={t.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition hover:opacity-70"
-                      >
-                        <Image
-                          src="/images/68e76c318862de30ebd604fd_HPG_website_icon_in.svg"
-                          alt="LinkedIn"
-                          width={16}
-                          height={16}
-                        />
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-[0.8rem] text-hpg-silver">
-                      <span className="font-instrument-italic italic text-hpg-orchid">{t.role}</span>
-                      <span>@</span>
-                      <a
-                        href={t.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-white/20 underline-offset-2 transition hover:decoration-white/60"
-                      >
-                        {t.company}
-                      </a>
+            {testimonials.length === 0 ? (
+              <p className="text-[0.95rem] text-white/40">Aucun témoignage pour le moment.</p>
+            ) : (
+              testimonials.map((t) => (
+                <div
+                  key={t.id}
+                  className="flex flex-col gap-6 rounded-[12px] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-[8px] max-[767px]:p-6"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-[0.75rem] font-medium uppercase tracking-[0.08em] text-hpg-orchid">
+                      Témoignage
+                    </span>
+                    <Image
+                      src="/images/68f62f2bf8f3beee3f75c9cb_HPG_website_icon_quote_blanc.svg"
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="shrink-0 opacity-20"
+                    />
+                  </div>
+                  <p className="text-[0.95rem] leading-[1.75] text-hpg-silver">{t.quote}</p>
+                  <div className="flex items-center gap-4 border-t border-white/[0.06] pt-6">
+                    {t.photo && (
+                      <Image
+                        src={t.photo}
+                        alt={t.author}
+                        width={48}
+                        height={48}
+                        className="h-12 w-12 shrink-0 rounded-full object-cover object-top"
+                      />
+                    )}
+                    <div className="flex flex-1 flex-col gap-0.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[0.9rem] font-medium">{t.author}</span>
+                        {t.linkedinUrl && (
+                          <a
+                            href={t.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition hover:opacity-70"
+                          >
+                            <Image
+                              src="/images/68e76c318862de30ebd604fd_HPG_website_icon_in.svg"
+                              alt="LinkedIn"
+                              width={16}
+                              height={16}
+                            />
+                          </a>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-1.5 text-[0.8rem] text-hpg-silver">
+                        {t.role && (
+                          <span className="font-instrument-italic italic text-hpg-orchid">{t.role}</span>
+                        )}
+                        {t.role && t.company && <span>@</span>}
+                        {t.company && (
+                          t.companyUrl ? (
+                            <a
+                              href={t.companyUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline decoration-white/20 underline-offset-2 transition hover:decoration-white/60"
+                            >
+                              {t.company}
+                            </a>
+                          ) : (
+                            <span>{t.company}</span>
+                          )
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </section>
@@ -211,7 +175,7 @@ export default function TemoignagesPage() {
       {/* ── HyperClub CTA ────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
-          <div className="flex items-center gap-0 overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.02] max-[767px]:flex-col">
+          <div className="flex items-stretch gap-0 overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.02] max-[767px]:flex-col">
             <div className="flex flex-1 flex-col gap-5 p-10 max-[767px]:p-8">
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
                 L&apos;HyperClub
@@ -220,7 +184,7 @@ export default function TemoignagesPage() {
                 Une communauté qui vous{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">comprend</span>
               </h2>
-              <p className="font-thin leading-[1.7] text-hpg-silver">
+              <p className="font-normal leading-[1.7] text-hpg-silver">
                 En rejoignant HyperGrowth, vous intégrez un collectif engagé, qui vous fait
                 avancer plus vite, réfléchir plus justement, et accéder aux bonnes personnes
                 au bon moment.
@@ -236,7 +200,7 @@ export default function TemoignagesPage() {
                 alt="Membres HyperClub"
                 width={720}
                 height={540}
-                className="h-[360px] w-full object-cover max-[767px]:h-[240px]"
+                className="h-full w-full object-cover max-[767px]:h-[240px]"
               />
             </div>
           </div>
@@ -261,7 +225,7 @@ export default function TemoignagesPage() {
                 C&apos;est votre tour{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">maintenant.</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement, juste de la clarté.
               </p>
               <Link href="/contact" className={btnViolet}>

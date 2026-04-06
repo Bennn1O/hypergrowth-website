@@ -72,12 +72,12 @@ export function ResourcesSection() {
               >
                 <div className="flex items-center justify-between">
                   <div className="font-instrument-italic text-hpg-orchid">{featuredArticle.category}</div>
-                  <div className="text-[0.8rem] font-thin text-hpg-silver">{featuredArticle.date}</div>
+                  <div className="text-[0.8rem] font-normal text-hpg-silver">{featuredArticle.date}</div>
                 </div>
 
                 <div className="flex flex-col gap-4">
                   <h3 className="text-2xl leading-[1.2]">{featuredArticle.title}</h3>
-                  <p className="text-[0.9rem] font-thin leading-[1.6] text-hpg-silver">{featuredArticle.excerpt}</p>
+                  <p className="text-[0.9rem] font-normal leading-[1.6] text-hpg-silver">{featuredArticle.excerpt}</p>
                 </div>
 
                 <div className="text-[0.8rem] uppercase underline decoration-hpg-orchid decoration-[0.005px] underline-offset-[10px]">Lire l&apos;article</div>
@@ -100,7 +100,7 @@ export function ResourcesSection() {
                     </div>
 
                     <div className="flex flex-col justify-center gap-3">
-                      <div className="flex items-center gap-3 text-[0.8rem] font-thin">
+                      <div className="flex items-center gap-3 text-[0.8rem] font-normal">
                         <span className="text-hpg-silver">{article.category}</span>
                         <span className="text-white/20">·</span>
                         <span className="text-hpg-metal">{article.date}</span>

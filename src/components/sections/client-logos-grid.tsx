@@ -11,7 +11,7 @@ interface ClientLogosGridProps {
  */
 export function ClientLogosGrid({ logos }: ClientLogosGridProps) {
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-3 gap-6 max-[479px]:grid-cols-2">
       {logos.map((logo, idx) => (
         <div
           key={idx}

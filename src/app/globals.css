@@ -67,7 +67,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -126,7 +125,6 @@ a {
 /* ─── Scroll reveal ─────────────────────────────────────────── */
 .reveal,
 .reveal-x {
-  will-change: transform, opacity;
   transition:
     opacity 0.7s var(--ease-expo) var(--d, 0s),
     transform 0.7s var(--ease-expo) var(--d, 0s);
@@ -134,7 +132,7 @@ a {
 .reveal   { opacity: 0; transform: translateY(24px); }
 .reveal-x { opacity: 0; transform: translateX(-24px); }
 .reveal.in-view,
-.reveal-x.in-view { opacity: 1; transform: translate(0, 0); will-change: auto; }
+.reveal-x.in-view { opacity: 1; transform: translate(0, 0); }
 
 /* ─── Reduced motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

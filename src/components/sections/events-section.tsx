@@ -100,7 +100,7 @@ export function EventsSection() {
                   </div>
                   <h3 className="text-[1.25rem] font-semibold leading-[1.2]">{event.title}</h3>
                 </div>
-                <p className="text-[0.88rem] font-thin leading-[1.6] text-hpg-silver">{event.description}</p>
+                <p className="text-[0.88rem] font-normal leading-[1.6] text-hpg-silver">{event.description}</p>
               </div>
             ))}
           </div>

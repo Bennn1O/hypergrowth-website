@@ -63,7 +63,7 @@ export default async function CaseStudyPage({
             <h1 className="text-[clamp(3.5rem,8vw,6.5rem)] font-bold leading-[1.02]">
               {cs.title}
             </h1>
-            <p className="max-w-[540px] text-[1rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[540px] text-[1rem] font-normal leading-[1.7] text-hpg-silver">
               {detail?.subtitle ?? cs.description}
             </p>
           </div>
@@ -100,7 +100,7 @@ export default async function CaseStudyPage({
                     <h3 className="text-[1.2rem] font-medium leading-[1.25]">
                       {detail.avant.desires.title}
                     </h3>
-                    <p className="text-[0.9rem] font-thin leading-[1.7] text-hpg-silver">
+                    <p className="text-[0.9rem] font-normal leading-[1.7] text-hpg-silver">
                       {detail.avant.desires.description}
                     </p>
                   </div>
@@ -111,7 +111,7 @@ export default async function CaseStudyPage({
                     <h3 className="text-[1.2rem] font-medium leading-[1.25]">
                       {detail.avant.problems.title}
                     </h3>
-                    <p className="text-[0.9rem] font-thin leading-[1.7] text-hpg-silver">
+                    <p className="text-[0.9rem] font-normal leading-[1.7] text-hpg-silver">
                       {detail.avant.problems.description}
                     </p>
                   </div>
@@ -133,7 +133,7 @@ export default async function CaseStudyPage({
                     <h3 className="text-[1.2rem] font-medium leading-[1.25]">
                       {detail.apres.solutions.title}
                     </h3>
-                    <p className="text-[0.9rem] font-thin leading-[1.7] text-white/85">
+                    <p className="text-[0.9rem] font-normal leading-[1.7] text-white/85">
                       {detail.apres.solutions.description}
                     </p>
                   </div>
@@ -144,7 +144,7 @@ export default async function CaseStudyPage({
                     <h3 className="text-[1.2rem] font-medium leading-[1.25]">
                       {detail.apres.results.title}
                     </h3>
-                    <p className="text-[0.9rem] font-thin leading-[1.7] text-white/85">
+                    <p className="text-[0.9rem] font-normal leading-[1.7] text-white/85">
                       {detail.apres.results.description}
                     </p>
                   </div>
@@ -169,7 +169,7 @@ export default async function CaseStudyPage({
                       <span className="inline-block self-start rounded border border-white/30 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/70">
                         Témoignage
                       </span>
-                      <p className="text-[1rem] font-thin leading-[1.7] text-white/90">
+                      <p className="text-[1rem] font-normal leading-[1.7] text-white/90">
                         {detail.testimonial.quote}
                       </p>
                       <div className="mt-auto flex items-center gap-3 border-t border-white/20 pt-6">
@@ -203,7 +203,7 @@ export default async function CaseStudyPage({
                       <span className="font-instrument-italic italic text-[2.8rem] leading-none text-hpg-orchid">
                         {stat.value}
                       </span>
-                      <span className="mt-2 text-[0.85rem] font-thin leading-[1.5] text-hpg-silver">
+                      <span className="mt-2 text-[0.85rem] font-normal leading-[1.5] text-hpg-silver">
                         {stat.label}
                       </span>
                     </div>
@@ -222,7 +222,7 @@ export default async function CaseStudyPage({
                   <span className="font-instrument-italic italic text-[2.8rem] leading-none text-hpg-orchid">
                     {stat.value}
                   </span>
-                  <span className="mt-2 text-[0.85rem] font-thin leading-[1.5] text-hpg-silver">
+                  <span className="mt-2 text-[0.85rem] font-normal leading-[1.5] text-hpg-silver">
                     {stat.label}
                   </span>
                 </div>
@@ -249,7 +249,7 @@ export default async function CaseStudyPage({
                 Et si c&apos;était votre{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">tour ?</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement,
                 juste de la clarté.
               </p>

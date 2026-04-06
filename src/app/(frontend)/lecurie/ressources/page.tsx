@@ -61,7 +61,7 @@ export default function EcurieRessourcesPage() {
             <h1 className="text-[clamp(4rem,9vw,7.5rem)] font-bold leading-[1]">
               Ressources
             </h1>
-            <p className="max-w-[500px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[500px] font-normal leading-[1.7] text-hpg-silver">
               Articles et insights pour accélérer votre scalabilité.
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function EcurieRessourcesPage() {
                     <h2 className="text-[1.1rem] font-medium leading-[1.3] transition-colors group-hover:text-hpg-orchid">
                       {article.title}
                     </h2>
-                    <p className="text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                    <p className="text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                       {article.description}
                     </p>
                   </div>
@@ -126,7 +126,7 @@ export default function EcurieRessourcesPage() {
                 Les ressources ne suffisent pas.{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">L&apos;accompagnement, si.</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement, juste de la clarté.
               </p>
               <Link href="/contact" className={btnViolet}>

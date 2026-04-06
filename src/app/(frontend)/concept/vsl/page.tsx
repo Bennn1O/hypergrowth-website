@@ -42,7 +42,7 @@ export default function VslPage() {
               La Méthode{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">OP-X</span>
             </h1>
-            <p className="max-w-[560px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[560px] font-normal leading-[1.7] text-hpg-silver">
               Découvrez comment HyperGrowth accompagne les dirigeants ambitieux
               dans leur phase de scaling grâce au modèle OP-X.
             </p>
@@ -74,7 +74,7 @@ export default function VslPage() {
               Prêt à passer à{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">l&apos;action</span> ?
             </h2>
-            <p className="max-w-[520px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[520px] font-normal leading-[1.7] text-hpg-silver">
               Réservez un échange de 30 minutes avec un Operating Partner pour
               discuter de votre situation et de vos objectifs.
             </p>

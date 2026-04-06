@@ -31,7 +31,7 @@ export function CommunitySection() {
               Dans le paddock des dirigeants{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">qui gagnent.</span>
             </h2>
-            <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
               Dans une écurie F1, personne n&apos;est spectateur. Chaque membre a un rôle, une intention, une vitesse. L&apos;HyperClub fonctionne pareil : 80+ dirigeants qui s&apos;entraident avec précision, se retrouvent dans des lieux qui comptent, et avancent ensemble plus vite qu&apos;ils ne le feraient seuls.
             </p>
             <Link

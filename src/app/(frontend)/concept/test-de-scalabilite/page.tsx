@@ -70,7 +70,7 @@ export default function TestScalabilitePage() {
               Votre score de{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">scalabilité.</span>
             </h1>
-            <p className="max-w-[480px] text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[480px] text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
               5 minutes. 6 dimensions. Un diagnostic honnête de votre organisation, et les vrais blocages que la croissance masque.
             </p>
           </div>
@@ -127,7 +127,7 @@ export default function TestScalabilitePage() {
                     {dim.num}
                   </span>
                   <h3 className="font-medium leading-[1.3]">{dim.title}</h3>
-                  <p className="text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                  <p className="text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                     {dim.description}
                   </p>
                 </div>
@@ -153,7 +153,7 @@ export default function TestScalabilitePage() {
                 Score en main. Et maintenant{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">?</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un Operating Partner analyse votre résultat avec vous en 30 minutes. Pas d&apos;engagement, juste de la clarté.
               </p>
               <Link

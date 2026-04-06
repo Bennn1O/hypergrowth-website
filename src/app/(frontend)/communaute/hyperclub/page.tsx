@@ -90,7 +90,7 @@ export default function HyperclubPage() {
             <h1 className="text-[clamp(4rem,9vw,7.5rem)] font-bold leading-[1]">
               L&apos;HyperClub
             </h1>
-            <p className="max-w-[540px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[540px] font-normal leading-[1.7] text-hpg-silver">
               Réservé aux dirigeants et entrepreneurs performants. C&apos;est une communauté
               privée d&apos;échange, de progression et de networking.
             </p>
@@ -140,7 +140,7 @@ export default function HyperclubPage() {
                   <h3 className="font-instrument-italic italic text-[1.3rem] leading-[1.2]">
                     {pillar.title}
                   </h3>
-                  <p className="font-thin leading-[1.6] text-hpg-silver">{pillar.description}</p>
+                  <p className="font-normal leading-[1.6] text-hpg-silver">{pillar.description}</p>
                 </div>
               ))}
             </div>
@@ -160,7 +160,7 @@ export default function HyperclubPage() {
                 <span className="font-instrument-italic italic text-hpg-orchid">150+</span>{' '}
                 dirigeants accompagnés
               </h2>
-              <p className="font-thin leading-[1.7] text-hpg-silver">
+              <p className="font-normal leading-[1.7] text-hpg-silver">
                 Des entrepreneurs et dirigeants de tous secteurs, réunis par la même ambition :
                 scaler sans perdre le contrôle.
               </p>
@@ -206,7 +206,7 @@ export default function HyperclubPage() {
                       {type.status}
                     </span>
                   </div>
-                  <p className="font-thin leading-[1.6] text-hpg-silver">{type.description}</p>
+                  <p className="font-normal leading-[1.6] text-hpg-silver">{type.description}</p>
                 </div>
               ))}
             </div>
@@ -236,7 +236,7 @@ export default function HyperclubPage() {
                 Vous voulez intégrer{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">l&apos;HyperClub&nbsp;?</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 On sélectionne les dirigeants avec qui le fit est réel. Un appel de 30 minutes pour évaluer votre profil.
               </p>
               <Link href="/contact" className={btnViolet}>

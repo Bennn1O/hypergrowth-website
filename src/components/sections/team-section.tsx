@@ -49,7 +49,7 @@ export function TeamSection() {
                     <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">
                       Les <span className="font-instrument-italic italic text-hpg-orchid">équipes</span>
                     </h2>
-                    <p className="max-w-[280px] text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+                    <p className="max-w-[280px] text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
                       Découvrez les Operating partners et les experts qui constituent l&apos;éco-système HyperGrowth.
                     </p>
                   </div>
@@ -62,7 +62,7 @@ export function TeamSection() {
                     <Image src="/images/portrait-killian.webp" alt="Portrait du fondateur Killian Palermo" width={70} height={70} className="rounded-[10px]" />
                     <div className="flex flex-col gap-2">
                       <h3 className="text-2xl leading-[1.2]">Killian Palermo</h3>
-                      <div className="font-thin text-hpg-silver">Founder &amp; Chief OP</div>
+                      <div className="font-normal text-hpg-silver">Founder &amp; Chief OP</div>
                     </div>
                   </div>
                 )
@@ -74,7 +74,7 @@ export function TeamSection() {
                     <Image src="/images/portrait-ulysse-square.webp" alt="Portrait de l'Operating Partner Ulysse El Sherbeeny" width={70} height={70} className="rounded-[10px]" />
                     <div className="flex flex-col gap-2">
                       <h3 className="text-2xl leading-[1.2]">Ulysse El Sherbeeny</h3>
-                      <div className="font-thin text-hpg-silver">CEO &amp; OP scaling perso</div>
+                      <div className="font-normal text-hpg-silver">CEO &amp; OP scaling perso</div>
                     </div>
                   </div>
                 )
@@ -99,7 +99,7 @@ export function TeamSection() {
                         ))}
                       </div>
                     </div>
-                    <div className="font-thin text-hpg-silver">Ils vous accompagnent au quotidien, vous allègent, et vous aident à prendre les décisions.</div>
+                    <div className="font-normal text-hpg-silver">Ils vous accompagnent au quotidien, vous allègent, et vous aident à prendre les décisions.</div>
                   </div>
                 )
               }
@@ -123,7 +123,7 @@ export function TeamSection() {
                         ))}
                       </div>
                     </div>
-                    <div className="font-thin text-hpg-silver">Ils exécutent, apportent leur expertise et vous accompagne sur une mission précise.</div>
+                    <div className="font-normal text-hpg-silver">Ils exécutent, apportent leur expertise et vous accompagne sur une mission précise.</div>
                   </div>
                 )
               }
@@ -142,7 +142,7 @@ export function TeamSection() {
                     <div className="absolute inset-0 bg-[linear-gradient(160deg,rgb(128_63_171_/_0.6)_0%,rgb(24_10_34_/_0.85)_50%,rgb(24_10_34_/_0.95)_100%)] backdrop-blur-[14px]" />
                     <div className="relative z-10 flex flex-col gap-3">
                       <h3 className="text-2xl leading-[1.2]">Prêt à scaler ?</h3>
-                      <p className="text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                      <p className="text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                         Découvrez les profils qui pourraient piloter votre croissance et exécuter à vos côtés.
                       </p>
                     </div>

@@ -1,17 +1,32 @@
 import { client } from '@/sanity/lib/client'
 import { RESSOURCE_BY_SLUG_QUERY, RESSOURCE_SLUGS_QUERY } from '@/sanity/lib/queries'
+import type { PortableTextBlock } from '@portabletext/react'
 
 export interface ResourceArticle {
   id: string
   slug: string
   title: string
   excerpt: string
-  content: string
+  content: PortableTextBlock[]
+  coverImage: { src: string; alt: string | null } | null
   publishedAt: string | null
 }
 
+function stringToPortableText(text: string): PortableTextBlock[] {
+  return text
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .map((p, i) => ({
+      _type: 'block' as const,
+      _key: `static-${i}`,
+      style: 'normal' as const,
+      children: [{ _type: 'span', _key: 'span', text: p, marks: [] }],
+      markDefs: [],
+    }))
+}
 
-const staticArticles: Record<string, ResourceArticle> = {
+const staticArticlesRaw: Record<string, Omit<ResourceArticle, 'content' | 'coverImage'> & { content: string }> = {
   'deleguer-sans-lacher-prise': {
     id: 'deleguer-sans-lacher-prise',
     slug: 'deleguer-sans-lacher-prise',
@@ -79,6 +94,17 @@ Le résultat : un dirigeant qui retrouve de la clarté, une équipe qui gagne en
     publishedAt: '2025-11-29T08:00:00.000Z',
   },
 }
+
+const staticArticles: Record<string, ResourceArticle> = Object.fromEntries(
+  Object.entries(staticArticlesRaw).map(([slug, article]) => [
+    slug,
+    {
+      ...article,
+      content: stringToPortableText(article.content),
+      coverImage: null,
+    },
+  ])
+)
 
 export async function getPublishedResourceBySlug(slug: string): Promise<ResourceArticle | null> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {

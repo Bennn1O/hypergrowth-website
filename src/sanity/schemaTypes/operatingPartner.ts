@@ -2,8 +2,8 @@ import { defineField, defineType } from 'sanity'
 import { UserIcon } from '@sanity/icons'
 
 export const operatingPartner = defineType({
-  name: 'operatingPartner',
-  title: 'Operating Partner',
+  name: 'operatingPartners',
+  title: 'Operating Partners',
   type: 'document',
   icon: UserIcon,
   fields: [

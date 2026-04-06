@@ -2,8 +2,8 @@ import { defineField, defineType } from 'sanity'
 import { BookIcon } from '@sanity/icons'
 
 export const ressource = defineType({
-  name: 'ressource',
-  title: 'Ressource / Article',
+  name: 'ressources',
+  title: 'Ressources / Articles',
   type: 'document',
   icon: BookIcon,
   fields: [
@@ -33,10 +33,51 @@ export const ressource = defineType({
       validation: (r) => r.max(300),
     }),
     defineField({
+      name: 'coverImage',
+      type: 'image',
+      title: 'Image de couverture',
+      options: { hotspot: true },
+      fields: [defineField({ name: 'alt', type: 'string', title: 'Alt text' })],
+    }),
+    defineField({
       name: 'content',
-      type: 'text',
+      type: 'array',
       title: 'Contenu',
-      rows: 30,
+      of: [
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'Titre H2', value: 'h2' },
+            { title: 'Titre H3', value: 'h3' },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Gras', value: 'strong' },
+              { title: 'Italique', value: 'em' },
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Lien',
+                fields: [
+                  defineField({ name: 'href', type: 'url', title: 'URL' }),
+                  defineField({ name: 'blank', type: 'boolean', title: 'Ouvrir dans un nouvel onglet', initialValue: true }),
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            defineField({ name: 'alt', type: 'string', title: 'Alt text' }),
+            defineField({ name: 'caption', type: 'string', title: 'Légende' }),
+          ],
+        },
+      ],
     }),
   ],
   preview: {

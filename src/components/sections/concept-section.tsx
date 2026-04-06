@@ -97,7 +97,7 @@ export function ConceptSection() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-[0.88rem] font-thin leading-[1.7] text-hpg-silver">
+                  <p className="text-[0.88rem] font-normal leading-[1.7] text-hpg-silver">
                     {card.description}
                   </p>
                 </div>

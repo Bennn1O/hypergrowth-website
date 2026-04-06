@@ -18,6 +18,8 @@ export function AboutSection() {
               alt="Killian Palermo debout face à une table"
               width={1500}
               height={1000}
+              sizes="(max-width: 767px) 100vw, 50vw"
+              loading="lazy"
               className="w-full object-cover"
             />
           </div>
@@ -30,10 +32,10 @@ export function AboutSection() {
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-medium leading-[1.08]">
               15 projets créés, 7 <span className="font-instrument-italic italic text-hpg-orchid">échecs</span>, des millions générés : j&apos;ai appris par l&apos;<span className="font-instrument-italic italic text-hpg-orchid">expérience.</span>
             </h2>
-            <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
               15 boîtes lancées, 7 plantées, des millions générés. Ce parcours m&apos;a appris une chose : le vrai défi n&apos;est pas de démarrer, c&apos;est de construire une organisation qui tient sans vous.
             </p>
-            <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
               C&apos;est pour ça qu&apos;existe le modèle OP-X. Un Operating Partner qui entre dans votre cockpit, orchestre les bons experts, structure les décisions, et sort quand l&apos;organisation n&apos;a plus besoin de lui.
             </p>
             <Link

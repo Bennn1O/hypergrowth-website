@@ -103,7 +103,7 @@ function DetailsGrid({ event }: { event: Event }) {
                   {event.conceptPanel.title}
                 </h3>
                 {event.conceptPanel.body.map((para, i) => (
-                  <p key={i} className="font-thin leading-[1.7] text-hpg-silver">
+                  <p key={i} className="font-normal leading-[1.7] text-hpg-silver">
                     {para}
                   </p>
                 ))}
@@ -143,7 +143,7 @@ function ProgrammeSection({ event }: { event: Event }) {
                 </span>
                 <div className="flex flex-col gap-1">
                   <span className="font-medium">{step.title}</span>
-                  <span className="text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                  <span className="text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                     {step.description}
                   </span>
                 </div>
@@ -181,7 +181,7 @@ function PillarsSection({ event }: { event: Event }) {
                 <h3 className="font-instrument-italic italic text-[1.3rem] leading-[1.2]">
                   {pillar.title}
                 </h3>
-                <p className="font-thin leading-[1.6] text-hpg-silver">{pillar.description}</p>
+                <p className="font-normal leading-[1.6] text-hpg-silver">{pillar.description}</p>
               </div>
             ))}
           </div>
@@ -244,7 +244,7 @@ function CtaSection({ event }: { event: Event }) {
               </>
             )}
           </h2>
-          <p className="max-w-[520px] font-thin leading-[1.7] text-hpg-silver">
+          <p className="max-w-[520px] font-normal leading-[1.7] text-hpg-silver">
             {isCafe
               ? "Les prochaines dates sont annoncées en avant-première aux membres de l'HyperClub et sur notre liste de diffusion."
               : "Les prochains Mastermind sont réservés en priorité aux membres de l'HyperClub. Rejoignez la communauté pour ne pas manquer les annonces."}
@@ -312,7 +312,7 @@ export default async function EventPage({ params }: Props) {
               )}
             </div>
             <HeroTitle title={event.title} />
-            <p className="max-w-[520px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[520px] font-normal leading-[1.7] text-hpg-silver">
               {event.description}
             </p>
             <Link href="/communaute/evenements" className={`self-start ${btnViolet}`}>

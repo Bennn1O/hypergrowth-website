@@ -65,6 +65,18 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/68df88f2746392ab1ec9141b_HPG_website_fav-icon.png" />
         <link rel="apple-touch-icon" href="/images/68df88f650217f54f596a7c6_HPG_website_webclip.png" />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hpg-brand-trait-16-9.avif"
+          type="image/avif"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/68f5e45298cd778cac552b86_HPG_website_gradient-2.avif"
+          type="image/avif"
+        />
       </head>
       <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white antialiased">
         <div

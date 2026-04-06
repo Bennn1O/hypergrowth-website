@@ -53,7 +53,7 @@ export default async function ConceptCaseStudiesPage() {
             <h1 className="text-[clamp(4rem,9vw,7.5rem)] font-bold leading-[1]">
               Case Studies
             </h1>
-            <p className="max-w-[500px] text-[1rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[500px] text-[1rem] font-normal leading-[1.7] text-hpg-silver">
               400M€ de valeur créée, 150+ dirigeants accompagnés. Voici ce que ça donne concrètement.
             </p>
             <Link href="/contact" className={`self-start ${btnViolet}`}>
@@ -87,10 +87,10 @@ export default async function ConceptCaseStudiesPage() {
               <Link
                 key={cs.id}
                 href={`/case-studies/${cs.slug}`}
-                className={`group flex gap-0 overflow-hidden rounded-[16px] transition hover:-translate-y-0.5 hover:border-hpg-orchid/25 max-[767px]:flex-col ${glassClass}`}
+                className={`group flex h-[320px] gap-0 overflow-hidden rounded-[16px] transition hover:-translate-y-0.5 hover:border-hpg-orchid/25 max-[767px]:h-auto max-[767px]:flex-col ${glassClass}`}
               >
                 <div
-                  className={`w-[40%] h-[260px] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px] ${cs.imageBgClass ?? ''}`}
+                  className={`w-[40%] shrink-0 overflow-hidden max-[767px]:w-full max-[767px]:h-[200px] ${cs.imageBgClass ?? ''}`}
                 >
                   <Image
                     src={cs.image}
@@ -100,9 +100,9 @@ export default async function ConceptCaseStudiesPage() {
                     className={`h-full w-full transition duration-500 group-hover:scale-[1.02] ${cs.imageObjectClass ?? 'object-cover'}`}
                   />
                 </div>
-                <div className="flex flex-1 flex-col justify-between gap-6 p-8">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-3">
+                <div className="flex min-w-0 flex-1 flex-col justify-between gap-6 overflow-hidden p-8">
+                  <div className="flex min-w-0 flex-col gap-4 overflow-hidden">
+                    <div className="flex flex-wrap items-center gap-2">
                       <span className="rounded-full border border-white/20 px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white/50">
                         {cs.category}
                       </span>
@@ -110,8 +110,8 @@ export default async function ConceptCaseStudiesPage() {
                         Accompagnement OP-X
                       </span>
                     </div>
-                    <h2 className="text-[1.6rem] font-bold leading-[1.1]">{cs.title}</h2>
-                    <p className="text-[0.9rem] font-thin leading-[1.7] text-hpg-silver">
+                    <h2 className="truncate text-[1.6rem] font-bold leading-[1.1]">{cs.title}</h2>
+                    <p className="line-clamp-3 text-[0.9rem] font-normal leading-[1.7] text-hpg-silver">
                       {cs.description}
                     </p>
                   </div>
@@ -171,7 +171,7 @@ export default async function ConceptCaseStudiesPage() {
                   <h3 className="font-instrument-italic italic text-[1.5rem] leading-[1.2]">
                     Operating Partner
                   </h3>
-                  <p className="font-thin leading-[1.6] text-hpg-silver">
+                  <p className="font-normal leading-[1.6] text-hpg-silver">
                     Un expert de la croissance rejoint votre équipe dirigeante pour piloter la
                     croissance avec vous, au quotidien.
                   </p>
@@ -190,7 +190,7 @@ export default async function ConceptCaseStudiesPage() {
                   <h3 className="font-instrument-italic italic text-[1.5rem] leading-[1.2]">
                     Experts
                   </h3>
-                  <p className="font-thin leading-[1.6] text-hpg-silver">
+                  <p className="font-normal leading-[1.6] text-hpg-silver">
                     20+ experts A-players exécutent pour vous, et mettent en place les stratégies
                     imaginées par votre OP.
                   </p>

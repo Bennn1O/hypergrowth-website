@@ -25,7 +25,7 @@ export default function MentionsLegalesPage() {
       </section>
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
-          <div className="flex flex-col gap-10 text-[0.95rem] font-thin leading-[1.8] text-hpg-silver">
+          <div className="flex flex-col gap-10 text-[0.95rem] font-normal leading-[1.8] text-hpg-silver">
             <div className="flex flex-col gap-3">
               <h2 className="text-[1.25rem] font-medium text-white">
                 Éditeur du site

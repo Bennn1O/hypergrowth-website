@@ -101,7 +101,7 @@ export default function AProposPage() {
               <span className="font-instrument-italic italic text-hpg-orchid">+1000</span>{' '}
               entrepreneurs à bâtir l&apos;entreprise de leur rêve
             </h2>
-            <p className="max-w-[580px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[580px] font-normal leading-[1.7] text-hpg-silver">
               À travers des systèmes éprouvés, des Operating Partners engagés et un réseau
               d&apos;experts A-players, nous aidons les dirigeants ambitieux à transformer leur
               hypercroissance en scaling contrôlé.
@@ -120,13 +120,13 @@ export default function AProposPage() {
                 Un concept trop peu développé{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">en France</span>
               </h2>
-              <p className="font-thin leading-[1.7] text-hpg-silver">
+              <p className="font-normal leading-[1.7] text-hpg-silver">
                 Pratique assez répandue de l&apos;autre côté de l&apos;Atlantique, nous avons
                 repéré un véritable manque en France. Boards de direction coûteux, process lourds,
                 mentorats peu calibrés — les entrepreneurs français doivent faire face à un
                 véritable challenge simplement pour pouvoir se faire aider.
               </p>
-              <p className="font-thin leading-[1.7] text-hpg-silver">
+              <p className="font-normal leading-[1.7] text-hpg-silver">
                 Avec le système d&apos;Operating Partner, vous gardez la flexibilité du début,
                 vous ne rendez des comptes qu&apos;à vous même, et vous déléguez tout
                 l&apos;opérationnel pour vous concentrer sur votre vision.
@@ -189,7 +189,7 @@ export default function AProposPage() {
                 <h3 className="font-instrument-italic italic text-[1.5rem] leading-[1.2]">
                   Les OP
                 </h3>
-                <p className="font-thin leading-[1.6] text-hpg-silver">
+                <p className="font-normal leading-[1.6] text-hpg-silver">
                   Ils vous accompagnent au quotidien, vous allègent, et vous aident à prendre
                   les décisions.
                 </p>
@@ -204,7 +204,7 @@ export default function AProposPage() {
                 <h3 className="font-instrument-italic italic text-[1.5rem] leading-[1.2]">
                   Les Experts
                 </h3>
-                <p className="font-thin leading-[1.6] text-hpg-silver">
+                <p className="font-normal leading-[1.6] text-hpg-silver">
                   Ils exécutent, apportent leur expertise et vous accompagnent sur une mission
                   précise.
                 </p>
@@ -234,7 +234,7 @@ export default function AProposPage() {
                 Vous voulez un Operating Partner{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">à vos côtés ?</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un appel de 30 minutes avec Killian pour évaluer votre contexte et voir si le fit est là.
               </p>
               <Link href="/contact" className={btnViolet}>

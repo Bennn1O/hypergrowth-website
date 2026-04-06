@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getAllEvents, eventTypes } from '@/lib/events'
 
 export const metadata: Metadata = {
   title: 'Évènements : communauté d\'entrepreneurs et dirigeants | HyperGrowth',
@@ -8,14 +9,9 @@ export const metadata: Metadata = {
     "L'intelligence collective est mise au service de votre business. Vous repartez avec un plan d'action et des relations solides.",
 }
 
-const containerClass =
-  'hpg-container'
-
-const glassClass =
-  'hpg-glass'
-
-const btnViolet =
-  'hpg-btn-violet group'
+const containerClass = 'hpg-container'
+const glassClass = 'hpg-glass'
+const btnViolet = 'hpg-btn-violet group'
 
 const Arrow = () => (
   <Image
@@ -27,53 +23,11 @@ const Arrow = () => (
   />
 )
 
-const eventTypes = [
-  {
-    title: 'Café Croissance',
-    status: 'OUVERT AU PUBLIC',
-    description:
-      "Un format hot seat de 8h à 15h. Vous présentez votre projet face à 10 entrepreneurs et dirigeants confirmés, repartez avec une analyse claire et un plan d'action structuré.",
-  },
-  {
-    title: 'Mastermind',
-    status: 'SUR CANDIDATURE',
-    description:
-      "De 4 à 10 jours dans un lieu privé à l'étranger. Activités, ateliers, échanges et networking. Vous créez un réseau solide et vivez une expérience unique avec d'autres dirigeants.",
-  },
-  {
-    title: 'Dîners HyperClub',
-    status: 'RÉSERVÉ AUX MEMBRES',
-    description:
-      "Un dîner d'exception avec 6 à 8 entrepreneurs et dirigeants confirmés. Un moment exclusif pour échanger, créer des synergies et tisser des relations fortes autour d'une belle table.",
-  },
-]
-
 const stats = [
   { value: '+150', label: 'dirigeants accompagnés' },
   { value: '+400M€', label: 'CA piloté' },
   { value: '+82%', label: 'identifient un frein majeur' },
   { value: '+70%', label: 'ajustent leur stratégie sous 7 jours' },
-]
-
-const eventList = [
-  {
-    href: '/evenements/cafe-croissance-lille',
-    title: 'Café Croissance Lille',
-    date: '17 décembre 2025',
-    type: 'Café Croissance',
-    location: 'Lille',
-    country: 'FRANCE',
-    past: true,
-  },
-  {
-    href: '/evenements/mastermind-srilanka',
-    title: 'Mastermind Sri Lanka',
-    dateRange: ['29 novembre 2025', '7 décembre 2025'],
-    type: 'Mastermind',
-    location: 'Weligama',
-    country: 'SRI LANKA',
-    past: true,
-  },
 ]
 
 const testimonials = [
@@ -97,7 +51,19 @@ const testimonials = [
   },
 ]
 
-export default function CommunauteEvenementsPage() {
+function formatEventDate(date: string, dateEnd?: string): string {
+  const fmt = (d: string) => {
+    const parsed = new Date(d)
+    if (Number.isNaN(parsed.getTime())) return d
+    return new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(parsed)
+  }
+  if (dateEnd) return `Du ${fmt(date)} au ${fmt(dateEnd)}`
+  return fmt(date)
+}
+
+export default async function CommunauteEvenementsPage() {
+  const events = await getAllEvents()
+
   return (
     <main className="flex flex-col items-stretch">
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -115,7 +81,7 @@ export default function CommunauteEvenementsPage() {
               <span className="font-instrument-italic italic text-hpg-orchid">Évènements</span>{' '}
               & lives
             </h1>
-            <p className="max-w-[520px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[520px] font-normal leading-[1.7] text-hpg-silver">
               L&apos;intelligence collective est mise au service de votre business. Vous repartez
               avec un plan d&apos;action et des relations solides.
             </p>
@@ -132,7 +98,7 @@ export default function CommunauteEvenementsPage() {
               <span className="font-instrument-italic italic text-hpg-orchid">table</span> devant
               d&apos;autres dirigeants ?
             </h2>
-            <p className="font-thin leading-[1.7] text-hpg-silver">
+            <p className="font-normal leading-[1.7] text-hpg-silver">
               Vous arrivez avec une problématique floue et vous repartez avec un plan d&apos;action
               clair et des relations solides.
             </p>
@@ -157,7 +123,7 @@ export default function CommunauteEvenementsPage() {
                     {type.status}
                   </span>
                 </div>
-                <p className="font-thin leading-[1.6] text-hpg-silver">{type.description}</p>
+                <p className="font-normal leading-[1.6] text-hpg-silver">{type.description}</p>
               </div>
             ))}
           </div>
@@ -168,44 +134,45 @@ export default function CommunauteEvenementsPage() {
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-3">
-            {eventList.map((event) => (
-              <Link
-                key={event.href}
-                href={event.href}
-                className={`relative flex items-center justify-between gap-6 overflow-hidden rounded-[12px] border border-white/10 bg-white/[0.02] px-6 py-5 transition max-[991px]:flex-col max-[991px]:items-start ${event.past ? 'opacity-50' : 'hover:-translate-y-0.5 hover:border-hpg-orchid/25 hover:bg-[rgb(24_10_34_/_0.3)]'}`}
-              >
-                {event.past && (
-                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-[rgb(24_10_34_/_0.5)]">
-                    <span className="rounded-full border border-white/20 bg-[rgb(24_10_34_/_0.8)] px-4 py-1.5 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-white/60">
-                      Événement passé
+            {events.map((event) => {
+              const isPast = event.isPast || event.status === 'past'
+              return (
+                <Link
+                  key={event.id}
+                  href={`/evenements/${event.slug}`}
+                  className={`relative flex items-center justify-between gap-6 overflow-hidden rounded-[12px] border border-white/10 bg-white/[0.02] px-6 py-5 transition max-[991px]:flex-col max-[991px]:items-start ${isPast ? 'opacity-50' : 'hover:-translate-y-0.5 hover:border-hpg-orchid/25 hover:bg-[rgb(24_10_34_/_0.3)]'}`}
+                >
+                  {isPast && (
+                    <div className="absolute inset-0 z-10 flex items-center justify-center bg-[rgb(24_10_34_/_0.5)]">
+                      <span className="rounded-full border border-white/20 bg-[rgb(24_10_34_/_0.8)] px-4 py-1.5 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-white/60">
+                        Événement passé
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-6 max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-2">
+                    <span className="text-[1rem] font-medium">{event.title}</span>
+                    <span className="text-[0.8rem] text-hpg-silver">
+                      {formatEventDate(event.date, event.dateEnd)}
                     </span>
                   </div>
-                )}
-                <div className="flex items-center gap-6 max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-2">
-                  <span className="text-[1rem] font-medium">{event.title}</span>
-                  <span className="text-[0.8rem] text-hpg-silver">
-                    {'dateRange' in event && event.dateRange
-                      ? `Du ${event.dateRange[0]} au ${event.dateRange[1]}`
-                      : event.date}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[0.75rem]">
-                    {event.type}
-                  </span>
-                  <span className="rounded-full bg-hpg-stealth px-3 py-1 text-[0.75rem]">
-                    {event.location}, {event.country}
-                  </span>
-                  <Image
-                    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className="opacity-40"
-                  />
-                </div>
-              </Link>
-            ))}
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[0.75rem]">
+                      {event.category}
+                    </span>
+                    <span className="rounded-full bg-hpg-stealth px-3 py-1 text-[0.75rem]">
+                      {event.location}, {event.country}
+                    </span>
+                    <Image
+                      src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="opacity-40"
+                    />
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -290,7 +257,7 @@ export default function CommunauteEvenementsPage() {
                 Prêt à mettre votre projet sur{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">la table&nbsp;?</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un Operating Partner analyse votre contexte en 30 minutes. Pas d&apos;engagement, juste de la clarté.
               </p>
               <Link href="/contact" className={btnViolet}>

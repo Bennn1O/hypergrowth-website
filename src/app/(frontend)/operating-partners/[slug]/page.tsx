@@ -171,7 +171,7 @@ export default async function OperatingPartnerPage({ params }: Props) {
               <p className="text-[1.1rem] font-medium text-hpg-orchid">
                 {partner.title}
               </p>
-              <p className="max-w-[560px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[560px] font-normal leading-[1.7] text-hpg-silver">
                 {partner.shortDescription}
               </p>
               {partner.expertiseTags.length > 0 && (
@@ -198,7 +198,7 @@ export default async function OperatingPartnerPage({ params }: Props) {
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
                 L&apos;équipe complète
               </span>
-              <p className="max-w-[500px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[500px] font-normal leading-[1.7] text-hpg-silver">
                 Operating Partners et Experts de l&apos;écosystème HyperGrowth.
               </p>
             </div>
@@ -227,7 +227,7 @@ export default async function OperatingPartnerPage({ params }: Props) {
                 Travailler avec{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">{partner.name.split(' ')[0]} ?</span>
               </h2>
-              <p className="max-w-[480px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[480px] font-normal leading-[1.7] text-hpg-silver">
                 Un appel de 30 minutes pour évaluer votre contexte et voir si le fit est là.
               </p>
               <Link href="/contact" className={btnViolet}>

@@ -45,7 +45,7 @@ export default function ContactPage() {
               Parlons de votre{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">croissance.</span>
             </h1>
-            <p className="max-w-[480px] text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[480px] text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
               30 minutes. Un Operating Partner. Pas de pitch, pas d&apos;engagement. On regarde ensemble si le contexte s&apos;y prête.
             </p>
           </div>
@@ -65,8 +65,8 @@ export default function ContactPage() {
                 />
                 <div className="flex flex-col gap-2 p-5">
                   <span className="font-medium">Killian Palermo</span>
-                  <span className="text-[0.75rem] font-thin text-hpg-orchid/80">Fondateur, Operating Partner</span>
-                  <p className="mt-1 text-[0.82rem] font-thin leading-[1.6] text-hpg-silver">
+                  <span className="text-[0.75rem] font-normal text-hpg-orchid/80">Fondateur, Operating Partner</span>
+                  <p className="mt-1 text-[0.82rem] font-normal leading-[1.6] text-hpg-silver">
                     &ldquo;On ne travaille pas avec tout le monde. On sélectionne les dirigeants avec qui le fit est réel et l&apos;ambition partagée.&rdquo;
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     </span>
                     <div className="flex flex-col gap-1">
                       <span className="text-[0.88rem] font-medium">{step.title}</span>
-                      <span className="text-[0.8rem] font-thin leading-[1.6] text-hpg-silver">{step.description}</span>
+                      <span className="text-[0.8rem] font-normal leading-[1.6] text-hpg-silver">{step.description}</span>
                     </div>
                   </div>
                 ))}
@@ -89,10 +89,9 @@ export default function ContactPage() {
               <iframe
                 src="https://meetings-eu1.hubspot.com/kpalermo?embed=true"
                 width="100%"
-                height="700"
                 frameBorder="0"
                 title="Réserver un appel avec Killian Palermo"
-                style={{ display: 'block' }}
+                className="block h-[700px] max-[767px]:h-[550px]"
               />
             </div>
 

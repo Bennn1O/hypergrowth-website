@@ -1,7 +1,7 @@
 import { defineQuery } from 'next-sanity'
 
 export const CASE_STUDIES_LIST_QUERY = defineQuery(`
-  *[_type == "caseStudy"] | order(_createdAt asc) {
+  *[_type == "caseStudies"] | order(_createdAt asc) {
     "id": _id,
     "slug": slug.current,
     title,
@@ -20,7 +20,7 @@ export const CASE_STUDIES_LIST_QUERY = defineQuery(`
 `)
 
 export const ALL_CASE_STUDIES_QUERY = defineQuery(`
-  *[_type == "caseStudy"] | order(_createdAt asc) {
+  *[_type == "caseStudies"] | order(_createdAt asc) {
     "id": _id,
     "slug": slug.current,
     title,
@@ -55,13 +55,13 @@ export const ALL_CASE_STUDIES_QUERY = defineQuery(`
 `)
 
 export const CASE_STUDY_SLUGS_QUERY = defineQuery(`
-  *[_type == "caseStudy"] | order(_createdAt asc) {
+  *[_type == "caseStudies"] | order(_createdAt asc) {
     "slug": slug.current
   }
 `)
 
 export const CASE_STUDY_BY_SLUG_QUERY = defineQuery(`
-  *[_type == "caseStudy" && slug.current == $slug][0] {
+  *[_type == "caseStudies" && slug.current == $slug][0] {
     "id": _id,
     "slug": slug.current,
     title,
@@ -96,24 +96,60 @@ export const CASE_STUDY_BY_SLUG_QUERY = defineQuery(`
 `)
 
 export const RESSOURCE_BY_SLUG_QUERY = defineQuery(`
-  *[_type == "ressource" && slug.current == $slug][0] {
+  *[_type == "ressources" && slug.current == $slug][0] {
     "id": _id,
     "slug": slug.current,
     title,
     excerpt,
-    content,
+    content[]{
+      ...,
+      _type == "image" => {
+        ...,
+        "url": asset->url,
+        "alt": alt,
+        "caption": caption
+      }
+    },
+    "coverImage": { "src": coverImage.asset->url, "alt": coverImage.alt },
     "publishedAt": publishedAt
   }
 `)
 
+export const ALL_TESTIMONIALS_QUERY = defineQuery(`
+  *[_type == "temoignages"] | order(_createdAt asc) {
+    "id": _id,
+    author,
+    role,
+    company,
+    companyUrl,
+    linkedinUrl,
+    "photo": coalesce(photo.asset->url, photoUrl),
+    quote,
+    featured
+  }
+`)
+
+export const FEATURED_TESTIMONIALS_QUERY = defineQuery(`
+  *[_type == "temoignages" && featured == true] | order(_createdAt asc) {
+    "id": _id,
+    author,
+    role,
+    company,
+    companyUrl,
+    linkedinUrl,
+    "photo": coalesce(photo.asset->url, photoUrl),
+    quote
+  }
+`)
+
 export const RESSOURCE_SLUGS_QUERY = defineQuery(`
-  *[_type == "ressource"] {
+  *[_type == "ressources"] {
     "slug": slug.current
   }
 `)
 
 export const ALL_EVENTS_QUERY = defineQuery(`
-  *[_type == "evenement"] | order(date desc) {
+  *[_type == "evenements"] | order(date desc) {
     "id": _id,
     "slug": slug.current,
     title,
@@ -139,13 +175,13 @@ export const ALL_EVENTS_QUERY = defineQuery(`
 `)
 
 export const EVENT_SLUGS_QUERY = defineQuery(`
-  *[_type == "evenement"] {
+  *[_type == "evenements"] {
     "slug": slug.current
   }
 `)
 
 export const EVENT_BY_SLUG_QUERY = defineQuery(`
-  *[_type == "evenement" && slug.current == $slug][0] {
+  *[_type == "evenements" && slug.current == $slug][0] {
     "id": _id,
     "slug": slug.current,
     title,
@@ -173,7 +209,7 @@ export const EVENT_BY_SLUG_QUERY = defineQuery(`
 `)
 
 export const ALL_PARTNERS_QUERY = defineQuery(`
-  *[_type == "operatingPartner"] | order(name asc) {
+  *[_type == "operatingPartners"] | order(name asc) {
     "slug": slug.current,
     name,
     title,
@@ -188,13 +224,13 @@ export const ALL_PARTNERS_QUERY = defineQuery(`
 `)
 
 export const PARTNER_SLUGS_QUERY = defineQuery(`
-  *[_type == "operatingPartner"] {
+  *[_type == "operatingPartners"] {
     "slug": slug.current
   }
 `)
 
 export const PARTNER_BY_SLUG_QUERY = defineQuery(`
-  *[_type == "operatingPartner" && slug.current == $slug][0] {
+  *[_type == "operatingPartners" && slug.current == $slug][0] {
     "slug": slug.current,
     name,
     title,

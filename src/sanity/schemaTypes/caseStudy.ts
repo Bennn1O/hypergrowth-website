@@ -8,8 +8,8 @@ const sectionFields = [
 ]
 
 export const caseStudy = defineType({
-  name: 'caseStudy',
-  title: 'Cas client',
+  name: 'caseStudies',
+  title: 'Cas clients',
   type: 'document',
   icon: DocumentTextIcon,
   fields: [

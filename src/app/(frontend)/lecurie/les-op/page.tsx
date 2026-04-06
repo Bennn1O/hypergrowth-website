@@ -140,7 +140,7 @@ export default function LesOpPage() {
             <h1 className="text-[clamp(4rem,9vw,7.5rem)] font-bold leading-[1]">
               L&apos;Équipe
             </h1>
-            <p className="max-w-[560px] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[560px] font-normal leading-[1.7] text-hpg-silver">
               Découvrez les Operating Partners et les Experts qui constituent
               l&apos;éco-système HyperGrowth.
             </p>
@@ -154,7 +154,7 @@ export default function LesOpPage() {
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
                 Les Operating Partners
               </span>
-              <p className="max-w-[500px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[500px] font-normal leading-[1.7] text-hpg-silver">
                 Ils vous accompagnent au quotidien, vous allègent, et vous aident à prendre
                 les décisions.
               </p>
@@ -176,7 +176,7 @@ export default function LesOpPage() {
                     <h3 className="font-medium">{op.name}</h3>
                     <p className="text-[0.8rem] text-hpg-orchid">{op.role}</p>
                   </div>
-                  <p className="flex-1 text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                  <p className="flex-1 text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                     {op.tagline}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -216,7 +216,7 @@ export default function LesOpPage() {
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
                 Les Experts
               </span>
-              <p className="max-w-[500px] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[500px] font-normal leading-[1.7] text-hpg-silver">
                 Ils exécutent, apportent leur expertise et vous accompagnent sur une mission
                 précise.
               </p>
@@ -238,7 +238,7 @@ export default function LesOpPage() {
                     <h3 className="font-medium">{expert.name}</h3>
                     <p className="text-[0.8rem] text-hpg-orchid">{expert.role}</p>
                   </div>
-                  <p className="flex-1 text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                  <p className="flex-1 text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                     {expert.tagline}
                   </p>
                   <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[0.7rem] text-white/60 self-start">

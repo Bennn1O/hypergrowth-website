@@ -121,7 +121,7 @@ export default function MethodeOpXPage() {
               La Méthode{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">OP-X</span>
             </h1>
-            <p className="max-w-[500px] text-[1rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[500px] text-[1rem] font-normal leading-[1.7] text-hpg-silver">
               Accélérez sans chaos, sans surcharge, sans perte de vision grâce à la méthode OP-X
             </p>
             <Link href="/contact" className={btnViolet}>
@@ -159,7 +159,7 @@ export default function MethodeOpXPage() {
                 Votre hypercroissance amène du CA, mais aussi du flou et des{' '}
                 <span className="font-instrument-italic italic text-hpg-orchid">noeuds.</span>
               </h2>
-              <p className="text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+              <p className="text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
                 Vous courez après les urgences, votre vision se trouble, et vous cherchez à
                 reconstruire un business lisible, sans freiner l'élan actuel.
               </p>
@@ -185,7 +185,7 @@ export default function MethodeOpXPage() {
                   className={`flex flex-col justify-between gap-10 rounded-[12px] p-8 ${glassClass}`}
                 >
                   <h3 className="text-[1.2rem] font-medium leading-[1.25]">{p.title}</h3>
-                  <p className="text-[0.9rem] font-thin leading-[1.6] text-hpg-silver">{p.desc}</p>
+                  <p className="text-[0.9rem] font-normal leading-[1.6] text-hpg-silver">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -202,7 +202,7 @@ export default function MethodeOpXPage() {
               <h2 className="max-w-[520px] text-[clamp(1.6rem,3vw,2.4rem)] font-medium leading-[1.1]">
                 3 minutes pour savoir si le modèle est fait pour vous.
               </h2>
-              <p className="max-w-[460px] text-[0.9rem] font-thin leading-[1.7] text-hpg-silver">
+              <p className="max-w-[460px] text-[0.9rem] font-normal leading-[1.7] text-hpg-silver">
                 Nous avons préparé une vidéo pour vous expliquer le concept HyperGrowth.
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function MethodeOpXPage() {
               Jamais seul dans les{' '}
               <span className="font-instrument-italic italic text-hpg-orchid">décisions</span>
             </h2>
-            <p className="max-w-[560px] text-[0.95rem] font-thin leading-[1.7] text-hpg-silver">
+            <p className="max-w-[560px] text-[0.95rem] font-normal leading-[1.7] text-hpg-silver">
               Rejoindre HyperGrowth, c'est intégrer un cercle d'entrepreneurs partageant défis et
               succès. En plus de votre OP et des leurs experts, l'entraide et les retours
               d'expérience font naître une force collective inarrêtable.
@@ -257,7 +257,7 @@ export default function MethodeOpXPage() {
                   <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium leading-[1.12]">
                     1 Operating Partner prêt à piloter avec vous
                   </h2>
-                  <p className="text-[0.9rem] font-thin leading-[1.7] text-hpg-silver">
+                  <p className="text-[0.9rem] font-normal leading-[1.7] text-hpg-silver">
                     Un expert du scale qui rejoint votre équipe dirigeante pour piloter la
                     croissance avec vous, au quotidien.
                   </p>
@@ -270,7 +270,7 @@ export default function MethodeOpXPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-[0.9rem] font-thin leading-[1.6] text-white/50">
+                <p className="text-[0.9rem] font-normal leading-[1.6] text-white/50">
                   Vous n'êtes plus seul pour prendre les bonnes décisions et garder le cap.
                 </p>
               </div>
@@ -295,7 +295,7 @@ export default function MethodeOpXPage() {
                   <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium leading-[1.12]">
                     20 experts A-players prêts à exécuter pour vous
                   </h2>
-                  <p className="text-[0.9rem] font-thin leading-[1.7] text-hpg-silver">
+                  <p className="text-[0.9rem] font-normal leading-[1.7] text-hpg-silver">
                     20 experts activés selon votre feuille de route, uniquement quand c'est
                     nécessaire.
                   </p>
@@ -308,7 +308,7 @@ export default function MethodeOpXPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-[0.9rem] font-thin leading-[1.6] text-white/50">
+                <p className="text-[0.9rem] font-normal leading-[1.6] text-white/50">
                   Ciblé, efficace, 100% orienté impact.
                 </p>
               </div>
@@ -366,7 +366,7 @@ export default function MethodeOpXPage() {
               >
                 <span className="text-[0.7rem] font-medium text-white/30">{b.num}</span>
                 <h3 className="text-[1rem] font-medium leading-[1.3]">{b.title}</h3>
-                <p className="mt-auto text-[0.85rem] font-thin leading-[1.6] text-hpg-silver">
+                <p className="mt-auto text-[0.85rem] font-normal leading-[1.6] text-hpg-silver">
                   {b.desc}
                 </p>
               </div>
@@ -389,11 +389,11 @@ export default function MethodeOpXPage() {
               <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.08]">
                 Votre projet est-il scalable ?
               </h2>
-              <p className="text-[0.9rem] font-thin leading-[1.7] text-white/80">
+              <p className="text-[0.9rem] font-normal leading-[1.7] text-white/80">
                 Comprendre le potentiel de scalabilité de votre projet est la meilleure manière de
                 commencer à prendre les bonnes décisions business dès aujourd'hui.
               </p>
-              <p className="text-[0.9rem] font-thin leading-[1.7] text-white/80">
+              <p className="text-[0.9rem] font-normal leading-[1.7] text-white/80">
                 Répondez au questionnaire et découvrez votre score, pour vous faire une idée du
                 potentiel concret de votre entreprise.
               </p>
@@ -451,7 +451,7 @@ export default function MethodeOpXPage() {
                   className={`flex flex-col gap-2 rounded-[12px] p-8 ${glassClass}`}
                 >
                   <span className="text-[2rem] font-medium text-hpg-orchid">{stat.value}</span>
-                  <span className="text-[0.85rem] font-thin text-hpg-silver">{stat.label}</span>
+                  <span className="text-[0.85rem] font-normal text-hpg-silver">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -466,7 +466,7 @@ export default function MethodeOpXPage() {
                   height={28}
                   className="opacity-50"
                 />
-                <p className="text-[1rem] font-thin leading-[1.7] text-white/90">
+                <p className="text-[1rem] font-normal leading-[1.7] text-white/90">
                   Killian possède des qualités d'analyse humaines et structurelles qui peuvent
                   faire changer grandement les choses sur une entreprise en croissance. Il est à
                   la fois votre accélérateur et le pilier d'une structure organisée et surtout
@@ -498,13 +498,13 @@ export default function MethodeOpXPage() {
               <div className="flex w-[260px] shrink-0 flex-col gap-4 max-[767px]:w-full max-[767px]:flex-row max-[479px]:flex-col">
                 <div className={`flex flex-1 flex-col gap-2 rounded-[12px] p-6 ${glassClass}`}>
                   <span className="text-[2.2rem] font-medium text-hpg-orchid">+230%</span>
-                  <span className="text-[0.8rem] font-thin leading-[1.5] text-hpg-silver">
+                  <span className="text-[0.8rem] font-normal leading-[1.5] text-hpg-silver">
                     Croissance de l'ARR depuis le début de l'accompagnement.
                   </span>
                 </div>
                 <div className={`flex flex-1 flex-col gap-2 rounded-[12px] p-6 ${glassClass}`}>
                   <span className="text-[2.2rem] font-medium text-hpg-orchid">+100K€</span>
-                  <span className="text-[0.8rem] font-thin leading-[1.5] text-hpg-silver">
+                  <span className="text-[0.8rem] font-normal leading-[1.5] text-hpg-silver">
                     Trésorerie récupérée via optimisation financière.
                   </span>
                 </div>

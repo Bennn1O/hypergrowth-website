@@ -15,7 +15,7 @@ export function Footer() {
           <div className="flex w-1/2 flex-col items-start justify-center gap-8 max-[991px]:w-full max-[479px]:px-4">
             <div className="flex flex-col gap-8">
               <h2 className="text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.08]">Votre projet est-il <span className="font-instrument-italic italic text-hpg-orchid">scalable</span> ?</h2>
-              <div className="font-thin">
+              <div className="font-normal">
                 Nous avons créé ce questionnaire pour aider les founders à faire un état des lieux. Remplissez-le en
                 moins de 5 minutes et faites enfin un état des lieux concret sur votre situation.
               </div>
@@ -49,12 +49,12 @@ export function Footer() {
 
         <div className="mt-12 flex items-center justify-between text-[0.8rem] max-[767px]:flex-col max-[767px]:gap-4 max-[767px]:text-center">
           <Link href="/">
-            <span className="font-instrument-italic text-[1.15rem] font-normal text-hpg-orchid">Hyper</span>
+            <span className="font-instrument-italic text-[1.15rem] font-medium text-hpg-orchid">Hyper</span>
             Growth
           </Link>
 
           <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 text-hpg-silver">
-            <span className="font-thin">2026 | Tous droits réservés</span>
+            <span className="font-normal">2026 | Tous droits réservés</span>
             <span className="text-white/20">·</span>
             <span>Designed by</span>
             <a href="https://www.bleuecitadelle.com" target="_blank" rel="noopener noreferrer" className="font-instrument-italic text-[0.95rem] text-hpg-orchid hover:underline">Bleue Citadelle,</a>
@@ -62,7 +62,7 @@ export function Footer() {
             <a href="https://omenstudio.co" target="_blank" rel="noopener noreferrer" className="font-medium uppercase tracking-[0.02em] text-white hover:text-hpg-orchid">OMEN STUDIO</a>
           </div>
 
-          <Link href="/mentions-legales" className="font-thin text-hpg-silver hover:text-white">
+          <Link href="/mentions-legales" className="font-normal text-hpg-silver hover:text-white">
             Mentions Légales
           </Link>
         </div>
