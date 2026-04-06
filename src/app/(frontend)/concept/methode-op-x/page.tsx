@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,16 +19,6 @@ const btnViolet =
 
 const btnOutline =
   'group inline-flex items-center justify-center gap-3 rounded-[12px] border border-white/20 bg-white/[0.03] px-6 py-[0.85rem] text-[0.9rem] font-medium tracking-[0.02em] text-white transition-colors hover:border-white/40'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 const CheckIcon = () => (
   <Image
@@ -126,7 +117,7 @@ export default function MethodeOpXPage() {
             </p>
             <Link href="/contact" className={btnViolet}>
               Réserver un appel
-              <Arrow />
+              <ArrowIcon />
             </Link>
           </div>
           <div className="mt-16 flex flex-col gap-5">
@@ -239,7 +230,7 @@ export default function MethodeOpXPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact" className={btnViolet}>
                 <span>Réserver un appel</span>
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
           </div>
@@ -436,7 +427,7 @@ export default function MethodeOpXPage() {
               </h2>
               <Link href="/concept/case-studies" className={`self-start mt-2 ${btnViolet}`}>
                 <span>Nos études de cas</span>
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
             <div className="grid grid-cols-4 gap-4 max-[991px]:grid-cols-2 max-[479px]:grid-cols-1">

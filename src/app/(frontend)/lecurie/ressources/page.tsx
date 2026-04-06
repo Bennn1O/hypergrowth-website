@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,16 +14,6 @@ const containerClass =
 
 const btnViolet =
   'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 const articles = [
   {
@@ -131,7 +122,7 @@ export default function EcurieRessourcesPage() {
               </p>
               <Link href="/contact" className={btnViolet}>
                 Réserver un appel
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
           </div>

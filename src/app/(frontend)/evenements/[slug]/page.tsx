@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,16 +17,6 @@ const glassClass =
 
 const btnViolet =
   'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 export async function generateStaticParams() {
   const slugs = await getEventSlugs()
@@ -254,7 +245,7 @@ function CtaSection({ event }: { event: Event }) {
               <>
                 <Link href="/communaute/evenements" className={btnViolet}>
                   Voir tous les événements
-                  <Arrow />
+                  <ArrowIcon />
                 </Link>
                 <Link
                   href="/communaute/hyperclub"
@@ -267,7 +258,7 @@ function CtaSection({ event }: { event: Event }) {
               <>
                 <Link href="/communaute/hyperclub" className={btnViolet}>
                   {"Rejoindre l'HyperClub"}
-                  <Arrow />
+                  <ArrowIcon />
                 </Link>
                 <Link
                   href="/communaute/evenements"
@@ -317,7 +308,7 @@ export default async function EventPage({ params }: Props) {
             </p>
             <Link href="/communaute/evenements" className={`self-start ${btnViolet}`}>
               Voir tous les événements
-              <Arrow />
+              <ArrowIcon />
             </Link>
           </div>
         </div>

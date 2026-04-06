@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -25,16 +26,6 @@ const clientLogos = [
   { src: '/images/68f246d863b4e3d783e683cf_14.avif', alt: '' },
 ]
 
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
-
 export default async function ConceptCaseStudiesPage() {
   const caseStudies = await getAllCaseStudies()
 
@@ -58,7 +49,7 @@ export default async function ConceptCaseStudiesPage() {
             </p>
             <Link href="/contact" className={`self-start ${btnViolet}`}>
               Réserver un appel
-              <Arrow />
+              <ArrowIcon />
             </Link>
             <div className="mt-4 flex flex-col gap-4">
               <span className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/40">
@@ -200,7 +191,7 @@ export default async function ConceptCaseStudiesPage() {
 
             <Link href="/concept/methode-op-x" className={btnViolet}>
               Découvrir la méthode OP-X
-              <Arrow />
+              <ArrowIcon />
             </Link>
           </div>
         </div>

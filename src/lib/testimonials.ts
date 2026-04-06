@@ -14,6 +14,7 @@ export interface Testimonial {
 }
 
 export async function getAllTestimonials(): Promise<Testimonial[]> {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return []
   const data = await client.fetch(ALL_TESTIMONIALS_QUERY)
   return (data ?? []) as Testimonial[]
 }

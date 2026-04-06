@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -26,16 +27,6 @@ export async function generateMetadata({
 const containerClass = 'hpg-container'
 const glassClass = 'hpg-glass-soft'
 const btnViolet = 'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 export default async function CaseStudyPage({
   params,
@@ -256,7 +247,7 @@ export default async function CaseStudyPage({
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className={btnViolet}>
                   Réserver un appel
-                  <Arrow />
+                  <ArrowIcon />
                 </Link>
                 <Link
                   href="/concept/case-studies"

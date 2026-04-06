@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,16 +13,6 @@ export const metadata: Metadata = {
 const containerClass = 'hpg-container'
 const glassClass = 'hpg-glass'
 const btnViolet = 'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 const stats = [
   { value: '+150', label: 'dirigeants accompagnés' },
@@ -66,7 +57,6 @@ export default async function CommunauteEvenementsPage() {
 
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -89,7 +79,6 @@ export default async function CommunauteEvenementsPage() {
         </div>
       </section>
 
-      {/* ── Question accroche ────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-6 max-w-[700px]">
@@ -106,7 +95,6 @@ export default async function CommunauteEvenementsPage() {
         </div>
       </section>
 
-      {/* ── 3 formats ────────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex gap-4 max-[991px]:flex-col">
@@ -130,7 +118,6 @@ export default async function CommunauteEvenementsPage() {
         </div>
       </section>
 
-      {/* ── Liste des évènements ──────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-3">
@@ -143,7 +130,7 @@ export default async function CommunauteEvenementsPage() {
                   className={`relative flex items-center justify-between gap-6 overflow-hidden rounded-[12px] border border-white/10 bg-white/[0.02] px-6 py-5 transition max-[991px]:flex-col max-[991px]:items-start ${isPast ? 'opacity-50' : 'hover:-translate-y-0.5 hover:border-hpg-orchid/25 hover:bg-[rgb(24_10_34_/_0.3)]'}`}
                 >
                   {isPast && (
-                    <div className="absolute inset-0 z-10 flex items-center justify-center bg-[rgb(24_10_34_/_0.5)]">
+                    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[rgb(24_10_34_/_0.5)]">
                       <span className="rounded-full border border-white/20 bg-[rgb(24_10_34_/_0.8)] px-4 py-1.5 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-white/60">
                         Événement passé
                       </span>
@@ -177,7 +164,6 @@ export default async function CommunauteEvenementsPage() {
         </div>
       </section>
 
-      {/* ── Stats d'impact ───────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-6">
@@ -201,7 +187,6 @@ export default async function CommunauteEvenementsPage() {
         </div>
       </section>
 
-      {/* ── Témoignages ──────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex gap-4 max-[767px]:flex-col">
@@ -239,7 +224,6 @@ export default async function CommunauteEvenementsPage() {
         </div>
       </section>
 
-      {/* ── CTA Réserver un appel ────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div
@@ -262,7 +246,7 @@ export default async function CommunauteEvenementsPage() {
               </p>
               <Link href="/contact" className={btnViolet}>
                 Réserver un appel
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
           </div>

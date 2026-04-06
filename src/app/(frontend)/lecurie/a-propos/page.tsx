@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,16 +17,6 @@ const glassClass =
 
 const btnViolet =
   'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 const stats = [
   { value: '150+', label: 'Dirigeants accompagnés' },
@@ -133,7 +124,7 @@ export default function AProposPage() {
               </p>
               <Link href="/concept/methode-op-x" className={`self-start ${btnViolet}`}>
                 Découvrir la méthode OP-X
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
             <div className="w-[420px] shrink-0 overflow-hidden rounded-[16px] max-[767px]:w-full">
@@ -212,7 +203,7 @@ export default function AProposPage() {
             </div>
             <Link href="/lecurie/les-op" className={`self-start ${btnViolet}`}>
               Découvrir les profils
-              <Arrow />
+              <ArrowIcon />
             </Link>
           </div>
         </div>
@@ -239,7 +230,7 @@ export default function AProposPage() {
               </p>
               <Link href="/contact" className={btnViolet}>
                 Réserver un appel
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
           </div>

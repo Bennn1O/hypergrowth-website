@@ -1,3 +1,4 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,16 +13,6 @@ export const metadata: Metadata = {
 const containerClass = 'hpg-container'
 
 const btnViolet = 'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 const clientLogos = [
   { src: '/images/68f246d99c0f71325b0fa8c9_10.avif', alt: '' },
@@ -45,7 +36,6 @@ export default async function TemoignagesPage() {
 
   return (
     <main className="flex flex-col items-stretch">
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-[180px] pb-16 max-[767px]:pt-[130px] max-[767px]:pb-10">
         <div
           className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[55vw] opacity-25"
@@ -66,7 +56,6 @@ export default async function TemoignagesPage() {
         </div>
       </section>
 
-      {/* ── Logos clients ────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-4">
@@ -89,7 +78,6 @@ export default async function TemoignagesPage() {
         </div>
       </section>
 
-      {/* ── Témoignages ──────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex flex-col gap-4">
@@ -172,7 +160,6 @@ export default async function TemoignagesPage() {
         </div>
       </section>
 
-      {/* ── HyperClub CTA ────────────────────────────────────────── */}
       <section className="mx-auto w-full">
         <div className={containerClass}>
           <div className="flex items-stretch gap-0 overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.02] max-[767px]:flex-col">
@@ -191,7 +178,7 @@ export default async function TemoignagesPage() {
               </p>
               <Link href="/communaute/hyperclub" className={`self-start ${btnViolet}`}>
                 Rejoindre l&apos;HyperClub
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
             <div className="w-[360px] shrink-0 overflow-hidden max-[767px]:w-full">
@@ -207,7 +194,6 @@ export default async function TemoignagesPage() {
         </div>
       </section>
 
-      {/* ── CTA Réserver un appel ────────────────────────────────── */}
       <section className="mx-auto w-full pb-16">
         <div className={containerClass}>
           <div
@@ -230,7 +216,7 @@ export default async function TemoignagesPage() {
               </p>
               <Link href="/contact" className={btnViolet}>
                 Réserver un appel
-                <Arrow />
+                <ArrowIcon />
               </Link>
             </div>
           </div>

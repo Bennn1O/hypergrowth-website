@@ -7,8 +7,7 @@ export const metadata: Metadata = {
     'Réservez un appel avec un Operating Partner HyperGrowth. 30 minutes pour évaluer votre contexte et voir si le fit est là.',
 }
 
-const containerClass =
-  'hpg-container'
+const containerClass = 'hpg-container'
 
 const steps = [
   {
@@ -94,11 +93,9 @@ export default function ContactPage() {
                 className="block h-[700px] max-[767px]:h-[550px]"
               />
             </div>
-
           </div>
         </div>
       </section>
-
     </main>
   )
 }

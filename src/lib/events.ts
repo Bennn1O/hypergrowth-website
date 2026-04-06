@@ -222,12 +222,10 @@ import { ALL_EVENTS_QUERY, EVENT_BY_SLUG_QUERY, EVENT_SLUGS_QUERY } from '@/sani
 
 function sortEvents(events: Event[]): Event[] {
   return [...events].sort((a, b) => {
-    if (a.publishedAt && b.publishedAt) {
-      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    }
-    if (a.publishedAt) return -1
-    if (b.publishedAt) return 1
-    return a.title.localeCompare(b.title, 'fr')
+    const aIsPast = a.status === 'past' || a.isPast
+    const bIsPast = b.status === 'past' || b.isPast
+    if (aIsPast !== bIsPast) return aIsPast ? 1 : -1
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 }
 

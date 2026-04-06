@@ -1,5 +1,5 @@
+import { ArrowIcon } from '@/components/ui/arrow-icon'
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -13,16 +13,6 @@ const containerClass =
 
 const btnViolet =
   'hpg-btn-violet group'
-
-const Arrow = () => (
-  <Image
-    src="/images/68df8890ec2e4ea24f700e96_HPG_website_icon_arrow.svg"
-    alt=""
-    width={18}
-    height={18}
-    className="transition-transform duration-200 group-hover:-rotate-45"
-  />
-)
 
 export default function VslPage() {
   return (
@@ -81,7 +71,7 @@ export default function VslPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact" className={btnViolet}>
                 Réserver un appel
-                <Arrow />
+                <ArrowIcon />
               </Link>
               <Link
                 href="/concept/methode-op-x"
