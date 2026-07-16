@@ -6,8 +6,8 @@ import { schemaTypes } from './src/sanity/schemaTypes'
 export default defineConfig({
   name: 'hypergrowth',
   title: 'HyperGrowth',
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'si8kibky',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   basePath: '/studio',
   plugins: [structureTool(), visionTool()],
   schema: { types: schemaTypes },
