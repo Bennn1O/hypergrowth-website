@@ -5,6 +5,7 @@ const footerSections = [
   { title: 'Le Concept', links: [ { label: 'Méthode OP-X', href: '/concept/methode-op-x' }, { label: 'Case Studies', href: '/concept/case-studies' }, { label: 'Scalabilité', href: '/concept/test-de-scalabilite' } ] },
   { title: 'Communauté', links: [ { label: 'Évènements', href: '/communaute/evenements' }, { label: 'HyperClub', href: '/communaute/hyperclub' }, { label: 'Témoignages', href: '/communaute/temoignages' } ] },
   { title: "L'écurie", links: [ { label: 'À Propos', href: '/lecurie/a-propos' }, { label: "L'équipe", href: '/lecurie/les-op' }, { label: 'Ressources', href: '/lecurie/ressources' } ] },
+  { title: 'Nos marques', links: [{ label: 'DONNA', href: 'https://ask-donna.fr' }] },
 ]
 
 
