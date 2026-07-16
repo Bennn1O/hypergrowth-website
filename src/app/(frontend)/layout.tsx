@@ -123,6 +123,7 @@ export default function RootLayout({
         <Script
           src="https://tracking.hypergrowth.fr/api/script.js"
           data-site-id="01be6295df26"
+          data-skip-patterns='["/studio"]'
           strategy="afterInteractive"
         />
       </body>
