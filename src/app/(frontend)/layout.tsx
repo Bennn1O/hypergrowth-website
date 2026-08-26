@@ -102,7 +102,7 @@ export default function RootLayout({
           type="image/avif"
         />
       </head>
-      <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white subpixel-antialiased">
         <div
           className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
           style={{
