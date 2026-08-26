@@ -17,9 +17,6 @@ const glassClass =
 const btnViolet =
   'hpg-btn-violet group'
 
-const btnOutline =
-  'group inline-flex items-center justify-center gap-3 rounded-[12px] border border-white/20 bg-white/[0.03] px-6 py-[0.85rem] text-[0.9rem] font-medium tracking-[0.02em] text-white transition-colors hover:border-white/40'
-
 const CheckIcon = () => (
   <Image
     src="/images/68df8890acfc8334ff5e2f81_HPG_website_icon_check.svg"
