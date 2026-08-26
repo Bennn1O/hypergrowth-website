@@ -1,27 +1,48 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useSyncExternalStore } from 'react'
+
+const consentKey = 'hpg-cookie-consent'
+const consentEvent = 'hpg-cookie-consent-change'
+
+function subscribeToConsent(callback: () => void) {
+  const handleChange = () => callback()
+  window.addEventListener('storage', handleChange)
+  window.addEventListener(consentEvent, handleChange)
+
+  return () => {
+    window.removeEventListener('storage', handleChange)
+    window.removeEventListener(consentEvent, handleChange)
+  }
+}
+
+function getConsentSnapshot() {
+  return localStorage.getItem(consentKey)
+}
+
+function getServerConsentSnapshot() {
+  return 'pending'
+}
+
+function acceptConsent() {
+  localStorage.setItem(consentKey, 'accepted')
+  window.dispatchEvent(new Event(consentEvent))
+}
+
+function declineConsent() {
+  localStorage.setItem(consentKey, 'declined')
+  window.dispatchEvent(new Event(consentEvent))
+}
 
 export function CookieBanner() {
-  const [visible, setVisible] = useState(false)
+  const consent = useSyncExternalStore(
+    subscribeToConsent,
+    getConsentSnapshot,
+    getServerConsentSnapshot,
+  )
 
-  useEffect(() => {
-    const consent = localStorage.getItem('hpg-cookie-consent')
-    if (!consent) setVisible(true)
-  }, [])
-
-  function accept() {
-    localStorage.setItem('hpg-cookie-consent', 'accepted')
-    setVisible(false)
-  }
-
-  function decline() {
-    localStorage.setItem('hpg-cookie-consent', 'declined')
-    setVisible(false)
-  }
-
-  if (!visible) return null
+  if (consent !== null) return null
 
   return (
     <div className="fixed bottom-6 left-1/2 z-50 w-full max-w-[640px] -translate-x-1/2 px-4">
@@ -34,13 +55,13 @@ export function CookieBanner() {
         </p>
         <div className="flex shrink-0 items-center gap-2">
           <button
-            onClick={decline}
+            onClick={declineConsent}
             className="rounded-[8px] border border-white/10 px-4 py-2 text-[0.78rem] font-medium text-white/50 transition hover:border-white/20 hover:text-white/80"
           >
             Refuser
           </button>
           <button
-            onClick={accept}
+            onClick={acceptConsent}
             className="rounded-[8px] border border-hpg-violet-border bg-hpg-violet-btn px-4 py-2 text-[0.78rem] font-medium text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.15)] transition hover:bg-[#6f33a0]"
           >
             Accepter

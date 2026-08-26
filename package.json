@@ -9,7 +9,7 @@
     "doctor": "bunx react-doctor@latest --verbose --diff",
     "doctor:full": "bunx react-doctor@latest --verbose --diff false",
     "start": "bunx next start",
-    "lint": "bunx next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "type-check": "tsc --noEmit"
@@ -42,6 +42,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "5.1.4",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.1.6",
     "happy-dom": "^20.11.6",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.9.3",

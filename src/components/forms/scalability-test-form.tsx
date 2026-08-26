@@ -102,8 +102,8 @@ export function ScalabilityTestForm() {
   const [honeypot, setHoneypot] = useState("");
   const [phase, setPhase] = useState<Phase>("welcome");
   const [result, setResult] = useState<ScalabilityResult | null>(null);
+  const [selectionTimer, setSelectionTimer] = useState<number | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const selectionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reduceMotion = useReducedMotion();
 
   const field = getFieldByRef(currentRef) ?? SCALABILITY_TEST_STEPS[0];
@@ -140,9 +140,9 @@ export function ScalabilityTestForm() {
 
   useEffect(
     () => () => {
-      if (selectionTimerRef.current) clearTimeout(selectionTimerRef.current);
+      if (selectionTimer !== null) window.clearTimeout(selectionTimer);
     },
-    [],
+    [selectionTimer],
   );
 
   function startTest() {
@@ -263,13 +263,37 @@ export function ScalabilityTestForm() {
     const nextAnswers = { ...answers, [field.ref]: choiceRef };
     setAnswers(nextAnswers);
     setError("");
-    if (selectionTimerRef.current) clearTimeout(selectionTimerRef.current);
+    if (selectionTimer !== null) window.clearTimeout(selectionTimer);
 
     const delay = event.detail === 0 || reduceMotion ? 0 : 180;
-    selectionTimerRef.current = setTimeout(
-      () => void advance(nextAnswers),
+    const timer = window.setTimeout(
+      () => {
+        setSelectionTimer(null);
+        void advance(nextAnswers);
+      },
       delay,
     );
+    setSelectionTimer(timer);
+  }
+
+  function selectScale(
+    number: number,
+    event: MouseEvent<HTMLButtonElement>,
+  ) {
+    const nextAnswers = { ...answers, [field.ref]: number };
+    setAnswers(nextAnswers);
+    setError("");
+    if (selectionTimer !== null) window.clearTimeout(selectionTimer);
+
+    const delay = event.detail === 0 || reduceMotion ? 0 : 180;
+    const timer = window.setTimeout(
+      () => {
+        setSelectionTimer(null);
+        void advance(nextAnswers);
+      },
+      delay,
+    );
+    setSelectionTimer(timer);
   }
 
   function handleInputKeyDown(
@@ -453,17 +477,7 @@ export function ScalabilityTestForm() {
                       : "border-white/10 bg-white/5 text-white/75 hover:border-white/30"
                   }`}
                   key={number}
-                  onClick={(event) => {
-                    const nextAnswers = { ...answers, [field.ref]: number };
-                    setAnswers(nextAnswers);
-                    setError("");
-                    if (selectionTimerRef.current)
-                      clearTimeout(selectionTimerRef.current);
-                    selectionTimerRef.current = setTimeout(
-                      () => void advance(nextAnswers),
-                      event.detail === 0 || reduceMotion ? 0 : 180,
-                    );
-                  }}
+                  onClick={(event) => selectScale(number, event)}
                   role="radio"
                   type="button"
                 >
