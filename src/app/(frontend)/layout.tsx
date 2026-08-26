@@ -102,7 +102,7 @@ export default function RootLayout({
           type="image/avif"
         />
       </head>
-      <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-hpg-night text-white subpixel-antialiased">
         <div
           className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
           style={{
@@ -123,6 +123,7 @@ export default function RootLayout({
         <Script
           src="https://tracking.hypergrowth.fr/api/script.js"
           data-site-id="01be6295df26"
+          data-skip-patterns='["/studio"]'
           strategy="afterInteractive"
         />
       </body>

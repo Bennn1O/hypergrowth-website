@@ -67,7 +67,7 @@ export function HeroSection() {
             {/* H1 */}
             <h1 className="hpg-hero-animate hpg-hero-animate-2 mx-auto max-w-[22ch] text-center text-[clamp(2.6rem,6vw,4.4rem)] font-bold leading-[1.0] tracking-[-0.025em] max-[991px]:text-[clamp(2.2rem,5.5vw,3.2rem)] max-[991px]:leading-[1.05] max-[767px]:text-[clamp(2rem,7.5vw,2.6rem)] max-[767px]:leading-[1.1]">
               Votre organisation doit scaler.{' '}
-              <span className="font-instrument-italic italic text-hpg-orchid">Sans que tout repose sur vous.</span>
+              <span className="font-instrument-italic font-normal italic text-hpg-orchid">Sans que tout repose sur vous.</span>
             </h1>
 
             {/* Sub-copy */}
