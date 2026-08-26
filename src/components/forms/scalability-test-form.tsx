@@ -266,33 +266,24 @@ export function ScalabilityTestForm() {
     if (selectionTimer !== null) window.clearTimeout(selectionTimer);
 
     const delay = event.detail === 0 || reduceMotion ? 0 : 180;
-    const timer = window.setTimeout(
-      () => {
-        setSelectionTimer(null);
-        void advance(nextAnswers);
-      },
-      delay,
-    );
+    const timer = window.setTimeout(() => {
+      setSelectionTimer(null);
+      void advance(nextAnswers);
+    }, delay);
     setSelectionTimer(timer);
   }
 
-  function selectScale(
-    number: number,
-    event: MouseEvent<HTMLButtonElement>,
-  ) {
+  function selectScale(number: number, event: MouseEvent<HTMLButtonElement>) {
     const nextAnswers = { ...answers, [field.ref]: number };
     setAnswers(nextAnswers);
     setError("");
     if (selectionTimer !== null) window.clearTimeout(selectionTimer);
 
     const delay = event.detail === 0 || reduceMotion ? 0 : 180;
-    const timer = window.setTimeout(
-      () => {
-        setSelectionTimer(null);
-        void advance(nextAnswers);
-      },
-      delay,
-    );
+    const timer = window.setTimeout(() => {
+      setSelectionTimer(null);
+      void advance(nextAnswers);
+    }, delay);
     setSelectionTimer(timer);
   }
 
@@ -328,6 +319,7 @@ export function ScalabilityTestForm() {
       : typeof value === "string"
         ? [value]
         : [];
+    const selectedRefs = new Set(selected);
 
     if (field.type === "picture_choice") {
       return (
@@ -338,7 +330,7 @@ export function ScalabilityTestForm() {
           role={multiple ? "group" : "radiogroup"}
         >
           {choices.map((choice, index) => {
-            const isSelected = selected.includes(choice.ref);
+            const isSelected = selectedRefs.has(choice.ref);
             return (
               <button
                 aria-checked={isSelected}
@@ -381,7 +373,7 @@ export function ScalabilityTestForm() {
         role={multiple ? "group" : "radiogroup"}
       >
         {choices.map((choice, index) => {
-          const isSelected = selected.includes(choice.ref);
+          const isSelected = selectedRefs.has(choice.ref);
           return (
             <button
               aria-checked={isSelected}

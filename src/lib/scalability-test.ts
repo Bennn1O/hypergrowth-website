@@ -338,9 +338,7 @@ export function getScalabilityResult(answers: Answers): ScalabilityResult {
 }
 
 export type NextStep =
-  | { ref: string; type: "field" }
-  | { type: "outcome" }
-  | null;
+  { ref: string; type: "field" } | { type: "outcome" } | null;
 
 export function getNextStep(currentRef: string, answers: Answers): NextStep {
   const variables = calculateVariables(answers);
