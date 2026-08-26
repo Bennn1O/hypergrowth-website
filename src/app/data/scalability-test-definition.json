@@ -1,0 +1,6122 @@
+{
+  "id": "STWAU1uE",
+  "type": "score_branching",
+  "title": "Calcule ton potentiel de croissance 🏁",
+  "workspace": {
+    "href": "https://api.typeform.com/workspaces/J9gm8X"
+  },
+  "theme": {
+    "href": "https://api.typeform.com/themes/svUxTKJX"
+  },
+  "settings": {
+    "language": "fr",
+    "progress_bar": "proportion",
+    "meta": {
+      "title": "Ton potentiel de croissance - HG",
+      "allow_indexing": true,
+      "description": "Évalue le potentiel de croissance de ton entreprise et découvre ton plan d’action sur mesure. ",
+      "image": {
+        "href": "https://images.typeform.com/images/xXe7U4QQiP5g"
+      }
+    },
+    "hide_navigation": false,
+    "is_public": true,
+    "is_trial": false,
+    "show_progress_bar": true,
+    "show_typeform_branding": true,
+    "are_uploads_public": false,
+    "show_time_to_complete": false,
+    "show_number_of_submissions": true,
+    "show_cookie_consent": true,
+    "show_question_number": true,
+    "hide_required_indicator": false,
+    "show_key_hint_on_choices": true,
+    "autosave_progress": true,
+    "free_form_navigation": false,
+    "use_lead_qualification": false,
+    "pro_subdomain_enabled": true,
+    "facebook_pixel": "727688240272851",
+    "milestones": [
+      {
+        "field_ref": "7629ff64-14d3-4164-a425-83cac232a07c",
+        "status": "active"
+      }
+    ],
+    "email_consent_notifications_config": {
+      "send_email_copy": true
+    },
+    "auto_translate": true,
+    "partial_responses_to_all_integrations": true
+  },
+  "thankyou_screens": [
+    {
+      "id": "8UpApooOvieY",
+      "ref": "80f0852a-bfa0-4ffe-982b-78bb8da37f0b",
+      "title": "*🚀 Scalabilité très forte*",
+      "type": "thankyou_screen",
+      "properties": {
+        "show_button": true,
+        "share_icons": false,
+        "button_mode": "redirect",
+        "button_text": "Comment accélérer ?",
+        "redirect_url": "https://hypergrowth-lab.notion.site/Ton-score-est-entre-120-145-Forte-scalabilit-255432d6f077806fa1a3ecd94dfaa2d2?pvs=74",
+        "description": "Ton modèle peut croître rapidement sans perte de qualité ni explosion des coûts. Tes process, ton offre et ton organisation sont déjà bien optimisés.\n\n_*Priorité : Capitaliser sur les forces, ouvrir de nouveaux canaux et anticiper les prochains goulots d’étranglement.*_"
+      }
+    },
+    {
+      "id": "wzxtpWpz8Ato",
+      "ref": "e93b7643-4f34-40fc-80de-68289a875ee5",
+      "title": "*🧩 Solide mais perfectible*",
+      "type": "thankyou_screen",
+      "properties": {
+        "show_button": true,
+        "share_icons": false,
+        "button_mode": "redirect",
+        "button_text": " Comment optimiser ?",
+        "redirect_url": "https://hypergrowth-lab.notion.site/Ton-score-est-entre-90-119-Solide-mais-perfectible-255432d6f0778019a499fa50c785652a?source=copy_link",
+        "description": "Tu disposes de bonnes bases pour soutenir la croissance, mais certains points freinent encore ton potentiel. Les optimisations clés se trouvent dans l’automatisation, la standardisation et la capacité RH.\n\n_*Priorité : Éliminer les frictions pour démultiplier la vitesse de scaling.*_"
+      }
+    },
+    {
+      "id": "HXg5EUF44HBV",
+      "ref": "9339ec7a-ca5f-4da5-8ece-eceee7aa56c4",
+      "title": "*🚧 Scalabilité limitée*",
+      "type": "thankyou_screen",
+      "properties": {
+        "show_button": true,
+        "share_icons": false,
+        "button_mode": "redirect",
+        "button_text": "Comment renforcer ? ",
+        "redirect_url": "https://hypergrowth-lab.notion.site/Ton-score-est-entre-60-89-Scalabilit-fragile-255432d6f07780a09d48c7ce2352f22d?pvs=74",
+        "description": "Ton modèle peut grandir, mais il saturera vite. Process incomplets, dépendance humaine ou manque d’outils te freinent.\n\n_*Priorité : Renforcer la structure interne et mettre en place des systèmes robustes avant d’accélérer.*_"
+      }
+    },
+    {
+      "id": "RbH2KBLnHDEa",
+      "ref": "2ffd44eb-d6da-471b-8104-bd855e64ad1b",
+      "title": "*❌ Pas prêt à scaler*",
+      "type": "thankyou_screen",
+      "properties": {
+        "show_button": true,
+        "share_icons": false,
+        "button_mode": "redirect",
+        "button_text": "Comment construire ? ",
+        "redirect_url": "https://hypergrowth-lab.notion.site/Ton-score-est-entre-0-59-Pas-pr-t-scaler-254432d6f0778051996dd02c991c6d26?source=copy_link",
+        "description": "Une croissance rapide mettrait ton business en difficulté. Les fondations ne sont pas encore en place pour absorber un fort volume.\n\n_*Priorité : standardiser ton offre, automatiser les étapes critiques et suivre tes KPIs.*_"
+      }
+    },
+    {
+      "id": "DefaultTyScreen",
+      "ref": "default_tys",
+      "title": "Merci d'avoir complété ce typeform\nMaintenant *créez le votre* — c'est gratuit, simple & superbe",
+      "type": "thankyou_screen",
+      "properties": {
+        "show_button": true,
+        "share_icons": false,
+        "button_mode": "default_redirect",
+        "button_text": "Créez un *typeform*"
+      },
+      "attachment": {
+        "type": "image",
+        "href": "https://public-assets.typeform.com/public/admin/2dpnUBBkz2VN.gif"
+      }
+    }
+  ],
+  "welcome_screens": [
+    {
+      "id": "fkf30JVMzIDP",
+      "ref": "ca6653e5-479b-41f4-a688-e5768b34fd26",
+      "title": "Calcule ton* potentiel de croissance*",
+      "properties": {
+        "show_button": true,
+        "button_text": "Commencer le test 👋",
+        "description": "Découvre en 10 minutes si ton entreprise *peut croître vite, sans stress et sans coûts inutiles. *"
+      }
+    }
+  ],
+  "fields": [
+    {
+      "id": "JSUyNPy1OmfQ",
+      "title": "Avant de calculer ton score de scalabilité, j’ai besoin de quelques infos de base",
+      "ref": "b3a58cf0-807b-4bc7-8cd1-8f92b9bef6e8",
+      "properties": {
+        "description": "Ça nous permet de :\n•\tGénérer ton score et ton rapport personnalisé,\n•\tTe partager tes résultats par mail,\n•\tEt, si tu le souhaites, t’envoyer un débrief individuel.\n\nAucune pub, aucun spam, tes infos restent confidentielles.",
+        "button_text": "Continuer",
+        "show_button": true,
+        "fields": [
+          {
+            "id": "GArdk8gaGNlg",
+            "title": "Quel est ton prénom ? ",
+            "ref": "a5213698-173e-47d4-8c01-7b3413042380",
+            "properties": {},
+            "validations": {
+              "required": true
+            },
+            "type": "short_text"
+          },
+          {
+            "id": "wc4dyX2G035i",
+            "title": "Quel est le nom de ton entreprise ? ",
+            "ref": "f815968e-027b-4142-8aee-6d4a1b98d8cf",
+            "properties": {},
+            "validations": {
+              "required": true
+            },
+            "type": "short_text"
+          },
+          {
+            "id": "ulzJbAWg8Clz",
+            "title": "Quel est ton CA annuel ? ",
+            "ref": "5fd040ec-81c8-46eb-b7fd-72674f14dec5",
+            "properties": {
+              "randomize": false,
+              "allow_multiple_selection": false,
+              "allow_other_choice": false,
+              "none_of_the_above": false,
+              "vertical_alignment": true,
+              "choices": [
+                {
+                  "id": "UT0TwmNHAiO1",
+                  "ref": "0c59e48c-1b4e-457b-ab7e-f35acac249e1",
+                  "label": "Entre 100k - 500k€"
+                },
+                {
+                  "id": "goLjMU8nslSk",
+                  "ref": "031f43cf-70f7-4270-b6b4-2f427208f933",
+                  "label": "Entre 500k-1M€"
+                },
+                {
+                  "id": "gDGTuRStWauB",
+                  "ref": "2db5cc14-aecf-4fcd-b79b-e0083af5297d",
+                  "label": "Entre 1M-5M€"
+                },
+                {
+                  "id": "N4TkZ32u5NDk",
+                  "ref": "207ce4e3-077e-4c2c-bdfe-a8e736e69384",
+                  "label": "Entre 5M-15M€"
+                },
+                {
+                  "id": "6xnq6RN9SPqQ",
+                  "ref": "2d1e539f-f755-44d7-a69c-50628538eb3e",
+                  "label": "Entre 15M-30M€"
+                },
+                {
+                  "id": "xcJcaNL5RVOc",
+                  "ref": "69da7909-9787-4d14-a871-81b3b2f2682a",
+                  "label": "Plus de 30M€"
+                }
+              ]
+            },
+            "validations": {
+              "required": false
+            },
+            "type": "multiple_choice"
+          },
+          {
+            "id": "q6QbY0vMljKQ",
+            "title": "Quel est ton numéro de téléphone professionnel ? ",
+            "ref": "7629ff64-14d3-4164-a425-83cac232a07c",
+            "properties": {
+              "description": "Non obligatoire mais fortement recommandé pour récupérer tes résulats",
+              "default_country_code": "FR"
+            },
+            "validations": {
+              "required": false
+            },
+            "type": "phone_number"
+          }
+        ]
+      },
+      "type": "group"
+    },
+    {
+      "id": "q4wqk5pG1SW1",
+      "title": "Super , on va voir comment  peut scaler au maximum.\\*",
+      "ref": "2ff5eccb-ed55-4130-8fb2-e65da57132fe",
+      "properties": {
+        "description": "Réponds instinctivement : il n’y a pas de bonne ou mauvaise réponse.",
+        "button_text": "C'est parti",
+        "hide_marks": false
+      },
+      "type": "statement"
+    },
+    {
+      "id": "pMi10vGdv8Cf",
+      "title": "Pour mieux comprendre l’activité de ton entreprise, *copie-colle le prompt ci-dessous* dans ton IA préférée, puis colle la réponse ci-dessous. (si pas d'IA, tu peux le résumer directement)",
+      "ref": "0700bc16-3507-45dc-9b3a-8b8c851239d1",
+      "properties": {
+        "description": "Fais-moi un résumé clair et concis de l’activité de mon entreprise {Nom de l'entreprise}.Structure ta réponse en trois parties : \n1. Mission principale de l’entreprise \n2. Produits ou services proposés \n3. Type de clients ou de marché adressé \n\nLe texte doit tenir en moins de 150 mots et rester compréhensible par un non-spécialiste."
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "3UXDKflsDvdL",
+      "title": "A quelle phase de croissance en est  ton entreprise ?",
+      "ref": "2a8ee11f-59da-4f3e-b2b7-cd6ec338a4e3",
+      "properties": {
+        "description": "L'idée est de situer l'état actuel des choses. ",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "KFOfLXb9w3ZR",
+            "ref": "e2317d3e-2d7d-4cfa-aa3a-5698f94bf2c4",
+            "label": "Je cherche à valider mon projet et générer de la traction"
+          },
+          {
+            "id": "rwfZl5rlfsvG",
+            "ref": "2c6f9285-d71f-4d39-bb50-5f88172e7a98",
+            "label": "Je structure mon business pour sortir du chaos et poser des bases solides"
+          },
+          {
+            "id": "W4Msf0zK5zi6",
+            "ref": "b3d05fa4-74de-4c4c-84bd-84e1cb9c7871",
+            "label": "J’ai une base solide, des systèmes en place et veux passer à l’échelle"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "CLgErPzCXm44",
+      "title": "Quel est le modèle de revenus de ton entreprise ? ",
+      "ref": "f2cd035f-c980-406b-a378-da057a9ab90e",
+      "properties": {
+        "description": "Quel type de revenus représente la majorité du CA.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "eRVjENxv9meU",
+            "ref": "553cd582-2093-4a4f-a47f-965a3b385c10",
+            "label": "Revenus récurrents (abonnement, contrats longue durée)"
+          },
+          {
+            "id": "Gi0G5RtFpVeq",
+            "ref": "dfafff7d-044c-4ad8-8b8d-ba0d598d1bea",
+            "label": "Mix récurrent + ventes ponctuelles répétées (clients réguliers)"
+          },
+          {
+            "id": "T82Z8mp5cofx",
+            "ref": "92cbeffb-0c6c-4ac1-8e14-f53c7674e465",
+            "label": "Ventes ponctuelles répétables (business traditionnel , e-commerce, licences)"
+          },
+          {
+            "id": "bVZ7cIlP4oh0",
+            "ref": "47913b71-b5bc-4a62-90bf-cbde73bc5d3f",
+            "label": "Ventes ponctuelles sur-mesure mais à forte valeur (B2B, industrie)"
+          },
+          {
+            "id": "dUA0aLYHdayf",
+            "ref": "e8ade3dd-aa66-4a86-a31f-23e9fcbc3f0c",
+            "label": "Facturation au temps passé (TJM, facturation horaire)"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "OQhucHSBlMkm",
+      "title": "L'offre est-elle standardisée ?",
+      "ref": "03578382-416d-4238-a8a2-7ac8d74350b7",
+      "properties": {
+        "description": "Dans quelle mesure le produit/ service est-il identique d’un client à l’autre. ",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "d8vXYjJj4MqP",
+            "ref": "e5db4a99-eabe-4a19-8250-5ed87809e61b",
+            "label": "100% identique (produit unique, abonnement, offre packagée)"
+          },
+          {
+            "id": "ev3pcloqGZ7P",
+            "ref": "42e8077a-1141-4e0e-a95d-c57813ff3a7c",
+            "label": "Majoritairement identique, quelques variantes"
+          },
+          {
+            "id": "4NnIndMTOFk4",
+            "ref": "61503acd-454b-49f4-ad89-89fec6527828",
+            "label": "50/50 standardisation / personnalisation"
+          },
+          {
+            "id": "dOsxmijeCN0V",
+            "ref": "2b349ee3-b585-4c60-a03c-8de673fd9b76",
+            "label": "Majorité sur-mesure avec quelques éléments standards"
+          },
+          {
+            "id": "cI2I6eh4IBU2",
+            "ref": "e1006c43-4a9d-40f7-b9c0-fbb415522b39",
+            "label": "100% sur-mesure, unique à chaque client"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "v7rQmTCxUsBc",
+      "title": "Le CA est-il récurrent et prévisible ?",
+      "ref": "cd04360c-1660-4b3d-95fb-3761160211b2",
+      "properties": {
+        "description": "Peux-tu prédire le chiffre d’affaires du mois ou trimestre prochain ?",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "VHuThlKmi2VB",
+            "ref": "4357b90f-ba6e-414c-a2c6-d19396aa6cae",
+            "label": "Oui, >90% de précision (abonnements, contrats fermes, commandes récurrentes)"
+          },
+          {
+            "id": "bghUWGznsh3e",
+            "ref": "e65b6a20-4f7d-4c63-bb0c-a3c20fbf6d9c",
+            "label": "Oui, entre 70 et 90%"
+          },
+          {
+            "id": "i5VgXMh69JkJ",
+            "ref": "6a6ab5a3-fd08-47a7-ba30-f756c3c75eb7",
+            "label": "Oui, entre 50 et 70%"
+          },
+          {
+            "id": "rWzzc86dpxQX",
+            "ref": "dedb0178-7554-4fbd-9096-e42db71284dd",
+            "label": "Non, forte variabilité"
+          },
+          {
+            "id": "oSC9D6oyfG3j",
+            "ref": "bbfcdb81-bdf1-43e1-a3c5-6f17aaa406e4",
+            "label": "Non, totalement imprévisible"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "vNxqSwzQfINF",
+      "title": "Les marges sont-elles élevées ?",
+      "ref": "9997db4d-1248-4207-affc-481ae22edb69",
+      "properties": {
+        "description": "Quelle est la marge nette moyenne (après toutes charges fixes et variables)",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "FUsqGePWEich",
+            "ref": "4f6e2c7e-9365-4918-8878-52ad6b866992",
+            "label": "+50%"
+          },
+          {
+            "id": "ICA4klDNsTAI",
+            "ref": "142bf2da-87e5-414a-9f90-4cae88824929",
+            "label": "35–50%"
+          },
+          {
+            "id": "CjDb3ZzrMU1L",
+            "ref": "c01b9559-4635-498c-9b7b-68f0513e0524",
+            "label": "20–35%"
+          },
+          {
+            "id": "2zhRSI7vXo5E",
+            "ref": "5d614a50-6523-46dd-b1ec-8ce0d9d67006",
+            "label": "10-20%"
+          },
+          {
+            "id": "dobfLfwlYXKp",
+            "ref": "e16122ea-b2da-45e8-8910-c58d672fe5b3",
+            "label": "-10%"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "btwtSakruJhW",
+      "title": "Le CA dépend-il directement du temps de travail de l'équipe ?",
+      "ref": "361164ce-bd61-463d-97fa-465637590bba",
+      "properties": {
+        "description": "Si ton chiffre d’affaires doublait, faudra-t-il doubler la main-d’œuvre ou le temps passé...",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "Io7Jd423lAS3",
+            "ref": "9fc706d1-3700-4a86-9895-f74b30891495",
+            "label": "Non, aucune augmentation significative de ressources"
+          },
+          {
+            "id": "15s8jopUzDkc",
+            "ref": "66aaa669-0e87-499a-83b1-6f3d294e2bb2",
+            "label": "Augmentation marginale (<20% de plus)"
+          },
+          {
+            "id": "bp5wG3xGhBcG",
+            "ref": "5200c037-d037-4c8a-83f1-d8292059d3ff",
+            "label": "Augmentation modérée (20–50% de plus)"
+          },
+          {
+            "id": "VFKmE8gmeeLJ",
+            "ref": "cf757796-659f-42bd-ab1a-541cbf825a63",
+            "label": "Augmentation importante (50–80% de plus)"
+          },
+          {
+            "id": "1QlMhiY1VtUc",
+            "ref": "f398fa45-b287-4e48-a7e7-5f3d67b8e815",
+            "label": "Oui, quasiment 1:1"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "FITWYgy5lRw6",
+      "title": "Quelle part des charges est fixe ? (en pourcentage)",
+      "ref": "12d502d9-dc33-4d5c-af31-d567da3b89d9",
+      "properties": {
+        "description": "Parmi toutes tes charges mensuelles, quelle proportion est fixe (salaires permanents, loyers, abonnements incompressibles). ",
+        "start_at_one": false,
+        "steps": 11,
+        "labels": {
+          "left": "0 à 10%",
+          "center": "50%",
+          "right": "100%"
+        }
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "opinion_scale"
+    },
+    {
+      "id": "CwwldIKHTBiw",
+      "title": " Comment évolue ton coût unitaire si ton volume augmente ?",
+      "ref": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d",
+      "properties": {
+        "description": "Si tu doublais ton nombre de clients ou ton volume de ventes, que se passerait-il pour ton coût unitaire de production.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "cNvOeeXMnQU7",
+            "ref": "6de96e3f-ead2-4b6d-b9ff-ae664a3546fe",
+            "label": "Il baisserait beaucoup"
+          },
+          {
+            "id": "H6dDsJEbvAsa",
+            "ref": "eda8d1a0-eb50-40d5-bf3d-5e844c5ffb49",
+            "label": "Il baisserait légèrement"
+          },
+          {
+            "id": "2xM3El2Xreoa",
+            "ref": "0dfdc64b-fb71-4137-b03e-645e7bcd61d9",
+            "label": "Il resterait identique"
+          },
+          {
+            "id": "Axp1k2yYBJwP",
+            "ref": "c0aa7f85-b727-4c6f-8dfe-b62a15374017",
+            "label": "Il augmenterait légèrement"
+          },
+          {
+            "id": "bwftEoh8o3ww",
+            "ref": "9b75716f-4b8f-4b8c-bdac-082c8f3379bb",
+            "label": "Il augmenterait fortement"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "McCFFY0DeYRa",
+      "title": "Peux-tu réduire tes coûts rapidement en cas de baisse d’activité ?",
+      "ref": "b9bffe14-550f-4bad-b7a4-011e9b631708",
+      "properties": {
+        "description": "Si ton activité baissait de 30%, pourrais-tu réduire rapidement tes charges principales.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "UdkDHyIvVYDp",
+            "ref": "8ccd9cf6-4693-47ef-bb5b-40b949c0f1e2",
+            "label": "Oui"
+          },
+          {
+            "id": "bcQt1KgwL79E",
+            "ref": "69fb039c-4845-4565-9afd-019277d8fb71",
+            "label": "Non"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "je1ZrJ5C3xfq",
+      "title": "Si non, qu’est-ce qui te bloque le plus ?",
+      "ref": "c6cb749a-ab7a-41fc-a09a-346515152172",
+      "properties": {
+        "description": "N'hésites pas à faire une longue réponse."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "0x9zNPvp7IVf",
+      "title": "Comment évolue ta rentabilité avec la croissance ?",
+      "ref": "e11dd474-d6fa-4861-af8b-db469f2293ba",
+      "properties": {
+        "description": "Sélectionne l'affirmation la plus proche de ta situation.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "MZboTtuYcL1V",
+            "ref": "c1106a9a-a11c-4de6-ac54-a14b5de9da11",
+            "label": "Elle s’améliore fortement"
+          },
+          {
+            "id": "j1hzOaqgBaLo",
+            "ref": "de31128c-eff5-4c3f-a702-eda36f4de984",
+            "label": "Elle s’améliore légèrement"
+          },
+          {
+            "id": "wrz8hBZhXBsk",
+            "ref": "d4e2016a-d333-4aa4-86d4-aa4a71c138ba",
+            "label": "Elle reste identique"
+          },
+          {
+            "id": "cXUIT91ieVt0",
+            "ref": "d276e8d8-20c0-4b79-a43b-38051974aa28",
+            "label": "Elle baisse légèrement"
+          },
+          {
+            "id": "hNXfoI1p8DXX",
+            "ref": "73a1d530-2653-4faf-95a7-a919420601e9",
+            "label": "Elle baisse fortement"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "Yuw2tNM9YaLd",
+      "title": "Maintenant, on regarde tes *process* et tes *outils*.",
+      "ref": "7d71310e-9a70-46e8-b105-0bdfd230866c",
+      "properties": {
+        "description": "C’est ici qu’on voit si ton business peut absorber plus de clients sans friction.",
+        "button_text": "Continue",
+        "hide_marks": false
+      },
+      "type": "statement"
+    },
+    {
+      "id": "i6xQmTGKX514",
+      "title": "Comment gères-tu aujourd’hui tes opérations ?",
+      "ref": "9abd7612-617a-4ec6-86ba-c367bff8bb8a",
+      "properties": {
+        "description": "Cela inclut la gestion commerciale, la production, la facturation, le suivi des clients, etc.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "supersized": false,
+        "show_labels": true,
+        "choices": [
+          {
+            "id": "rS7A1FcAmqRx",
+            "ref": "a8990df6-a861-46f9-b2e9-26d0ca07278c",
+            "label": "Système complet et intégré (CRM, ERP, suivi centralisé)",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/UdQsitqK7aWU",
+              "properties": {
+                "description": "laptop computer on glass-top table"
+              }
+            }
+          },
+          {
+            "id": "lualkE02Hnc1",
+            "ref": "c7b00de1-44c2-4099-9c9a-fb506efc1a03",
+            "label": "Outils partiellement connectés (certains échanges automatisés)",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/EKLaVR4Kzt4t",
+              "properties": {
+                "description": "person using MacBook Pro"
+              }
+            }
+          },
+          {
+            "id": "JlPquV3nssD6",
+            "ref": "f921de7d-f240-44db-b312-c8473c52f83f",
+            "label": "Outils isolés et process manuels (Excel, e-mails, téléphone)",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/e9iHZWZXGjQz",
+              "properties": {
+                "description": "white printing paper with numbers"
+              }
+            }
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "picture_choice"
+    },
+    {
+      "id": "n6jrdlEDYwjk",
+      "title": "Quel est ton niveau d’automatisation des tâches récurrentes ?",
+      "ref": "971916b2-e53e-43d6-a027-b9aa445181f1",
+      "properties": {
+        "description": "Estimation du pourcentage de tâches répétitives déjà automatisées (facturation, relances, suivi clients, etc.)",
+        "start_at_one": false,
+        "steps": 11,
+        "labels": {
+          "left": "0 à 10%",
+          "center": "50%",
+          "right": "100%"
+        }
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "opinion_scale"
+    },
+    {
+      "id": "NWXwWXiiQwUp",
+      "title": "Ton infrastructure peut-elle absorber plus de volume ? ",
+      "ref": "15b8f9e8-045c-439a-a022-e70b8f4c3f84",
+      "properties": {
+        "description": "Si ton volume d’activité triplait demain, tes outils et systèmes pourraient-ils suivre.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "jvmrIZxL9BfY",
+            "ref": "9e3d5dfc-a642-49f3-b63d-e9f6d9450398",
+            "label": "Oui, sans changement majeur"
+          },
+          {
+            "id": "da2Um6RHZBAV",
+            "ref": "ef82f1a5-c370-48d4-a09a-f2b4bcdbc39c",
+            "label": "Oui, avec quelques ajustements"
+          },
+          {
+            "id": "CjyFpNkHlqMH",
+            "ref": "43e7b72c-bdef-4558-98f4-8442bb4d99fd",
+            "label": "Oui, mais avec beaucoup de changements"
+          },
+          {
+            "id": "72q3sDfpYHO3",
+            "ref": "dab3e371-33c7-4bd2-9611-804fd58ede69",
+            "label": "Non, il faudrait tout revoir"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "rf32SGcJ6o6V",
+      "title": "Tes opérations peuvent-elles tourner sans toi ?",
+      "ref": "fc4c7285-e0d9-4271-80df-a6fd73d79cc7",
+      "properties": {
+        "description": "Peux-tu t’absenter 1 mois sans que l’activité soit bloquée ou ralentie",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "3d4Q6WUNoUvO",
+            "ref": "a306e7f7-a214-4d69-aa68-68e21966620d",
+            "label": "Oui"
+          },
+          {
+            "id": "7aVNZisbw7xr",
+            "ref": "c9f321af-fc09-4bf8-87da-31ae4c5a4cf2",
+            "label": "Non"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "hAixTZDikWbq",
+      "title": "Si non, qu’est-ce qui te rend indispensable aujourd’hui ?",
+      "ref": "e31c58b2-2b5a-432c-97df-fc0a7fa575f4",
+      "properties": {
+        "description": "N'hésites pas à faire une longue réponse."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "QMcS3Mt0KRE0",
+      "title": "Quels outils technologiques utilises-tu déjà ?",
+      "ref": "b553506c-c372-4316-935a-c0eb2ecc0c1d",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": true,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "supersized": false,
+        "show_labels": true,
+        "choices": [
+          {
+            "id": "HuBcgiIJoztH",
+            "ref": "6e41ef0b-eeed-47a2-8344-7dfd3ac170ff",
+            "label": "Intelligence artificielle / machine learning",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/7vZ9KXSxYkLS",
+              "properties": {
+                "description": "a person holding a cell phone in their hand"
+              }
+            }
+          },
+          {
+            "id": "ZSFhJNKO3mH4",
+            "ref": "1b250470-e600-4a55-b8fa-e95bc33d2a19",
+            "label": "Automatisations type Zapier, Make, scripts",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/zP4FnszmB2nq",
+              "properties": {
+                "description": "time lapse photography of square containers at night"
+              }
+            }
+          },
+          {
+            "id": "AXFuYfJfswDo",
+            "ref": "c99dd7c9-1800-4833-ad82-33c62f1fb37d",
+            "label": "Outils d’analytique prédictive ou dashboard temps réel",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/8RSdwJ28H3g3",
+              "properties": {
+                "description": "turned on monitoring screen"
+              }
+            }
+          },
+          {
+            "id": "R8aKLz3YXuC1",
+            "ref": "032e73db-91e2-406f-9f24-74ff021d4061",
+            "label": "Aucun de ces outils",
+            "attachment": {
+              "type": "image",
+              "href": "https://images.typeform.com/images/ZiCyspMYUAue",
+              "properties": {
+                "description": "a person holding a remote control in their hand"
+              }
+            }
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "picture_choice"
+    },
+    {
+      "id": "NpbNMz36GWJ0",
+      "title": "Quel est ton canal principal d’acquisition de clients ?",
+      "ref": "49b1fb9a-d479-48c9-ae6d-9a84fee47a12",
+      "properties": {
+        "description": "Choisis celui qui te génère aujourd’hui la majorité de tes nouveaux clients.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "NY38LgdK18sS",
+            "ref": "3e98f785-6475-4398-9686-69481e4ec353",
+            "label": "Canaux scalables (Paid ads, SEO, affiliation, partenariats digitaux)"
+          },
+          {
+            "id": "Bv3AMfrVRALV",
+            "ref": "e9f48ab0-5598-4d23-9043-40b999c9e980",
+            "label": "Canaux semi-scalables (réseaux sociaux avec contenu régulier, webinaires)"
+          },
+          {
+            "id": "KtyjcIQ0kMiP",
+            "ref": "07432aad-c8d8-482e-b28a-105a208d9b04",
+            "label": "Canaux non-scalables (réseau personnel, bouche-à-oreille)"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "ArLBVVKF60ns",
+      "title": "Ton acquisition peut-elle croître sans plus de temps investi ?",
+      "ref": "3c48fe4a-6753-4a32-82cb-9ca5f2cfa18f",
+      "properties": {
+        "description": "Sélectionne l'un des réponses ci-dessous. ",
+        "randomize": false,
+        "alphabetical_order": true,
+        "choices": [
+          {
+            "id": "nkE3bycCwO8G",
+            "ref": "e59ce4dd-8dd9-4d10-9186-ae16950f329d",
+            "label": "Oui, aucun temps supplémentaire nécessaire"
+          },
+          {
+            "id": "OxD1vKlIjm2R",
+            "ref": "e2bc4631-7082-43c7-a756-3891b19acc55",
+            "label": "Oui, mais un peu plus d’effort (<20% de plus)"
+          },
+          {
+            "id": "nFQM7Owthqn7",
+            "ref": "b2c6c120-33a4-4441-9d85-75507c47adee",
+            "label": "Oui, mais beaucoup plus d’effort (20–50%)"
+          },
+          {
+            "id": "fS7iF4QeDZWY",
+            "ref": "4dff78b6-697d-442e-8cfd-d710d3e01c1c",
+            "label": "Non, presque 1:1"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "dropdown"
+    },
+    {
+      "id": "pmmsaYPNM23a",
+      "title": "Ton coût d’acquisition client (CAC) est-il maîtrisé ?",
+      "ref": "d975ab72-18d5-45a3-a774-9a25ab369023",
+      "properties": {
+        "description": "Le CAC, c’est le coût moyen pour obtenir un nouveau client.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "nrbaMQzURvh8",
+            "ref": "a3f50e3b-a69d-4997-b320-cd225bc0fd88",
+            "label": "Oui"
+          },
+          {
+            "id": "tLUVp5wpQzKD",
+            "ref": "83d0edc6-2946-460a-a59d-51121fa3153f",
+            "label": "Non"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "6Sa8VZlX5IN6",
+      "title": "Si non, qu’est-ce qui rend son calcul ou sa maîtrise difficile ?",
+      "ref": "f05d549d-0414-470c-803e-32ae68df8e7a",
+      "properties": {
+        "description": "N'hésites pas à faire une longue réponse."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "1pfSk0QM23i8",
+      "title": "Tes canaux de conversion sont-ils automatisés ?",
+      "ref": "166229b8-26fe-475f-854d-17134d561455",
+      "properties": {
+        "description": "Choisi l'affirmation qui correspondent à ta situation.",
+        "randomize": false,
+        "alphabetical_order": false,
+        "choices": [
+          {
+            "id": "65E3XAi2Ymd9",
+            "ref": "f280bde6-3781-48c0-9f44-f6cddfd4210e",
+            "label": "Mon process de conversion est totalement automatisé (funnel, onboarding, paiement)"
+          },
+          {
+            "id": "vXcG498e2C35",
+            "ref": "e6a7d072-debf-4182-b879-3dffb6da5204",
+            "label": "Une partie est automatisée (envoi automatique d’e-mails, formulaires pré-remplis, etc.)"
+          },
+          {
+            "id": "Q55H10FZDoEE",
+            "ref": "5f238c03-3d98-48e8-a249-50c9d81008f1",
+            "label": "J’utilise un CRM ou outil de suivi qui m’aide à suivre les prospects"
+          },
+          {
+            "id": "aHbxnGnk3nVp",
+            "ref": "2ba18e86-512b-4cef-a2a8-9618b0cb9089",
+            "label": "Je fais encore beaucoup de suivi manuel"
+          },
+          {
+            "id": "8HIwtUqQ2lvc",
+            "ref": "98fe15e6-1386-42e6-8307-492dc8177879",
+            "label": "Je gère tout en direct avec chaque client"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "dropdown"
+    },
+    {
+      "id": "SRdDGlsFlzKH",
+      "title": "Quel est le type principal de ton offre ?",
+      "ref": "cd75b6a6-5db6-4d58-a2ad-bf3a03247581",
+      "properties": {
+        "description": " Sélectionne la catégorie qui correspond le mieux à ce que tu vends aujourd’hui.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "YvPbdGYP4jqQ",
+            "ref": "fa575a0f-1f72-4116-8eb2-c64ba6886728",
+            "label": "Produit physique"
+          },
+          {
+            "id": "5NKNqyg2LQO3",
+            "ref": "356bbc04-7f49-4611-9f25-071160a8d411",
+            "label": "Produit digital / logiciel"
+          },
+          {
+            "id": "7YwaxQoy2Ns0",
+            "ref": "f56fa919-9b05-48ae-8f10-bb5c7c1e49e4",
+            "label": "Service"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "yWpxJZ1bfi4R",
+      "title": "Ton offre peut-elle être délivrée sans intervention humaine ? ",
+      "ref": "1469a9e0-7f14-4247-a3a5-7c936bf410a2",
+      "properties": {
+        "description": "Pense à la livraison du produit ou service : peux-tu servir un nouveau client sans intervention manuelle importante.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "ri9ayuuqRQJY",
+            "ref": "18db9760-4ebf-45e1-8dff-90fb67b865ce",
+            "label": "Oui, entièrement automatisé ou en libre-service"
+          },
+          {
+            "id": "l5qAc7D7TnVw",
+            "ref": "a3c95185-f4c2-4f8b-accb-8627e907028a",
+            "label": "Partiellement automatisé (une partie du processus est manuelle)"
+          },
+          {
+            "id": "7eFQnDmFPBtl",
+            "ref": "d576e088-5cb6-46c3-ba74-560c90e4ac22",
+            "label": "Non, totalement manuel ou sur-mesure"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "hnoKzuC9QbPE",
+      "title": "Comment gères-tu la livraison ?",
+      "ref": "5bc72e99-bcef-48b8-b003-14d7f2c7dac1",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "RGWky8mRbjLs",
+            "ref": "c79df024-28bc-4664-9fda-ab7a1252969f",
+            "label": "Expédition automatisée via prestataire logistique"
+          },
+          {
+            "id": "AzLIdLNZIa3K",
+            "ref": "7813cdd0-6f3f-4e21-838a-bfbe195477b6",
+            "label": "Expédition interne avec process optimisé"
+          },
+          {
+            "id": "tbpy3psbYzpZ",
+            "ref": "35176f4e-4e16-42af-909b-44878d487e16",
+            "label": "Expédition manuelle au cas par cas"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "OwPpnfUagdFw",
+      "title": "Ton produit ou service est-il adaptable à d’autres marchés ou segments ? ",
+      "ref": "fa11f45f-e55f-4a23-a0d4-e4e0aa27d93a",
+      "properties": {
+        "description": "Par “adaptable”, on entend qu’il peut être vendu à d’autres types de clients ou dans d’autres zones géographiques sans transformation majeure.",
+        "randomize": false,
+        "alphabetical_order": false,
+        "choices": [
+          {
+            "id": "Vn6KTgeWvwfB",
+            "ref": "db5f7504-e86e-4b99-ba4d-24e5ac544745",
+            "label": "Oui, sans adaptation majeure"
+          },
+          {
+            "id": "z8TC8AHGOgn1",
+            "ref": "43ac9107-de90-47b4-bf17-db9f55b96771",
+            "label": "Oui, mais avec quelques ajustements"
+          },
+          {
+            "id": "5WQNEAcu8VDn",
+            "ref": "9fbf5c3f-66ed-4a41-b4ce-14d29fc5872d",
+            "label": "Non, très spécifique à un marché"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "dropdown"
+    },
+    {
+      "id": "DQ47HMN447i0",
+      "title": "On passe à ton *équipe* et à ton *organisation*.",
+      "ref": "2a9b5915-4f57-45ef-a949-2d62eced9bc5",
+      "properties": {
+        "description": "L’objectif : voir si ton business peut tourner sans toi et soutenir la croissance.",
+        "button_text": "Continuer",
+        "hide_marks": false
+      },
+      "type": "statement"
+    },
+    {
+      "id": "0HUaw96fylr7",
+      "title": "Un client peut-il utiliser ton produit ou service sans ton aide ?",
+      "ref": "3f87d327-ff95-4bcc-9624-1cd233c6600d",
+      "properties": {
+        "description": "Mesure l’autonomie du client après achat.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "mCPcg9xwedj1",
+            "ref": "04a90779-0a9a-408f-8ab5-663075855bd3",
+            "label": "Oui, il est 100% autonome"
+          },
+          {
+            "id": "9nUXUZ8KYPqK",
+            "ref": "18ffa81a-1009-4819-ae4d-22f53b2beef3",
+            "label": "Oui, mais il a besoin d’un support ponctuel"
+          },
+          {
+            "id": "9AH5ZeX4bjST",
+            "ref": "f98bc09e-336f-4be7-808b-7b17793000ea",
+            "label": "Non, il a besoin d’un accompagnement régulier"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "RolTy1h63O0a",
+      "title": "Ton produit digital inclut-il une documentation ou un onboarding automatisé ?",
+      "ref": "52bb9f00-a879-400e-bd67-8670efa6cbb8",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "Fp5pJTfsfPlJ",
+            "ref": "2933b3d4-6d6b-4a30-ab35-a12e54b4942e",
+            "label": "Oui"
+          },
+          {
+            "id": "fJyST77X9WJe",
+            "ref": "ec03ecaf-2c1c-4001-bb7e-144aeafdf300",
+            "label": "Non"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "HSZdSCRl0FGO",
+      "title": "Tes process de service sont-ils standardisés dans des modèles ou méthodes réutilisables ?",
+      "ref": "e863d247-542c-48f4-a6c0-d349bff4c1bc",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": false,
+        "choices": [
+          {
+            "id": "syiYcr8fswWS",
+            "ref": "226a7e34-59c3-4ef4-8fef-837b3fbfcdcb",
+            "label": "Oui"
+          },
+          {
+            "id": "Nl9xBKRtVLYH",
+            "ref": "704c0d29-13c6-4616-bc9e-94a464e469a6",
+            "label": "Non"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "6LItgG5e4yUQ",
+      "title": "Quelle est la structure actuelle de ton équipe ?",
+      "ref": "b59d72f9-317a-494c-a472-003584e759ca",
+      "properties": {
+        "description": "Indique la configuration de ton équipe aujourd’hui.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "adYKwma1aMmf",
+            "ref": "15227e66-31e7-47d2-b028-bd5ae0cecc0c",
+            "label": "Je travaille seul(e)"
+          },
+          {
+            "id": "AgOS2PIn1uIV",
+            "ref": "1a0d3e7d-764c-4116-b63b-30e35d410e4d",
+            "label": "Petite équipe (<5 personnes)"
+          },
+          {
+            "id": "WpYLNgEf2Szz",
+            "ref": "89e15339-401c-4067-987f-6c54e8500b2b",
+            "label": "Équipe structurée (5–20 personnes)"
+          },
+          {
+            "id": "ewzwVAmyT4j7",
+            "ref": "308df2e1-5079-4e5b-90ee-d67931d5edf4",
+            "label": "Organisation structurée (>20 personnes, plusieurs pôles)"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "4ZNUUjJvggYu",
+      "title": "Ton équipe peut-elle maintenir la performance sans toi ?",
+      "ref": "b2cbd5d3-486d-4e37-b36b-fe65065e5755",
+      "properties": {
+        "description": "Même si tes systèmes sont en place, peux-tu t’absenter un mois sans que les résultats commerciaux ou opérationnels chutent.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "kE4WPxzHmHG1",
+            "ref": "037f2307-6773-415a-af71-deccdb89dd3c",
+            "label": "Oui, tout est couvert et géré"
+          },
+          {
+            "id": "v1Q9svLkprQb",
+            "ref": "4674ca03-8112-4c4b-80fc-142e544e78eb",
+            "label": "Oui, mais avec quelques ralentissements"
+          },
+          {
+            "id": "OsOLspgzzyKu",
+            "ref": "29262f2e-1043-4863-9f68-df868a80727b",
+            "label": "Non, ma présence est indispensable"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "GaP8VbdxBklj",
+      "title": "Quelles sont les tâches qui dépendent encore exclusivement de toi ?",
+      "ref": "1072be3f-cadf-4e02-9d73-ff034baa04dd",
+      "properties": {
+        "description": "N'hésites pas à faire une longue réponse."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "si0BoyPDwmua",
+      "title": "Ton équipe a-t-elle des process clairs pour chaque fonction ?",
+      "ref": "27677b7d-904f-448b-b57a-6c0abefff863",
+      "properties": {
+        "description": " Par “process clairs”, on entend des procédures documentées, accessibles et connues de tous (commercial, production, support…).",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "9PlFRR0xxLDE",
+            "ref": "9d841f83-8433-41b2-911a-cf7e08081d48",
+            "label": "Oui, pour toutes les fonctions"
+          },
+          {
+            "id": "6pJtRFVpjSbQ",
+            "ref": "28ad9904-b4a6-44d5-a42d-b88b4019aa22",
+            "label": "Oui, mais seulement pour certaines"
+          },
+          {
+            "id": "UrZj8KSKyDKS",
+            "ref": "b530945c-4504-4edd-b76e-e0b9618ae259",
+            "label": "Non, peu ou pas documenté"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "vxTO1ZwirQZB",
+      "title": "Quelles fonctions sont les mieux structurées aujourd’hui ?",
+      "ref": "cb4b429c-0586-4f57-8ac2-4e2f4a7058a6",
+      "properties": {
+        "description": "N'hésites pas à faire une longue réponse."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "YWLT1xvEe4VG",
+      "title": "Ta structure RH est-elle prête pour une forte croissance ?",
+      "ref": "e97bc63c-d549-4930-9e4a-baaa359e7aac",
+      "properties": {
+        "description": "Si ton volume d’activité doublait, pourrais-tu recruter et intégrer rapidement de nouvelles personnes.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "89Fozh7YJoqC",
+            "ref": "f99e1f4a-2ae8-45fb-b3b0-7617388b35df",
+            "label": "Oui, process de recrutement et onboarding déjà en place"
+          },
+          {
+            "id": "nwyWusfpX2Ym",
+            "ref": "b98be2ff-4415-40b7-8db7-1f2f91c9a011",
+            "label": "Oui, mais à améliorer avant la croissance"
+          },
+          {
+            "id": "2PqsAjinPIqt",
+            "ref": "fec6cf9f-548c-43c1-9932-d69ba1541a6a",
+            "label": "Non, il faudrait tout mettre en place"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "7JpO2klJrJ93",
+      "title": "As-tu un plan RH écrit ou un organigramme prévisionnel pour les 12–24 prochains mois ?",
+      "ref": "8ff522e0-fc61-4536-9554-387ff5baf274",
+      "properties": {
+        "description": "N'hésites pas à faire une longue réponse."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "5vnqCPXzlL8R",
+      "title": "As-tu mis en place un suivi régulier des KPIs stratégiques ? ",
+      "ref": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5",
+      "properties": {
+        "description": "Les KPIs stratégiques incluent par exemple : trésorerie, marge nette, taux de conversion, churn, productivité par employé…",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "XsEEMzGAHynA",
+            "ref": "672a670e-2807-4df6-895a-b40ea460199e",
+            "label": "Oui, suivi automatisé avec tableau de bord"
+          },
+          {
+            "id": "WYKvyIow8x1S",
+            "ref": "54d6ffa4-b909-4e71-b425-ce39be50402c",
+            "label": "Oui, mais collecte manuelle"
+          },
+          {
+            "id": "eXzgWIQjVbkx",
+            "ref": "8dd1e020-f77b-4fe9-bf81-2614c0c5f1a4",
+            "label": "Non, suivi irrégulier ou incomplet"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "O4sTZalwLui0",
+      "title": "Quel.s outil.s utilises-tu ?",
+      "ref": "8f1c48d1-6879-4209-a607-2eccc79a77d9",
+      "properties": {
+        "description": "N'hésites pas à tous les renseigner."
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "WH9EGqncwoEJ",
+      "title": "Ton produit ou service est-il prêt pour l’internationalisation ou un nouveau marché ?",
+      "ref": "0ed52295-0ccc-4419-884c-68a56f0dd613",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "Ob831eXPGJd7",
+            "ref": "e6bba4d4-4c95-456a-a901-71ca14b7dd1e",
+            "label": "Oui, sans adaptation majeure"
+          },
+          {
+            "id": "pSImld3jvoIF",
+            "ref": "6fed7e38-6bfe-491a-a9e1-5ffc6dd3541c",
+            "label": "Oui, mais avec quelques ajustements"
+          },
+          {
+            "id": "rzH748T5jNYZ",
+            "ref": "0b75a7dc-a54c-48ab-b76b-433e893ae6ec",
+            "label": "Non, nécessiterait une refonte majeure"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "EqFX9mEQIrFU",
+      "title": "Ton organisation pourrait-elle gérer 3x plus de clients sans perte de qualité ?",
+      "ref": "446271e3-8808-4d80-9562-84b6e0439af9",
+      "properties": {
+        "description": "Imagine un scénario de forte croissance en 12 mois.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "xSIJKvENBS7E",
+            "ref": "96f0b6ae-23c8-460a-8e40-d90b60a89e80",
+            "label": "Oui, déjà dimensionnée pour"
+          },
+          {
+            "id": "OMWGGFdutr7M",
+            "ref": "31869b66-a292-4c4e-8d4c-a7102e77a269",
+            "label": "Oui, mais avec quelques renforts"
+          },
+          {
+            "id": "2vqfdhQFoAqL",
+            "ref": "d473d3cc-830c-4f5f-b514-7b7e3abb829e",
+            "label": "Non, il faudrait tout réorganiser"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "KXdDkPRyckoz",
+      "title": "Dans quels domaines devrais-tu recruter ou renforcer l’équipe ?",
+      "ref": "b1d24635-37ad-485c-808c-787221cbb991",
+      "properties": {},
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "TQZExbyXD28k",
+      "title": "Peux-tu prévoir ton chiffre d’affaires à 12 mois ?",
+      "ref": "9d737dc5-da7b-427d-8138-f2e9a18e9c9f",
+      "properties": {
+        "description": "Sur la base de ton pipeline, tes contrats et ta récurrence.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "ODYGKImoE3nW",
+            "ref": "13840226-33b7-4c52-8763-eabcf244c4b7",
+            "label": "Oui, avec une précision >90%"
+          },
+          {
+            "id": "QKFU5CqRPW6C",
+            "ref": "cf7e1732-1031-4342-90f9-31cbe41dfa93",
+            "label": "Oui, avec une précision de 70–90%"
+          },
+          {
+            "id": "HQdIa97wjRmo",
+            "ref": "41046971-56fc-48da-856a-7922c5a62f40",
+            "label": "Non, forte incertitude"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "BtjSoaIpvmva",
+      "title": "Les process clés sont-ils formalisés dans des SOPs (Standard Operating Procedures) ?",
+      "ref": "a69c49ef-5408-42d2-ba06-04f7dc3de313",
+      "properties": {
+        "description": " Les SOPs décrivent précisément les étapes pour exécuter une tâche, de façon reproductible.",
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "none_of_the_above": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "id": "SQQ2ABmlsJ5u",
+            "ref": "632ce25a-d624-47d3-9fbe-2b40b0458bdf",
+            "label": "Oui, pour toutes les fonctions"
+          },
+          {
+            "id": "exJ4CbWrLX3B",
+            "ref": "6f04b09e-2659-44d8-ab91-5b2307f559a8",
+            "label": "Oui, pour certaines fonctions seulement"
+          },
+          {
+            "id": "2b83fn0M4yer",
+            "ref": "b0ab6636-bfd0-4376-b09a-c4d28c592db6",
+            "label": "Non, ou quasi inexistant"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "id": "ytRVTnhQkgqV",
+      "title": "Quelles fonctions sont les mieux documentées aujourd’hui ?",
+      "ref": "23adb37e-9ef3-4244-8f5e-294e1d801574",
+      "properties": {},
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "id": "iRobhg848vLa",
+      "title": "Merci , j’ai toutes tes réponses. Calculons ton score de scalabilité…",
+      "ref": "97a6226a-dec3-4af6-823e-d9541f8b3033",
+      "properties": {
+        "description": "Renseigne ton mail pour accéder à ton score."
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "email"
+    },
+    {
+      "id": "NthjhvHn2Jdw",
+      "title": "*Ton score est de **{{var:score}}** !* ",
+      "ref": "46de95c1-3244-4cc0-adc6-afba88a4a5ef",
+      "properties": {
+        "description": "Appuie sur \"Continuer\" pour en savoir plus. ",
+        "button_text": "Continuer",
+        "hide_marks": false
+      },
+      "type": "statement"
+    }
+  ],
+  "variables": {
+    "counter_21d581f6_c24c_431d_8b99_29ae62208289": 0,
+    "counter_2a5be08e_c204_4721_b960_ba9e6f4e3ec9": 0,
+    "counter_4355f097_c330_4f9f_ba73_96c91006b51f": 0,
+    "counter_51697a5b_1d7f_4de6_b23f_f879f81a6562": 0,
+    "score": 0,
+    "tag_lead_quality": "Low",
+    "winning_outcome_id": "6adae2ff-8a1d-45da-9b0e-bd6d691a29f8"
+  },
+  "logic": [
+    {
+      "type": "field",
+      "ref": "b9bffe14-550f-4bad-b7a4-011e9b631708",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b9bffe14-550f-4bad-b7a4-011e9b631708"
+              },
+              {
+                "type": "choice",
+                "value": "8ccd9cf6-4693-47ef-bb5b-40b949c0f1e2"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b9bffe14-550f-4bad-b7a4-011e9b631708"
+              },
+              {
+                "type": "choice",
+                "value": "69fb039c-4845-4565-9afd-019277d8fb71"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "e11dd474-d6fa-4861-af8b-db469f2293ba"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b9bffe14-550f-4bad-b7a4-011e9b631708"
+              },
+              {
+                "type": "choice",
+                "value": "8ccd9cf6-4693-47ef-bb5b-40b949c0f1e2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "fc4c7285-e0d9-4271-80df-a6fd73d79cc7",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "fc4c7285-e0d9-4271-80df-a6fd73d79cc7"
+              },
+              {
+                "type": "choice",
+                "value": "a306e7f7-a214-4d69-aa68-68e21966620d"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "fc4c7285-e0d9-4271-80df-a6fd73d79cc7"
+              },
+              {
+                "type": "choice",
+                "value": "c9f321af-fc09-4bf8-87da-31ae4c5a4cf2"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "b553506c-c372-4316-935a-c0eb2ecc0c1d"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "fc4c7285-e0d9-4271-80df-a6fd73d79cc7"
+              },
+              {
+                "type": "choice",
+                "value": "a306e7f7-a214-4d69-aa68-68e21966620d"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "d975ab72-18d5-45a3-a774-9a25ab369023",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "d975ab72-18d5-45a3-a774-9a25ab369023"
+              },
+              {
+                "type": "choice",
+                "value": "a3f50e3b-a69d-4997-b320-cd225bc0fd88"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "d975ab72-18d5-45a3-a774-9a25ab369023"
+              },
+              {
+                "type": "choice",
+                "value": "83d0edc6-2946-460a-a59d-51121fa3153f"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "166229b8-26fe-475f-854d-17134d561455"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "d975ab72-18d5-45a3-a774-9a25ab369023"
+              },
+              {
+                "type": "choice",
+                "value": "a3f50e3b-a69d-4997-b320-cd225bc0fd88"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "1469a9e0-7f14-4247-a3a5-7c936bf410a2",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "1469a9e0-7f14-4247-a3a5-7c936bf410a2"
+              },
+              {
+                "type": "choice",
+                "value": "18db9760-4ebf-45e1-8dff-90fb67b865ce"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "1469a9e0-7f14-4247-a3a5-7c936bf410a2"
+              },
+              {
+                "type": "choice",
+                "value": "a3c95185-f4c2-4f8b-accb-8627e907028a"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "1469a9e0-7f14-4247-a3a5-7c936bf410a2"
+              },
+              {
+                "type": "choice",
+                "value": "d576e088-5cb6-46c3-ba74-560c90e4ac22"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "5bc72e99-bcef-48b8-b003-14d7f2c7dac1"
+            }
+          },
+          "condition": {
+            "op": "or",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "1469a9e0-7f14-4247-a3a5-7c936bf410a2"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "18db9760-4ebf-45e1-8dff-90fb67b865ce"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "1469a9e0-7f14-4247-a3a5-7c936bf410a2"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "a3c95185-f4c2-4f8b-accb-8627e907028a"
+                  }
+                ]
+              },
+              {
+                "op": "and",
+                "vars": [
+                  {
+                    "op": "is",
+                    "vars": [
+                      {
+                        "type": "field",
+                        "value": "1469a9e0-7f14-4247-a3a5-7c936bf410a2"
+                      },
+                      {
+                        "type": "choice",
+                        "value": "d576e088-5cb6-46c3-ba74-560c90e4ac22"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "is",
+                    "vars": [
+                      {
+                        "type": "field",
+                        "value": "cd75b6a6-5db6-4d58-a2ad-bf3a03247581"
+                      },
+                      {
+                        "type": "choice",
+                        "value": "fa575a0f-1f72-4116-8eb2-c64ba6886728"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "fa11f45f-e55f-4a23-a0d4-e4e0aa27d93a"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "b2cbd5d3-486d-4e37-b36b-fe65065e5755",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b2cbd5d3-486d-4e37-b36b-fe65065e5755"
+              },
+              {
+                "type": "choice",
+                "value": "037f2307-6773-415a-af71-deccdb89dd3c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b2cbd5d3-486d-4e37-b36b-fe65065e5755"
+              },
+              {
+                "type": "choice",
+                "value": "4674ca03-8112-4c4b-80fc-142e544e78eb"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b2cbd5d3-486d-4e37-b36b-fe65065e5755"
+              },
+              {
+                "type": "choice",
+                "value": "29262f2e-1043-4863-9f68-df868a80727b"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "27677b7d-904f-448b-b57a-6c0abefff863"
+            }
+          },
+          "condition": {
+            "op": "or",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "b2cbd5d3-486d-4e37-b36b-fe65065e5755"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "037f2307-6773-415a-af71-deccdb89dd3c"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "b2cbd5d3-486d-4e37-b36b-fe65065e5755"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "4674ca03-8112-4c4b-80fc-142e544e78eb"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "27677b7d-904f-448b-b57a-6c0abefff863",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "27677b7d-904f-448b-b57a-6c0abefff863"
+              },
+              {
+                "type": "choice",
+                "value": "9d841f83-8433-41b2-911a-cf7e08081d48"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "27677b7d-904f-448b-b57a-6c0abefff863"
+              },
+              {
+                "type": "choice",
+                "value": "28ad9904-b4a6-44d5-a42d-b88b4019aa22"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "27677b7d-904f-448b-b57a-6c0abefff863"
+              },
+              {
+                "type": "choice",
+                "value": "b530945c-4504-4edd-b76e-e0b9618ae259"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "e97bc63c-d549-4930-9e4a-baaa359e7aac"
+            }
+          },
+          "condition": {
+            "op": "or",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "27677b7d-904f-448b-b57a-6c0abefff863"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "9d841f83-8433-41b2-911a-cf7e08081d48"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "27677b7d-904f-448b-b57a-6c0abefff863"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "b530945c-4504-4edd-b76e-e0b9618ae259"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "e97bc63c-d549-4930-9e4a-baaa359e7aac",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e97bc63c-d549-4930-9e4a-baaa359e7aac"
+              },
+              {
+                "type": "choice",
+                "value": "f99e1f4a-2ae8-45fb-b3b0-7617388b35df"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e97bc63c-d549-4930-9e4a-baaa359e7aac"
+              },
+              {
+                "type": "choice",
+                "value": "b98be2ff-4415-40b7-8db7-1f2f91c9a011"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e97bc63c-d549-4930-9e4a-baaa359e7aac"
+              },
+              {
+                "type": "choice",
+                "value": "fec6cf9f-548c-43c1-9932-d69ba1541a6a"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e97bc63c-d549-4930-9e4a-baaa359e7aac"
+              },
+              {
+                "type": "choice",
+                "value": "fec6cf9f-548c-43c1-9932-d69ba1541a6a"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5"
+              },
+              {
+                "type": "choice",
+                "value": "672a670e-2807-4df6-895a-b40ea460199e"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5"
+              },
+              {
+                "type": "choice",
+                "value": "54d6ffa4-b909-4e71-b425-ce39be50402c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5"
+              },
+              {
+                "type": "choice",
+                "value": "8dd1e020-f77b-4fe9-bf81-2614c0c5f1a4"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "0ed52295-0ccc-4419-884c-68a56f0dd613"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "ca9d04d0-dcdf-40ea-aa93-f1f76c1081f5"
+              },
+              {
+                "type": "choice",
+                "value": "8dd1e020-f77b-4fe9-bf81-2614c0c5f1a4"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "8f1c48d1-6879-4209-a607-2eccc79a77d9"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "446271e3-8808-4d80-9562-84b6e0439af9",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "446271e3-8808-4d80-9562-84b6e0439af9"
+              },
+              {
+                "type": "choice",
+                "value": "96f0b6ae-23c8-460a-8e40-d90b60a89e80"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "446271e3-8808-4d80-9562-84b6e0439af9"
+              },
+              {
+                "type": "choice",
+                "value": "31869b66-a292-4c4e-8d4c-a7102e77a269"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "446271e3-8808-4d80-9562-84b6e0439af9"
+              },
+              {
+                "type": "choice",
+                "value": "d473d3cc-830c-4f5f-b514-7b7e3abb829e"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "b1d24635-37ad-485c-808c-787221cbb991"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "446271e3-8808-4d80-9562-84b6e0439af9"
+              },
+              {
+                "type": "choice",
+                "value": "31869b66-a292-4c4e-8d4c-a7102e77a269"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "9d737dc5-da7b-427d-8138-f2e9a18e9c9f"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "a69c49ef-5408-42d2-ba06-04f7dc3de313",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "a69c49ef-5408-42d2-ba06-04f7dc3de313"
+              },
+              {
+                "type": "choice",
+                "value": "632ce25a-d624-47d3-9fbe-2b40b0458bdf"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "a69c49ef-5408-42d2-ba06-04f7dc3de313"
+              },
+              {
+                "type": "choice",
+                "value": "6f04b09e-2659-44d8-ab91-5b2307f559a8"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "a69c49ef-5408-42d2-ba06-04f7dc3de313"
+              },
+              {
+                "type": "choice",
+                "value": "b0ab6636-bfd0-4376-b09a-c4d28c592db6"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "23adb37e-9ef3-4244-8f5e-294e1d801574"
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "a69c49ef-5408-42d2-ba06-04f7dc3de313"
+              },
+              {
+                "type": "choice",
+                "value": "6f04b09e-2659-44d8-ab91-5b2307f559a8"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "97a6226a-dec3-4af6-823e-d9541f8b3033"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "3f87d327-ff95-4bcc-9624-1cd233c6600d",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+              },
+              {
+                "type": "choice",
+                "value": "04a90779-0a9a-408f-8ab5-663075855bd3"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+              },
+              {
+                "type": "choice",
+                "value": "18ffa81a-1009-4819-ae4d-22f53b2beef3"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+              },
+              {
+                "type": "choice",
+                "value": "f98bc09e-336f-4be7-808b-7b17793000ea"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "52bb9f00-a879-400e-bd67-8670efa6cbb8"
+            }
+          },
+          "condition": {
+            "op": "or",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "04a90779-0a9a-408f-8ab5-663075855bd3"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "18ffa81a-1009-4819-ae4d-22f53b2beef3"
+                  }
+                ]
+              },
+              {
+                "op": "and",
+                "vars": [
+                  {
+                    "op": "is",
+                    "vars": [
+                      {
+                        "type": "field",
+                        "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                      },
+                      {
+                        "type": "choice",
+                        "value": "f98bc09e-336f-4be7-808b-7b17793000ea"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "is",
+                    "vars": [
+                      {
+                        "type": "field",
+                        "value": "cd75b6a6-5db6-4d58-a2ad-bf3a03247581"
+                      },
+                      {
+                        "type": "choice",
+                        "value": "356bbc04-7f49-4611-9f25-071160a8d411"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "e863d247-542c-48f4-a6c0-d349bff4c1bc"
+            }
+          },
+          "condition": {
+            "op": "or",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "04a90779-0a9a-408f-8ab5-663075855bd3"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "18ffa81a-1009-4819-ae4d-22f53b2beef3"
+                  }
+                ]
+              },
+              {
+                "op": "and",
+                "vars": [
+                  {
+                    "op": "is",
+                    "vars": [
+                      {
+                        "type": "field",
+                        "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                      },
+                      {
+                        "type": "choice",
+                        "value": "f98bc09e-336f-4be7-808b-7b17793000ea"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "is",
+                    "vars": [
+                      {
+                        "type": "field",
+                        "value": "cd75b6a6-5db6-4d58-a2ad-bf3a03247581"
+                      },
+                      {
+                        "type": "choice",
+                        "value": "f56fa919-9b05-48ae-8f10-bb5c7c1e49e4"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "b59d72f9-317a-494c-a472-003584e759ca"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "04a90779-0a9a-408f-8ab5-663075855bd3"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "18ffa81a-1009-4819-ae4d-22f53b2beef3"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "3f87d327-ff95-4bcc-9624-1cd233c6600d"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "f98bc09e-336f-4be7-808b-7b17793000ea"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "cd75b6a6-5db6-4d58-a2ad-bf3a03247581"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "fa575a0f-1f72-4116-8eb2-c64ba6886728"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "f2cd035f-c980-406b-a378-da057a9ab90e",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "f2cd035f-c980-406b-a378-da057a9ab90e"
+              },
+              {
+                "type": "choice",
+                "value": "553cd582-2093-4a4f-a47f-965a3b385c10"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "f2cd035f-c980-406b-a378-da057a9ab90e"
+              },
+              {
+                "type": "choice",
+                "value": "dfafff7d-044c-4ad8-8b8d-ba0d598d1bea"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "f2cd035f-c980-406b-a378-da057a9ab90e"
+              },
+              {
+                "type": "choice",
+                "value": "92cbeffb-0c6c-4ac1-8e14-f53c7674e465"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "f2cd035f-c980-406b-a378-da057a9ab90e"
+              },
+              {
+                "type": "choice",
+                "value": "47913b71-b5bc-4a62-90bf-cbde73bc5d3f"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "f2cd035f-c980-406b-a378-da057a9ab90e"
+              },
+              {
+                "type": "choice",
+                "value": "e8ade3dd-aa66-4a86-a31f-23e9fcbc3f0c"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "03578382-416d-4238-a8a2-7ac8d74350b7",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "03578382-416d-4238-a8a2-7ac8d74350b7"
+              },
+              {
+                "type": "choice",
+                "value": "e5db4a99-eabe-4a19-8250-5ed87809e61b"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "03578382-416d-4238-a8a2-7ac8d74350b7"
+              },
+              {
+                "type": "choice",
+                "value": "42e8077a-1141-4e0e-a95d-c57813ff3a7c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "03578382-416d-4238-a8a2-7ac8d74350b7"
+              },
+              {
+                "type": "choice",
+                "value": "61503acd-454b-49f4-ad89-89fec6527828"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "03578382-416d-4238-a8a2-7ac8d74350b7"
+              },
+              {
+                "type": "choice",
+                "value": "2b349ee3-b585-4c60-a03c-8de673fd9b76"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "03578382-416d-4238-a8a2-7ac8d74350b7"
+              },
+              {
+                "type": "choice",
+                "value": "e1006c43-4a9d-40f7-b9c0-fbb415522b39"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "cd04360c-1660-4b3d-95fb-3761160211b2",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "cd04360c-1660-4b3d-95fb-3761160211b2"
+              },
+              {
+                "type": "choice",
+                "value": "4357b90f-ba6e-414c-a2c6-d19396aa6cae"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "cd04360c-1660-4b3d-95fb-3761160211b2"
+              },
+              {
+                "type": "choice",
+                "value": "e65b6a20-4f7d-4c63-bb0c-a3c20fbf6d9c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "cd04360c-1660-4b3d-95fb-3761160211b2"
+              },
+              {
+                "type": "choice",
+                "value": "6a6ab5a3-fd08-47a7-ba30-f756c3c75eb7"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "cd04360c-1660-4b3d-95fb-3761160211b2"
+              },
+              {
+                "type": "choice",
+                "value": "dedb0178-7554-4fbd-9096-e42db71284dd"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "cd04360c-1660-4b3d-95fb-3761160211b2"
+              },
+              {
+                "type": "choice",
+                "value": "bbfcdb81-bdf1-43e1-a3c5-6f17aaa406e4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "9997db4d-1248-4207-affc-481ae22edb69",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9997db4d-1248-4207-affc-481ae22edb69"
+              },
+              {
+                "type": "choice",
+                "value": "4f6e2c7e-9365-4918-8878-52ad6b866992"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9997db4d-1248-4207-affc-481ae22edb69"
+              },
+              {
+                "type": "choice",
+                "value": "142bf2da-87e5-414a-9f90-4cae88824929"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9997db4d-1248-4207-affc-481ae22edb69"
+              },
+              {
+                "type": "choice",
+                "value": "c01b9559-4635-498c-9b7b-68f0513e0524"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9997db4d-1248-4207-affc-481ae22edb69"
+              },
+              {
+                "type": "choice",
+                "value": "5d614a50-6523-46dd-b1ec-8ce0d9d67006"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9997db4d-1248-4207-affc-481ae22edb69"
+              },
+              {
+                "type": "choice",
+                "value": "e16122ea-b2da-45e8-8910-c58d672fe5b3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "361164ce-bd61-463d-97fa-465637590bba",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "361164ce-bd61-463d-97fa-465637590bba"
+              },
+              {
+                "type": "choice",
+                "value": "9fc706d1-3700-4a86-9895-f74b30891495"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "361164ce-bd61-463d-97fa-465637590bba"
+              },
+              {
+                "type": "choice",
+                "value": "66aaa669-0e87-499a-83b1-6f3d294e2bb2"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "361164ce-bd61-463d-97fa-465637590bba"
+              },
+              {
+                "type": "choice",
+                "value": "5200c037-d037-4c8a-83f1-d8292059d3ff"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "361164ce-bd61-463d-97fa-465637590bba"
+              },
+              {
+                "type": "choice",
+                "value": "cf757796-659f-42bd-ab1a-541cbf825a63"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "361164ce-bd61-463d-97fa-465637590bba"
+              },
+              {
+                "type": "choice",
+                "value": "f398fa45-b287-4e48-a7e7-5f3d67b8e815"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "12d502d9-dc33-4d5c-af31-d567da3b89d9",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 3
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 4
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 6
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 7
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 8
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 9
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "12d502d9-dc33-4d5c-af31-d567da3b89d9"
+              },
+              {
+                "type": "constant",
+                "value": 10
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d"
+              },
+              {
+                "type": "choice",
+                "value": "6de96e3f-ead2-4b6d-b9ff-ae664a3546fe"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d"
+              },
+              {
+                "type": "choice",
+                "value": "eda8d1a0-eb50-40d5-bf3d-5e844c5ffb49"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d"
+              },
+              {
+                "type": "choice",
+                "value": "0dfdc64b-fb71-4137-b03e-645e7bcd61d9"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d"
+              },
+              {
+                "type": "choice",
+                "value": "c0aa7f85-b727-4c6f-8dfe-b62a15374017"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e5e890e9-e0e2-4792-ac66-4f6b3faff36d"
+              },
+              {
+                "type": "choice",
+                "value": "9b75716f-4b8f-4b8c-bdac-082c8f3379bb"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "e11dd474-d6fa-4861-af8b-db469f2293ba",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e11dd474-d6fa-4861-af8b-db469f2293ba"
+              },
+              {
+                "type": "choice",
+                "value": "c1106a9a-a11c-4de6-ac54-a14b5de9da11"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e11dd474-d6fa-4861-af8b-db469f2293ba"
+              },
+              {
+                "type": "choice",
+                "value": "de31128c-eff5-4c3f-a702-eda36f4de984"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e11dd474-d6fa-4861-af8b-db469f2293ba"
+              },
+              {
+                "type": "choice",
+                "value": "d4e2016a-d333-4aa4-86d4-aa4a71c138ba"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e11dd474-d6fa-4861-af8b-db469f2293ba"
+              },
+              {
+                "type": "choice",
+                "value": "d276e8d8-20c0-4b79-a43b-38051974aa28"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e11dd474-d6fa-4861-af8b-db469f2293ba"
+              },
+              {
+                "type": "choice",
+                "value": "73a1d530-2653-4faf-95a7-a919420601e9"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "9abd7612-617a-4ec6-86ba-c367bff8bb8a",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9abd7612-617a-4ec6-86ba-c367bff8bb8a"
+              },
+              {
+                "type": "choice",
+                "value": "a8990df6-a861-46f9-b2e9-26d0ca07278c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9abd7612-617a-4ec6-86ba-c367bff8bb8a"
+              },
+              {
+                "type": "choice",
+                "value": "c7b00de1-44c2-4099-9c9a-fb506efc1a03"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9abd7612-617a-4ec6-86ba-c367bff8bb8a"
+              },
+              {
+                "type": "choice",
+                "value": "f921de7d-f240-44db-b312-c8473c52f83f"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "971916b2-e53e-43d6-a027-b9aa445181f1",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 3
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 4
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 6
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 7
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 8
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 9
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "field",
+                "value": "971916b2-e53e-43d6-a027-b9aa445181f1"
+              },
+              {
+                "type": "constant",
+                "value": 10
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "15b8f9e8-045c-439a-a022-e70b8f4c3f84",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "15b8f9e8-045c-439a-a022-e70b8f4c3f84"
+              },
+              {
+                "type": "choice",
+                "value": "9e3d5dfc-a642-49f3-b63d-e9f6d9450398"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "15b8f9e8-045c-439a-a022-e70b8f4c3f84"
+              },
+              {
+                "type": "choice",
+                "value": "ef82f1a5-c370-48d4-a09a-f2b4bcdbc39c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "15b8f9e8-045c-439a-a022-e70b8f4c3f84"
+              },
+              {
+                "type": "choice",
+                "value": "43e7b72c-bdef-4558-98f4-8442bb4d99fd"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "15b8f9e8-045c-439a-a022-e70b8f4c3f84"
+              },
+              {
+                "type": "choice",
+                "value": "dab3e371-33c7-4bd2-9611-804fd58ede69"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "b553506c-c372-4316-935a-c0eb2ecc0c1d",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b553506c-c372-4316-935a-c0eb2ecc0c1d"
+              },
+              {
+                "type": "choice",
+                "value": "6e41ef0b-eeed-47a2-8344-7dfd3ac170ff"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b553506c-c372-4316-935a-c0eb2ecc0c1d"
+              },
+              {
+                "type": "choice",
+                "value": "1b250470-e600-4a55-b8fa-e95bc33d2a19"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b553506c-c372-4316-935a-c0eb2ecc0c1d"
+              },
+              {
+                "type": "choice",
+                "value": "c99dd7c9-1800-4833-ad82-33c62f1fb37d"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 0
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b553506c-c372-4316-935a-c0eb2ecc0c1d"
+              },
+              {
+                "type": "choice",
+                "value": "032e73db-91e2-406f-9f24-74ff021d4061"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "49b1fb9a-d479-48c9-ae6d-9a84fee47a12",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "49b1fb9a-d479-48c9-ae6d-9a84fee47a12"
+              },
+              {
+                "type": "choice",
+                "value": "3e98f785-6475-4398-9686-69481e4ec353"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "49b1fb9a-d479-48c9-ae6d-9a84fee47a12"
+              },
+              {
+                "type": "choice",
+                "value": "e9f48ab0-5598-4d23-9043-40b999c9e980"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "49b1fb9a-d479-48c9-ae6d-9a84fee47a12"
+              },
+              {
+                "type": "choice",
+                "value": "07432aad-c8d8-482e-b28a-105a208d9b04"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "3c48fe4a-6753-4a32-82cb-9ca5f2cfa18f",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3c48fe4a-6753-4a32-82cb-9ca5f2cfa18f"
+              },
+              {
+                "type": "choice",
+                "value": "e59ce4dd-8dd9-4d10-9186-ae16950f329d"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3c48fe4a-6753-4a32-82cb-9ca5f2cfa18f"
+              },
+              {
+                "type": "choice",
+                "value": "e2bc4631-7082-43c7-a756-3891b19acc55"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3c48fe4a-6753-4a32-82cb-9ca5f2cfa18f"
+              },
+              {
+                "type": "choice",
+                "value": "b2c6c120-33a4-4441-9d85-75507c47adee"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "3c48fe4a-6753-4a32-82cb-9ca5f2cfa18f"
+              },
+              {
+                "type": "choice",
+                "value": "4dff78b6-697d-442e-8cfd-d710d3e01c1c"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "166229b8-26fe-475f-854d-17134d561455",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "166229b8-26fe-475f-854d-17134d561455"
+              },
+              {
+                "type": "choice",
+                "value": "f280bde6-3781-48c0-9f44-f6cddfd4210e"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "166229b8-26fe-475f-854d-17134d561455"
+              },
+              {
+                "type": "choice",
+                "value": "e6a7d072-debf-4182-b879-3dffb6da5204"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "166229b8-26fe-475f-854d-17134d561455"
+              },
+              {
+                "type": "choice",
+                "value": "5f238c03-3d98-48e8-a249-50c9d81008f1"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "166229b8-26fe-475f-854d-17134d561455"
+              },
+              {
+                "type": "choice",
+                "value": "2ba18e86-512b-4cef-a2a8-9618b0cb9089"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "166229b8-26fe-475f-854d-17134d561455"
+              },
+              {
+                "type": "choice",
+                "value": "98fe15e6-1386-42e6-8307-492dc8177879"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "5bc72e99-bcef-48b8-b003-14d7f2c7dac1",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "5bc72e99-bcef-48b8-b003-14d7f2c7dac1"
+              },
+              {
+                "type": "choice",
+                "value": "c79df024-28bc-4664-9fda-ab7a1252969f"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "5bc72e99-bcef-48b8-b003-14d7f2c7dac1"
+              },
+              {
+                "type": "choice",
+                "value": "7813cdd0-6f3f-4e21-838a-bfbe195477b6"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 0
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "5bc72e99-bcef-48b8-b003-14d7f2c7dac1"
+              },
+              {
+                "type": "choice",
+                "value": "35176f4e-4e16-42af-909b-44878d487e16"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "fa11f45f-e55f-4a23-a0d4-e4e0aa27d93a",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "fa11f45f-e55f-4a23-a0d4-e4e0aa27d93a"
+              },
+              {
+                "type": "choice",
+                "value": "db5f7504-e86e-4b99-ba4d-24e5ac544745"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "fa11f45f-e55f-4a23-a0d4-e4e0aa27d93a"
+              },
+              {
+                "type": "choice",
+                "value": "43ac9107-de90-47b4-bf17-db9f55b96771"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "fa11f45f-e55f-4a23-a0d4-e4e0aa27d93a"
+              },
+              {
+                "type": "choice",
+                "value": "9fbf5c3f-66ed-4a41-b4ce-14d29fc5872d"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "52bb9f00-a879-400e-bd67-8670efa6cbb8",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "52bb9f00-a879-400e-bd67-8670efa6cbb8"
+              },
+              {
+                "type": "choice",
+                "value": "2933b3d4-6d6b-4a30-ab35-a12e54b4942e"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 0
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "52bb9f00-a879-400e-bd67-8670efa6cbb8"
+              },
+              {
+                "type": "choice",
+                "value": "ec03ecaf-2c1c-4001-bb7e-144aeafdf300"
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "b59d72f9-317a-494c-a472-003584e759ca"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "e863d247-542c-48f4-a6c0-d349bff4c1bc",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 2
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e863d247-542c-48f4-a6c0-d349bff4c1bc"
+              },
+              {
+                "type": "choice",
+                "value": "226a7e34-59c3-4ef4-8fef-837b3fbfcdcb"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 0
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "e863d247-542c-48f4-a6c0-d349bff4c1bc"
+              },
+              {
+                "type": "choice",
+                "value": "704c0d29-13c6-4616-bc9e-94a464e469a6"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "b59d72f9-317a-494c-a472-003584e759ca",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b59d72f9-317a-494c-a472-003584e759ca"
+              },
+              {
+                "type": "choice",
+                "value": "15227e66-31e7-47d2-b028-bd5ae0cecc0c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b59d72f9-317a-494c-a472-003584e759ca"
+              },
+              {
+                "type": "choice",
+                "value": "1a0d3e7d-764c-4116-b63b-30e35d410e4d"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b59d72f9-317a-494c-a472-003584e759ca"
+              },
+              {
+                "type": "choice",
+                "value": "89e15339-401c-4067-987f-6c54e8500b2b"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "b59d72f9-317a-494c-a472-003584e759ca"
+              },
+              {
+                "type": "choice",
+                "value": "308df2e1-5079-4e5b-90ee-d67931d5edf4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "0ed52295-0ccc-4419-884c-68a56f0dd613",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "0ed52295-0ccc-4419-884c-68a56f0dd613"
+              },
+              {
+                "type": "choice",
+                "value": "e6bba4d4-4c95-456a-a901-71ca14b7dd1e"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "0ed52295-0ccc-4419-884c-68a56f0dd613"
+              },
+              {
+                "type": "choice",
+                "value": "6fed7e38-6bfe-491a-a9e1-5ffc6dd3541c"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "0ed52295-0ccc-4419-884c-68a56f0dd613"
+              },
+              {
+                "type": "choice",
+                "value": "0b75a7dc-a54c-48ab-b76b-433e893ae6ec"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "9d737dc5-da7b-427d-8138-f2e9a18e9c9f",
+      "actions": [
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 5
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9d737dc5-da7b-427d-8138-f2e9a18e9c9f"
+              },
+              {
+                "type": "choice",
+                "value": "13840226-33b7-4c52-8763-eabcf244c4b7"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 3
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9d737dc5-da7b-427d-8138-f2e9a18e9c9f"
+              },
+              {
+                "type": "choice",
+                "value": "cf7e1732-1031-4342-90f9-31cbe41dfa93"
+              }
+            ]
+          }
+        },
+        {
+          "action": "add",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "score"
+            },
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          },
+          "condition": {
+            "op": "is",
+            "vars": [
+              {
+                "type": "field",
+                "value": "9d737dc5-da7b-427d-8138-f2e9a18e9c9f"
+              },
+              {
+                "type": "choice",
+                "value": "41046971-56fc-48da-856a-7922c5a62f40"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "46de95c1-3244-4cc0-adc6-afba88a4a5ef",
+      "actions": [
+        {
+          "action": "set",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "tag_lead_quality"
+            },
+            "value": {
+              "type": "constant",
+              "value": "High"
+            }
+          },
+          "condition": {
+            "op": "equal",
+            "vars": [
+              {
+                "type": "variable",
+                "value": "score"
+              },
+              {
+                "type": "constant",
+                "value": 85
+              }
+            ]
+          }
+        },
+        {
+          "action": "set",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "winning_outcome_id"
+            },
+            "value": {
+              "type": "constant",
+              "value": "6adae2ff-8a1d-45da-9b0e-bd6d691a29f8"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        },
+        {
+          "action": "set",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "winning_outcome_id"
+            },
+            "value": {
+              "type": "constant",
+              "value": "2164ba0a-e6f2-4ae9-9be0-72ff5c96cab6"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "greater_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "op": "lower_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 60
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "set",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "winning_outcome_id"
+            },
+            "value": {
+              "type": "constant",
+              "value": "305678b4-963d-4044-a9ce-9986f7febb7f"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "greater_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 60
+                  }
+                ]
+              },
+              {
+                "op": "lower_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 89
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "set",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "winning_outcome_id"
+            },
+            "value": {
+              "type": "constant",
+              "value": "4b067820-fb99-4968-9e26-1c9b9a324f8f"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "greater_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 90
+                  }
+                ]
+              },
+              {
+                "op": "lower_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 119
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "set",
+          "details": {
+            "target": {
+              "type": "variable",
+              "value": "winning_outcome_id"
+            },
+            "value": {
+              "type": "constant",
+              "value": "6adae2ff-8a1d-45da-9b0e-bd6d691a29f8"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "greater_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 120
+                  }
+                ]
+              },
+              {
+                "op": "lower_equal_than",
+                "vars": [
+                  {
+                    "type": "variable",
+                    "value": "score"
+                  },
+                  {
+                    "type": "constant",
+                    "value": 145
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "outcome",
+              "value": "winning_outcome_id"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "variable": "winning_outcome_id",
+    "choices": [
+      {
+        "id": "5Jvwi7HbcAVi",
+        "ref": "6adae2ff-8a1d-45da-9b0e-bd6d691a29f8",
+        "title": "*🚀 Scalabilité très forte*",
+        "counter_variable": "counter_4355f097_c330_4f9f_ba73_96c91006b51f",
+        "thankyou_screen_ref": "80f0852a-bfa0-4ffe-982b-78bb8da37f0b"
+      },
+      {
+        "id": "DoC1tD1M6uZO",
+        "ref": "4b067820-fb99-4968-9e26-1c9b9a324f8f",
+        "title": "*🧩 Solide mais perfectible*",
+        "counter_variable": "counter_2a5be08e_c204_4721_b960_ba9e6f4e3ec9",
+        "thankyou_screen_ref": "e93b7643-4f34-40fc-80de-68289a875ee5"
+      },
+      {
+        "id": "aeZPXU7nZzTN",
+        "ref": "305678b4-963d-4044-a9ce-9986f7febb7f",
+        "title": "*🚧 Scalabilité limitée*",
+        "counter_variable": "counter_51697a5b_1d7f_4de6_b23f_f879f81a6562",
+        "thankyou_screen_ref": "9339ec7a-ca5f-4da5-8ece-eceee7aa56c4"
+      },
+      {
+        "id": "Avcd5a5IXhUt",
+        "ref": "2164ba0a-e6f2-4ae9-9be0-72ff5c96cab6",
+        "title": "*❌ Pas prêt à scaler*",
+        "counter_variable": "counter_21d581f6_c24c_431d_8b99_29ae62208289",
+        "thankyou_screen_ref": "2ffd44eb-d6da-471b-8104-bd855e64ad1b"
+      }
+    ]
+  },
+  "created_at": "2025-08-11T07:22:20+00:00",
+  "last_updated_at": "2026-05-26T16:55:22+00:00",
+  "published_at": "2025-08-12T18:18:04+00:00",
+  "_links": {
+    "display": "https://j22adeg5sot.typeform.com/scorescaling",
+    "responses": "https://api.typeform.com/forms/STWAU1uE/responses"
+  }
+}

@@ -1,70 +1,74 @@
-import { withSentryConfig } from '@sentry/nextjs';
-import type { NextConfig } from 'next'
+import { withSentryConfig } from "@sentry/nextjs";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
+        protocol: "https",
+        hostname: "cdn.sanity.io",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
+        protocol: "https",
+        hostname: "cdn.prod.website-files.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.typeform.com",
       },
     ],
   },
   turbopack: {
     rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
       },
     },
   },
   async redirects() {
     return [
       {
-        source: '/operating-partners/ulysse-l-sher-operating-partner',
-        destination: '/operating-partners/ulysselsher-operating-partner',
+        source: "/operating-partners/ulysse-l-sher-operating-partner",
+        destination: "/operating-partners/ulysselsher-operating-partner",
         permanent: true,
       },
       {
-        source: '/operating-partners/benjamin-bremont-operating-partner',
-        destination: '/operating-partners/ben-bremont-operating-partner',
+        source: "/operating-partners/benjamin-bremont-operating-partner",
+        destination: "/operating-partners/ben-bremont-operating-partner",
         permanent: true,
       },
       {
-        source: '/concept/test-scalabilite',
-        destination: '/concept/test-de-scalabilite',
+        source: "/concept/test-scalabilite",
+        destination: "/concept/test-de-scalabilite",
         permanent: true,
       },
       {
-        source: '/ecurie/a-propos',
-        destination: '/lecurie/a-propos',
+        source: "/ecurie/a-propos",
+        destination: "/lecurie/a-propos",
         permanent: true,
       },
       {
-        source: '/ecurie/les-op',
-        destination: '/lecurie/les-op',
+        source: "/ecurie/les-op",
+        destination: "/lecurie/les-op",
         permanent: true,
       },
       {
-        source: '/ecurie/ressources',
-        destination: '/lecurie/ressources',
+        source: "/ecurie/ressources",
+        destination: "/lecurie/ressources",
         permanent: true,
       },
       {
-        source: '/concept/case-studies/pureva',
-        destination: '/case-studies/etude-de-cas-pureva',
+        source: "/concept/case-studies/pureva",
+        destination: "/case-studies/etude-de-cas-pureva",
         permanent: true,
       },
-    ]
+    ];
   },
-}
+};
 
 export default withSentryConfig(nextConfig, {
   // For all available options, see:
