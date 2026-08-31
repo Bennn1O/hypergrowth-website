@@ -14,6 +14,7 @@ export const runtime = "nodejs";
 const DEFAULT_WEBHOOK_URL =
   "https://n8nfastscribe.convertlabs.fr/webhook/f8aada19-fa30-401d-bebb-f21bd7e48e28";
 const MAX_BODY_SIZE = 100_000;
+const FORM_SOURCE = "scalability_test";
 
 function getContactValue(
   entries: ReturnType<typeof buildWebhookAnswers>,
@@ -82,8 +83,10 @@ export async function POST(request: Request) {
       form: {
         id: SCALABILITY_FORM_ID,
         name: "Calcule ton potentiel de croissance",
+        source: FORM_SOURCE,
         version: 1,
       },
+      formsSource: FORM_SOURCE,
       result,
       score: result.score,
       submittedAt: new Date().toISOString(),
