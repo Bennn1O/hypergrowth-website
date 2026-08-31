@@ -86,7 +86,7 @@ export async function POST(request: Request) {
         source: FORM_SOURCE,
         version: 1,
       },
-      formSource: FORM_SOURCE,
+      formsSource: FORM_SOURCE,
       result,
       score: result.score,
       submittedAt: new Date().toISOString(),

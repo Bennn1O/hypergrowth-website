@@ -72,11 +72,11 @@ describe("POST /api/scalability-test", () => {
       contact: { email: string };
       event: string;
       form: { source: string };
-      formSource: string;
+      formsSource: string;
       score: number;
     };
     expect(payload.event).toBe("scalability_test.completed");
-    expect(payload.formSource).toBe("scalability_test");
+    expect(payload.formsSource).toBe("scalability_test");
     expect(payload.form.source).toBe("scalability_test");
     expect(payload.contact.email).toBe("test@hypergrowth.fr");
     expect(payload.answers.length).toBeGreaterThan(30);
