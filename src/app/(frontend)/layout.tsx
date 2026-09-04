@@ -1,11 +1,13 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { CookieBanner } from "@/components/layout/cookie-banner";
 import { LenisProvider } from "@/providers/lenis-provider";
+import {
+  SiteCookieBanner,
+  SiteTracking,
+} from "@/components/layout/site-privacy";
 
 const archivo = localFont({
   src: "../../../public/fonts/archivo-variable.woff2",
@@ -119,13 +121,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </LenisProvider>
-        <CookieBanner />
-        <Script
-          src="https://tracking.hypergrowth.fr/api/script.js"
-          data-site-id="01be6295df26"
-          data-skip-patterns='["/studio"]'
-          strategy="afterInteractive"
-        />
+        <SiteCookieBanner />
+        <SiteTracking />
       </body>
     </html>
   );

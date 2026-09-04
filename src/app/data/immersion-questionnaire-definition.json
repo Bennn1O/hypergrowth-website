@@ -1,0 +1,186 @@
+{
+  "id": "HADRQfDW",
+  "title": "Immersion - Questionnaire Hypergrowth",
+  "welcome_screen": {
+    "title": "Bienvenue dans l'Immersion HyperGrowth !",
+    "button_text": "Commencer le questionnaire",
+    "description": "Ce questionnaire nous permet d'en savoir plus avant notre venue.\n\nQuelques questions clés : assez pour creuser, pas trop pour ne pas biaiser notre regard.\n\nTes réponses restent _confidentielles_ et nous servent uniquement à orienter les sujets développés pendant l'Immersion.\n\nCompte 15 minutes, n'hésite pas à développer les réponses."
+  },
+  "thank_you_screen": {
+    "title": "Merci pour tes réponses !",
+    "description": "À très vite, l'équipe HyperGrowth"
+  },
+  "fields": [
+    {
+      "id": "Vot3Wy4LavQZ",
+      "ref": "944fee07-ccc0-4728-9b02-4046a8684842",
+      "title": "Si tu devais décrire ton entreprise en une phrase à quelqu'un qui ne connaît pas ton secteur ?",
+      "type": "short_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "m2QFQMVahoZv",
+      "ref": "9cc9b347-d7a2-48fa-8769-4cd1dddd47f2",
+      "title": "Quel est ton CA actuel ?",
+      "type": "short_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "fpGJ2LOBijcB",
+      "ref": "3edf0953-2dea-44f6-ad0e-17eba4f58e63",
+      "title": "Comment tes clients arrivent-ils majoritairement ?",
+      "type": "multiple_choice",
+      "properties": {
+        "allow_multiple_selection": false,
+        "choices": [
+          {
+            "id": "MybQvtRmdWF9",
+            "ref": "813a9a64-7fa0-4859-9e1f-54cc0b62d1b3",
+            "label": "Réseau"
+          },
+          {
+            "id": "eiKJCOvABn59",
+            "ref": "c6328d34-38aa-4f11-b721-2486f99d1d9c",
+            "label": "Bouche-à-oreille"
+          },
+          {
+            "id": "OxszuWT94pmV",
+            "ref": "359bca16-fad5-4acb-b358-5b1cf9d86efa",
+            "label": "Inbound"
+          },
+          {
+            "id": "bxmizSpgdtBt",
+            "ref": "0bfda486-f522-44c4-9275-9e32c7027d90",
+            "label": "Prospection active"
+          },
+          {
+            "id": "0ymvXtXzWjGf",
+            "ref": "9ed06926-ef88-4f58-a168-b978f1320b5b",
+            "label": "Autre"
+          }
+        ]
+      },
+      "validations": { "required": false }
+    },
+    {
+      "id": "SJ3B4yqNY6zX",
+      "ref": "837b4b75-3883-4947-a38c-76c6be62352c",
+      "title": "Quel est le sujet qui t'occupe le plus l'esprit en ce moment ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "wlFSBM8FZMqD",
+      "ref": "1436d17b-6910-4acb-9749-fa822f8f998b",
+      "title": "Quel est le problème numéro 1 que tu veux résoudre dans les 6 prochains mois ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "eotAUIl2YKgk",
+      "ref": "ae1bd5d6-f665-414b-82c4-4f502d240398",
+      "title": "Qu'est-ce qui t'empêche d'avancer sur ce sujet aujourd'hui ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "DoOC0gmjlSTO",
+      "ref": "e18c95d1-4302-415e-9dde-43c21d961041",
+      "title": "Sur une échelle de 1 à 10, quelle est l'urgence de changer les choses dans ton entreprise ?",
+      "type": "opinion_scale",
+      "properties": {
+        "start_at_one": true,
+        "steps": 10
+      },
+      "validations": { "required": false }
+    },
+    {
+      "id": "akg4swxgXasj",
+      "ref": "2a8717f3-880f-47c3-8406-f892a74b0cc5",
+      "title": "Dans quoi passes-tu la majorité de ton temps en ce moment ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "7Mqaa1HsJ6SF",
+      "ref": "939608b9-a98d-48d1-892b-df6a4a4550d3",
+      "title": "Qu'est-ce qui te prend le plus d'énergie dans ton rôle aujourd'hui ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "YgtL8Ns1aHLK",
+      "ref": "3b12b851-2dcc-4baf-8f41-87acfadeb3a0",
+      "title": "As-tu un bras droit opérationnel ?",
+      "type": "multiple_choice",
+      "properties": {
+        "allow_multiple_selection": false,
+        "choices": [
+          {
+            "id": "ZDNcfybEqQmD",
+            "ref": "87707c3e-8350-4855-9557-01604c756f50",
+            "label": "Oui"
+          },
+          {
+            "id": "HQ43yvG1kkyM",
+            "ref": "14c00186-12a7-400a-9cdc-1e6bca4e4b5f",
+            "label": "Non"
+          },
+          {
+            "id": "2xzuMP7LqJAy",
+            "ref": "9e2d37a0-0951-4c25-914e-0b4e5dc5d9c6",
+            "label": "En cours de recrutement"
+          }
+        ]
+      },
+      "validations": { "required": false }
+    },
+    {
+      "id": "KkRj5tamVdyy",
+      "ref": "9d0d2853-b5d0-48f3-bd27-69a896cbc0f0",
+      "title": "Qui sera disponible pendant les 2 jours d'immersion ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "D6L9VJ9E782y",
+      "ref": "6f160894-1aed-4c1a-9062-a39899994655",
+      "title": "Y a-t-il des sujets sensibles ou des zones à ne pas aborder avec l'équipe ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "34UZlhoacQJd",
+      "ref": "42729e53-28f1-4037-af11-f1e3dc439483",
+      "title": "Qu'est-ce que tu attends concrètement de cette Immersion ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "Mw1JctJ7rave",
+      "ref": "3f669dfd-5694-4ec3-a023-6358eb4ee1c4",
+      "title": "As-tu un deck de présentation de ton entreprise ?",
+      "type": "file_upload",
+      "properties": {},
+      "validations": { "required": false }
+    },
+    {
+      "id": "PapoMgNI25bs",
+      "ref": "019e3137-7744-490d-9cb4-d6943b1f2452",
+      "title": "Y a-t-il quelque chose d'important que tu veux qu'on sache avant d'arriver ?",
+      "type": "long_text",
+      "properties": {},
+      "validations": { "required": false }
+    }
+  ]
+}
