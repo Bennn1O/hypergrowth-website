@@ -1,6 +1,7 @@
 {
   "id": "HADRQfDW",
   "title": "Immersion - Questionnaire Hypergrowth",
+  "estimated_minutes": 15,
   "welcome_screen": {
     "title": "Bienvenue dans l'Immersion HyperGrowth !",
     "button_text": "Commencer le questionnaire",
@@ -8,6 +9,7 @@
   },
   "thank_you_screen": {
     "title": "Merci pour tes réponses !",
+    "summary": "Tes réponses ont bien été enregistrées. Elles aideront l’équipe à préparer les deux jours d’immersion.",
     "description": "À très vite, l'équipe HyperGrowth"
   },
   "fields": [
@@ -17,7 +19,9 @@
       "title": "Si tu devais décrire ton entreprise en une phrase à quelqu'un qui ne connaît pas ton secteur ?",
       "type": "short_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "m2QFQMVahoZv",
@@ -25,7 +29,9 @@
       "title": "Quel est ton CA actuel ?",
       "type": "short_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "fpGJ2LOBijcB",
@@ -62,7 +68,9 @@
           }
         ]
       },
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "SJ3B4yqNY6zX",
@@ -70,7 +78,9 @@
       "title": "Quel est le sujet qui t'occupe le plus l'esprit en ce moment ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "wlFSBM8FZMqD",
@@ -78,7 +88,9 @@
       "title": "Quel est le problème numéro 1 que tu veux résoudre dans les 6 prochains mois ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "eotAUIl2YKgk",
@@ -86,7 +98,9 @@
       "title": "Qu'est-ce qui t'empêche d'avancer sur ce sujet aujourd'hui ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "DoOC0gmjlSTO",
@@ -97,7 +111,9 @@
         "start_at_one": true,
         "steps": 10
       },
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "akg4swxgXasj",
@@ -105,7 +121,9 @@
       "title": "Dans quoi passes-tu la majorité de ton temps en ce moment ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "7Mqaa1HsJ6SF",
@@ -113,7 +131,9 @@
       "title": "Qu'est-ce qui te prend le plus d'énergie dans ton rôle aujourd'hui ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "YgtL8Ns1aHLK",
@@ -140,7 +160,9 @@
           }
         ]
       },
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "KkRj5tamVdyy",
@@ -148,7 +170,9 @@
       "title": "Qui sera disponible pendant les 2 jours d'immersion ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "D6L9VJ9E782y",
@@ -156,7 +180,9 @@
       "title": "Y a-t-il des sujets sensibles ou des zones à ne pas aborder avec l'équipe ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "34UZlhoacQJd",
@@ -164,7 +190,9 @@
       "title": "Qu'est-ce que tu attends concrètement de cette Immersion ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "Mw1JctJ7rave",
@@ -172,7 +200,9 @@
       "title": "As-tu un deck de présentation de ton entreprise ?",
       "type": "file_upload",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     },
     {
       "id": "PapoMgNI25bs",
@@ -180,7 +210,9 @@
       "title": "Y a-t-il quelque chose d'important que tu veux qu'on sache avant d'arriver ?",
       "type": "long_text",
       "properties": {},
-      "validations": { "required": false }
+      "validations": {
+        "required": false
+      }
     }
   ]
 }

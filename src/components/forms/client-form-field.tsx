@@ -6,61 +6,53 @@ import {
 } from "hugeicons-react";
 import type { ChangeEvent, KeyboardEvent } from "react";
 
-import type {
-  ImmersionAnswerValue,
-  ImmersionChoice,
-  ImmersionField,
-} from "@/lib/immersion-questionnaire";
+import {
+  ADDRESS_KEYS,
+  emptyAddress,
+  isAddressValue,
+  type AddressValue,
+  type AnswerValue,
+  type FormChoice,
+  type FormField,
+} from "@/lib/client-forms";
 
-interface ImmersionQuestionInputProps {
+export type TextElement = HTMLInputElement | HTMLTextAreaElement;
+
+interface FormQuestionInputProps {
   deck: File | null;
   disabled: boolean;
   errorId?: string;
-  field: ImmersionField;
-  inputRef: (node: HTMLInputElement | HTMLTextAreaElement | null) => void;
-  onAnswer: (value: ImmersionAnswerValue) => void;
+  field: FormField;
+  inputRef: (node: TextElement | null) => void;
+  onAnswer: (value: AnswerValue) => void;
   onChoice: (choiceRef: string) => void;
   onDeckChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onDeckRemove: () => void;
   onScale: (value: number) => void;
-  onTextKeyDown: (
-    event: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
-  value?: ImmersionAnswerValue;
+  onTextKeyDown: (event: KeyboardEvent<TextElement>) => void;
+  value?: AnswerValue;
 }
 
-interface ChoiceInputProps {
-  disabled: boolean;
-  errorId?: string;
-  field: ImmersionField;
-  onChoice: ImmersionQuestionInputProps["onChoice"];
-  value?: ImmersionAnswerValue;
-}
+const inputClass =
+  "w-full rounded-xl border border-white/30 bg-white/5 px-4 text-base text-white outline-2 outline-offset-1 outline-transparent transition-colors placeholder:text-white/50 focus:border-hpg-orchid focus:outline-hpg-orchid disabled:cursor-wait disabled:opacity-60";
 
-interface ScaleInputProps {
-  disabled: boolean;
-  errorId?: string;
-  field: ImmersionField;
-  onScale: ImmersionQuestionInputProps["onScale"];
-  value?: ImmersionAnswerValue;
-}
+const PLACEHOLDERS: Record<string, string> = {
+  "9cc9b347-d7a2-48fa-8769-4cd1dddd47f2": "Ex. 1,2 M€",
+  email_facturation: "Ex. compta@entreprise.fr",
+  siret: "Ex. 123 456 789 00012",
+  telephone: "Ex. 06 12 34 56 78",
+  tva_intra: "Ex. FR12345678901",
+};
 
-interface DeckInputProps {
-  deck: File | null;
-  disabled: boolean;
-  errorId?: string;
-  field: ImmersionField;
-  onDeckChange: ImmersionQuestionInputProps["onDeckChange"];
-  onDeckRemove: ImmersionQuestionInputProps["onDeckRemove"];
-}
+const ADDRESS_LABELS: Record<keyof AddressValue, string> = {
+  cp: "Code postal",
+  ligne1: "Adresse",
+  ligne2: "Complément d’adresse",
+  pays: "Pays",
+  ville: "Ville",
+};
 
-function ChoiceLabel({
-  choice,
-  index,
-}: {
-  choice: ImmersionChoice;
-  index: number;
-}) {
+function ChoiceLabel({ choice, index }: { choice: FormChoice; index: number }) {
   return (
     <>
       <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-xs text-white/70">
@@ -79,7 +71,10 @@ function ChoiceInput({
   field,
   onChoice,
   value,
-}: ChoiceInputProps) {
+}: Pick<
+  FormQuestionInputProps,
+  "disabled" | "errorId" | "field" | "onChoice" | "value"
+>) {
   const choices = field.properties?.choices ?? [];
   const selectedRef = typeof value === "string" ? value : "";
 
@@ -127,7 +122,10 @@ function ScaleInput({
   field,
   onScale,
   value,
-}: ScaleInputProps) {
+}: Pick<
+  FormQuestionInputProps,
+  "disabled" | "errorId" | "field" | "onScale" | "value"
+>) {
   const steps = field.properties?.steps ?? 10;
   const minimum = field.properties?.start_at_one ? 1 : 0;
   const maximum = field.properties?.start_at_one ? steps : steps - 1;
@@ -188,7 +186,10 @@ function DeckInput({
   field,
   onDeckChange,
   onDeckRemove,
-}: DeckInputProps) {
+}: Pick<
+  FormQuestionInputProps,
+  "deck" | "disabled" | "errorId" | "field" | "onDeckChange" | "onDeckRemove"
+>) {
   if (deck) {
     return (
       <div className="flex min-h-20 items-center gap-3 rounded-xl border border-hpg-orchid/50 bg-hpg-orchid/10 p-4">
@@ -234,60 +235,88 @@ function DeckInput({
   );
 }
 
-export function ImmersionQuestionInput({
-  deck,
+function AddressInput({
   disabled,
   errorId,
   field,
   inputRef,
   onAnswer,
-  onChoice,
-  onDeckChange,
-  onDeckRemove,
-  onScale,
   onTextKeyDown,
   value,
-}: ImmersionQuestionInputProps) {
-  if (field.type === "multiple_choice") {
-    return (
-      <ChoiceInput
-        disabled={disabled}
-        errorId={errorId}
-        field={field}
-        onChoice={onChoice}
-        value={value}
-      />
-    );
+}: Pick<
+  FormQuestionInputProps,
+  | "disabled"
+  | "errorId"
+  | "field"
+  | "inputRef"
+  | "onAnswer"
+  | "onTextKeyDown"
+  | "value"
+>) {
+  const address = isAddressValue(value) ? value : emptyAddress();
+
+  function update(key: keyof AddressValue, next: string) {
+    onAnswer({ ...address, [key]: next });
   }
 
-  if (field.type === "opinion_scale") {
-    return (
-      <ScaleInput
-        disabled={disabled}
-        errorId={errorId}
-        field={field}
-        onScale={onScale}
-        value={value}
-      />
-    );
-  }
+  return (
+    <fieldset
+      aria-describedby={errorId}
+      className="grid gap-3 sm:grid-cols-6"
+      disabled={disabled}
+    >
+      <legend className="sr-only">{field.title}</legend>
+      {ADDRESS_KEYS.map((key) => {
+        const isCompact = key === "cp";
+        return (
+          <label
+            className={`grid gap-1.5 ${
+              isCompact
+                ? "sm:col-span-2"
+                : key === "ville"
+                  ? "sm:col-span-4"
+                  : "sm:col-span-6"
+            }`}
+            key={key}
+          >
+            <span className="text-xs text-white/60">{ADDRESS_LABELS[key]}</span>
+            <input
+              autoComplete={
+                key === "ligne1"
+                  ? "address-line1"
+                  : key === "ligne2"
+                    ? "address-line2"
+                    : key === "cp"
+                      ? "postal-code"
+                      : key === "ville"
+                        ? "address-level2"
+                        : "country-name"
+              }
+              className={`${inputClass} min-h-12`}
+              name={`${field.ref}_${key}`}
+              onChange={(event) => update(key, event.target.value)}
+              onKeyDown={onTextKeyDown}
+              ref={key === "ligne1" ? inputRef : undefined}
+              type="text"
+              value={address[key]}
+            />
+          </label>
+        );
+      })}
+    </fieldset>
+  );
+}
 
-  if (field.type === "file_upload") {
-    return (
-      <DeckInput
-        deck={deck}
-        disabled={disabled}
-        errorId={errorId}
-        field={field}
-        onDeckChange={onDeckChange}
-        onDeckRemove={onDeckRemove}
-      />
-    );
-  }
+export function FormQuestionInput(props: FormQuestionInputProps) {
+  const { field, value } = props;
 
+  if (field.type === "multiple_choice") return <ChoiceInput {...props} />;
+  if (field.type === "opinion_scale") return <ScaleInput {...props} />;
+  if (field.type === "file_upload") return <DeckInput {...props} />;
+  if (field.type === "address") return <AddressInput {...props} />;
+
+  const { disabled, errorId, inputRef, onAnswer, onTextKeyDown } = props;
   const textValue = typeof value === "string" ? value : "";
-  const inputClass =
-    "w-full rounded-xl border border-white/30 bg-white/5 px-4 text-base text-white outline-2 outline-offset-1 outline-transparent transition-colors placeholder:text-white/50 focus:border-hpg-orchid focus:outline-hpg-orchid disabled:cursor-wait disabled:opacity-60";
 
   if (field.type === "long_text") {
     return (
@@ -306,22 +335,34 @@ export function ImmersionQuestionInput({
     );
   }
 
+  const isEmail = field.type === "email";
+  const isPhone = field.type === "phone_number";
+  const isSiret = field.properties?.format === "siret";
+
   return (
     <input
       aria-describedby={errorId}
       aria-invalid={Boolean(errorId)}
       aria-labelledby={`${field.id}-title`}
+      autoComplete={
+        isEmail
+          ? "email"
+          : isPhone
+            ? "tel"
+            : field.ref === "contact_nom"
+              ? "name"
+              : "off"
+      }
       className={`${inputClass} min-h-14`}
       disabled={disabled}
+      inputMode={
+        isSiret ? "numeric" : isPhone ? "tel" : isEmail ? "email" : undefined
+      }
       onChange={(event) => onAnswer(event.target.value)}
       onKeyDown={onTextKeyDown}
-      placeholder={
-        field.ref === "9cc9b347-d7a2-48fa-8769-4cd1dddd47f2"
-          ? "Ex. 1,2 M€"
-          : "Ta réponse"
-      }
+      placeholder={PLACEHOLDERS[field.ref] ?? "Ta réponse"}
       ref={inputRef}
-      type="text"
+      type={isEmail ? "email" : isPhone ? "tel" : "text"}
       value={textValue}
     />
   );

@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { ClientFormPage } from "@/components/forms/client-form-page";
 
 export const metadata: Metadata = {
-  description:
-    "Questionnaire confidentiel de préparation à l’immersion HyperGrowth.",
+  description: "Informations administratives et de facturation HyperGrowth.",
   robots: {
     follow: false,
     googleBot: {
@@ -17,27 +16,26 @@ export const metadata: Metadata = {
     index: false,
     nocache: true,
   },
-  title: "Questionnaire d’immersion | HyperGrowth",
+  title: "Onboarding client | HyperGrowth",
 };
 
 interface PageProps {
   searchParams: Promise<{ t?: string | string[] }>;
 }
 
-export default function ImmersionQuestionnairePage({
-  searchParams,
-}: PageProps) {
+export default function OnboardingClientPage({ searchParams }: PageProps) {
   return (
     <ClientFormPage
-      footer="Les informations transmises sont réservées à l’équipe HyperGrowth chargée de ton immersion."
-      intro="Tes réponses donnent à l’équipe les repères nécessaires pour préparer des échanges utiles dès le premier jour."
-      kind="immersion"
+      footer="Ces informations servent uniquement à établir le contrat et la facturation. Elles ne sont jamais partagées."
+      intro="Quelques informations sur ton entreprise pour préparer le contrat, la facturation et ton cadeau de bienvenue."
+      kind="onboarding"
       searchParams={searchParams}
+      successHref={process.env.GOCARDLESS_MANDATE_URL}
       title={
         <>
-          Préparons ton{" "}
+          Bienvenue chez{" "}
           <span className="font-instrument-italic font-normal italic text-hpg-orchid">
-            immersion.
+            HyperGrowth.
           </span>
         </>
       }
