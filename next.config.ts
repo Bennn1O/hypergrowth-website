@@ -66,6 +66,16 @@ const nextConfig: NextConfig = {
         destination: "/case-studies/etude-de-cas-pureva",
         permanent: true,
       },
+      {
+        source: "/questionnaire-immersion",
+        destination: "https://cockpit.hypergrowth.fr/forms/immersion",
+        permanent: true,
+      },
+      {
+        source: "/onboarding-client",
+        destination: "https://cockpit.hypergrowth.fr/forms/onboarding",
+        permanent: true,
+      },
     ];
   },
 };
