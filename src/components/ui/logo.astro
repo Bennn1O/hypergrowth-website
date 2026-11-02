@@ -1,0 +1,32 @@
+---
+import Logomark from '../../assets/brand/logomark.svg';
+import Logotype from '../../assets/brand/logotype.svg';
+
+interface Props {
+  /** `full` = mark + wordmark, `mark` = symbol only, `type` = wordmark only. */
+  variant?: 'full' | 'mark' | 'type';
+  /** `light` renders the wordmark in white on dark backgrounds. */
+  tone?: 'dark' | 'light';
+  class?: string;
+}
+
+const { variant = 'full', tone = 'dark', class: className } = Astro.props;
+const typeTone = tone === 'light' ? 'text-white' : 'text-ink';
+---
+
+<span class:list={['inline-flex items-center gap-2', className]}>
+  {
+    variant !== 'type' && (
+      <Logomark class="h-[1.15em] w-auto shrink-0 text-purple" aria-hidden="true" />
+    )
+  }
+  {
+    variant !== 'mark' && (
+      <Logotype
+        class:list={['h-[0.9em] w-auto shrink-0 [&_.growth]:text-purple', typeTone]}
+        aria-hidden="true"
+      />
+    )
+  }
+  <span class="sr-only">HyperGrowth</span>
+</span>

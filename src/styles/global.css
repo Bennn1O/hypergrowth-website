@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/*
+ * HyperGrowth design tokens.
+ * Palette: brand board (Colors.png).
+ * Layout, spacing and type scale: Figma "Marketing Agency" homepage (node 1:188).
+ */
+@theme {
+  /* Brand */
+  --color-blush: #ffb6f4;
+  --color-pink: #ff61a7;
+  --color-purple: #842cb4;
+  --color-ink: #111111;
+  --color-mist: #e7e7e7;
+
+  /* Neutrals (Figma) */
+  --color-graphite: #252424;
+  --color-muted: #757575;
+  --color-subtle: #a3a3a3;
+  --color-line: #e1e1e1;
+  --color-divider: #e9e9e9;
+  --color-placeholder: #c4c4c4;
+  --color-steel: #828d91;
+  --color-night: #090b0b;
+  --color-success: #34d399;
+
+  /* Type */
+  --font-sans: "Inter Tight Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "Cascadia Code", ui-monospace, monospace;
+
+  --text-display: clamp(3.25rem, 7vw, 6.25rem);
+  --text-display--line-height: 0.9;
+  --text-display--letter-spacing: -0.02em;
+  --text-statement: clamp(2rem, 4.2vw, 3.75rem);
+  --text-statement--line-height: 1.1;
+  --text-statement--letter-spacing: -0.02em;
+  --text-title: clamp(2.25rem, 3.4vw, 3rem);
+  --text-title--line-height: 1.25;
+  --text-title--letter-spacing: -0.025em;
+  --text-stat: clamp(2.5rem, 3.5vw, 3.125rem);
+  --text-stat--line-height: 1.1;
+  --text-wordmark: clamp(4rem, 17vw, 18rem);
+  --text-wordmark--line-height: 1;
+  --text-wordmark--letter-spacing: -0.035em;
+
+  /* Shape */
+  --radius-card: 1rem;
+  --radius-panel: 1.25rem;
+  --radius-button: 0.75rem;
+
+  --shadow-button: 0 4px 4px 0 rgb(0 0 0 / 0.12), 0 0 0 1px var(--color-ink);
+  --shadow-chip: inset 0 -0.75px 0 0 rgb(0 0 0 / 0.03), 0 1.5px 3.7px 0 rgb(0 0 0 / 0.08);
+
+  --container-site: 88.5rem;
+}
+
+@layer base {
+  html {
+    color: var(--color-ink);
+    background-color: var(--color-white);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-purple);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Frosted chip used on project cards. */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(25px);
+}
+
+/* Second half of a two-tone statement. */
+@utility text-quiet {
+  color: color-mix(in srgb, currentColor 40%, transparent);
+}

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/base-layout.astro';
+import { getDictionary, resolveLocale } from '../../../i18n';
+import { getProjects } from '../data/get-projects';
+import HeroSection from './hero-section.astro';
+import ProofSection from './proof-section.astro';
+import ServicesSection from './services-section.astro';
+import StatementSection from './statement-section.astro';
+import StatsSection from './stats-section.astro';
+import WorkSection from './work-section.astro';
+
+const locale = resolveLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+const projects = await getProjects(locale);
+---
+
+<BaseLayout>
+  <HeroSection t={t} />
+  <ProofSection t={t} />
+  <StatementSection t={t} />
+  <StatsSection t={t} />
+  <ServicesSection t={t} />
+  <WorkSection t={t} projects={projects} />
+</BaseLayout>

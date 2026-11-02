@@ -1,0 +1,78 @@
+---
+import { getDictionary, localizePath, resolveLocale } from '../../i18n';
+import Button from '../ui/button.astro';
+import Icon from '../ui/icon.astro';
+import Logo from '../ui/logo.astro';
+import LanguageSwitcher from './language-switcher.astro';
+
+const locale = resolveLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+const home = localizePath('/', locale);
+
+const links = [
+  { label: t.nav.services, href: `${home}#services` },
+  { label: t.nav.work, href: `${home}#work` },
+  { label: t.nav.studio, href: `${home}#studio` },
+];
+const contactHref = `${home}#contact`;
+---
+
+<header class="sticky top-0 z-40 bg-white/85 px-3 py-1.5 backdrop-blur-md sm:px-4">
+  <div class="mx-auto flex h-[50px] max-w-site items-center justify-between gap-6 px-3 sm:px-6">
+    <div class="flex items-center gap-8">
+      <a href={home} aria-label={t.a11y.home} class="text-[28px] leading-none">
+        <Logo />
+      </a>
+      <nav aria-label={t.a11y.mainNav} class="hidden lg:block">
+        <ul class="flex items-center gap-4">
+          {
+            links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="px-2.5 text-base font-medium text-ink transition-colors hover:text-purple"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hidden items-center gap-8 lg:flex">
+      <LanguageSwitcher />
+      <Button href={contactHref} icon="phone">{t.nav.contact}</Button>
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary
+        class="flex size-11 cursor-pointer list-none items-center justify-center rounded-button border border-line [&::-webkit-details-marker]:hidden"
+        aria-label={t.a11y.openMenu}
+      >
+        <Icon name="menu" size={22} class="group-open:hidden" />
+        <Icon name="plus" size={22} class="hidden rotate-45 group-open:block" />
+      </summary>
+      <div
+        class="absolute top-[calc(100%+0.5rem)] right-0 flex w-[min(20rem,calc(100vw-2rem))] flex-col gap-4 rounded-panel border border-line bg-white p-5 shadow-chip"
+      >
+        <nav aria-label={t.a11y.mainNav}>
+          <ul class="flex flex-col gap-1">
+            {
+              links.map((link) => (
+                <li>
+                  <a href={link.href} class="block rounded-lg px-2 py-2 text-lg font-medium hover:bg-mist">
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <LanguageSwitcher />
+        <Button href={contactHref} icon="phone" class="w-full">{t.nav.contact}</Button>
+      </div>
+    </details>
+  </div>
+</header>

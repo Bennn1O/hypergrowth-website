@@ -1,0 +1,75 @@
+---
+import Button from '../../../components/ui/button.astro';
+import Icon from '../../../components/ui/icon.astro';
+import MediaPlaceholder from '../../../components/ui/media-placeholder.astro';
+import { localizePath, resolveLocale, type Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
+const contactHref = `${localizePath('/', locale)}#contact`;
+---
+
+<section id="services" class="mx-auto flex max-w-site flex-col gap-[60px] px-6 pt-20 sm:px-[60px]" aria-labelledby="services-title">
+  <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+    <div class="flex flex-1 flex-col items-start gap-6">
+      <div class="flex flex-col gap-4">
+        <p class="flex items-center gap-2 text-[11px] leading-[1.5] font-semibold tracking-[0.1em] text-[#6b7280] uppercase">
+          <span class="size-1.5 rounded-full bg-success" aria-hidden="true"></span>
+          {t.services.eyebrow}
+        </p>
+        <h2 id="services-title" class="max-w-[498px] text-title">{t.services.title}</h2>
+      </div>
+      <Button href={contactHref} icon="arrow-right" size="lg">{t.services.cta}</Button>
+    </div>
+
+    <div class="flex flex-col gap-6 lg:w-[380px]">
+      <p class="text-base leading-6 font-medium text-muted">{t.services.intro}</p>
+      <ul class="flex max-w-[349px] flex-wrap gap-2">
+        {
+          t.services.chips.map((chip) => (
+            <li class="flex items-center gap-1.5 rounded-lg border border-line bg-white px-[13px] py-[7px] text-sm leading-[19.5px] font-medium tracking-[-0.05em] text-[#323232] shadow-chip">
+              <Icon name="check-circle" size={14} class="text-success" />
+              {chip}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex flex-col rounded-panel border border-line bg-white px-6 py-4 sm:px-10 sm:py-6">
+    {
+      t.services.items.map((item, index) => (
+        <details
+          name="services"
+          open={index === 0}
+          class="group border-divider py-4 not-last:border-b sm:py-6"
+        >
+          <summary class="flex cursor-pointer list-none items-center gap-4 sm:gap-8 [&::-webkit-details-marker]:hidden">
+            <span class="w-12 shrink-0 text-xl leading-[1.4] font-medium text-ink sm:w-[100px]">({index + 1})</span>
+            <span class="flex-1 text-xl leading-[1.4] font-medium text-ink sm:text-2xl lg:max-w-[458px]">{item.title}</span>
+            <span class="hidden flex-1 text-base leading-[1.4] font-medium text-muted lg:block group-open:lg:invisible">
+              {item.description}
+            </span>
+            <span class="flex size-[42px] shrink-0 items-center justify-center rounded-full border border-[#efefef] transition-colors group-hover:border-ink">
+              <Icon name="plus" size={18} class="group-open:hidden" />
+              <Icon name="minus" size={18} class="hidden group-open:block" />
+            </span>
+          </summary>
+          <div class="flex flex-col gap-6 pt-6 lg:flex-row lg:items-center lg:gap-[30px] lg:pl-[130px]">
+            <p class="text-base leading-[1.4] font-medium text-muted lg:w-[386px] lg:shrink-0">{item.description}</p>
+            <div class="grid flex-1 grid-cols-3 gap-[13px]" aria-hidden="true">
+              {(['blush', 'pink', 'purple'] as const).map((tone) => (
+                <MediaPlaceholder tone={tone} class="h-[100px] rounded-[13px] sm:h-[140px]" />
+              ))}
+            </div>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>
