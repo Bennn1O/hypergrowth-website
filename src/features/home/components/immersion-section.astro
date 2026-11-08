@@ -56,16 +56,25 @@ const panels: Panel[] = [
   </div>
 
   <!-- Horizontal track (pinned on large screens, stacked on mobile). -->
-  <div class="overflow-hidden" data-hscroll>
+  <div class="relative overflow-hidden" data-hscroll>
+    <div class="absolute inset-x-0 bottom-0 z-10 hidden h-[3px] bg-ink/10 lg:block" aria-hidden="true">
+      <div class="h-full origin-left scale-x-0 bg-pink" data-hscroll-progress></div>
+    </div>
     <div class="flex flex-col lg:h-dvh lg:w-max lg:flex-row" data-hscroll-track>
       {
         panels.map((panel) =>
           panel.kind === 'phase' ? (
             <article
-              class="relative flex flex-col justify-between gap-10 border-t border-ink/15 px-4 py-16 sm:px-6 lg:h-full lg:w-[78vw] lg:border-t-0 lg:border-l lg:px-12 lg:pt-28 lg:pb-12"
+              class="relative isolate flex flex-col justify-between gap-10 overflow-hidden border-t border-ink/15 px-4 py-16 sm:px-6 lg:h-full lg:w-[78vw] lg:border-t-0 lg:border-l lg:px-12 lg:pt-28 lg:pb-12"
               data-clock={`${panel.phase.day} · ${panel.phase.start}`}
               data-panel
             >
+              <span
+                class="outline-text pointer-events-none absolute -z-10 right-6 bottom-0 font-serif text-[clamp(10rem,30vw,34rem)] leading-[0.75] font-medium italic select-none lg:right-12"
+                aria-hidden="true"
+              >
+                {panel.index + 1}
+              </span>
               <header class="flex items-start justify-between gap-6">
                 <p class="label text-ink/50">
                   {im.phaseLabel} {panel.index + 1} / 4
@@ -98,6 +107,7 @@ const panels: Panel[] = [
               class="relative isolate flex flex-col justify-end overflow-hidden bg-ink px-4 py-24 text-paper sm:px-6 lg:h-full lg:w-[62vw] lg:px-12 lg:pb-16"
               data-clock={panel.interlude.time}
               data-panel
+              data-dark
             >
               <div class="absolute inset-0 -z-10 opacity-45" aria-hidden="true">
                 <div class="nappes" />

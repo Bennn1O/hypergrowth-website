@@ -1,0 +1,31 @@
+---
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<!--
+  Custom scrollbar carrying the relationship timeline: stages, hour ticks, and the
+  current clock riding on the thumb. Ticks are placed by the motion script from the
+  [data-clock] markers. The native scrollbar is hidden only when this rail is live.
+-->
+<aside
+  class="group/rail fixed top-24 right-2 bottom-6 z-40 hidden w-10 text-ink transition-colors duration-500 select-none sm:right-4 lg:w-36 [.rail-dark_&]:text-paper [.rail-on_&]:block"
+  data-rail
+  aria-label={t.a11y.clock}
+>
+  <div class="absolute inset-y-0 right-3 w-px bg-current opacity-20" data-rail-line></div>
+  <ol class="absolute inset-0" data-rail-ticks></ol>
+  <div class="absolute right-[11px] w-[3px] bg-pink" data-rail-thumb>
+    <p
+      class="label absolute top-1/2 right-4 -translate-y-1/2 overflow-hidden bg-ink px-2 py-1.5 text-[10px] whitespace-nowrap text-paper [.rail-dark_&]:bg-paper [.rail-dark_&]:text-ink tabular-nums transition-opacity duration-300 lg:text-[11px]"
+      data-rail-pill
+    >
+      <span class="inline-block" data-clock-display>{t.opening.clock}</span>
+    </p>
+  </div>
+</aside>

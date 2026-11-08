@@ -8,45 +8,19 @@ const t = getDictionary(locale);
 const home = localizePath('/', locale);
 ---
 
-<header class="pointer-events-none fixed inset-x-0 top-0 z-40 px-4 pt-3 sm:px-6 sm:pt-4">
-  <div
-    class="pointer-events-auto mx-auto flex max-w-site items-center gap-4 rounded-sm border border-ink/10 bg-paper/80 px-3 py-2 backdrop-blur-md sm:gap-8"
-  >
-    <a href={home} aria-label={t.a11y.home} class="shrink-0 text-[22px] leading-none">
-      <Logo variant="mark" class="sm:hidden" />
-      <Logo class="hidden sm:inline-flex" />
+<header
+  class="pointer-events-none fixed inset-x-0 top-0 z-40 px-4 pt-3 transition-transform duration-500 ease-out-expo data-[hidden]:-translate-y-[130%] sm:px-6 sm:pt-4"
+  data-site-header
+>
+  <div class="pointer-events-auto mx-auto flex max-w-site items-center justify-between gap-6">
+    <a href={home} aria-label={t.a11y.home} class="bg-paper/80 px-3 py-2 text-[22px] leading-none backdrop-blur-md">
+      <Logo />
     </a>
-
-    <nav aria-label={t.a11y.mainNav} class="min-w-0 flex-1">
-      <ol class="flex items-center gap-2 sm:gap-3">
-        {
-          t.timeline.stages.map((stage) => (
-            <li class="min-w-0 flex-1">
-              <a href={`#${stage.id}`} class="group flex flex-col gap-1.5" data-stage-link={stage.id}>
-                <span class="label hidden text-[11px] text-ink/45 transition-colors group-hover:text-ink group-data-[active]:text-ink sm:block">
-                  {stage.label}
-                </span>
-                <span class="relative block h-[2px] overflow-hidden bg-ink/12">
-                  <span class="absolute inset-0 origin-left scale-x-0 bg-pink" data-stage-fill />
-                </span>
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-    </nav>
-
-    <p
-      class="label w-[8.5em] shrink-0 overflow-hidden text-right text-[11px] tabular-nums sm:w-[9.5em] sm:text-xs"
-      aria-label={t.a11y.clock}
-      aria-live="off"
-    >
-      <span class="inline-block" data-clock>{t.opening.clock}</span>
-    </p>
-
-    <div class="hidden items-center gap-4 lg:flex">
-      <LanguageSwitcher />
-      <a href="#cafe" class="label bg-ink px-3 py-2.5 text-paper transition-colors hover:bg-purple">{t.timeline.contact}</a>
+    <div class="flex items-center gap-3">
+      <LanguageSwitcher class="hidden bg-paper/80 p-1 backdrop-blur-md sm:flex" />
+      <a href="#cafe" class="label bg-ink px-4 py-3 text-paper transition-colors hover:bg-purple" data-magnetic>
+        {t.timeline.contact}
+      </a>
     </div>
   </div>
 </header>

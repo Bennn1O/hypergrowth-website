@@ -12,17 +12,18 @@ const { t } = Astro.props;
 
 <section
   class="relative flex min-h-dvh flex-col justify-between overflow-hidden px-4 pt-28 pb-8 sm:px-6"
+  data-opening
   data-stage="avant"
   data-clock={t.opening.clock}
   aria-labelledby="opening-title"
 >
-  <div class="pointer-events-none absolute -top-1/4 right-[-25%] h-[90vh] w-[90vw] opacity-60 sm:right-[-10%] sm:w-[60vw]" aria-hidden="true">
+  <div data-opening-nappes class="pointer-events-none absolute -top-1/4 right-[-25%] h-[90vh] w-[90vw] opacity-60 sm:right-[-10%] sm:w-[60vw]" aria-hidden="true">
     <div class="nappes"></div>
   </div>
 
   <p class="label relative text-ink/60" data-fade>{t.opening.eyebrow}</p>
 
-  <h1 id="opening-title" class="shout relative my-10 text-giant">
+  <h1 id="opening-title" class="shout relative my-10 text-giant" data-intro-title>
     {t.opening.title.map((line) => <SplitText text={line} class="block" />)}
     <SplitText text={t.opening.accent} class="voice block text-[1.08em] text-pink" />
   </h1>

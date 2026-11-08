@@ -151,3 +151,79 @@
     transform: translate3d(-3%, 4%, 0) rotate(-6deg) scale(1.02);
   }
 }
+
+/* Custom rail replaces the native scrollbar once the motion script is live. */
+html.rail-on {
+  scrollbar-width: none;
+}
+
+html.rail-on::-webkit-scrollbar {
+  display: none;
+}
+
+/* Loader failsafe: never block the page if the script does not run. */
+[data-loader] {
+  animation: loader-failsafe 0s linear 4s forwards;
+}
+
+@keyframes loader-failsafe {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* Outlined numerals behind the 48h phases. */
+@utility outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(17 17 17 / 0.16);
+}
+
+.rail-tick {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.rail-tick::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 1px;
+  margin-right: 12px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.rail-tick > span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+@media (min-width: 1024px) {
+  [data-rail]:hover .rail-tick > span {
+    opacity: 0.45;
+  }
+  [data-rail]:hover .rail-tick:hover > span,
+  [data-rail]:hover .rail-tick[data-active] > span {
+    opacity: 1;
+  }
+  [data-rail]:hover [data-rail-pill] {
+    opacity: 0;
+  }
+}
+
+.rail-tick[data-active]::after {
+  width: 12px;
+  opacity: 1;
+}
