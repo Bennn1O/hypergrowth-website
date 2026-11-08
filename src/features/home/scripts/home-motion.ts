@@ -325,18 +325,6 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
           },
         },
       });
-      // Phase names drift against the track for depth.
-      for (const title of all('[data-panel] h3', track)) {
-        gsap.fromTo(
-          title,
-          { xPercent: 10 },
-          {
-            xPercent: -10,
-            ease: 'none',
-            scrollTrigger: { trigger: title, containerAnimation: tween, start: 'left right', end: 'right left', scrub: true },
-          },
-        );
-      }
     }
     onReady(tween);
 

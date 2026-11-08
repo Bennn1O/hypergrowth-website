@@ -11,11 +11,11 @@ const { t } = Astro.props;
 const team = t.team;
 ---
 
-<section class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="ensuite" data-clock={t.after.clock} aria-labelledby="team-title">
+<section id="maison" class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="maison" data-clock={team.clock} aria-labelledby="team-title">
   <div class="mx-auto flex max-w-site flex-col gap-16">
     <div class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-5 lg:col-start-8">
-        <ChapterBar prefix={t.chapter.prefix} chapter={team.chapter} index={7} />
+        <ChapterBar prefix={t.chapter.prefix} chapter={team.chapter} index={5} />
       </div>
       <h2 id="team-title" class="shout text-display lg:col-span-11">
         <SplitText text={team.title} class="block" />

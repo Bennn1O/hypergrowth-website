@@ -1,0 +1,63 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const c = t.cases;
+---
+
+<section id="resultats" class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="resultats" data-clock={c.clock} aria-labelledby="cases-title">
+  <div class="mx-auto flex max-w-site flex-col gap-16 sm:gap-24">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5 lg:col-start-8">
+        <ChapterBar prefix={t.chapter.prefix} chapter={c.chapter} index={4} />
+      </div>
+      <h2 id="cases-title" class="shout text-display lg:col-span-11">
+        <SplitText text={c.title} class="block" />
+        <SplitText text={c.accent} class="voice block text-pink" />
+      </h2>
+    </div>
+
+    <figure class="grid gap-6 lg:grid-cols-12" data-fade>
+      <span class="display text-[8rem] leading-[0.6] text-pink lg:col-span-1" aria-hidden="true">“</span>
+      <blockquote class="display text-[clamp(1.5rem,2.6vw,2.4rem)] leading-[1.15] tracking-[-0.04em] lg:col-span-9">
+        {c.quote.text}
+      </blockquote>
+      <figcaption class="label flex flex-col gap-1 lg:col-span-9 lg:col-start-2">
+        <span>{c.quote.author}</span>
+        <span class="text-pink">{c.quote.role}</span>
+      </figcaption>
+    </figure>
+
+    <ul class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        c.items.map((item) => (
+          <li
+            class="group relative isolate flex flex-col justify-between gap-10 overflow-hidden rounded-xl bg-white p-6 shadow-[0_24px_50px_-28px_rgb(17_17_17/0.3),0_1px_3px_rgb(17_17_17/0.06)] transition-[background-color,color,transform] duration-500 ease-out-expo hover:-translate-y-1.5 hover:bg-ink hover:text-paper sm:p-7"
+            data-fade
+          >
+            <div class="grain absolute inset-0 -z-10 opacity-20 mix-blend-multiply" aria-hidden="true" />
+            <div class="flex flex-col gap-3">
+              <p class="label text-ink/45 transition-colors group-hover:text-paper/50">{item.sector}</p>
+              <h3 class="display text-4xl leading-none tracking-[-0.05em]">{item.name}</h3>
+              <p class="text-sm leading-snug font-medium opacity-70">{item.text}</p>
+            </div>
+            <dl class="grid grid-cols-2 gap-4 border-t border-current/15 pt-5">
+              {item.metrics.map((metric) => (
+                <div class="flex flex-col gap-1">
+                  <dt class="display text-2xl leading-none tracking-[-0.04em] text-pink">{metric.value}</dt>
+                  <dd class="text-xs leading-snug font-medium opacity-70">{metric.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

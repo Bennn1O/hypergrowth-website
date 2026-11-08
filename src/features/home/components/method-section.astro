@@ -1,0 +1,90 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const m = t.method;
+const [first, ...rest] = m.steps;
+---
+
+<section id="methode" class="relative" data-stage="methode" data-clock={first.time} aria-labelledby="method-title">
+  <div class="mx-auto flex max-w-site flex-col gap-12 px-4 pt-24 pb-20 sm:px-6">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <ChapterBar prefix={t.chapter.prefix} chapter={m.chapter} index={2} />
+      </div>
+      <h2 id="method-title" class="shout text-display lg:col-span-11">
+        <SplitText text={m.title} class="block" />
+        <SplitText text={m.accent} class="voice block text-pink" />
+      </h2>
+      <p class="text-lead font-medium lg:col-span-5 lg:col-start-8">{m.intro}</p>
+    </div>
+  </div>
+
+  <!-- The whole relationship in one horizontal track (pinned on desktop, stacked on mobile). -->
+  <div class="relative overflow-hidden" data-hscroll>
+    <div class="absolute inset-x-0 bottom-0 z-10 hidden h-[3px] bg-ink/10 lg:block" aria-hidden="true">
+      <div class="h-full origin-left scale-x-0 bg-pink" data-hscroll-progress></div>
+    </div>
+    <div class="flex flex-col lg:h-dvh lg:w-max lg:flex-row" data-hscroll-track>
+      {
+        [first, null, ...rest].map((step, i) =>
+          step ? (
+            <article
+              class="relative isolate flex flex-col justify-between gap-10 overflow-hidden border-t border-ink/15 px-4 py-16 sm:px-6 lg:h-full lg:w-[72vw] lg:border-t-0 lg:border-l lg:px-12 lg:pt-28 lg:pb-14"
+              data-clock={step.time}
+              data-panel
+            >
+              <span
+                class="outline-text display pointer-events-none absolute right-6 bottom-0 -z-10 text-[clamp(10rem,28vw,30rem)] leading-[0.75] select-none lg:right-12"
+                aria-hidden="true"
+              >
+                {m.steps.indexOf(step) + 1}
+              </span>
+              <header class="flex items-start justify-between gap-6">
+                <p class="label text-pink">{step.label}</p>
+                <p class="label tabular-nums">{step.time}</p>
+              </header>
+              <div class="grid gap-8 lg:grid-cols-12">
+                <h3 class="shout text-display lg:col-span-11">{step.title}</h3>
+                <p class="text-lead font-medium lg:col-span-6">{step.text}</p>
+                <ol class="flex flex-wrap gap-2 self-end lg:col-span-5 lg:col-start-8">
+                  {step.points.map((point) => (
+                    <li class="rounded-full border border-ink/20 px-3 py-1.5 text-sm font-medium">{point}</li>
+                  ))}
+                </ol>
+              </div>
+              <p class="label text-ink/40">
+                {m.stepLabel} {m.steps.indexOf(step) + 1} / {m.steps.length}
+              </p>
+            </article>
+          ) : (
+            <article
+              class="relative isolate flex flex-col justify-end overflow-hidden bg-ink px-4 py-24 text-paper sm:px-6 lg:h-full lg:w-[52vw] lg:px-12 lg:pb-16"
+              data-clock={m.interlude.time}
+              data-panel
+              data-dark
+            >
+              <div class="absolute inset-0 -z-10 opacity-45" aria-hidden="true"><div class="nappes" /></div>
+              <div class="grain absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
+              <p class="label mb-auto flex justify-between text-blush">
+                <span>{m.interlude.label}</span>
+                <span class="tabular-nums">{m.interlude.time}</span>
+              </p>
+              <p class="shout mt-16 text-display">
+                {m.interlude.title} <span class="voice text-pink">{m.interlude.accent}</span>
+              </p>
+              <p class="mt-8 max-w-md text-lead text-paper/70">{m.interlude.text}</p>
+            </article>
+          ),
+        )
+      }
+    </div>
+  </div>
+  <div class="h-16 sm:h-24" aria-hidden="true"></div>
+</section>

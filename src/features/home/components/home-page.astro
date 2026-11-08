@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/base-layout.astro';
 import { getDictionary, resolveLocale } from '../../../i18n';
-import AfterSection from './after-section.astro';
 import BeforeSection from './before-section.astro';
 import ClosingSection from './closing-section.astro';
 import EcosystemSection from './ecosystem-section.astro';
@@ -9,10 +8,10 @@ import GridSection from './grid-section.astro';
 import IntroLoader from './intro-loader.astro';
 import MarqueeBand from './marquee-band.astro';
 import ScrollRail from './scroll-rail.astro';
-import ImmersionSection from './immersion-section.astro';
+import MethodSection from './method-section.astro';
+import CasesSection from './cases-section.astro';
 import OpeningSection from './opening-section.astro';
 import TeamSection from './team-section.astro';
-import TenDaysSection from './ten-days-section.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
@@ -25,12 +24,11 @@ const t = getDictionary(locale);
   <OpeningSection t={t} />
   <BeforeSection t={t} />
   <MarqueeBand items={t.marquee} />
-  <ImmersionSection t={t} />
-  <TenDaysSection t={t} />
-  <AfterSection t={t} />
+  <MethodSection t={t} />
   <GridSection t={t} />
-  <EcosystemSection t={t} />
+  <CasesSection t={t} />
   <TeamSection t={t} />
+  <EcosystemSection t={t} />
   <ClosingSection t={t} />
 </BaseLayout>
 

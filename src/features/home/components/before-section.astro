@@ -43,29 +43,5 @@ const b = t.before;
       </div>
     </div>
 
-    <!-- Where we meet: four tickets, same card language as the intro card. -->
-    <div class="flex flex-col gap-6">
-      <p class="label text-ink/50">{b.meetLabel}</p>
-      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          b.meet.map((item, index) => (
-            <li
-              class="group relative isolate flex min-h-64 flex-col justify-between gap-10 overflow-hidden rounded-xl bg-white p-6 shadow-[0_24px_50px_-28px_rgb(17_17_17/0.3),0_1px_3px_rgb(17_17_17/0.06)] transition-[background-color,color,transform] duration-500 ease-out-expo hover:-translate-y-1.5 hover:bg-ink hover:text-paper"
-              data-fade
-            >
-              <div class="grain absolute inset-0 -z-10 opacity-20 mix-blend-multiply group-hover:mix-blend-soft-light" aria-hidden="true" />
-              <span class="flex items-center justify-between">
-                <span class="label text-ink/40 transition-colors group-hover:text-paper/50">{String(index + 1).padStart(2, '0')}</span>
-                <span class="block size-2 rounded-full bg-pink" />
-              </span>
-              <span class="flex flex-col gap-3">
-                <span class="display text-3xl leading-none tracking-[-0.045em]">{item.name}</span>
-                <span class="text-sm leading-snug font-medium opacity-70">{item.text}</span>
-              </span>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
   </div>
 </section>
