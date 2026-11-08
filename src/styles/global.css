@@ -59,6 +59,11 @@
     height: auto;
   }
 
+  /* Decorative layers (gradients, skewed bands) must never widen the page on phones. */
+  body {
+    overflow-x: clip;
+  }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }

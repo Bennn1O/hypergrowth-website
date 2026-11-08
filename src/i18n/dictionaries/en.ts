@@ -41,6 +41,7 @@ export const en: Dictionary = {
     cta: 'The journey',
   },
   before: {
+    photoCaption: 'Bordeaux, 2025',
     clock: 'D-10',
     chapter: 'about us',
     title: 'If you are here, someone probably told you about',

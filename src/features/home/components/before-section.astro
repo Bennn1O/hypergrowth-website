@@ -15,12 +15,26 @@ const b = t.before;
   <div class="mx-auto flex max-w-site flex-col gap-24 sm:gap-36">
     <!-- Centered statement flanked by photos, as on a studio cover. -->
     <div class="relative py-6 lg:py-24">
-      <PhotoSlot label={t.a11y.photo} caption="Café Croissance" class="absolute top-0 left-0 hidden aspect-[4/5] w-[14vw] lg:block" />
-      <PhotoSlot label={t.a11y.photo} caption="Dîner CEO" class="absolute right-0 bottom-0 hidden aspect-[5/4] w-[16vw] lg:block" />
+      <PhotoSlot label={t.a11y.photo} caption={b.photoCaption} src="/photos/bordeaux-2613.webp" class="absolute top-0 left-0 hidden aspect-[4/5] w-[14vw] lg:block" />
+      <PhotoSlot label={t.a11y.photo} caption={b.photoCaption} src="/photos/bordeaux-2592.webp" class="absolute right-0 bottom-0 hidden aspect-[3/2] w-[20vw] lg:block" />
       <h2 id="before-title" class="shout relative mx-auto max-w-5xl text-center text-display">
         <SplitText text={b.title} />{' '}
         <SplitText text={b.accent} class="voice text-pink" />
       </h2>
+    </div>
+
+    <!-- A strip of the room, between the card and the rest. -->
+    <div class="grid grid-cols-3 gap-3 sm:gap-4" data-fade>
+      {
+        ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/photos/bordeaux-2801.webp'].map((src, i) => (
+          <PhotoSlot
+            label={t.a11y.photo}
+            caption={b.photoCaption}
+            src={src}
+            class:list={['relative aspect-[3/4]', i === 1 && 'sm:translate-y-10']}
+          />
+        ))
+      }
     </div>
 
     <div

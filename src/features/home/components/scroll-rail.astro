@@ -25,7 +25,7 @@ const stageTitles = Object.fromEntries(t.timeline.stages.map((stage) => [stage.i
   <div class="pointer-events-none absolute top-0 right-0 h-px w-8" data-rail-needle>
     <span class="absolute inset-0 bg-pink"></span>
     <span class="absolute top-1/2 -right-[3px] size-[7px] -translate-y-1/2 rounded-full bg-pink"></span>
-    <div class="absolute top-1/2 right-11 -translate-y-1/2 text-right whitespace-nowrap transition-opacity duration-300" data-rail-readout>
+    <div class="absolute top-1/2 right-11 hidden -translate-y-1/2 text-right whitespace-nowrap transition-opacity duration-300 lg:block" data-rail-readout>
       <p class="label text-[9px] opacity-55" data-rail-stage>{t.timeline.stages[0].title}</p>
       <p class="mt-1 overflow-hidden text-[13px] leading-none font-medium tracking-[-0.02em] tabular-nums">
         <span class="inline-block" data-clock-display>{t.opening.clock}</span>

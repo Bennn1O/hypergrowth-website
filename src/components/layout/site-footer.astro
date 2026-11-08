@@ -60,9 +60,9 @@ const socials = site.socials.filter((social) => social.href);
                 class="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-4 py-4 sm:grid-cols-[4rem_1fr_auto] sm:py-5"
               >
                 <span class="label text-paper/40 transition-colors group-hover:text-pink">{String(index + 1).padStart(2, '0')}</span>
-                <span class="display block h-[1.1em] overflow-hidden text-[clamp(1.9rem,4.6vw,4.25rem)] leading-[1.1] tracking-[-0.05em]">
+                <span class="display block overflow-hidden text-[clamp(1.9rem,4.6vw,4.25rem)] leading-[1.1] tracking-[-0.05em] sm:h-[1.1em]">
                   <span class="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{stage.title}</span>
-                  <span class="block text-pink transition-transform duration-500 ease-out-expo group-hover:-translate-y-full" aria-hidden="true">
+                  <span class="hidden text-pink transition-transform duration-500 ease-out-expo group-hover:-translate-y-full sm:block" aria-hidden="true">
                     {stage.title}
                   </span>
                 </span>
