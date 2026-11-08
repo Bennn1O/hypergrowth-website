@@ -32,4 +32,15 @@ const stageTitles = Object.fromEntries(t.timeline.stages.map((stage) => [stage.i
       </p>
     </div>
   </div>
+
+  <!-- Phones: the same reading, parked bottom right, shown while scrolling. -->
+  <div
+    class="pointer-events-none absolute right-6 bottom-0 rounded-full bg-paper/90 px-3 py-2 text-right whitespace-nowrap opacity-0 shadow-sm backdrop-blur transition-opacity duration-300 [.rail-dark_&]:bg-ink/85 lg:hidden"
+    data-rail-pill
+  >
+    <p class="label text-[9px] opacity-55" data-rail-stage>{t.timeline.stages[0].title}</p>
+    <p class="mt-1 overflow-hidden text-[13px] leading-none font-medium tracking-[-0.02em] tabular-nums">
+      <span class="inline-block" data-clock-display>{t.opening.clock}</span>
+    </p>
+  </div>
 </aside>

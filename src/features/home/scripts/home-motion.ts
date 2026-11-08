@@ -39,27 +39,27 @@ function scrollToY(y: number, immediate = false) {
 /* ------------------------------------------------------------------ */
 
 function createClock(onChange: (value: string) => void): ClockSetter {
-  const target = document.querySelector<HTMLElement>('[data-clock-display]');
-  let current = target?.textContent?.trim() ?? '';
+  const targets = all('[data-clock-display]');
+  let current = targets[0]?.textContent?.trim() ?? '';
   let roll: gsap.core.Timeline | undefined;
 
   return (value, animate = true) => {
-    if (!target || !value || value === current) return;
+    if (!targets.length || !value || value === current) return;
     current = value;
     onChange(value);
     if (!animate) {
-      target.textContent = value;
+      for (const target of targets) target.textContent = value;
       return;
     }
     // Kill the previous roll entirely (its text swap included), or a fast jump leaves a stale value.
     roll?.kill();
     roll = gsap
       .timeline()
-      .to(target, { yPercent: -120, duration: 0.16, ease: 'power2.in' })
+      .to(targets, { yPercent: -120, duration: 0.16, ease: 'power2.in' })
       .add(() => {
-        target.textContent = value;
+        for (const target of targets) target.textContent = value;
       })
-      .fromTo(target, { yPercent: 120 }, { yPercent: 0, duration: 0.4, ease: 'expo.out' });
+      .fromTo(targets, { yPercent: 120 }, { yPercent: 0, duration: 0.4, ease: 'expo.out' });
   };
 }
 
@@ -103,8 +103,9 @@ function setupRail(getMarkers: () => Marker[]) {
   const ticksRoot = rail?.querySelector<HTMLElement>('[data-rail-ticks]');
   const needle = rail?.querySelector<HTMLElement>('[data-rail-needle]');
   const readout = rail?.querySelector<HTMLElement>('[data-rail-readout]');
-  const stageLabel = rail?.querySelector<HTMLElement>('[data-rail-stage]');
-  if (!rail || !ruler || !ticksRoot || !needle || !readout || !stageLabel) return () => {};
+  const stageLabels = rail ? all('[data-rail-stage]', rail) : [];
+  const pill = rail?.querySelector<HTMLElement>('[data-rail-pill]');
+  if (!rail || !ruler || !ticksRoot || !needle || !readout || !stageLabels.length) return () => {};
 
   const stageTitles: Record<string, string> = JSON.parse(rail.dataset.stageTitles ?? '{}');
   document.documentElement.classList.add('rail-on');
@@ -192,20 +193,18 @@ function setupRail(getMarkers: () => Marker[]) {
     dragging = false;
   });
 
-  // On touch screens the readout only shows while scrolling.
+  // On phones the bottom pill only shows while scrolling.
   let idle: number | undefined;
-  const touch = !window.matchMedia(FINE_POINTER).matches;
-  if (touch) readout.style.opacity = '0';
   window.addEventListener(
     'scroll',
     () => {
       update();
-      if (!touch) return;
-      readout.style.opacity = '1';
+      if (!pill) return;
+      pill.style.opacity = '1';
       window.clearTimeout(idle);
       idle = window.setTimeout(() => {
-        readout.style.opacity = '0';
-      }, 1200);
+        pill.style.opacity = '0';
+      }, 1100);
     },
     { passive: true },
   );
@@ -221,11 +220,11 @@ function setupRail(getMarkers: () => Marker[]) {
       activeStage = stage;
       gsap
         .timeline()
-        .to(stageLabel, { opacity: 0, y: -4, duration: 0.15 })
+        .to(stageLabels, { opacity: 0, y: -4, duration: 0.15 })
         .add(() => {
-          stageLabel.textContent = stageTitles[stage];
+          for (const label of stageLabels) label.textContent = stageTitles[stage];
         })
-        .fromTo(stageLabel, { y: 4 }, { opacity: 0.55, y: 0, duration: 0.35, ease: 'expo.out' });
+        .fromTo(stageLabels, { y: 4 }, { opacity: 0.55, y: 0, duration: 0.35, ease: 'expo.out' });
     }
   };
 }
@@ -322,65 +321,41 @@ function setupReveals() {
 /* Desktop choreography: pinned 48h track, scattered OP-X cards.       */
 /* ------------------------------------------------------------------ */
 
+/** The method track: pinned and scrolled horizontally, on every screen size. */
+function makeHorizontal(): gsap.core.Tween | undefined {
+  const wrapper = document.querySelector<HTMLElement>('[data-hscroll]');
+  const track = document.querySelector<HTMLElement>('[data-hscroll-track]');
+  const progress = document.querySelector<HTMLElement>('[data-hscroll-progress]');
+  if (!wrapper || !track) return undefined;
+  const distance = () => track.scrollWidth - window.innerWidth;
+  return gsap.to(track, {
+    x: () => -distance(),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: wrapper,
+      start: 'top top',
+      end: () => `+=${distance()}`,
+      pin: true,
+      scrub: 0.6,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        if (progress) gsap.set(progress, { scaleX: self.progress });
+      },
+    },
+  });
+}
+
 function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => void) {
+  const deck = document.querySelector<HTMLElement>('[data-deck]');
+  const cards = all('[data-card]');
+
   mm.add(DESKTOP, () => {
-    const wrapper = document.querySelector<HTMLElement>('[data-hscroll]');
-    const track = document.querySelector<HTMLElement>('[data-hscroll-track]');
-    const progress = document.querySelector<HTMLElement>('[data-hscroll-progress]');
-    let tween: gsap.core.Tween | undefined;
-    if (wrapper && track) {
-      const distance = () => track.scrollWidth - window.innerWidth;
-      tween = gsap.to(track, {
-        x: () => -distance(),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: wrapper,
-          start: 'top top',
-          end: () => `+=${distance()}`,
-          pin: true,
-          scrub: 0.6,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            if (progress) gsap.set(progress, { scaleX: self.progress });
-          },
-        },
-      });
-    }
-    onReady(tween);
+    const tween = makeHorizontal();
 
-    // J+10: the two documents start stacked and fan out.
-    const docs = all('[data-doc]');
-    if (docs.length === 2) {
-      gsap.fromTo(
-        docs[1],
-        { xPercent: -104, rotate: 5, y: 30 },
-        {
-          xPercent: 0,
-          rotate: 0,
-          y: 0,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: '[data-docs]', start: 'top 80%', end: 'top 30%', scrub: 0.8 },
-        },
-      );
-      gsap.fromTo(
-        docs[0],
-        { rotate: -4 },
-        { rotate: 0, ease: 'power2.out', scrollTrigger: { trigger: '[data-docs]', start: 'top 80%', end: 'top 30%', scrub: 0.8 } },
-      );
-    }
-
-    // Expertises: stop-scroll moment, the cards are dealt one by one over the big words.
-    const deck = document.querySelector<HTMLElement>('[data-deck]');
-    const cards = all('[data-card]');
+    // Expertises: stop-scroll moment, the cards are dealt one by one around the big words.
     if (deck && cards.length) {
       const deal = gsap.timeline({
-        scrollTrigger: {
-          trigger: deck,
-          start: 'top top',
-          end: () => `+=${cards.length * 42}%`,
-          pin: true,
-          scrub: 0.7,
-        },
+        scrollTrigger: { trigger: deck, start: 'top top', end: () => `+=${cards.length * 42}%`, pin: true, scrub: 0.7 },
       });
       deal.fromTo('[data-deck-title]', { scale: 0.9, opacity: 0.5 }, { scale: 1, opacity: 1, duration: 1, ease: 'none' }, 0);
       cards.forEach((card, i) => {
@@ -394,9 +369,30 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
       });
       deal.fromTo('[data-deck-aside]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '>-0.2').to({}, { duration: 0.8 });
     }
+    onReady(tween);
   });
 
-  mm.add(`not ${DESKTOP}`, () => onReady());
+  mm.add(`not ${DESKTOP}`, () => {
+    const tween = makeHorizontal();
+
+    // Expertises on phones: the cards stack up one by one in the middle of the screen.
+    if (deck && cards.length) {
+      const deal = gsap.timeline({
+        scrollTrigger: { trigger: deck, start: 'top top', end: () => `+=${cards.length * 55}%`, pin: true, scrub: 0.6 },
+      });
+      cards.forEach((card, i) => {
+        const r = i % 2 ? 3 : -3;
+        deal.fromTo(
+          card,
+          { yPercent: 130, rotate: r * 4, opacity: 0 },
+          { yPercent: i * -2, rotate: r, opacity: 1, duration: 1, ease: 'power3.out' },
+          i * 0.8,
+        );
+      });
+      deal.fromTo('[data-deck-aside]', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '>-0.2').to({}, { duration: 0.6 });
+    }
+    onReady(tween);
+  });
 }
 
 /* ------------------------------------------------------------------ */
