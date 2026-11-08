@@ -348,23 +348,30 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
     }
     onReady(tween);
 
+    // Expertises: stop-scroll moment, the cards are dealt one by one over the big words.
+    const deck = document.querySelector<HTMLElement>('[data-deck]');
     const cards = all('[data-card]');
-    if (cards.length) {
-      gsap.fromTo(
-        cards,
-        {
-          xPercent: (i: number) => Number(cards[i].dataset.x),
-          y: (i: number) => Number(cards[i].dataset.y) * 3,
-          rotate: (i: number) => Number(cards[i].dataset.r),
+    if (deck && cards.length) {
+      const deal = gsap.timeline({
+        scrollTrigger: {
+          trigger: deck,
+          start: 'top top',
+          end: () => `+=${cards.length * 42}%`,
+          pin: true,
+          scrub: 0.7,
         },
-        {
-          xPercent: 0,
-          y: 0,
-          rotate: 0,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: '[data-cards]', start: 'top 95%', end: 'top 25%', scrub: 0.8 },
-        },
-      );
+      });
+      deal.fromTo('[data-deck-title]', { scale: 0.9, opacity: 0.5 }, { scale: 1, opacity: 1, duration: 1, ease: 'none' }, 0);
+      cards.forEach((card, i) => {
+        const r = Number(card.dataset.r) || 0;
+        deal.fromTo(
+          card,
+          { opacity: 0, scale: 0.35, yPercent: 60, rotate: r + (i % 2 ? 24 : -24) },
+          { opacity: 1, scale: 1, yPercent: 0, rotate: r, duration: 1, ease: 'back.out(1.7)' },
+          0.4 + i * 0.75,
+        );
+      });
+      deal.fromTo('[data-deck-aside]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '>-0.2').to({}, { duration: 0.8 });
     }
   });
 

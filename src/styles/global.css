@@ -244,7 +244,11 @@ html.rail-on::-webkit-scrollbar {
   }
 }
 
-/* Keep content clear of the rail on large screens; backgrounds stay full-bleed. */
+/* Keep content clear of the rail; backgrounds stay full-bleed. */
+html.rail-on .max-w-site {
+  padding-right: 2rem;
+}
+
 @media (min-width: 1024px) {
   html.rail-on .max-w-site {
     padding-right: 3.5rem;

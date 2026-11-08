@@ -10,60 +10,63 @@ interface Props {
 const { t } = Astro.props;
 const g = t.grid;
 
-// Deterministic "posées sur la table" offsets, undone on scroll (desktop only).
-const scatter = [
-  { x: -8, y: 30, r: -9 },
-  { x: 12, y: -20, r: 6 },
-  { x: -18, y: 45, r: 11 },
-  { x: 6, y: -35, r: -5 },
-  { x: 20, y: 15, r: 8 },
-  { x: -10, y: -40, r: -12 },
-  { x: 14, y: 35, r: 4 },
-  { x: -16, y: -10, r: -7 },
+// Where each card lands on the "table" (desktop): left/top in % of the stage, rotation in deg.
+// A ring around the big words, leaving the centre-bottom clear for the accent.
+const spots = [
+  { x: 1, y: 6, r: -6 },
+  { x: 18, y: 1, r: 4 },
+  { x: 63, y: 2, r: -3 },
+  { x: 81, y: 8, r: 6 },
+  { x: 1, y: 52, r: 3 },
+  { x: 13, y: 71, r: -5 },
+  { x: 70, y: 71, r: 5 },
+  { x: 83, y: 50, r: -4 },
 ];
 ---
 
-<section class="relative px-4 pt-16 pb-32 sm:px-6" data-stage="ensuite" data-clock={t.after.clock} aria-labelledby="grid-title">
-  <div class="mx-auto flex max-w-site flex-col gap-16 sm:gap-24">
-    <div class="grid gap-10 lg:grid-cols-12">
-      <div class="lg:col-span-5 lg:col-start-8">
-        <ChapterBar prefix={t.chapter.prefix} chapter={g.chapter} index={5} />
-      </div>
-      <h2 id="grid-title" class="shout text-display lg:col-span-11">
-        <SplitText text={g.title} />{' '}
-        <SplitText text={g.accent} class="voice text-pink" />
-      </h2>
-      <p class="text-lead text-ink/80 lg:col-span-6">{g.intro}</p>
+<section class="relative" data-stage="ensuite" data-clock={t.after.clock} aria-labelledby="grid-title">
+  <div class="mx-auto grid max-w-site gap-10 px-4 pt-16 sm:px-6 lg:grid-cols-12">
+    <div class="lg:col-span-5 lg:col-start-8">
+      <ChapterBar prefix={t.chapter.prefix} chapter={g.chapter} index={5} />
     </div>
+    <p class="text-lead text-ink/80 lg:col-span-6">{g.intro}</p>
+  </div>
 
-    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-cards>
+  <!-- Stop-scroll moment (desktop): the stage pins, the cards are dealt one by one over the big words. -->
+  <div class="relative py-12 pr-12 pl-4 sm:pl-6 lg:h-dvh lg:overflow-hidden lg:p-0" data-deck>
+    <h2
+      id="grid-title"
+      class="shout mx-auto max-w-site text-display lg:absolute lg:inset-0 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center lg:text-giant lg:leading-[0.84]"
+      data-deck-title
+    >
+      <span class="lg:text-ink/14">{g.title}</span>{' '}
+      <span class="voice text-pink">{g.accent}</span>
+    </h2>
+
+    <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:absolute lg:inset-y-0 lg:right-16 lg:left-0 lg:mt-0 lg:block" data-cards>
       {
         g.items.map((item, index) => (
           <li
-            class="group flex aspect-square flex-col justify-between gap-4 bg-mist p-5 transition-colors duration-500 hover:bg-ink hover:text-paper sm:p-6"
+            class="group flex flex-col justify-between gap-4 bg-white p-5 lg:aspect-square lg:gap-3 shadow-[0_30px_60px_-30px_rgb(17_17_17/0.5),0_0_0_1px_rgb(17_17_17/0.06)] transition-colors duration-500 hover:bg-ink hover:text-paper lg:absolute lg:top-[var(--y)] lg:left-[var(--x)] lg:w-[min(15.5rem,15vw)]"
+            style={`--x: ${spots[index].x}%; --y: ${spots[index].y}%; --r: ${spots[index].r}deg;`}
             data-card
-            data-x={scatter[index].x}
-            data-y={scatter[index].y}
-            data-r={scatter[index].r}
+            data-r={spots[index].r}
           >
             <div class="flex items-start justify-between gap-4">
-              <h3 class="shout text-2xl leading-[1.05] xl:text-3xl">{item.name}</h3>
-              <span class="display text-3xl leading-none text-pink">{String(index + 1).padStart(2, '0')}</span>
+              <h3 class="shout text-xl leading-[1.05] xl:text-2xl">{item.name}</h3>
+              <span class="display text-2xl leading-none text-pink">{String(index + 1).padStart(2, '0')}</span>
             </div>
-            <p class="text-sm opacity-75 sm:text-base">{item.look}</p>
-            <div class="flex flex-col gap-2">
-              <p class="label text-[10px] text-purple group-hover:text-blush">{g.expertsLabel}</p>
-              <ul class="flex flex-wrap gap-1.5">
-                {item.experts.map((expert) => (
-                  <li class="border border-current/25 px-2 py-1 text-xs">{expert}</li>
-                ))}
-              </ul>
-            </div>
+            <p class="text-sm leading-snug opacity-75">{item.text}</p>
+            <ul class="flex flex-wrap gap-1.5">
+              {item.tags.map((tag) => (
+                <li class="border border-current/25 px-2 py-1 text-xs">{tag}</li>
+              ))}
+            </ul>
           </li>
         ))
       }
     </ul>
 
-    <p class="voice text-center text-xl text-ink/60 sm:text-2xl">{g.aside}</p>
+    <p class="voice mt-12 text-center text-xl text-ink/60 lg:absolute lg:inset-x-0 lg:bottom-6 lg:mt-0 lg:text-lg" data-deck-aside>{g.aside}</p>
   </div>
 </section>
