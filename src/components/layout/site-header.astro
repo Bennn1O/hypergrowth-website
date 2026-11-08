@@ -13,7 +13,7 @@ const home = localizePath('/', locale);
   data-site-header
 >
   <div class="pointer-events-auto mx-auto flex max-w-site items-center justify-between gap-6">
-    <a href={home} aria-label={t.a11y.home} class="bg-paper/80 px-3 py-2 text-[22px] leading-none backdrop-blur-md">
+    <a href={home} aria-label={t.a11y.home} class="bg-paper/80 px-3 py-2 text-[22px] leading-none backdrop-blur-md transition-opacity duration-500 [[data-on-hero]_&]:pointer-events-none [[data-on-hero]_&]:opacity-0">
       <Logo />
     </a>
     <div class="flex items-center gap-3">

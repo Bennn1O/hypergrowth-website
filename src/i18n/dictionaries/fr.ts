@@ -32,11 +32,11 @@ export const fr = {
   },
   opening: {
     clock: 'J-10',
-    eyebrow: 'HyperGrowth · Méthode OP-X',
-    title: ['Votre entreprise', 'grossit plus vite', 'que son'],
-    accent: 'organisation.',
-    lead: 'On le sait parce qu’on s’y installe. Quarante-huit heures avec vous, puis des opérationnels qui restent jusqu’à ce que ça tienne.',
-    hint: 'Faites défiler, l’horloge tourne.',
+    tagLeft: 'Bras droit opérationnel',
+    tagRight: 'des dirigeants',
+    statement: 'Une équipe d’opérationnels pour les entreprises qui grossissent plus vite que leur organisation.',
+    note: 'Quarante-huit heures d’immersion avec vous, une feuille de route à dix jours, puis des Operating Partners qui tiennent les chantiers jusqu’au bout.',
+    cta: 'Le parcours',
   },
   before: {
     clock: 'J-10',

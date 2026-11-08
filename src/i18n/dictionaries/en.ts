@@ -29,11 +29,11 @@ export const en: Dictionary = {
   },
   opening: {
     clock: 'D-10',
-    eyebrow: 'HyperGrowth · OP-X method',
-    title: ['Your company', 'is growing faster', 'than its'],
-    accent: 'organisation.',
-    lead: 'We know because we move in. Forty-eight hours with you, then operators who stay until it holds.',
-    hint: 'Scroll, the clock is running.',
+    tagLeft: 'The operational right hand',
+    tagRight: 'of founders',
+    statement: 'A team of operators for companies growing faster than their organisation.',
+    note: 'Forty-eight hours of immersion with you, a roadmap ten days later, then Operating Partners who run the workstreams all the way.',
+    cta: 'The journey',
   },
   before: {
     clock: 'D-10',

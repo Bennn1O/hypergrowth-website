@@ -1,5 +1,7 @@
 ---
-import PhotoSlot from '../../../components/ui/photo-slot.astro';
+import Logomark from '../../../assets/brand/logomark.svg';
+import Logotype from '../../../assets/brand/logotype.svg';
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
 import SplitText from '../../../components/ui/split-text.astro';
 import type { Dictionary } from '../../../i18n';
 
@@ -8,44 +10,49 @@ interface Props {
 }
 
 const { t } = Astro.props;
+const o = t.opening;
 ---
 
+<!--
+  Hero, built like a studio cover: the brand as the headline (top left), the positioning
+  in the right column, a note bottom left, and the first chapter bar closing the screen.
+  Two columns only: 1-6 and 7-12, shared with the next sections.
+-->
 <section
-  class="relative flex min-h-dvh flex-col justify-between overflow-hidden px-4 pt-28 pb-8 sm:px-6"
-  data-opening
+  class="relative flex min-h-dvh flex-col px-4 pt-20 pb-8 sm:px-6 sm:pt-20"
   data-stage="avant"
-  data-clock={t.opening.clock}
+  data-clock={o.clock}
+  data-opening
   aria-labelledby="opening-title"
 >
-  <div data-opening-nappes class="pointer-events-none absolute -top-1/4 right-[-25%] h-[90vh] w-[90vw] opacity-60 sm:right-[-10%] sm:w-[60vw]" aria-hidden="true">
-    <div class="nappes"></div>
-  </div>
+  <div class="mx-auto grid w-full max-w-site flex-1 grid-cols-1 gap-y-10 lg:grid-cols-12 lg:grid-rows-[auto_1fr_auto] lg:gap-x-6">
+    <!-- Logo: mark and wordmark caps share one height (wordmark box = caps x 1.32). -->
+    <div class="flex w-fit flex-col gap-4 lg:col-span-8">
+      <div class="flex items-start gap-[1vw] overflow-hidden text-pink" aria-hidden="true" data-hero-logo>
+        <Logomark class="h-[13vw] w-auto shrink-0 lg:h-[6.8vw]" />
+        <Logotype class="-mt-[0.4vw] h-[17.2vw] w-auto shrink-0 lg:-mt-[0.25vw] lg:h-[9vw] [&_.growth]:text-pink" />
+      </div>
+      <p class="label flex justify-between gap-6 text-pink" data-fade>
+        <span>{o.tagLeft}</span>
+        <span>{o.tagRight}</span>
+      </p>
+    </div>
 
+    <h1
+      id="opening-title"
+      class="display self-center text-[clamp(1.75rem,2.6vw,2.6rem)] leading-[1.08] tracking-[-0.045em] lg:col-span-5 lg:col-start-8 lg:row-start-2"
+      data-intro-title
+    >
+      <SplitText text={o.statement} />
+    </h1>
 
-  <h1 id="opening-title" class="shout relative my-10 text-giant" data-intro-title>
-    {t.opening.title.map((line) => <SplitText text={line} class="block" />)}
-    <SplitText text={t.opening.accent} class="voice block text-[1.08em] text-pink" />
-  </h1>
+    <p class="max-w-sm self-end text-base leading-snug text-ink/80 lg:col-span-4 lg:row-start-3" data-fade>{o.note}</p>
 
-  <PhotoSlot
-    label={t.a11y.photo}
-    caption="Immersion · J1"
-    class="absolute top-[18%] right-[6%] hidden aspect-[4/5] w-[17vw] lg:block"
-    speed={-0.25}
-  />
-  <PhotoSlot
-    label={t.a11y.photo}
-    caption="Dîner · J1"
-    skew="right"
-    class="absolute right-[24%] bottom-[16%] hidden aspect-[5/4] w-[13vw] lg:block"
-    speed={0.35}
-  />
-
-  <div class="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-    <p class="label flex items-center gap-3 text-ink/60" data-fade>
-      <span class="inline-block size-2 animate-pulse rounded-full bg-pink"></span>
-      {t.opening.hint}
-    </p>
-    <p class="max-w-md text-lead text-ink/80" data-fade>{t.opening.lead}</p>
+    <div class="flex flex-col items-start gap-3 self-end lg:col-span-5 lg:col-start-8 lg:row-start-3" data-fade>
+      <a href="#avant" class="label flex items-center gap-2 bg-ink px-3 py-2.5 text-paper transition-colors hover:bg-purple" data-magnetic>
+        {o.cta} <span aria-hidden="true">↗</span>
+      </a>
+      <ChapterBar prefix={t.chapter.prefix} chapter={t.before.chapter} index={1} class="w-full" />
+    </div>
   </div>
 </section>

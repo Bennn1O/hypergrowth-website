@@ -261,6 +261,7 @@ function setupReveals() {
   }
 
   for (const bar of all('[data-chapter-bar]')) {
+    if (bar.closest('[data-opening]')) continue;
     gsap
       .timeline({ scrollTrigger: { trigger: bar, start: 'top 85%', once: true } })
       .from(bar, { scaleX: 0, duration: 1.1, ease: 'expo.inOut' })
@@ -385,6 +386,17 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
 function setupHeader() {
   const header = document.querySelector<HTMLElement>('[data-site-header]');
   if (!header) return;
+  // The hero already shows the logo in large: the header logo waits until we leave it.
+  const hero = document.querySelector('[data-opening]');
+  if (hero) {
+    header.toggleAttribute('data-on-hero', true);
+    ScrollTrigger.create({
+      trigger: hero,
+      start: 'top top',
+      end: 'bottom 20%',
+      onToggle: (self) => header.toggleAttribute('data-on-hero', self.isActive),
+    });
+  }
   ScrollTrigger.create({
     start: 160,
     end: 'max',
@@ -406,7 +418,7 @@ function setupMarquee() {
     boost *= 0.92;
     x -= (0.05 + Math.abs(boost) * 0.03) * delta;
     if (half > 0 && -x >= half) x += half;
-    gsap.set(track, { x });
+    gsap.set(track, { x, skewX: gsap.utils.clamp(-8, 8, -boost * 0.25) });
   });
 }
 
@@ -502,7 +514,10 @@ function playIntro() {
         lenis?.start();
       });
   }
-  if (title) tl.add(revealWords(title), loader ? '-=0.55' : 0);
+  const logo = all('[data-hero-logo] > *');
+  if (logo.length) tl.from(logo, { yPercent: 105, duration: 1.2, stagger: 0.08, ease: 'expo.out' }, loader ? '-=0.6' : 0);
+  if (title) tl.add(revealWords(title), '<0.15');
+  tl.from('[data-opening] [data-chapter-bar]', { scaleX: 0, duration: 1.1, ease: 'expo.inOut' }, '<0.2');
   tl.from('[data-opening] [data-fade]', { y: 24, opacity: 0, duration: 1, stagger: 0.08, ease: 'expo.out' }, '<0.3');
 }
 

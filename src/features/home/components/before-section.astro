@@ -1,5 +1,4 @@
 ---
-import ChapterBar from '../../../components/ui/chapter-bar.astro';
 import PhotoSlot from '../../../components/ui/photo-slot.astro';
 import SplitText from '../../../components/ui/split-text.astro';
 import type { Dictionary } from '../../../i18n';
@@ -14,32 +13,22 @@ const b = t.before;
 
 <section id="avant" class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="avant" data-clock={b.clock} aria-labelledby="before-title">
   <div class="mx-auto flex max-w-site flex-col gap-24 sm:gap-36">
-    <div class="grid gap-10 lg:grid-cols-12">
-      <div class="lg:col-span-5 lg:col-start-8">
-        <ChapterBar prefix={t.chapter.prefix} chapter={b.chapter} index={1} />
-      </div>
-      <h2 id="before-title" class="shout text-display lg:col-span-11">
+    <!-- Centered statement flanked by photos, as on a studio cover. -->
+    <div class="relative py-6 lg:py-24">
+      <PhotoSlot label={t.a11y.photo} caption="Café Croissance" class="absolute top-0 left-0 hidden aspect-[4/5] w-[14vw] lg:block" />
+      <PhotoSlot label={t.a11y.photo} caption="Dîner CEO" class="absolute right-0 bottom-0 hidden aspect-[5/4] w-[16vw] lg:block" />
+      <h2 id="before-title" class="shout relative mx-auto max-w-5xl text-center text-display">
         <SplitText text={b.title} />{' '}
         <SplitText text={b.accent} class="voice text-pink" />
       </h2>
     </div>
 
-    <div class="relative grid items-center gap-12 lg:grid-cols-12">
-      <PhotoSlot label={t.a11y.photo} caption="Café Croissance" class="aspect-[4/3] lg:col-span-4" />
-      <div class="bg-ink p-6 text-paper sm:p-8 lg:col-span-4 lg:col-start-6" data-fade>
-        {
-          b.card.map((line, index) => (
-            <p class:list={['text-lead', index > 0 && 'mt-4', index === 1 && 'voice text-blush']}>{line}</p>
-          ))
-        }
-      </div>
-      <PhotoSlot
-        label={t.a11y.photo}
-        caption="Dîner CEO"
-        skew="right"
-        class="aspect-[3/4] w-2/3 justify-self-end lg:col-span-2 lg:col-start-11 lg:w-full"
-        speed={-0.3}
-      />
+    <div class="mx-auto max-w-md bg-ink p-6 text-paper sm:p-8" data-fade>
+      {
+        b.card.map((line, index) => (
+          <p class:list={['text-lead', index > 0 && 'mt-4', index === 1 && 'text-blush']}>{line}</p>
+        ))
+      }
     </div>
 
     <p class="shout text-center text-title">

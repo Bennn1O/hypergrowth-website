@@ -9,7 +9,6 @@ interface Props {
 
 const { t } = Astro.props;
 const team = t.team;
-const tones = ['bg-blush', 'bg-pink', 'bg-purple', 'bg-mist'];
 ---
 
 <section class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="ensuite" data-clock={t.after.clock} aria-labelledby="team-title">
@@ -29,12 +28,11 @@ const tones = ['bg-blush', 'bg-pink', 'bg-purple', 'bg-mist'];
         team.members.map((member, index) => (
           <li class="group flex flex-col gap-4" data-fade>
             <div
-              class:list={['relative aspect-[4/5] overflow-hidden', tones[index % tones.length]]}
-              style="clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);"
+              class="relative aspect-[4/5] overflow-hidden bg-mist"
               aria-label={t.a11y.photo}
             >
-              <div class="grain absolute inset-0 opacity-60 mix-blend-overlay" />
-              <span class="absolute inset-0 flex items-center justify-center display text-[7rem] leading-none text-ink/15 transition-transform duration-700 ease-out-expo group-hover:scale-110">
+              <div class="grain absolute inset-0 opacity-40 mix-blend-multiply" />
+              <span class="absolute inset-0 flex items-center justify-center display text-[7rem] leading-none text-ink/10 transition-transform duration-700 ease-out-expo group-hover:scale-110">
                 {member.name.charAt(0)}
               </span>
             </div>
