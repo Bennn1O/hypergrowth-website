@@ -1,0 +1,43 @@
+---
+import SplitText from '../../../components/ui/split-text.astro';
+import { site } from '../../../data/site';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const c = t.closing;
+const contactHref = site.email ? `mailto:${site.email}` : null;
+---
+
+<section
+  id="cafe"
+  class="relative isolate flex min-h-dvh flex-col justify-center overflow-hidden bg-ink px-4 py-32 text-paper sm:px-6"
+  data-stage="ensuite"
+  data-clock={c.clock}
+  aria-labelledby="closing-title"
+>
+  <div class="absolute inset-0 -z-10 opacity-80" aria-hidden="true"><div class="nappes"></div></div>
+  <div class="grain absolute inset-0 -z-10 opacity-50" aria-hidden="true"></div>
+
+  <div class="mx-auto flex w-full max-w-site flex-col gap-12">
+    <h2 id="closing-title" class="shout text-giant">
+      <SplitText text={c.title} class="block" />
+      <SplitText text={c.accent} class="voice block text-[1.15em] text-blush" />
+    </h2>
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+      <p class="max-w-lg text-lead text-paper/85">{c.text}</p>
+      {
+        contactHref ? (
+          <a href={contactHref} class="label bg-paper px-6 py-5 text-sm text-ink transition-colors hover:bg-pink">
+            {c.cta} →
+          </a>
+        ) : (
+          <p class="label border border-paper/40 px-6 py-5 text-sm text-paper/70">{c.pending}</p>
+        )
+      }
+    </div>
+  </div>
+</section>

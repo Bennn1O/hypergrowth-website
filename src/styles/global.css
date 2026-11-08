@@ -2,8 +2,8 @@
 
 /*
  * HyperGrowth design tokens.
- * Palette: brand board (Colors.png).
- * Layout, spacing and type scale: Figma "Marketing Agency" homepage (node 1:188).
+ * Source: charte graphique du rebranding (Marlay, relevée le 05/11/2026).
+ * IBM Plex Serif pour les titres et la voix, Helvetica pour le texte et les repères.
  */
 @theme {
   /* Brand */
@@ -12,56 +12,59 @@
   --color-purple: #842cb4;
   --color-ink: #111111;
   --color-mist: #e7e7e7;
+  --color-paper: #f3f3f1;
 
-  /* Neutrals (Figma) */
-  --color-graphite: #252424;
-  --color-muted: #757575;
+  /* Neutrals */
+  --color-muted: #6f6f6f;
   --color-subtle: #a3a3a3;
-  --color-line: #e1e1e1;
-  --color-divider: #e9e9e9;
-  --color-placeholder: #c4c4c4;
-  --color-steel: #828d91;
-  --color-night: #090b0b;
-  --color-success: #34d399;
+  --color-line: #d6d6d6;
+  --color-ghost: #c9c9c9;
 
   /* Type */
-  --font-sans: "Inter Tight Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-mono: "Cascadia Code", ui-monospace, monospace;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
 
-  --text-display: clamp(3.25rem, 7vw, 6.25rem);
-  --text-display--line-height: 0.9;
-  --text-display--letter-spacing: -0.02em;
-  --text-statement: clamp(2rem, 4.2vw, 3.75rem);
-  --text-statement--line-height: 1.1;
-  --text-statement--letter-spacing: -0.02em;
-  --text-title: clamp(2.25rem, 3.4vw, 3rem);
-  --text-title--line-height: 1.25;
-  --text-title--letter-spacing: -0.025em;
-  --text-stat: clamp(2.5rem, 3.5vw, 3.125rem);
-  --text-stat--line-height: 1.1;
-  --text-wordmark: clamp(4rem, 17vw, 18rem);
-  --text-wordmark--line-height: 1;
-  --text-wordmark--letter-spacing: -0.035em;
+  --text-giant: clamp(3.4rem, 11.5vw, 13rem);
+  --text-giant--line-height: 0.86;
+  --text-giant--letter-spacing: -0.045em;
+  --text-display: clamp(2.6rem, 7.4vw, 8.25rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.04em;
+  --text-title: clamp(2rem, 4.6vw, 4.5rem);
+  --text-title--line-height: 1;
+  --text-title--letter-spacing: -0.03em;
+  --text-lead: clamp(1.15rem, 1.6vw, 1.5rem);
+  --text-lead--line-height: 1.35;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.08em;
 
-  /* Shape */
-  --radius-card: 1rem;
-  --radius-panel: 1.25rem;
-  --radius-button: 0.75rem;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
-  --shadow-button: 0 4px 4px 0 rgb(0 0 0 / 0.12), 0 0 0 1px var(--color-ink);
-  --shadow-chip: inset 0 -0.75px 0 0 rgb(0 0 0 / 0.03), 0 1.5px 3.7px 0 rgb(0 0 0 / 0.08);
-
-  --container-site: 88.5rem;
+  --container-site: 96rem;
 }
 
 @layer base {
   html {
     color: var(--color-ink);
-    background-color: var(--color-white);
+    background-color: var(--color-paper);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  ::selection {
+    background: var(--color-pink);
+    color: var(--color-ink);
   }
 
   :focus-visible {
@@ -80,13 +83,71 @@
   }
 }
 
-/* Frosted chip used on project cards. */
-@utility glass {
-  background-color: rgb(255 255 255 / 0.12);
-  backdrop-filter: blur(25px);
+/* Uppercase Helvetica marker used for labels, clock and navigation. */
+@utility label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-/* Second half of a two-tone statement. */
-@utility text-quiet {
-  color: color-mix(in srgb, currentColor 40%, transparent);
+/* The serif "voice" that breaks a sans title (charte : italique en fin de titre). */
+@utility voice {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+/* Big uppercase sans title. */
+@utility shout {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@utility grain {
+  background-image: url('/textures/grain.svg');
+  background-size: 240px 240px;
+}
+
+/* Words are split server-side; JS lifts each one in. Visible by default without JS. */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.split-word > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Brand gradient "nappes" (charte : dégradé rose et violet en nappes floues). */
+.nappes {
+  position: absolute;
+  inset: -20%;
+  filter: blur(60px);
+  background:
+    radial-gradient(40% 45% at 22% 30%, var(--color-blush) 0%, transparent 70%),
+    radial-gradient(38% 42% at 75% 25%, var(--color-pink) 0%, transparent 70%),
+    radial-gradient(45% 50% at 60% 80%, var(--color-purple) 0%, transparent 72%);
+  animation: nappes 18s ease-in-out infinite alternate;
+}
+
+@keyframes nappes {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, -3%, 0) rotate(8deg) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-3%, 4%, 0) rotate(-6deg) scale(1.02);
+  }
 }

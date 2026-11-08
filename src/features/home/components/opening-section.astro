@@ -1,0 +1,51 @@
+---
+import PhotoSlot from '../../../components/ui/photo-slot.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section
+  class="relative flex min-h-dvh flex-col justify-between overflow-hidden px-4 pt-28 pb-8 sm:px-6"
+  data-stage="avant"
+  data-clock={t.opening.clock}
+  aria-labelledby="opening-title"
+>
+  <div class="pointer-events-none absolute -top-1/4 right-[-25%] h-[90vh] w-[90vw] opacity-60 sm:right-[-10%] sm:w-[60vw]" aria-hidden="true">
+    <div class="nappes"></div>
+  </div>
+
+  <p class="label relative text-ink/60" data-fade>{t.opening.eyebrow}</p>
+
+  <h1 id="opening-title" class="shout relative my-10 text-giant">
+    {t.opening.title.map((line) => <SplitText text={line} class="block" />)}
+    <SplitText text={t.opening.accent} class="voice block text-[1.08em] text-pink" />
+  </h1>
+
+  <PhotoSlot
+    label={t.a11y.photo}
+    caption="Immersion · J1"
+    class="absolute top-[18%] right-[6%] hidden aspect-[4/5] w-[17vw] lg:block"
+    speed={-0.25}
+  />
+  <PhotoSlot
+    label={t.a11y.photo}
+    caption="Dîner · J1"
+    skew="right"
+    class="absolute right-[24%] bottom-[16%] hidden aspect-[5/4] w-[13vw] lg:block"
+    speed={0.35}
+  />
+
+  <div class="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <p class="label flex items-center gap-3 text-ink/60" data-fade>
+      <span class="inline-block size-2 animate-pulse rounded-full bg-pink"></span>
+      {t.opening.hint}
+    </p>
+    <p class="max-w-md text-lead text-ink/80" data-fade>{t.opening.lead}</p>
+  </div>
+</section>

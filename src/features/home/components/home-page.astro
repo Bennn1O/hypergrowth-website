@@ -1,24 +1,34 @@
 ---
 import BaseLayout from '../../../layouts/base-layout.astro';
 import { getDictionary, resolveLocale } from '../../../i18n';
-import { getProjects } from '../data/get-projects';
-import HeroSection from './hero-section.astro';
-import ProofSection from './proof-section.astro';
-import ServicesSection from './services-section.astro';
-import StatementSection from './statement-section.astro';
-import StatsSection from './stats-section.astro';
-import WorkSection from './work-section.astro';
+import AfterSection from './after-section.astro';
+import BeforeSection from './before-section.astro';
+import ClosingSection from './closing-section.astro';
+import EcosystemSection from './ecosystem-section.astro';
+import GridSection from './grid-section.astro';
+import ImmersionSection from './immersion-section.astro';
+import OpeningSection from './opening-section.astro';
+import TeamSection from './team-section.astro';
+import TenDaysSection from './ten-days-section.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
-const projects = await getProjects(locale);
 ---
 
 <BaseLayout>
-  <HeroSection t={t} />
-  <ProofSection t={t} />
-  <StatementSection t={t} />
-  <StatsSection t={t} />
-  <ServicesSection t={t} />
-  <WorkSection t={t} projects={projects} />
+  <OpeningSection t={t} />
+  <BeforeSection t={t} />
+  <ImmersionSection t={t} />
+  <TenDaysSection t={t} />
+  <AfterSection t={t} />
+  <GridSection t={t} />
+  <EcosystemSection t={t} />
+  <TeamSection t={t} />
+  <ClosingSection t={t} />
 </BaseLayout>
+
+<script>
+  import { initHomeMotion } from '../scripts/home-motion';
+
+  initHomeMotion();
+</script>

@@ -1,0 +1,48 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const a = t.after;
+---
+
+<section id="ensuite" class="relative px-4 pt-24 pb-24 sm:px-6" data-stage="ensuite" data-clock={a.clock} aria-labelledby="after-title">
+  <div class="mx-auto flex max-w-site flex-col gap-20 sm:gap-28">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <ChapterBar prefix={t.chapter.prefix} chapter={a.chapter} index={4} />
+      </div>
+      <h2 id="after-title" class="shout text-display lg:col-span-11">
+        <SplitText text={a.title} class="block" />
+        <SplitText text={a.accent} class="voice block text-pink" />
+      </h2>
+    </div>
+
+    <div class="grid gap-12 lg:grid-cols-12">
+      <p class="text-lead lg:col-span-6">{a.text}</p>
+      <dl class="grid gap-8 sm:grid-cols-3 lg:col-span-5 lg:col-start-8 lg:grid-cols-1">
+        {
+          a.facts.map((fact) => (
+            <div class="flex items-baseline gap-5 border-t border-ink pt-4" data-fade>
+              <dt class="font-serif text-[clamp(3.5rem,6vw,5.5rem)] leading-none font-medium text-purple italic">{fact.value}</dt>
+              <dd class="text-base text-ink/75">{fact.label}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 text-center">
+      <p class="label text-ink/50">{a.wordsLabel}</p>
+      <ul class="shout text-display leading-[0.95]" data-words>
+        {a.words.map((word) => <li class="text-ink/12" data-word>{word}</li>)}
+      </ul>
+      <p class="voice mt-4 text-xl text-purple sm:text-2xl">{a.wordsAside}</p>
+    </div>
+  </div>
+</section>

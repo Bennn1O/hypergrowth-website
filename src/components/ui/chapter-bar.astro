@@ -1,0 +1,23 @@
+---
+/**
+ * ABCS-style chapter marker: "Ce qu'il faut savoir <chapter>" + number, on a pink bar.
+ */
+interface Props {
+  prefix: string;
+  chapter: string;
+  index: number;
+  class?: string;
+}
+
+const { prefix, chapter, index, class: className } = Astro.props;
+---
+
+<div
+  class:list={['chapter-bar flex origin-left items-center justify-between gap-6 bg-pink px-3 py-2 text-ink', className]}
+  data-chapter-bar
+>
+  <p class="label">
+    {prefix} <span class="voice text-[1.15em] tracking-normal">{chapter}</span>
+  </p>
+  <p class="font-serif text-xl leading-none italic">{String(index).padStart(2, '0')}</p>
+</div>

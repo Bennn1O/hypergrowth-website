@@ -1,0 +1,81 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const d = t.tenDays;
+const tilts = ['-rotate-2', 'rotate-[1.5deg]'];
+---
+
+<section
+  id="dix-jours"
+  class="relative bg-mist px-4 pt-24 pb-32 sm:px-6"
+  data-stage="dix-jours"
+  data-clock={d.milestones[0].time}
+  aria-labelledby="ten-days-title"
+>
+  <div class="mx-auto flex max-w-site flex-col gap-20 sm:gap-28">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5 lg:col-start-8">
+        <ChapterBar prefix={t.chapter.prefix} chapter={d.chapter} index={3} />
+      </div>
+      <h2 id="ten-days-title" class="shout text-display lg:col-span-10">
+        <SplitText text={d.title} class="block" />
+        <SplitText text={d.accent} class="voice block text-purple" />
+      </h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 md:gap-12 lg:px-[8%]">
+      {
+        d.documents.map((doc, index) => (
+          <article
+            class:list={[
+              'flex aspect-[1/1.2] flex-col justify-between bg-paper p-6 shadow-[0_30px_60px_-30px_rgb(17_17_17/0.35)] sm:p-10',
+              tilts[index],
+            ]}
+            data-sheet
+          >
+            <p class="label flex justify-between text-ink/45">
+              <span>HyperGrowth™</span>
+              <span>J+10</span>
+            </p>
+            <div class="flex flex-col gap-6">
+              <h3 class="font-serif text-title font-medium">
+                <span class="voice text-pink">{doc.name}</span>
+              </h3>
+              <p class="text-lead text-ink/75">{doc.text}</p>
+            </div>
+            <span class="flex flex-col gap-2" aria-hidden="true">
+              <span class="h-1.5 w-full bg-ink/8" />
+              <span class="h-1.5 w-4/5 bg-ink/8" />
+              <span class="h-1.5 w-3/5 bg-ink/8" />
+            </span>
+          </article>
+        ))
+      }
+    </div>
+
+    <ol class="relative grid gap-8 md:grid-cols-4 md:gap-4">
+      <span class="absolute top-[7px] right-0 left-0 hidden h-px origin-left bg-ink md:block" data-line />
+      {
+        d.milestones.map((milestone) => (
+          <li class="relative flex flex-col gap-3 md:pt-8" data-clock={milestone.time}>
+            <span class="absolute top-0 left-0 hidden size-[15px] rounded-full border-2 border-ink bg-pink md:block" />
+            <span class="label tabular-nums text-pink">{milestone.time}</span>
+            <span class="font-serif text-xl">{milestone.text}</span>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="shout text-center text-display">
+      <SplitText text={d.statement} class="block" />
+      <SplitText text={d.statementAccent} class="voice block text-purple" />
+    </p>
+  </div>
+</section>
