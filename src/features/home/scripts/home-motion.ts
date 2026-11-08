@@ -268,6 +268,26 @@ function setupReveals() {
       .from(bar.children, { yPercent: 100, opacity: 0, duration: 0.6, stagger: 0.08, ease: 'expo.out' }, '-=0.4');
   }
 
+  // Global figures count up the first time they show (only the number part of the text moves).
+  for (const el of all('[data-count]')) {
+    const text = el.textContent ?? '';
+    const match = text.match(/\d+/);
+    if (!match) continue;
+    const target = Number(match[0]);
+    const render = (n: number) => {
+      el.textContent = text.replace(match[0], String(Math.round(n)));
+    };
+    const counter = { n: 0 };
+    render(0);
+    gsap.to(counter, {
+      n: target,
+      duration: 1.8,
+      ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      onUpdate: () => render(counter.n),
+    });
+  }
+
   for (const line of all('[data-line]')) {
     gsap.from(line, { scaleX: 0, ease: 'none', scrollTrigger: { trigger: line, start: 'top 80%', end: 'top 40%', scrub: true } });
   }

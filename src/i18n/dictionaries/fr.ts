@@ -159,6 +159,12 @@ export const fr = {
     chapter: 'sur ce que ça donne',
     title: 'Des entreprises réelles,',
     accent: 'des chiffres réels.',
+    stats: [
+      { value: '400 M€', label: 'de chiffre d’affaires piloté' },
+      { value: '150+', label: 'dirigeants accompagnés' },
+      { value: '80+', label: 'membres de l’HyperClub' },
+      { value: '+7 M€', label: 'levés par nos clients' },
+    ],
     quote: {
       text: 'Killian possède des qualités d’analyse humaines et structurelles qui peuvent faire changer grandement les choses sur une entreprise en croissance. Il est à la fois votre accélérateur et le pilier d’une structure organisée et surtout efficace !',
       author: 'Vincent Mongis et Adrien Charles-Nicolas',

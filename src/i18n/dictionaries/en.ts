@@ -156,6 +156,12 @@ export const en: Dictionary = {
     chapter: 'about what it delivers',
     title: 'Real companies,',
     accent: 'real numbers.',
+    stats: [
+      { value: '€400M', label: 'revenue steered' },
+      { value: '150+', label: 'founders supported' },
+      { value: '80+', label: 'HyperClub members' },
+      { value: '+€7M', label: 'raised by our clients' },
+    ],
     quote: {
       text: 'Killian has human and structural analytical skills that can really change things for a growing company. He is both your accelerator and the backbone of an organised and, above all, effective structure!',
       author: 'Vincent Mongis and Adrien Charles-Nicolas',

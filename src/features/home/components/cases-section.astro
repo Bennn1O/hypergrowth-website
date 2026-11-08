@@ -23,6 +23,19 @@ const c = t.cases;
       </h2>
     </div>
 
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-10 border-t border-ink/15 pt-8 lg:grid-cols-4">
+      {
+        c.stats.map((stat) => (
+          <div class="flex flex-col gap-3">
+            <dt class="display text-[clamp(3rem,6vw,6rem)] leading-none tracking-[-0.06em] tabular-nums">
+              <span data-count>{stat.value}</span>
+            </dt>
+            <dd class="label text-ink/55">{stat.label}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
     <figure class="grid gap-6 lg:grid-cols-12" data-fade>
       <span class="display text-[8rem] leading-[0.6] text-pink lg:col-span-1" aria-hidden="true">“</span>
       <blockquote class="display text-[clamp(1.5rem,2.6vw,2.4rem)] leading-[1.15] tracking-[-0.04em] lg:col-span-9">
