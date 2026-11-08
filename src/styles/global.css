@@ -101,12 +101,11 @@
   letter-spacing: -0.045em;
 }
 
-/* The "voice" that breaks an uppercase title: lowercase, coloured, same Geist medium. */
+/* The accent at the end of a title: same Geist medium, same case, only the colour changes. */
 @utility voice {
   font-family: var(--font-sans);
   font-weight: 500;
   font-style: normal;
-  text-transform: none;
 }
 
 /* Big uppercase title. */
