@@ -23,29 +23,29 @@ const team = t.team;
       </h2>
     </div>
 
-    <ul class="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+    <ul class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
       {
         team.members.map((member, index) => (
-          <li class="group flex flex-col gap-4" data-fade>
+          <li class="group flex flex-col gap-3 sm:gap-4" data-fade>
             <div
-              class="relative aspect-[4/5] overflow-hidden bg-mist"
+              class="relative aspect-[4/5] overflow-hidden rounded-lg bg-mist"
               aria-label={t.a11y.photo}
             >
               <div class="grain absolute inset-0 opacity-40 mix-blend-multiply" />
-              <span class="absolute inset-0 flex items-center justify-center display text-[7rem] leading-none text-ink/10 transition-transform duration-700 ease-out-expo group-hover:scale-110">
+              <span class="absolute inset-0 flex items-center justify-center display text-[4.5rem] leading-none sm:text-[7rem] text-ink/10 transition-transform duration-700 ease-out-expo group-hover:scale-110">
                 {member.name.charAt(0)}
               </span>
             </div>
-            <div class="flex items-baseline justify-between gap-3 border-t border-ink pt-3">
-              <p class="display text-2xl">{member.name}</p>
+            <div class="flex flex-col gap-1 border-t border-ink pt-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+              <p class="display text-xl sm:text-2xl">{member.name}</p>
               <p class="label text-[10px] text-pink">{member.role}</p>
             </div>
-            <p class="text-sm text-ink/70">{member.text}</p>
+            <p class="text-xs leading-snug text-ink/70 sm:text-sm">{member.text}</p>
           </li>
         ))
       }
-      <li class="flex items-end sm:col-span-2 lg:col-span-1">
-        <p class="voice text-2xl text-ink/60">{team.more}</p>
+      <li class="col-span-2 flex items-end lg:col-span-1">
+        <p class="voice text-xl text-ink/60 sm:text-2xl">{team.more}</p>
       </li>
     </ul>
   </div>

@@ -27,5 +27,5 @@ const { label, caption, src, class: className } = Astro.props;
       <div class="grain absolute inset-0 opacity-40 mix-blend-multiply" />
     )
   }
-  <figcaption class:list={['label absolute bottom-3 left-3 text-[10px]', src ? 'text-white/85' : 'text-ink/45']}>{caption}</figcaption>
+  <figcaption class:list={['label absolute bottom-3 left-3 hidden text-[10px] sm:block', src ? 'text-white/85' : 'text-ink/45']}>{caption}</figcaption>
 </figure>
