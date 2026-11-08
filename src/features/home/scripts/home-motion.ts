@@ -279,6 +279,17 @@ function setupReveals() {
     gsap.to(word, { color: '#111111', ease: 'none', scrollTrigger: { trigger: word, start: 'top 72%', end: 'top 45%', scrub: true } });
   }
 
+  const footerLogo = document.querySelector('[data-footer-logo]');
+  if (footerLogo) {
+    gsap.from(footerLogo.children, {
+      yPercent: 60,
+      opacity: 0,
+      stagger: 0.08,
+      ease: 'none',
+      scrollTrigger: { trigger: footerLogo, start: 'top bottom', end: 'bottom bottom', scrub: true },
+    });
+  }
+
   for (const [index, sheet] of all('[data-sheet]').entries()) {
     gsap.from(sheet, {
       y: 120,
@@ -451,7 +462,7 @@ function setupEcosystemPreview() {
   });
   for (const item of all('[data-eco-item]', list)) {
     item.addEventListener('pointerenter', () => {
-      label.textContent = item.querySelector('.font-serif')?.textContent?.trim() ?? '';
+      label.textContent = item.querySelector('[data-eco-name]')?.textContent?.trim() ?? '';
       gsap.to(preview, { opacity: 1, scale: 1, rotate: -3, duration: 0.5, ease: 'expo.out' });
     });
   }

@@ -34,12 +34,12 @@ const tones = ['bg-blush', 'bg-pink', 'bg-purple', 'bg-mist'];
               aria-label={t.a11y.photo}
             >
               <div class="grain absolute inset-0 opacity-60 mix-blend-overlay" />
-              <span class="absolute inset-0 flex items-center justify-center font-serif text-[7rem] leading-none text-ink/15 italic transition-transform duration-700 ease-out-expo group-hover:scale-110">
+              <span class="absolute inset-0 flex items-center justify-center display text-[7rem] leading-none text-ink/15 transition-transform duration-700 ease-out-expo group-hover:scale-110">
                 {member.name.charAt(0)}
               </span>
             </div>
             <div class="flex items-baseline justify-between gap-3 border-t border-ink pt-3">
-              <p class="font-serif text-2xl font-medium">{member.name}</p>
+              <p class="display text-2xl">{member.name}</p>
               <p class="label text-[10px] text-pink">{member.role}</p>
             </div>
             <p class="text-sm text-ink/70">{member.text}</p>

@@ -266,6 +266,12 @@ export const en: Dictionary = {
     pending: 'Contact details coming soon',
   },
   footer: {
+    statement: 'For founders whose company is growing faster than its organisation, and who want a direction held all the way.',
+    cta: 'Grab a coffee',
+    navLabel: 'The journey',
+    contactLabel: 'Write',
+    followLabel: 'Follow',
+    pending: 'Contact details coming soon',
     line: 'OP-X method',
     legal: 'Legal notice',
     rights: 'All rights reserved',

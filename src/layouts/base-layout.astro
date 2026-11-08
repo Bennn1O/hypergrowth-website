@@ -1,7 +1,5 @@
 ---
-import '@fontsource/ibm-plex-serif/latin-500.css';
-import '@fontsource/ibm-plex-serif/latin-500-italic.css';
-import '@fontsource/ibm-plex-serif/latin-600-italic.css';
+import '@fontsource-variable/geist';
 import '../styles/global.css';
 
 import SiteFooter from '../components/layout/site-footer.astro';
@@ -47,7 +45,7 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     <meta name="generator" content={Astro.generator} />
     <script is:inline>document.documentElement.classList.add('js');</script>
   </head>
-  <body class="min-h-dvh bg-paper">
+  <body class="min-h-dvh bg-paper tracking-[-0.01em]">
     <a
       href="#main"
       class="sr-only z-50 bg-ink px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"

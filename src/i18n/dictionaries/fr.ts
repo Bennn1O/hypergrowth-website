@@ -269,6 +269,12 @@ export const fr = {
     pending: 'Coordonnées à venir',
   },
   footer: {
+    statement: 'Pour les dirigeants dont l’entreprise grossit plus vite que son organisation, et qui veulent un cap tenu jusqu’au bout.',
+    cta: 'Prendre un café',
+    navLabel: 'Le parcours',
+    contactLabel: 'Écrire',
+    followLabel: 'Suivre',
+    pending: 'Coordonnées à venir',
     line: 'Méthode OP-X',
     legal: 'Mentions légales',
     rights: 'Tous droits réservés',

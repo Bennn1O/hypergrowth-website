@@ -3,7 +3,8 @@
 /*
  * HyperGrowth design tokens.
  * Source: charte graphique du rebranding (Marlay, relevée le 05/11/2026).
- * IBM Plex Serif pour les titres et la voix, Helvetica pour le texte et les repères.
+ * Couleurs de la charte. Typo : Geist seule, en medium à interlettrage serré
+ * (choix de DA du 08/11/2026, sans serif).
  */
 @theme {
   /* Brand */
@@ -21,20 +22,20 @@
   --color-ghost: #c9c9c9;
 
   /* Type */
-  --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
+  --font-sans: "Geist Variable", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
 
   --text-giant: clamp(3.4rem, 11.5vw, 13rem);
   --text-giant--line-height: 0.86;
-  --text-giant--letter-spacing: -0.045em;
+  --text-giant--letter-spacing: -0.06em;
   --text-display: clamp(2.6rem, 7.4vw, 8.25rem);
   --text-display--line-height: 0.92;
-  --text-display--letter-spacing: -0.04em;
+  --text-display--letter-spacing: -0.055em;
   --text-title: clamp(2rem, 4.6vw, 4.5rem);
   --text-title--line-height: 1;
-  --text-title--letter-spacing: -0.03em;
+  --text-title--letter-spacing: -0.045em;
   --text-lead: clamp(1.15rem, 1.6vw, 1.5rem);
-  --text-lead--line-height: 1.35;
+  --text-lead--line-height: 1.3;
+  --text-lead--letter-spacing: -0.02em;
   --text-label: 0.75rem;
   --text-label--line-height: 1;
   --text-label--letter-spacing: 0.08em;
@@ -83,32 +84,37 @@
   }
 }
 
-/* Uppercase Helvetica marker used for labels, clock and navigation. */
+/* Small uppercase marker used for labels, clock and navigation. */
 @utility label {
   font-family: var(--font-sans);
   font-size: var(--text-label);
   line-height: 1;
-  letter-spacing: 0.08em;
-  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
-/* The serif "voice" that breaks a sans title (charte : italique en fin de titre). */
+/* Geist medium, tight: every big type on the site. */
+@utility display {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+/* The "voice" that breaks an uppercase title: lowercase, coloured, same Geist medium. */
 @utility voice {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-style: normal;
   text-transform: none;
 }
 
-/* Big uppercase sans title. */
+/* Big uppercase title. */
 @utility shout {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 }
-
 @utility grain {
   background-image: url('/textures/grain.svg');
   background-size: 240px 240px;

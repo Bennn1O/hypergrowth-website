@@ -1,28 +1,82 @@
 ---
+import Logomark from '../../assets/brand/logomark.svg';
+import Logotype from '../../assets/brand/logotype.svg';
+import { site } from '../../data/site';
 import { getDictionary, resolveLocale } from '../../i18n';
-import Logo from '../ui/logo.astro';
 import LanguageSwitcher from './language-switcher.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
 const year = new Date().getFullYear();
+const socials = site.socials.filter((social) => social.href);
 ---
 
-<footer data-dark class="bg-ink px-4 pt-10 pb-6 text-paper sm:px-6">
-  <div class="mx-auto flex max-w-site flex-col gap-10">
-    <div class="flex items-center justify-between gap-6 text-[28px]">
-      <Logo tone="light" />
-      <LanguageSwitcher class="[&_a]:text-paper/60 [&_a[aria-current]]:bg-paper [&_a[aria-current]]:text-ink" />
+<footer data-dark data-clock={t.closing.clock} class="overflow-hidden bg-ink px-4 pt-14 pb-5 text-paper sm:px-6 sm:pt-20">
+  <div class="mx-auto flex max-w-site flex-col gap-16 sm:gap-24">
+    <div class="grid gap-12 md:grid-cols-12">
+      <div class="flex flex-col items-start gap-6 md:col-span-4">
+        <p class="display max-w-xs text-xl leading-[1.15] tracking-[-0.03em]">{t.footer.statement}</p>
+        <a href="#cafe" class="label flex items-center gap-2 bg-paper px-3 py-2.5 text-ink transition-colors hover:bg-pink" data-magnetic>
+          {t.footer.cta} <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <nav aria-label={t.footer.navLabel} class="md:col-span-4 md:col-start-6">
+        <ul class="flex flex-col">
+          {
+            t.timeline.stages.map((stage) => (
+              <li>
+                <a href={`#${stage.id}`} class="group display block h-[1.1em] overflow-hidden text-[clamp(2.4rem,4.4vw,4rem)] leading-[1.1] tracking-[-0.05em]">
+                  <span class="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{stage.label}</span>
+                  <span class="block text-pink transition-transform duration-500 ease-out-expo group-hover:-translate-y-full" aria-hidden="true">
+                    {stage.label}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="flex flex-col gap-8 md:col-span-3 md:col-start-10">
+        <div class="flex flex-col gap-2">
+          <p class="label text-paper/50">{t.footer.contactLabel}</p>
+          {
+            site.email ? (
+              <a href={`mailto:${site.email}`} class="display text-xl tracking-[-0.03em] hover:text-pink">{site.email}</a>
+            ) : (
+              <p class="display text-xl tracking-[-0.03em] text-paper/60">{t.footer.pending}</p>
+            )
+          }
+        </div>
+        {
+          socials.length > 0 && (
+            <div class="flex flex-col gap-2">
+              <p class="label text-paper/50">{t.footer.followLabel}</p>
+              {socials.map((social) => (
+                <a href={social.href!} rel="noopener" class="display text-xl tracking-[-0.03em] hover:text-pink">
+                  {social.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+        <LanguageSwitcher class="[&_a]:text-paper/60 [&_a[aria-current]]:bg-paper [&_a[aria-current]]:text-ink" />
+      </div>
     </div>
-    <div class="flex flex-col justify-between gap-3 border-t border-paper/15 pt-5 sm:flex-row">
-      <p class="label text-[11px] text-paper/60">
-        {year} · HyperGrowth™ · <span class="text-pink">{t.footer.line}</span>
-      </p>
-      <p class="label flex gap-6 text-[11px] text-paper/40">
+
+    <div class="flex items-end gap-[1.5vw] text-pink" aria-hidden="true" data-footer-logo>
+      <Logomark class="h-auto w-[17vw] shrink-0" />
+      <Logotype class="h-auto w-full [&_.growth]:text-pink" />
+    </div>
+
+    <div class="label flex flex-col gap-3 text-[11px] text-paper/50 sm:flex-row sm:justify-between lg:pr-40">
+      <p>© {year} · HyperGrowth™ · <span class="text-pink">{t.footer.line}</span></p>
+      <p class="flex gap-6">
         <span>{t.footer.legal}</span>
         <span>{t.footer.rights}</span>
-        <a href="#top" class="hover:text-pink">{t.a11y.backToTop} ↑</a>
       </p>
+      <a href="#top" class="hover:text-pink">{t.a11y.backToTop} ↑</a>
     </div>
   </div>
 </footer>

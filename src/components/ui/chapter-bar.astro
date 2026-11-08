@@ -19,5 +19,5 @@ const { prefix, chapter, index, class: className } = Astro.props;
   <p class="label">
     {prefix} <span class="voice text-[1.15em] tracking-normal">{chapter}</span>
   </p>
-  <p class="font-serif text-xl leading-none italic">{String(index).padStart(2, '0')}</p>
+  <p class="display text-xl leading-none">{String(index).padStart(2, '0')}</p>
 </div>

@@ -45,7 +45,7 @@ const panels: Panel[] = [
           {
             im.rules.map((rule, index) => (
               <li class="flex items-baseline gap-5 border-b border-ink/20 py-3" data-fade>
-                <span class="font-serif text-sm text-pink italic">{String(index + 1).padStart(2, '0')}</span>
+                <span class="display text-sm text-pink">{String(index + 1).padStart(2, '0')}</span>
                 <span class="shout text-xl sm:text-2xl">{rule}</span>
               </li>
             ))
@@ -70,7 +70,7 @@ const panels: Panel[] = [
               data-panel
             >
               <span
-                class="outline-text pointer-events-none absolute -z-10 right-6 bottom-0 font-serif text-[clamp(10rem,30vw,34rem)] leading-[0.75] font-medium italic select-none lg:right-12"
+                class="outline-text pointer-events-none absolute -z-10 right-6 bottom-0 display text-[clamp(10rem,30vw,34rem)] leading-[0.75] select-none lg:right-12"
                 aria-hidden="true"
               >
                 {panel.index + 1}
@@ -84,7 +84,7 @@ const panels: Panel[] = [
                 </p>
               </header>
               <div class="grid gap-10 lg:grid-cols-12">
-                <h3 class="font-serif text-giant font-medium lg:col-span-12">
+                <h3 class="display text-giant lg:col-span-12">
                   <span class="voice text-purple">{panel.phase.name}</span>
                 </h3>
                 <p class="text-lead lg:col-span-5">{panel.phase.text}</p>
@@ -99,7 +99,7 @@ const panels: Panel[] = [
               </div>
               <p class="flex flex-col gap-1 border-t border-ink pt-4 sm:flex-row sm:items-baseline sm:gap-6">
                 <span class="label shrink-0 text-pink">{im.exitLabel}</span>
-                <span class="font-serif text-lg italic">{panel.phase.exit}</span>
+                <span class="display text-lg">{panel.phase.exit}</span>
               </p>
             </article>
           ) : (
@@ -136,7 +136,7 @@ const panels: Panel[] = [
       {
         im.partition.map((door, index) => (
           <li class="group relative flex flex-1 flex-col justify-between gap-8 overflow-hidden bg-mist p-6 transition-[flex-grow,background-color,color] duration-700 ease-out-expo hover:bg-purple hover:text-paper lg:hover:flex-[2.4]">
-            <span class="font-serif text-giant leading-none text-ink/10 italic transition-colors group-hover:text-paper/20">
+            <span class="display text-giant leading-none text-ink/10 transition-colors group-hover:text-paper/20">
               {String(index + 1).padStart(2, '0')}
             </span>
             <span class="flex flex-col gap-3">
