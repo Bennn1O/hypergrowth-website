@@ -296,15 +296,6 @@ function setupReveals() {
     });
   }
 
-  for (const [index, sheet] of all('[data-sheet]').entries()) {
-    gsap.from(sheet, {
-      y: 120,
-      rotate: index % 2 ? 9 : -9,
-      opacity: 0,
-      ease: 'none',
-      scrollTrigger: { trigger: sheet, start: 'top 100%', end: 'top 55%', scrub: true },
-    });
-  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -349,6 +340,27 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
     }
     onReady(tween);
 
+    // J+10: the two documents start stacked and fan out.
+    const docs = all('[data-doc]');
+    if (docs.length === 2) {
+      gsap.fromTo(
+        docs[1],
+        { xPercent: -104, rotate: 5, y: 30 },
+        {
+          xPercent: 0,
+          rotate: 0,
+          y: 0,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: '[data-docs]', start: 'top 80%', end: 'top 30%', scrub: 0.8 },
+        },
+      );
+      gsap.fromTo(
+        docs[0],
+        { rotate: -4 },
+        { rotate: 0, ease: 'power2.out', scrollTrigger: { trigger: '[data-docs]', start: 'top 80%', end: 'top 30%', scrub: 0.8 } },
+      );
+    }
+
     // Expertises: stop-scroll moment, the cards are dealt one by one over the big words.
     const deck = document.querySelector<HTMLElement>('[data-deck]');
     const cards = all('[data-card]');
@@ -386,17 +398,26 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
 function setupHeader() {
   const header = document.querySelector<HTMLElement>('[data-site-header]');
   if (!header) return;
-  // The hero already shows the logo in large: the header logo waits until we leave it.
-  const hero = document.querySelector('[data-opening]');
-  if (hero) {
-    header.toggleAttribute('data-on-hero', true);
+  // The hero and the footer show the full logo in large: the header keeps only the mark,
+  // and hides it while either of them is on screen, so the logo never shows twice.
+  const big = [document.querySelector('[data-opening]'), document.querySelector('[data-footer-logo]')].filter(
+    (el): el is Element => Boolean(el),
+  );
+  const visible = new Set<Element>();
+  const sync = () => header.toggleAttribute('data-hide-logo', visible.size > 0);
+  for (const el of big) {
     ScrollTrigger.create({
-      trigger: hero,
-      start: 'top top',
-      end: 'bottom 20%',
-      onToggle: (self) => header.toggleAttribute('data-on-hero', self.isActive),
+      trigger: el,
+      start: 'top bottom',
+      end: 'bottom top',
+      onToggle: (self) => {
+        if (self.isActive) visible.add(el);
+        else visible.delete(el);
+        sync();
+      },
     });
   }
+  header.toggleAttribute('data-hide-logo', true);
   ScrollTrigger.create({
     start: 160,
     end: 'max',

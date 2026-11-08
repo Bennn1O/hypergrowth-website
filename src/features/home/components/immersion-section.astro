@@ -128,24 +128,5 @@ const panels: Panel[] = [
     </div>
   </div>
 
-  <div class="mx-auto flex max-w-site flex-col gap-10 px-4 pt-28 pb-32 sm:px-6">
-    <h3 class="shout text-title">
-      {im.partitionTitle} <span class="voice text-pink">{im.partitionAccent}</span>
-    </h3>
-    <ul class="flex flex-col gap-2 lg:h-[26rem] lg:flex-row" data-doors>
-      {
-        im.partition.map((door, index) => (
-          <li class="group relative flex flex-1 flex-col justify-between gap-8 overflow-hidden bg-mist p-6 transition-[flex-grow,background-color,color] duration-700 ease-out-expo hover:bg-purple hover:text-paper lg:hover:flex-[2.4]">
-            <span class="display text-giant leading-none text-ink/10 transition-colors group-hover:text-paper/20">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <span class="flex flex-col gap-3">
-              <span class="shout text-2xl sm:text-3xl">{door.name}</span>
-              <span class="max-w-xs text-base opacity-75">{door.text}</span>
-            </span>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <div class="h-24 sm:h-32" aria-hidden="true"></div>
 </section>

@@ -27,6 +27,11 @@ export const fr = {
     ],
     contact: 'Un café ?',
   },
+  marquee: [
+    'Accélérez sans surcharge',
+    'sans chaos',
+    'sans perte de vision',
+  ],
   chapter: {
     prefix: 'Ce qu’il faut savoir',
   },
@@ -64,8 +69,8 @@ export const fr = {
   },
   immersion: {
     chapter: 'pendant les 48 heures',
-    title: 'Quarante-huit heures,',
-    accent: 'sans téléphone.',
+    title: 'Quarante-huit heures, et vous repartez',
+    accent: 'avec un cap.',
     intro:
       'Un jour et demi à deux jours, chez vous ou dans nos bureaux. On cherche les vrais problèmes de l’entreprise, on construit les pistes avec vous, et vous repartez avec un cap.',
     rulesLabel: 'Les règles',

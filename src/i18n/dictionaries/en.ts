@@ -24,6 +24,11 @@ export const en: Dictionary = {
     ],
     contact: 'Coffee?',
   },
+  marquee: [
+    'Speed up without overload',
+    'without chaos',
+    'without losing sight',
+  ],
   chapter: {
     prefix: 'What you should know',
   },
@@ -61,8 +66,8 @@ export const en: Dictionary = {
   },
   immersion: {
     chapter: 'about the 48 hours',
-    title: 'Forty-eight hours,',
-    accent: 'no phones.',
+    title: 'Forty-eight hours, and you leave',
+    accent: 'with a direction.',
     intro:
       'A day and a half to two days, at your place or in our offices. We look for the company’s real problems, build the options with you, and you leave with a direction.',
     rulesLabel: 'The rules',
