@@ -65,9 +65,13 @@ const socials = site.socials.filter((social) => social.href);
       </div>
     </div>
 
-    <div class="flex items-end gap-[1.5vw] text-pink" aria-hidden="true" data-footer-logo>
-      <Logomark class="h-auto w-[17vw] shrink-0" />
-      <Logotype class="h-auto w-full [&_.growth]:text-pink" />
+    <!--
+      Wordmark caps as tall as the mark: the caps fill ~76% of the wordmark's box
+      (the rest is the y/p descenders), hence 11.6vw x 1.32. Both fit in ~94vw.
+    -->
+    <div class="flex items-start justify-between gap-[1.5vw] text-pink" aria-hidden="true" data-footer-logo>
+      <Logomark class="h-[11.6vw] w-auto shrink-0" />
+      <Logotype class="-mt-[0.4vw] h-[15.3vw] w-auto shrink-0 [&_.growth]:text-pink" />
     </div>
 
     <div class="label flex flex-col gap-3 text-[11px] text-paper/50 sm:flex-row sm:justify-between lg:pr-40">

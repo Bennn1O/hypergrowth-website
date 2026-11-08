@@ -41,6 +41,7 @@ function scrollToY(y: number, immediate = false) {
 function createClock(onChange: (value: string) => void): ClockSetter {
   const target = document.querySelector<HTMLElement>('[data-clock-display]');
   let current = target?.textContent?.trim() ?? '';
+  let roll: gsap.core.Timeline | undefined;
 
   return (value, animate = true) => {
     if (!target || !value || value === current) return;
@@ -50,8 +51,9 @@ function createClock(onChange: (value: string) => void): ClockSetter {
       target.textContent = value;
       return;
     }
-    gsap.killTweensOf(target);
-    gsap
+    // Kill the previous roll entirely (its text swap included), or a fast jump leaves a stale value.
+    roll?.kill();
+    roll = gsap
       .timeline()
       .to(target, { yPercent: -120, duration: 0.16, ease: 'power2.in' })
       .add(() => {
