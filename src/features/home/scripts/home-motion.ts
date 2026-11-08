@@ -76,7 +76,10 @@ function setupClockMarkers(setClock: ClockSetter, containerAnimation?: gsap.core
             containerAnimation,
             start: 'left 55%',
             end: 'right 55%',
-            onToggle: (self) => self.isActive && setClock(value),
+            // The last panel stays "active" once the track stops: only count it while pinned.
+            onToggle: (self) => {
+              if (self.isActive && containerAnimation.scrollTrigger?.isActive) setClock(value);
+            },
           })
         : ScrollTrigger.create({
             trigger: el,
