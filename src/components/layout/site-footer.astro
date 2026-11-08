@@ -14,29 +14,12 @@ const socials = site.socials.filter((social) => social.href);
 <footer data-dark data-clock={t.closing.clock} class="overflow-hidden bg-ink px-4 pt-14 pb-5 text-paper sm:px-6 sm:pt-20">
   <div class="mx-auto flex max-w-site flex-col gap-16 sm:gap-24">
     <div class="grid gap-12 md:grid-cols-12">
-      <div class="flex flex-col items-start gap-6 md:col-span-4">
-        <p class="display max-w-xs text-xl leading-[1.15] tracking-[-0.03em]">{t.footer.statement}</p>
+      <div class="flex flex-col items-start gap-6 md:col-span-5">
+        <p class="display max-w-sm text-2xl leading-[1.1] tracking-[-0.035em]">{t.footer.statement}</p>
         <a href="#cafe" class="label flex items-center gap-2 bg-paper px-3 py-2.5 text-ink transition-colors hover:bg-pink" data-magnetic>
           {t.footer.cta} <span aria-hidden="true">↗</span>
         </a>
       </div>
-
-      <nav aria-label={t.footer.navLabel} class="md:col-span-4 md:col-start-6">
-        <ul class="flex flex-col">
-          {
-            t.timeline.stages.map((stage) => (
-              <li>
-                <a href={`#${stage.id}`} class="group display block h-[1.1em] overflow-hidden text-[clamp(2.4rem,4.4vw,4rem)] leading-[1.1] tracking-[-0.05em]">
-                  <span class="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{stage.label}</span>
-                  <span class="block text-pink transition-transform duration-500 ease-out-expo group-hover:-translate-y-full" aria-hidden="true">
-                    {stage.label}
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
 
       <div class="flex flex-col gap-8 md:col-span-3 md:col-start-10">
         <div class="flex flex-col gap-2">
@@ -64,6 +47,32 @@ const socials = site.socials.filter((social) => social.href);
         <LanguageSwitcher class="[&_a]:text-paper/60 [&_a[aria-current]]:bg-paper [&_a[aria-current]]:text-ink" />
       </div>
     </div>
+
+    <!-- The journey, told again: each step is a sentence, not a code. -->
+    <nav aria-label={t.footer.navLabel}>
+      <p class="label mb-4 text-paper/50">{t.footer.navLabel}</p>
+      <ol class="border-t border-paper/20">
+        {
+          t.timeline.stages.map((stage, index) => (
+            <li class="border-b border-paper/20">
+              <a
+                href={`#${stage.id}`}
+                class="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-4 py-4 sm:grid-cols-[4rem_1fr_auto] sm:py-5"
+              >
+                <span class="label text-paper/40 transition-colors group-hover:text-pink">{String(index + 1).padStart(2, '0')}</span>
+                <span class="display block h-[1.1em] overflow-hidden text-[clamp(1.9rem,4.6vw,4.25rem)] leading-[1.1] tracking-[-0.05em]">
+                  <span class="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{stage.title}</span>
+                  <span class="block text-pink transition-transform duration-500 ease-out-expo group-hover:-translate-y-full" aria-hidden="true">
+                    {stage.title}
+                  </span>
+                </span>
+                <span class="label col-start-2 mt-2 text-paper/50 tabular-nums sm:col-start-3 sm:mt-0 sm:text-right">{stage.time}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
 
     <!--
       Wordmark caps as tall as the mark: the caps fill ~76% of the wordmark's box

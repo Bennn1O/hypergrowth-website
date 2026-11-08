@@ -185,51 +185,68 @@ html.rail-on::-webkit-scrollbar {
   -webkit-text-stroke: 1.5px rgb(17 17 17 / 0.16);
 }
 
+/* Rail ruler: minor graduations (magnified near the needle) and major ticks on the moments. */
+.rail-grad {
+  position: absolute;
+  right: 0;
+  width: 8px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.18;
+  transform-origin: right center;
+}
+
 .rail-tick {
   position: absolute;
   right: 0;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   transform: translateY(-50%);
-  cursor: pointer;
 }
 
 .rail-tick::after {
   content: "";
   display: block;
-  width: 7px;
+  width: 16px;
   height: 1px;
-  margin-right: 12px;
   background: currentColor;
-  opacity: 0.45;
+  opacity: 0.6;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.rail-tick[data-active]::after {
+  background: var(--color-pink);
+  opacity: 1;
 }
 
 .rail-tick > span {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.3s;
+  transform: translateX(6px);
+  transition: opacity 0.3s, transform 0.4s var(--ease-out-expo);
 }
 
 @media (min-width: 1024px) {
   [data-rail]:hover .rail-tick > span {
-    opacity: 0.45;
+    opacity: 0.6;
+    transform: none;
   }
-  [data-rail]:hover .rail-tick:hover > span,
   [data-rail]:hover .rail-tick[data-active] > span {
     opacity: 1;
   }
-  [data-rail]:hover [data-rail-pill] {
+  [data-rail]:hover [data-rail-readout] {
     opacity: 0;
   }
 }
 
-.rail-tick[data-active]::after {
-  width: 12px;
-  opacity: 1;
+/* Keep content clear of the rail on large screens; backgrounds stay full-bleed. */
+@media (min-width: 1024px) {
+  html.rail-on .max-w-site {
+    padding-right: 3.5rem;
+  }
 }

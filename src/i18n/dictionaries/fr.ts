@@ -20,10 +20,10 @@ export const fr = {
   },
   timeline: {
     stages: [
-      { id: 'avant', label: 'Avant' },
-      { id: 'immersion', label: '48h' },
-      { id: 'dix-jours', label: 'J+10' },
-      { id: 'ensuite', label: 'Ensuite' },
+      { id: 'avant', label: 'Avant', title: 'On se rencontre', time: 'J-10' },
+      { id: 'immersion', label: '48h', title: 'Quarante-huit heures avec vous', time: 'J1 → J2' },
+      { id: 'dix-jours', label: 'J+10', title: 'Votre feuille de route', time: 'J+10' },
+      { id: 'ensuite', label: 'Ensuite', title: 'On reste jusqu’au bout', time: 'Mois 1 → 6' },
     ],
     contact: 'Un café ?',
   },
@@ -31,7 +31,7 @@ export const fr = {
     prefix: 'Ce qu’il faut savoir',
   },
   opening: {
-    clock: 'Avant · J-10',
+    clock: 'J-10',
     eyebrow: 'HyperGrowth · Méthode OP-X',
     title: ['Votre entreprise', 'grossit plus vite', 'que son'],
     accent: 'organisation.',

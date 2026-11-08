@@ -8,7 +8,7 @@ const DESKTOP = '(min-width: 1024px)';
 const FINE_POINTER = '(hover: hover) and (pointer: fine)';
 
 type ClockSetter = (value: string | undefined, animate?: boolean) => void;
-type Marker = { value: string; trigger: ScrollTrigger; el: HTMLElement; inTrack: boolean };
+type Marker = { value: string; stage: string; trigger: ScrollTrigger; el: HTMLElement; inTrack: boolean };
 
 let trackTween: gsap.core.Tween | undefined;
 
@@ -87,7 +87,8 @@ function setupClockMarkers(setClock: ClockSetter, containerAnimation?: gsap.core
             end: 'bottom 55%',
             onToggle: (self) => self.isActive && setClock(value),
           });
-    markers.push({ value, trigger, el, inTrack: inTrack && Boolean(containerAnimation) });
+    const stage = el.closest<HTMLElement>('[data-stage]')?.dataset.stage ?? 'ensuite';
+    markers.push({ value, stage, trigger, el, inTrack: inTrack && Boolean(containerAnimation) });
   }
   return markers;
 }
@@ -98,37 +99,57 @@ function setupClockMarkers(setClock: ClockSetter, containerAnimation?: gsap.core
 
 function setupRail(getMarkers: () => Marker[]) {
   const rail = document.querySelector<HTMLElement>('[data-rail]');
+  const ruler = rail?.querySelector<HTMLElement>('[data-rail-ruler]');
   const ticksRoot = rail?.querySelector<HTMLElement>('[data-rail-ticks]');
-  const thumb = rail?.querySelector<HTMLElement>('[data-rail-thumb]');
-  const pill = rail?.querySelector<HTMLElement>('[data-rail-pill]');
-  if (!rail || !ticksRoot || !thumb || !pill) return () => {};
+  const needle = rail?.querySelector<HTMLElement>('[data-rail-needle]');
+  const readout = rail?.querySelector<HTMLElement>('[data-rail-readout]');
+  const stageLabel = rail?.querySelector<HTMLElement>('[data-rail-stage]');
+  if (!rail || !ruler || !ticksRoot || !needle || !readout || !stageLabel) return () => {};
 
+  const stageTitles: Record<string, string> = JSON.parse(rail.dataset.stageTitles ?? '{}');
   document.documentElement.classList.add('rail-on');
+  let grads: { el: HTMLElement; y: number }[] = [];
   let ticks: { el: HTMLElement; value: string }[] = [];
-  let thumbH = 0;
   let activeValue = '';
+  let activeStage = '';
 
   const limit = () => Math.max(1, ScrollTrigger.maxScroll(window));
 
+  // Needle position, and a "loupe" on the graduations around it.
   const update = () => {
-    const progress = Math.min(1, Math.max(0, window.scrollY / limit()));
-    gsap.set(thumb, { y: progress * (rail.clientHeight - thumbH) });
-  };
-
-  const place = () => {
-    thumbH = Math.max(28, (window.innerHeight / (limit() + window.innerHeight)) * rail.clientHeight);
-    thumb.style.height = `${thumbH}px`;
-    update();
+    const h = rail.clientHeight;
+    const y = Math.min(1, Math.max(0, window.scrollY / limit())) * h;
+    gsap.set(needle, { y });
+    // Light ink when the needle sits over a dark section (checked under the needle itself).
+    const probeX = Math.max(0, rail.getBoundingClientRect().left - 4);
+    const probeY = rail.getBoundingClientRect().top + y;
+    const under = document.elementsFromPoint(probeX, probeY).find((el) => !rail.contains(el));
+    document.documentElement.classList.toggle('rail-dark', Boolean(under?.closest('[data-dark]')));
+    for (const grad of grads) {
+      const near = Math.max(0, 1 - Math.abs(grad.y - y) / 70);
+      grad.el.style.transform = `scaleX(${1 + near * near * 2.6})`;
+      grad.el.style.opacity = String(0.18 + near * 0.6);
+    }
   };
 
   const build = () => {
+    const h = rail.clientHeight;
+    // Minor graduations every 7px.
+    ruler.replaceChildren();
+    grads = [];
+    for (let y = 0; y <= h; y += 7) {
+      const el = document.createElement('span');
+      el.className = 'rail-grad';
+      el.style.top = `${y}px`;
+      ruler.append(el);
+      grads.push({ el, y });
+    }
+
+    // Major ticks on the moments, placed where they happen in the page.
     ticksRoot.replaceChildren();
     ticks = [];
     const seen = new Set<string>();
-    let lastTop = -Infinity;
-    const h = rail.clientHeight;
     const pin = trackTween?.scrollTrigger;
-    // Markers inside the pinned track live in horizontal space: map them back to page scroll.
     const pagePosition = (m: Marker) => {
       if (!m.inTrack || !pin) return m.trigger.start;
       const offset = gsap.utils.clamp(0, pin.end - pin.start, m.el.offsetLeft - window.innerWidth * 0.55);
@@ -137,97 +158,76 @@ function setupRail(getMarkers: () => Marker[]) {
     const markers = getMarkers()
       .map((m) => ({ value: m.value, start: Math.max(0, pagePosition(m)) }))
       .sort((a, b) => a.start - b.start);
-
     for (const { value, start } of markers) {
       if (seen.has(value)) continue;
       seen.add(value);
-      const ratio = Math.min(1, start / limit());
       const li = document.createElement('li');
       li.className = 'rail-tick';
-      li.style.top = `${ratio * 100}%`;
+      li.style.top = `${Math.min(1, start / limit()) * 100}%`;
       const label = document.createElement('span');
       label.textContent = value;
       li.append(label);
-      const top = ratio * h;
-      if (top - lastTop < 16) li.toggleAttribute('data-crowded', true);
-      else lastTop = top;
       li.toggleAttribute('data-active', value === activeValue);
-      li.addEventListener('click', () => scrollToY(start + 2));
       ticksRoot.append(li);
       ticks.push({ el: li, value });
     }
-    place();
+    update();
   };
 
-  // Drag the thumb or click the line, like a native scrollbar.
+  // Drag or click anywhere on the ruler, like a native scrollbar.
   let dragging = false;
   const seek = (clientY: number, immediate: boolean) => {
     const rect = rail.getBoundingClientRect();
-    const ratio = Math.min(1, Math.max(0, (clientY - rect.top - thumbH / 2) / (rect.height - thumbH)));
-    scrollToY(ratio * limit(), immediate);
+    scrollToY(Math.min(1, Math.max(0, (clientY - rect.top) / rect.height)) * limit(), immediate);
   };
-  const line = rail.querySelector<HTMLElement>('[data-rail-line]');
-  for (const target of [thumb, line]) {
-    if (!target) continue;
-    target.addEventListener('pointerdown', (event) => {
-      dragging = true;
-      target.setPointerCapture(event.pointerId);
-      seek(event.clientY, target === thumb);
-    });
-    target.addEventListener('pointermove', (event) => {
-      if (dragging) seek(event.clientY, true);
-    });
-    target.addEventListener('pointerup', () => {
-      dragging = false;
-    });
-  }
+  ruler.addEventListener('pointerdown', (event) => {
+    dragging = true;
+    ruler.setPointerCapture(event.pointerId);
+    seek(event.clientY, false);
+  });
+  ruler.addEventListener('pointermove', (event) => {
+    if (dragging) seek(event.clientY, true);
+  });
+  ruler.addEventListener('pointerup', () => {
+    dragging = false;
+  });
 
-  // On touch screens the clock pill only shows while scrolling.
+  // On touch screens the readout only shows while scrolling.
   let idle: number | undefined;
   const touch = !window.matchMedia(FINE_POINTER).matches;
-  if (touch) pill.style.opacity = '0';
+  if (touch) readout.style.opacity = '0';
   window.addEventListener(
     'scroll',
     () => {
       update();
       if (!touch) return;
-      pill.style.opacity = '1';
+      readout.style.opacity = '1';
       window.clearTimeout(idle);
       idle = window.setTimeout(() => {
-        pill.style.opacity = '0';
+        readout.style.opacity = '0';
       }, 1200);
     },
     { passive: true },
   );
 
   ScrollTrigger.addEventListener('refresh', build);
-  window.addEventListener('resize', place);
+  window.addEventListener('resize', build);
   build();
 
-  return (value: string) => {
+  return (value: string, stage?: string) => {
     activeValue = value;
     for (const tick of ticks) tick.el.toggleAttribute('data-active', tick.value === value);
-  };
-}
-
-/** The rail switches to light ink over dark sections. */
-function setupDarkZones(containerAnimation?: gsap.core.Tween) {
-  const root = document.documentElement;
-  const active = new Set<Element>();
-  const sync = () => root.classList.toggle('rail-dark', active.size > 0);
-  for (const el of all('[data-dark]')) {
-    const toggle = (self: ScrollTrigger) => {
-      if (self.isActive) active.add(el);
-      else active.delete(el);
-      sync();
-    };
-    const inTrack = Boolean(el.closest('[data-hscroll-track]'));
-    if (inTrack && containerAnimation) {
-      ScrollTrigger.create({ trigger: el, containerAnimation, start: 'left right-=48', end: 'right right-=48', onToggle: toggle });
-    } else {
-      ScrollTrigger.create({ trigger: el, start: 'top 50%', end: 'bottom 50%', onToggle: toggle });
+    if (stage && stage !== activeStage && stageTitles[stage]) {
+      activeStage = stage;
+      gsap
+        .timeline()
+        .to(stageLabel, { opacity: 0, y: -4, duration: 0.15 })
+        .add(() => {
+          stageLabel.textContent = stageTitles[stage];
+        })
+        .fromTo(stageLabel, { y: 4 }, { opacity: 0.55, y: 0, duration: 0.35, ease: 'expo.out' });
     }
-  }
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -504,13 +504,12 @@ function playIntro() {
 export function initHomeMotion() {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let markers: Marker[] = [];
-  let onClock: (value: string) => void = () => {};
-  const setClock = createClock((value) => onClock(value));
+  let onClock: (value: string, stage?: string) => void = () => {};
+  const setClock = createClock((value) => onClock(value, markers.find((m) => m.value === value)?.stage));
 
   if (reduced) {
     document.querySelector('[data-loader]')?.remove();
     markers = setupClockMarkers((value) => setClock(value, false));
-    setupDarkZones();
     onClock = setupRail(() => markers);
     return;
   }
@@ -522,7 +521,6 @@ export function initHomeMotion() {
   setupLayout(mm, (tween) => {
     trackTween = tween;
     markers = setupClockMarkers(setClock, tween);
-    setupDarkZones(tween);
     if (!first) ScrollTrigger.refresh();
     first = false;
   });

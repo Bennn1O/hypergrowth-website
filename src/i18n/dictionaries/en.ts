@@ -17,10 +17,10 @@ export const en: Dictionary = {
   },
   timeline: {
     stages: [
-      { id: 'avant', label: 'Before' },
-      { id: 'immersion', label: '48h' },
-      { id: 'dix-jours', label: 'D+10' },
-      { id: 'ensuite', label: 'After' },
+      { id: 'avant', label: 'Before', title: 'We meet', time: 'D-10' },
+      { id: 'immersion', label: '48h', title: 'Forty-eight hours with you', time: 'D1 → D2' },
+      { id: 'dix-jours', label: 'D+10', title: 'Your roadmap', time: 'D+10' },
+      { id: 'ensuite', label: 'After', title: 'We stay until it holds', time: 'Month 1 → 6' },
     ],
     contact: 'Coffee?',
   },
@@ -28,7 +28,7 @@ export const en: Dictionary = {
     prefix: 'What you should know',
   },
   opening: {
-    clock: 'Before · D-10',
+    clock: 'D-10',
     eyebrow: 'HyperGrowth · OP-X method',
     title: ['Your company', 'is growing faster', 'than its'],
     accent: 'organisation.',
