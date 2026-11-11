@@ -5,7 +5,6 @@ import BeforeSection from './before-section.astro';
 import ClosingSection from './closing-section.astro';
 import EcosystemSection from './ecosystem-section.astro';
 import GridSection from './grid-section.astro';
-import IntroLoader from './intro-loader.astro';
 import MarqueeBand from './marquee-band.astro';
 import ScrollRail from './scroll-rail.astro';
 import MethodSection from './method-section.astro';
@@ -18,7 +17,6 @@ const t = getDictionary(locale);
 ---
 
 <BaseLayout>
-  <IntroLoader t={t} />
   <ScrollRail t={t} />
   <div class="pointer-events-none fixed top-0 left-0 z-[55] hidden size-3 rounded-full bg-white mix-blend-difference" data-cursor aria-hidden="true"></div>
   <OpeningSection t={t} />

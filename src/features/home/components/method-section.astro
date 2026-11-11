@@ -18,7 +18,7 @@ const [first, ...rest] = m.steps;
       <div class="lg:col-span-5">
         <ChapterBar prefix={t.chapter.prefix} chapter={m.chapter} index={2} />
       </div>
-      <h2 id="method-title" class="shout text-display lg:col-span-11">
+      <h2 id="method-title" class="section-title lg:col-span-11">
         <SplitText text={m.title} class="block" />
         <SplitText text={m.accent} class="voice block text-pink" />
       </h2>
@@ -51,7 +51,7 @@ const [first, ...rest] = m.steps;
                 <p class="label tabular-nums">{step.time}</p>
               </header>
               <div class="grid gap-8 lg:grid-cols-12">
-                <h3 class="shout text-display lg:col-span-11">{step.title}</h3>
+                <h3 class="section-title lg:col-span-11">{step.title}</h3>
                 <p class="text-lead font-medium lg:col-span-6">{step.text}</p>
                 <ol class="flex flex-wrap gap-2 self-end lg:col-span-5 lg:col-start-8">
                   {step.points.map((point) => (
@@ -76,7 +76,7 @@ const [first, ...rest] = m.steps;
                 <span>{m.interlude.label}</span>
                 <span class="tabular-nums">{m.interlude.time}</span>
               </p>
-              <p class="shout mt-16 text-display">
+              <p class="section-title mt-16">
                 {m.interlude.title} <span class="voice text-pink">{m.interlude.accent}</span>
               </p>
               <p class="mt-8 max-w-md text-lead text-paper/70">{m.interlude.text}</p>

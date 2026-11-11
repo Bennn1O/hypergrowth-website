@@ -24,10 +24,10 @@ const c = t.cases;
       <ChapterBar prefix={t.chapter.prefix} chapter={c.chapter} index={4} />
       <h2
         id="cases-title"
-        class="text-[clamp(2.75rem,8.5vw,8.25rem)] leading-none font-normal tracking-[-0.015em] text-black"
+        class="section-title text-black"
       >
         <SplitText text={c.title} />{' '}
-        <SplitText text={c.accent} class="font-serif font-semibold tracking-[-0.03em] text-pink italic" /><span class="font-bold">{c.titleEnd}</span>
+        <SplitText text={c.accent} class="font-serif font-semibold tracking-[-0.03em] text-pink italic" />{c.titleEnd}
       </h2>
     </div>
 

@@ -402,28 +402,24 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
 function setupHeader() {
   const header = document.querySelector<HTMLElement>('[data-site-header]');
   if (!header) return;
-  // The footer shows the full logo in large: the header logo steps aside while it is on screen.
-  const footerLogo = document.querySelector('[data-footer-logo]');
-  if (footerLogo) {
+  // Hidden while the hero (which has its own navbar) or the footer (big logo) is on screen.
+  const blockers = new Set<Element>();
+  const sync = () => header.toggleAttribute('data-hidden', blockers.size > 0);
+  const watch = (el: Element | null, start: string, end: string) => {
+    if (!el) return;
     ScrollTrigger.create({
-      trigger: footerLogo,
-      start: 'top bottom',
-      end: 'bottom top',
-      onToggle: (self) => header.toggleAttribute('data-hide-logo', self.isActive),
+      trigger: el,
+      start,
+      end,
+      onToggle: (self) => {
+        if (self.isActive) blockers.add(el);
+        else blockers.delete(el);
+        sync();
+      },
     });
-  }
-  // At the very top the header sits inside the hero card; once scrolled it tightens.
-  ScrollTrigger.create({
-    start: 40,
-    end: 'max',
-    onToggle: (self) => header.toggleAttribute('data-scrolled', self.isActive),
-  });
-  ScrollTrigger.create({
-    start: 160,
-    end: 'max',
-    onUpdate: (self) => header.toggleAttribute('data-hidden', self.direction === 1),
-    onLeaveBack: () => header.removeAttribute('data-hidden'),
-  });
+  };
+  watch(document.querySelector('[data-opening]'), 'top top', 'bottom 15%');
+  watch(document.querySelector('footer'), 'top 30%', 'bottom top');
 }
 
 function setupMarquee() {
@@ -517,29 +513,14 @@ function setupEcosystemPreview() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Intro: the loader shows the first clock value, then lifts.          */
+/* Intro: the hero title comes in word by word.                       */
 /* ------------------------------------------------------------------ */
 
 function playIntro() {
-  const loader = document.querySelector<HTMLElement>('[data-loader]');
   const title = document.querySelector('[data-intro-title]');
-  const tl = gsap.timeline();
-  if (loader) {
-    loader.style.animation = 'none';
-    lenis?.stop();
-    tl.from('[data-loader-clock]', { yPercent: 110, duration: 0.9, ease: 'expo.out' })
-      .to('[data-loader-bar]', { scaleX: 1, duration: 0.8, ease: 'expo.inOut' }, '<0.1')
-      .to(loader, { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=0.15')
-      .add(() => {
-        loader.remove();
-        lenis?.start();
-      });
-  }
-  const logo = all('[data-hero-logo] > *');
-  if (logo.length) tl.from(logo, { yPercent: 105, duration: 1.2, stagger: 0.08, ease: 'expo.out' }, loader ? '-=0.6' : 0);
-  if (title) tl.add(revealWords(title), '<0.15');
-  tl.from('[data-opening] [data-chapter-bar]', { scaleX: 0, duration: 1.1, ease: 'expo.inOut' }, '<0.2');
-  tl.from('[data-opening] [data-fade]', { y: 24, opacity: 0, duration: 1, stagger: 0.08, ease: 'expo.out' }, '<0.3');
+  const tl = gsap.timeline({ delay: 0.1 });
+  if (title) tl.add(revealWords(title), 0);
+  tl.from('[data-opening] [data-fade]', { y: 24, opacity: 0, duration: 1, stagger: 0.08, ease: 'expo.out' }, 0.3);
 }
 
 /* ------------------------------------------------------------------ */
@@ -551,9 +532,9 @@ export function initHomeMotion() {
   const setClock = createClock((value) => onClock(value, markers.find((m) => m.value === value)?.stage));
 
   if (reduced) {
-    document.querySelector('[data-loader]')?.remove();
     markers = setupClockMarkers((value) => setClock(value, false));
     onClock = setupRail(() => markers);
+    setupHeader();
     return;
   }
 

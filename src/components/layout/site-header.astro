@@ -1,42 +1,15 @@
 ---
-import Logomark from '../../assets/brand/logomark.svg';
-import Logotype from '../../assets/brand/logotype.svg';
-import { getDictionary, localizePath, resolveLocale } from '../../i18n';
-import LanguageSwitcher from './language-switcher.astro';
-
-const locale = resolveLocale(Astro.currentLocale);
-const t = getDictionary(locale);
-const home = localizePath('/', locale);
+import NavBar from './nav-bar.astro';
 ---
 
 <!--
-  Header from Figma (HYPERGROWTH, 376:435): logo (picto rose, logotype noir), language pill, pink CTA.
-  At the top it sits inside the hero card; once scrolled it tightens to the top edge.
+  Sticky header: the hero card already carries the navbar, so this compact bar only
+  slides in once the hero is out of view, and steps aside over the footer's big logo.
 -->
 <header
-  class="pointer-events-none fixed inset-x-0 top-0 z-40 px-8 pt-7 transition-[padding,translate,background-color,box-shadow] duration-500 ease-out-expo data-[hidden]:-translate-y-[130%] data-[scrolled]:bg-white/85 data-[scrolled]:pt-3 data-[scrolled]:pb-3 data-[scrolled]:shadow-[0_1px_0_rgb(17_17_17/0.06)] data-[scrolled]:backdrop-blur-md sm:px-[78px] sm:pt-[74px] sm:data-[scrolled]:pt-4 sm:data-[scrolled]:pb-4"
+  class="fixed inset-x-0 top-0 z-40 border-b border-ink/6 bg-white/85 px-5 py-3 backdrop-blur-md transition-transform duration-500 ease-out-expo data-[hidden]:-translate-y-full sm:px-[78px]"
   data-site-header
+  data-hidden
 >
-  <div class="pointer-events-auto flex items-center justify-between gap-6">
-    <a
-      href={home}
-      aria-label={t.a11y.home}
-      class="flex items-center gap-3 transition-opacity duration-500 [[data-hide-logo]_&]:pointer-events-none [[data-hide-logo]_&]:opacity-0"
-    >
-      <Logomark class="h-7 w-auto shrink-0 text-pink sm:h-9" aria-hidden="true" />
-      <Logotype class="h-[31px] w-auto shrink-0 text-ink sm:h-10 [&_.growth]:text-ink" aria-hidden="true" />
-    </a>
-    <div class="flex items-center gap-3">
-      <LanguageSwitcher
-        class="hidden gap-[3px] rounded-[8px] bg-mist/90 p-[3px] backdrop-blur-xl sm:flex [&_a]:rounded-[5px] [&_a]:px-[5px] [&_a]:py-[3px] [&_a]:font-helvetica [&_a]:text-xs [&_a]:leading-4 [&_a]:font-normal [&_a]:tracking-[-0.01em]"
-      />
-      <a
-        href="#cafe"
-        class="rounded-[4px] bg-pink px-3 py-2 font-helvetica text-xs leading-3 font-bold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
-        data-magnetic
-      >
-        {t.timeline.contact}
-      </a>
-    </div>
-  </div>
+  <NavBar compact class="mx-auto max-w-[1356px]" />
 </header>

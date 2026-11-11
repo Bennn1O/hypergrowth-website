@@ -22,7 +22,7 @@
   --color-ghost: #c9c9c9;
 
   /* Type */
-  --font-sans: "Geist Variable", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
   /* Hero (Figma « Header / Hero - Exploration », 376:435): Helvetica + IBM Plex Serif italic. */
   --font-helvetica: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
@@ -109,18 +109,27 @@
   letter-spacing: -0.045em;
 }
 
-/* The accent at the end of a title: same Geist medium, same case, only the colour changes. */
+/* The accent of a title (Figma): IBM Plex Serif SemiBold Italic. */
 @utility voice {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-style: normal;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.03em;
 }
 
-/* Big uppercase title. */
+/* Plain Helvetica heading (no forced case). */
 @utility shout {
   font-family: var(--font-sans);
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* One size for every section title, the hero's (Figma: Helvetica 58px, lh 1, -2px). */
+@utility section-title {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 3.84vw, 3.625rem);
+  line-height: 1;
+  letter-spacing: -0.0345em;
 }
 @utility grain {
   background-image: url('/textures/grain.svg');
@@ -172,18 +181,6 @@ html.rail-on {
 
 html.rail-on::-webkit-scrollbar {
   display: none;
-}
-
-/* Loader failsafe: never block the page if the script does not run. */
-[data-loader] {
-  animation: loader-failsafe 0s linear 4s forwards;
-}
-
-@keyframes loader-failsafe {
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
 }
 
 /* Outlined numerals behind the 48h phases. */
