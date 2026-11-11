@@ -1,6 +1,7 @@
 ---
+import Logomark from '../../assets/brand/logomark.svg';
+import Logotype from '../../assets/brand/logotype.svg';
 import { getDictionary, localizePath, resolveLocale } from '../../i18n';
-import Logo from '../ui/logo.astro';
 import LanguageSwitcher from './language-switcher.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
@@ -8,17 +9,32 @@ const t = getDictionary(locale);
 const home = localizePath('/', locale);
 ---
 
+<!--
+  Header from Figma (HYPERGROWTH, 376:435): logo (picto rose, logotype noir), language pill, pink CTA.
+  At the top it sits inside the hero card; once scrolled it tightens to the top edge.
+-->
 <header
-  class="pointer-events-none fixed inset-x-0 top-0 z-40 px-4 pt-3 transition-transform duration-500 ease-out-expo data-[hidden]:-translate-y-[130%] sm:px-6 sm:pt-4"
+  class="pointer-events-none fixed inset-x-0 top-0 z-40 px-8 pt-7 transition-[padding,translate] duration-500 ease-out-expo data-[hidden]:-translate-y-[130%] data-[scrolled]:pt-4 sm:px-[78px] sm:pt-[74px] sm:data-[scrolled]:pt-5"
   data-site-header
 >
-  <div class="pointer-events-auto mx-auto flex max-w-site items-center justify-between gap-6">
-    <a href={home} aria-label={t.a11y.home} class="bg-paper/80 p-2 text-[26px] leading-none backdrop-blur-md transition-opacity duration-500 [[data-hide-logo]_&]:pointer-events-none [[data-hide-logo]_&]:opacity-0">
-      <Logo variant="mark" />
+  <div class="pointer-events-auto flex items-center justify-between gap-6">
+    <a
+      href={home}
+      aria-label={t.a11y.home}
+      class="flex items-center gap-3 rounded-md transition-opacity duration-500 in-data-[scrolled]:bg-white/80 in-data-[scrolled]:p-2 in-data-[scrolled]:backdrop-blur-md [[data-hide-logo]_&]:pointer-events-none [[data-hide-logo]_&]:opacity-0"
+    >
+      <Logomark class="h-7 w-auto shrink-0 text-pink sm:h-9" aria-hidden="true" />
+      <Logotype class="h-[31px] w-auto shrink-0 text-ink sm:h-10 [&_.growth]:text-ink" aria-hidden="true" />
     </a>
     <div class="flex items-center gap-3">
-      <LanguageSwitcher class="hidden bg-paper/80 p-1 backdrop-blur-md sm:flex" />
-      <a href="#cafe" class="label bg-ink px-4 py-3 text-paper transition-colors hover:bg-purple" data-magnetic>
+      <LanguageSwitcher
+        class="hidden gap-[3px] rounded-[8px] bg-mist/90 p-[3px] backdrop-blur-xl sm:flex [&_a]:rounded-[5px] [&_a]:px-[5px] [&_a]:py-[3px] [&_a]:font-helvetica [&_a]:text-xs [&_a]:leading-4 [&_a]:font-normal [&_a]:tracking-[-0.01em]"
+      />
+      <a
+        href="#cafe"
+        class="rounded-[4px] bg-pink px-3 py-2 font-helvetica text-xs leading-3 font-bold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
+        data-magnetic
+      >
         {t.timeline.contact}
       </a>
     </div>

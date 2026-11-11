@@ -23,6 +23,9 @@
 
   /* Type */
   --font-sans: "Geist Variable", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  /* Hero (Figma « Header / Hero - Exploration », 376:435): Helvetica + IBM Plex Serif italic. */
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
+  --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
 
   --text-giant: clamp(3.4rem, 11.5vw, 13rem);
   --text-giant--line-height: 0.86;

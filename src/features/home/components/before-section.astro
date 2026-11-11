@@ -1,4 +1,5 @@
 ---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
 import PhotoSlot from '../../../components/ui/photo-slot.astro';
 import SplitText from '../../../components/ui/split-text.astro';
 import type { Dictionary } from '../../../i18n';
@@ -13,6 +14,8 @@ const b = t.before;
 
 <section id="avant" class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="avant" data-clock={b.clock} aria-labelledby="before-title">
   <div class="mx-auto flex max-w-site flex-col gap-24 sm:gap-36">
+    <ChapterBar prefix={t.chapter.prefix} chapter={b.chapter} index={1} class="lg:ml-auto lg:w-5/12" />
+
     <!-- Centered statement flanked by photos, as on a studio cover. -->
     <div class="relative py-6 lg:py-24">
       <PhotoSlot label={t.a11y.photo} caption={b.photoCaption} src="/photos/bordeaux-2613.webp" class="absolute top-0 left-0 hidden aspect-[4/5] w-[14vw] lg:block" />

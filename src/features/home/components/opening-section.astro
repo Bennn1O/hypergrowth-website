@@ -1,7 +1,4 @@
 ---
-import Logomark from '../../../assets/brand/logomark.svg';
-import Logotype from '../../../assets/brand/logotype.svg';
-import ChapterBar from '../../../components/ui/chapter-bar.astro';
 import SplitText from '../../../components/ui/split-text.astro';
 import type { Dictionary } from '../../../i18n';
 
@@ -14,45 +11,49 @@ const o = t.opening;
 ---
 
 <!--
-  Hero, built like a studio cover: the brand as the headline (top left), the positioning
-  in the right column, a note bottom left, and the first chapter bar closing the screen.
-  Two columns only: 1-6 and 7-12, shared with the next sections.
+  Hero, from Figma « Header / Hero - Exploration » (HYPERGROWTH, node 376:435).
+  A white card inset 30px in a blush-to-white frame, top corners rounded 24px.
+  The header (logo, langue, « Un café ? ») is the site header, laid over the card.
 -->
 <section
-  class="relative flex min-h-dvh flex-col px-4 pt-20 pb-8 sm:px-6 sm:pt-20"
+  class="relative bg-[linear-gradient(180deg,#ffb6f4_0%,#ffffff_82%)] bg-[length:100%_720px] bg-no-repeat p-3 sm:p-[30px]"
   data-stage="avant"
   data-clock={o.clock}
   data-opening
   aria-labelledby="opening-title"
 >
-  <div class="mx-auto grid w-full max-w-site flex-1 grid-cols-1 gap-y-10 lg:grid-cols-12 lg:grid-rows-[auto_1fr_auto] lg:gap-x-6">
-    <!-- Logo: mark and wordmark caps share one height (wordmark box = caps x 1.32). -->
-    <div class="flex w-fit flex-col gap-4 lg:col-span-8">
-      <div class="flex items-start gap-[1vw] overflow-hidden text-pink" aria-hidden="true" data-hero-logo>
-        <Logomark class="h-[9.5vw] w-auto shrink-0 lg:h-[6.8vw]" />
-        <Logotype class="-mt-[0.3vw] h-[12.5vw] w-auto shrink-0 lg:-mt-[0.25vw] lg:h-[9vw] [&_.growth]:text-pink" />
+  <div
+    class="mx-auto flex min-h-[calc(100svh-24px)] max-w-[1452px] flex-col justify-end rounded-t-[24px] bg-white pt-28 pr-10 pb-8 pl-5 sm:min-h-[calc(100svh-60px)] sm:px-12 sm:pb-[50px] lg:min-h-[640px]"
+  >
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-[215px]">
+      <div class="flex max-w-[790px] flex-col items-start gap-8">
+        <h1
+          id="opening-title"
+          class="font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink"
+          data-intro-title
+        >
+          <SplitText text={o.statementAccent} class="font-serif font-medium tracking-[-0.03em] text-pink italic" />{' '}
+          <SplitText text={o.statement} />
+        </h1>
+        <a
+          href="#avant"
+          class="flex items-center gap-2 rounded-[4px] bg-ink px-3 py-2 font-helvetica text-sm leading-3 font-bold tracking-[0.034em] text-paper uppercase transition-colors hover:bg-pink"
+          data-magnetic
+          data-fade
+        >
+          {o.cta}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="2.5" cy="8" r="1" stroke="currentColor" />
+            <path d="M5 8h9m0 0-2.5-2.2M14 8l-2.5 2.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
       </div>
-      <p class="label flex flex-wrap justify-between gap-x-6 gap-y-1 text-pink" data-fade>
-        <span>{o.tagLeft}</span>
-        <span>{o.tagRight}</span>
+      <p
+        class="max-w-[382px] font-helvetica text-sm leading-[1.2] tracking-[-0.01em] text-ink/80 lg:text-right"
+        data-fade
+      >
+        {o.note}
       </p>
-    </div>
-
-    <h1
-      id="opening-title"
-      class="display self-center text-[clamp(1.75rem,2.6vw,2.6rem)] leading-[1.08] tracking-[-0.045em] lg:col-span-5 lg:col-start-8 lg:row-start-2"
-      data-intro-title
-    >
-      <SplitText text={o.statement} />
-    </h1>
-
-    <p class="max-w-sm self-end text-base leading-snug text-ink/80 lg:col-span-4 lg:row-start-3" data-fade>{o.note}</p>
-
-    <div class="flex flex-col items-start gap-3 self-end lg:col-span-5 lg:col-start-8 lg:row-start-3" data-fade>
-      <a href="#avant" class="label flex items-center gap-2 bg-ink px-3 py-2.5 text-paper transition-colors hover:bg-purple" data-magnetic>
-        {o.cta} <span aria-hidden="true">↗</span>
-      </a>
-      <ChapterBar prefix={t.chapter.prefix} chapter={t.before.chapter} index={1} class="w-full" />
     </div>
   </div>
 </section>

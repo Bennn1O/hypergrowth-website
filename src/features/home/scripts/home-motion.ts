@@ -402,26 +402,22 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
 function setupHeader() {
   const header = document.querySelector<HTMLElement>('[data-site-header]');
   if (!header) return;
-  // The hero and the footer show the full logo in large: the header keeps only the mark,
-  // and hides it while either of them is on screen, so the logo never shows twice.
-  const big = [document.querySelector('[data-opening]'), document.querySelector('[data-footer-logo]')].filter(
-    (el): el is Element => Boolean(el),
-  );
-  const visible = new Set<Element>();
-  const sync = () => header.toggleAttribute('data-hide-logo', visible.size > 0);
-  for (const el of big) {
+  // The footer shows the full logo in large: the header logo steps aside while it is on screen.
+  const footerLogo = document.querySelector('[data-footer-logo]');
+  if (footerLogo) {
     ScrollTrigger.create({
-      trigger: el,
+      trigger: footerLogo,
       start: 'top bottom',
       end: 'bottom top',
-      onToggle: (self) => {
-        if (self.isActive) visible.add(el);
-        else visible.delete(el);
-        sync();
-      },
+      onToggle: (self) => header.toggleAttribute('data-hide-logo', self.isActive),
     });
   }
-  header.toggleAttribute('data-hide-logo', true);
+  // At the very top the header sits inside the hero card; once scrolled it tightens.
+  ScrollTrigger.create({
+    start: 40,
+    end: 'max',
+    onToggle: (self) => header.toggleAttribute('data-scrolled', self.isActive),
+  });
   ScrollTrigger.create({
     start: 160,
     end: 'max',
