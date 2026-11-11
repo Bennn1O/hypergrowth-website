@@ -1,6 +1,6 @@
 ---
 /**
- * ABCS-style chapter marker: "Ce qu'il faut savoir <chapter>" + number, on a pink bar.
+ * Chapter marker, from Figma (HYPERGROWTH): « Ce qu'il faut savoir … » + number, white on a pink bar.
  */
 interface Props {
   prefix: string;
@@ -13,11 +13,9 @@ const { prefix, chapter, index, class: className } = Astro.props;
 ---
 
 <div
-  class:list={['chapter-bar flex origin-left items-center justify-between gap-6 bg-pink px-3 py-2 text-ink', className]}
+  class:list={['chapter-bar flex w-full max-w-[594px] origin-left items-center justify-between gap-6 bg-pink px-3 py-2 font-helvetica text-white', className]}
   data-chapter-bar
 >
-  <p class="label">
-    {prefix} <span class="voice">{chapter}</span>
-  </p>
-  <p class="display text-xl leading-none">{String(index).padStart(2, '0')}</p>
+  <p class="text-xs leading-3 font-bold tracking-[0.04em] uppercase">{prefix} {chapter}</p>
+  <p class="text-xl leading-5 font-bold tracking-[-0.045em]">{String(index).padStart(2, '0')}</p>
 </div>

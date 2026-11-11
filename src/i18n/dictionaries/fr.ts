@@ -20,10 +20,10 @@ export const fr = {
   },
   timeline: {
     stages: [
-      { id: 'avant', label: 'Avant', title: 'On se rencontre', time: 'J-10' },
-      { id: 'methode', label: 'Méthode', title: 'On s’installe, puis on reste', time: '48h → 6 mois' },
-      { id: 'resultats', label: 'Résultats', title: 'Ce que ça donne', time: 'Après 6 mois' },
-      { id: 'maison', label: 'La maison', title: 'Qui vous accompagne', time: 'Au quotidien' },
+      { id: 'avant', label: 'Avant', title: 'On se rencontre', lead: 'On se', accent: 'rencontre', time: 'J-10' },
+      { id: 'methode', label: 'Méthode', title: 'On s’installe, puis on reste', lead: 'On s’installe, puis', accent: 'on reste', time: '48h → 6 mois' },
+      { id: 'resultats', label: 'Résultats', title: 'Ce que ça donne', lead: 'Ce que', accent: 'ça donne', time: 'Après 6 mois' },
+      { id: 'maison', label: 'La maison', title: 'Qui vous accompagne', lead: 'Qui vous', accent: 'accompagne', time: 'Au quotidien' },
     ],
     contact: 'Un café ?',
   },
@@ -159,8 +159,9 @@ export const fr = {
   cases: {
     clock: 'Après 6 mois',
     chapter: 'sur ce que ça donne',
-    title: 'Des entreprises réelles,',
-    accent: 'des chiffres réels.',
+    title: 'Des entreprises réelles, des',
+    accent: 'chiffres réels',
+    titleEnd: '.',
     stats: [
       { value: '400 M€', label: 'de chiffre d’affaires piloté' },
       { value: '150+', label: 'dirigeants accompagnés' },
@@ -168,13 +169,31 @@ export const fr = {
       { value: '+7 M€', label: 'levés par nos clients' },
     ],
     quote: {
-      text: 'Killian possède des qualités d’analyse humaines et structurelles qui peuvent faire changer grandement les choses sur une entreprise en croissance. Il est à la fois votre accélérateur et le pilier d’une structure organisée et surtout efficace !',
-      author: 'Vincent Mongis et Adrien Charles-Nicolas',
+      parts: [
+        'Killian possède des qualités ',
+        'd’analyse humaines et structurelles',
+        ' qui peuvent faire changer grandement les choses sur une entreprise ',
+        'en croissance',
+        '. Il est à la fois ',
+        'votre accélérateur',
+        ' et le pilier d’une ',
+        'structure organisée',
+        ' et surtout ',
+        'efficace',
+        ' !',
+      ],
+      author: 'Vincent Mongis & Adrien Charles-Nicolas',
       role: 'CEO, Pureva',
+      avatarAlt: 'Vincent Mongis et Adrien Charles-Nicolas',
     },
+    closingBefore: 'Et dire que ça pourrait ',
+    closingAccent: 'être vous',
+    closingAfter: '...',
+    cta: 'Prendre rendez-vous',
     items: [
       {
         name: 'Pureva',
+        image: '/cases/pureva.webp',
         sector: 'Scale-up B2C, filtration d’eau',
         text: 'Organisation en tension, trésorerie sous pression, croissance bloquée.',
         metrics: [
@@ -184,6 +203,7 @@ export const fr = {
       },
       {
         name: 'Nophone',
+        image: '/cases/nophone.webp',
         sector: 'E-commerce B2B',
         text: 'Une marque à 100 k€ par mois, une organisation qui menaçait de céder sous son propre poids.',
         metrics: [
@@ -193,6 +213,7 @@ export const fr = {
       },
       {
         name: 'Koko Kombucha',
+        image: '/cases/koko-kombucha.webp',
         sector: 'E-commerce B2C, boissons',
         text: 'Une CEO qui voulait sortir de l’opérationnel, une croissance à piloter.',
         metrics: [
@@ -202,6 +223,7 @@ export const fr = {
       },
       {
         name: 'Net & Connect',
+        image: '/cases/net-and-connect.webp',
         sector: 'Club d’entrepreneurs',
         text: 'Une belle croissance, aucun process pour la tenir. Structuration complète, nouvelles verticales lancées.',
         metrics: [
@@ -211,6 +233,7 @@ export const fr = {
       },
       {
         name: 'Minastorm',
+        image: '/cases/minastorm.webp',
         sector: 'E-commerce, mode',
         text: 'Une marque à 7 chiffres et une CEO trop dans le cambouis. Repositionnement, nouveaux leviers sans charge en plus.',
         metrics: [
@@ -220,6 +243,7 @@ export const fr = {
       },
       {
         name: 'La Draft',
+        image: '/cases/la-draft.webp',
         sector: 'Agence de recrutement',
         text: 'Un potentiel évident, des process inexistants. Croissance et lancement d’un SaaS accompagnés.',
         metrics: [
@@ -247,8 +271,8 @@ export const fr = {
   team: {
     clock: 'Au quotidien',
     chapter: 'sur les gens',
-    title: 'Une petite équipe,',
-    accent: 'qui se déplace.',
+    title: 'Une petite équipe, qui',
+    accent: 'se déplace',
     members: [
       { name: 'Killian', role: 'CEO', text: 'Ouvre les sujets en immersion. Stratégie, commercial, relation avec les dirigeants.' },
       { name: 'Benjamin', role: 'CTO et CPO', text: 'Ferme et tient le rythme en immersion. Tech, produit, données.' },
@@ -258,7 +282,9 @@ export const fr = {
       { name: 'Julie', role: 'Head Donna', text: 'L’assistanat de dirigeant.' },
       { name: 'Léa', role: 'Design et web', text: 'Identités, maquettes, sites.' },
     ],
-    more: 'Et les Operating Partners, qui portent les missions au quotidien.',
+    moreLead: 'Et les ',
+    moreAccent: 'Operating Partners',
+    moreEnd: ', qui portent les missions au quotidien.',
   },
   closing: {
     meetLabel: 'Où l’on se croise',
@@ -276,9 +302,17 @@ export const fr = {
     pending: 'Coordonnées à venir',
   },
   footer: {
-    statement: 'Pour les dirigeants dont l’entreprise grossit plus vite que son organisation, et qui veulent un cap tenu jusqu’au bout.',
+    statement: [
+      'Pour les dirigeants dont l’entreprise grossit ',
+      'plus vite',
+      ' que son organisation, et qui veulent un cap tenu ',
+      'jusqu’au bout',
+      '.',
+    ],
     cta: 'Prendre un café',
     navLabel: 'Le parcours',
+    navLabelLead: 'Le ',
+    navLabelAccent: 'parcours',
     contactLabel: 'Écrire',
     followLabel: 'Suivre',
     pending: 'Coordonnées à venir',

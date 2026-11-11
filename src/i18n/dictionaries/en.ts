@@ -17,10 +17,10 @@ export const en: Dictionary = {
   },
   timeline: {
     stages: [
-      { id: 'avant', label: 'Before', title: 'We meet', time: 'D-10' },
-      { id: 'methode', label: 'Method', title: 'We move in, then we stay', time: '48h → 6 months' },
-      { id: 'resultats', label: 'Results', title: 'What it delivers', time: 'After 6 months' },
-      { id: 'maison', label: 'The house', title: 'Who works with you', time: 'Day to day' },
+      { id: 'avant', label: 'Before', title: 'We meet', lead: 'We', accent: 'meet', time: 'D-10' },
+      { id: 'methode', label: 'Method', title: 'We move in, then we stay', lead: 'We move in, then', accent: 'we stay', time: '48h → 6 months' },
+      { id: 'resultats', label: 'Results', title: 'What it delivers', lead: 'What it', accent: 'delivers', time: 'After 6 months' },
+      { id: 'maison', label: 'The house', title: 'Who works with you', lead: 'Who', accent: 'works with you', time: 'Day to day' },
     ],
     contact: 'Coffee?',
   },
@@ -156,8 +156,9 @@ export const en: Dictionary = {
   cases: {
     clock: 'After 6 months',
     chapter: 'about what it delivers',
-    title: 'Real companies,',
-    accent: 'real numbers.',
+    title: 'Real companies, real',
+    accent: 'numbers',
+    titleEnd: '.',
     stats: [
       { value: '€400M', label: 'revenue steered' },
       { value: '150+', label: 'founders supported' },
@@ -165,13 +166,31 @@ export const en: Dictionary = {
       { value: '+€7M', label: 'raised by our clients' },
     ],
     quote: {
-      text: 'Killian has human and structural analytical skills that can really change things for a growing company. He is both your accelerator and the backbone of an organised and, above all, effective structure!',
-      author: 'Vincent Mongis and Adrien Charles-Nicolas',
+      parts: [
+        'Killian has ',
+        'human and structural analytical skills',
+        ' that can really change things for a ',
+        'growing company',
+        '. He is both ',
+        'your accelerator',
+        ' and the backbone of an ',
+        'organised structure',
+        ' that is, above all, ',
+        'effective',
+        '!',
+      ],
+      author: 'Vincent Mongis & Adrien Charles-Nicolas',
       role: 'CEOs, Pureva',
+      avatarAlt: 'Vincent Mongis and Adrien Charles-Nicolas',
     },
+    closingBefore: 'And to think it could be ',
+    closingAccent: 'you',
+    closingAfter: '...',
+    cta: 'Book a call',
     items: [
       {
         name: 'Pureva',
+        image: '/cases/pureva.webp',
         sector: 'B2C scale-up, water filtration',
         text: 'An organisation under strain, cash under pressure, growth stalled.',
         metrics: [
@@ -181,6 +200,7 @@ export const en: Dictionary = {
       },
       {
         name: 'Nophone',
+        image: '/cases/nophone.webp',
         sector: 'B2B e-commerce',
         text: 'A brand at €100k a month, with an organisation about to buckle under its own weight.',
         metrics: [
@@ -190,6 +210,7 @@ export const en: Dictionary = {
       },
       {
         name: 'Koko Kombucha',
+        image: '/cases/koko-kombucha.webp',
         sector: 'B2C e-commerce, drinks',
         text: 'A CEO who wanted out of operations, and growth to steer.',
         metrics: [
@@ -199,6 +220,7 @@ export const en: Dictionary = {
       },
       {
         name: 'Net & Connect',
+        image: '/cases/net-and-connect.webp',
         sector: 'Founders’ club',
         text: 'Strong growth, no process to hold it. Full restructuring, new verticals launched.',
         metrics: [
@@ -208,6 +230,7 @@ export const en: Dictionary = {
       },
       {
         name: 'Minastorm',
+        image: '/cases/minastorm.webp',
         sector: 'E-commerce, fashion',
         text: 'A 7-figure brand and a CEO stuck in the weeds. Repositioning, new levers with no extra load.',
         metrics: [
@@ -217,6 +240,7 @@ export const en: Dictionary = {
       },
       {
         name: 'La Draft',
+        image: '/cases/la-draft.webp',
         sector: 'Recruitment agency',
         text: 'Obvious potential, no processes. Growth and a SaaS launch, supported.',
         metrics: [
@@ -244,8 +268,8 @@ export const en: Dictionary = {
   team: {
     clock: 'Day to day',
     chapter: 'about the people',
-    title: 'A small team,',
-    accent: 'that travels.',
+    title: 'A small team, that',
+    accent: 'travels',
     members: [
       { name: 'Killian', role: 'CEO', text: 'Opens the subjects during immersions. Strategy, sales, founder relationships.' },
       { name: 'Benjamin', role: 'CTO and CPO', text: 'Closes and keeps the pace during immersions. Tech, product, data.' },
@@ -255,7 +279,9 @@ export const en: Dictionary = {
       { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
       { name: 'Léa', role: 'Design and web', text: 'Identities, mock-ups, websites.' },
     ],
-    more: 'And the Operating Partners, who carry the missions day to day.',
+    moreLead: 'And the ',
+    moreAccent: 'Operating Partners',
+    moreEnd: ', who carry the missions day to day.',
   },
   closing: {
     meetLabel: 'Where we meet',
@@ -273,9 +299,17 @@ export const en: Dictionary = {
     pending: 'Contact details coming soon',
   },
   footer: {
-    statement: 'For founders whose company is growing faster than its organisation, and who want a direction held all the way.',
+    statement: [
+      'For founders whose company is growing ',
+      'faster',
+      ' than its organisation, and who want a direction held ',
+      'all the way',
+      '.',
+    ],
     cta: 'Grab a coffee',
     navLabel: 'The journey',
+    navLabelLead: 'The ',
+    navLabelAccent: 'journey',
     contactLabel: 'Write',
     followLabel: 'Follow',
     pending: 'Contact details coming soon',

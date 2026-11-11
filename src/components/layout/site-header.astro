@@ -14,14 +14,14 @@ const home = localizePath('/', locale);
   At the top it sits inside the hero card; once scrolled it tightens to the top edge.
 -->
 <header
-  class="pointer-events-none fixed inset-x-0 top-0 z-40 px-8 pt-7 transition-[padding,translate] duration-500 ease-out-expo data-[hidden]:-translate-y-[130%] data-[scrolled]:pt-4 sm:px-[78px] sm:pt-[74px] sm:data-[scrolled]:pt-5"
+  class="pointer-events-none fixed inset-x-0 top-0 z-40 px-8 pt-7 transition-[padding,translate,background-color,box-shadow] duration-500 ease-out-expo data-[hidden]:-translate-y-[130%] data-[scrolled]:bg-white/85 data-[scrolled]:pt-3 data-[scrolled]:pb-3 data-[scrolled]:shadow-[0_1px_0_rgb(17_17_17/0.06)] data-[scrolled]:backdrop-blur-md sm:px-[78px] sm:pt-[74px] sm:data-[scrolled]:pt-4 sm:data-[scrolled]:pb-4"
   data-site-header
 >
   <div class="pointer-events-auto flex items-center justify-between gap-6">
     <a
       href={home}
       aria-label={t.a11y.home}
-      class="flex items-center gap-3 rounded-md transition-opacity duration-500 in-data-[scrolled]:bg-white/80 in-data-[scrolled]:p-2 in-data-[scrolled]:backdrop-blur-md [[data-hide-logo]_&]:pointer-events-none [[data-hide-logo]_&]:opacity-0"
+      class="flex items-center gap-3 transition-opacity duration-500 [[data-hide-logo]_&]:pointer-events-none [[data-hide-logo]_&]:opacity-0"
     >
       <Logomark class="h-7 w-auto shrink-0 text-pink sm:h-9" aria-hidden="true" />
       <Logotype class="h-[31px] w-auto shrink-0 text-ink sm:h-10 [&_.growth]:text-ink" aria-hidden="true" />

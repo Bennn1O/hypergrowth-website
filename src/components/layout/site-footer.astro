@@ -7,89 +7,99 @@ import LanguageSwitcher from './language-switcher.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
+const f = t.footer;
 const year = new Date().getFullYear();
 const socials = site.socials.filter((social) => social.href);
 ---
 
-<footer data-dark data-clock={t.closing.clock} class="overflow-hidden bg-ink px-4 pt-14 pb-5 text-paper sm:px-6 sm:pt-20">
-  <div class="mx-auto flex max-w-site flex-col gap-16 sm:gap-24">
-    <div class="grid gap-12 md:grid-cols-12">
-      <div class="flex flex-col items-start gap-6 md:col-span-5">
-        <p class="display max-w-sm text-2xl leading-[1.1] tracking-[-0.035em]">{t.footer.statement}</p>
-        <a href="#cafe" class="label flex items-center gap-2 bg-paper px-3 py-2.5 text-ink transition-colors hover:bg-pink" data-magnetic>
-          {t.footer.cta} <span aria-hidden="true">↗</span>
+<!--
+  From Figma (HYPERGROWTH, « Footer - Exploration », node 376:799): a dark card inset 30px in a
+  frame fading from ink to pink, bottom corners rounded 24px, the wordmark as a watermark.
+-->
+<footer
+  data-dark
+  data-clock={t.closing.clock}
+  class="bg-[linear-gradient(180deg,#111111_8%,#ff61a7_100%)] p-3 font-helvetica text-white sm:p-[30px] sm:pt-0"
+>
+  <div class="relative isolate mx-auto max-w-[1452px] overflow-hidden rounded-b-[24px] bg-ink px-5 pt-14 pb-8 sm:px-[59px] sm:pt-9 sm:pb-8">
+    <div class="pointer-events-none absolute inset-x-0 -bottom-[4%] -z-10 flex items-end justify-center gap-[1vw] text-[#171717]" aria-hidden="true" data-footer-logo>
+      <Logotype class="h-auto w-[103%] max-w-none shrink-0 [&_.growth]:text-[#171717]" />
+    </div>
+
+    <div class="flex flex-col gap-24 sm:gap-32">
+      <div class="flex flex-col gap-24">
+        <div class="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
+          <div class="flex max-w-[440px] flex-col items-start gap-6">
+            <span class="flex items-center gap-[6px] text-[19px]">
+              <Logomark class="h-[19px] w-auto text-pink" aria-hidden="true" />
+              <Logotype class="h-[21px] w-auto text-white [&_.growth]:text-white" aria-hidden="true" />
+              <span class="sr-only">HyperGrowth</span>
+            </span>
+            <p class="text-2xl leading-[1.1] tracking-[-0.035em]">
+              {f.statement.map((part, i) => (i % 2 ? <span class="text-pink">{part}</span> : part))}
+            </p>
+            <a
+              href="#cafe"
+              class="rounded-[4px] bg-pink px-3 py-2 text-xs leading-3 font-bold tracking-[0.04em] text-white uppercase transition-colors hover:bg-white hover:text-ink"
+              data-magnetic
+            >
+              {t.timeline.contact}
+            </a>
+          </div>
+
+          <div class="flex min-w-[189px] flex-col items-start gap-3">
+            <p class="text-xs leading-3 font-bold tracking-[0.04em] uppercase">{f.contactLabel}</p>
+            {
+              site.email ? (
+                <a href={`mailto:${site.email}`} class="text-xl leading-7 font-bold tracking-[-0.03em] hover:text-pink">{site.email}</a>
+              ) : (
+                <p class="text-xl leading-7 font-bold tracking-[-0.03em]">{f.pending}</p>
+              )
+            }
+            {socials.map((social) => (
+              <a href={social.href!} rel="noopener" class="text-xl leading-7 font-bold tracking-[-0.03em] hover:text-pink">{social.label}</a>
+            ))}
+            <LanguageSwitcher
+              class="gap-[3px] rounded-[8px] bg-white/10 p-[3px] backdrop-blur-xl [&_a]:rounded-[5px] [&_a]:px-[5px] [&_a]:py-[3px] [&_a]:text-xs [&_a]:leading-4 [&_a]:font-normal [&_a]:text-white/70 [&_a[aria-current]]:bg-white [&_a[aria-current]]:text-ink"
+            />
+          </div>
+        </div>
+
+        <nav aria-label={f.navLabel} class="flex flex-col gap-8">
+          <p class="text-2xl leading-3 font-bold tracking-[0.02em] text-[#818181] uppercase">
+            {f.navLabelLead}<span class="text-pink">{f.navLabelAccent}</span>
+          </p>
+          <ol class="border-t border-[#818181]">
+            {
+              t.timeline.stages.map((stage, index) => (
+                <li class="border-b border-[#818181]">
+                  <a href={`#${stage.id}`} class="group flex items-center justify-between gap-6 py-5">
+                    <span class="flex items-center gap-4 sm:gap-8">
+                      <span class="text-base leading-3 font-bold tracking-[0.03em] text-[#818181]">{String(index + 1).padStart(2, '0')}</span>
+                      <span class="text-[clamp(2rem,4.5vw,4.25rem)] leading-[1.1] tracking-[-0.05em] transition-transform duration-500 ease-out-expo group-hover:translate-x-2">
+                        {stage.lead} <span class="font-serif font-semibold tracking-[-0.04em] text-pink italic">{stage.accent}</span>
+                      </span>
+                    </span>
+                    <span class="hidden text-base leading-3 font-bold tracking-[0.03em] whitespace-nowrap text-[#818181] uppercase sm:block">{stage.time}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ol>
+        </nav>
+      </div>
+
+      <div class="flex flex-col gap-4 text-sm leading-[11px] font-bold tracking-[0.03em] uppercase sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-[#818181]">© {year} · HyperGrowth™ · <span class="text-pink">{f.line}</span></p>
+        <p class="flex gap-6 text-[#818181]">
+          <span>{f.legal}</span>
+          <span>{f.rights}</span>
+        </p>
+        <a href="#top" class="flex items-center gap-1 text-white hover:text-pink">
+          {t.a11y.backToTop}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="11" r="0.9" stroke="currentColor" stroke-width="0.6" /><path d="M7 9V1.5m0 0L5 3.5M7 1.5l2 2" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </a>
       </div>
-
-      <div class="flex flex-col gap-8 md:col-span-3 md:col-start-10">
-        <div class="flex flex-col gap-2">
-          <p class="label text-paper/50">{t.footer.contactLabel}</p>
-          {
-            site.email ? (
-              <a href={`mailto:${site.email}`} class="display text-xl tracking-[-0.03em] hover:text-pink">{site.email}</a>
-            ) : (
-              <p class="display text-xl tracking-[-0.03em] text-paper/60">{t.footer.pending}</p>
-            )
-          }
-        </div>
-        {
-          socials.length > 0 && (
-            <div class="flex flex-col gap-2">
-              <p class="label text-paper/50">{t.footer.followLabel}</p>
-              {socials.map((social) => (
-                <a href={social.href!} rel="noopener" class="display text-xl tracking-[-0.03em] hover:text-pink">
-                  {social.label}
-                </a>
-              ))}
-            </div>
-          )
-        }
-        <LanguageSwitcher class="[&_a]:text-paper/60 [&_a[aria-current]]:bg-paper [&_a[aria-current]]:text-ink" />
-      </div>
-    </div>
-
-    <!-- The journey, told again: each step is a sentence, not a code. -->
-    <nav aria-label={t.footer.navLabel}>
-      <p class="label mb-4 text-paper/50">{t.footer.navLabel}</p>
-      <ol class="border-t border-paper/20">
-        {
-          t.timeline.stages.map((stage, index) => (
-            <li class="border-b border-paper/20">
-              <a
-                href={`#${stage.id}`}
-                class="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-4 py-4 sm:grid-cols-[4rem_1fr_auto] sm:py-5"
-              >
-                <span class="label text-paper/40 transition-colors group-hover:text-pink">{String(index + 1).padStart(2, '0')}</span>
-                <span class="display block overflow-hidden text-[clamp(1.9rem,4.6vw,4.25rem)] leading-[1.1] tracking-[-0.05em] sm:h-[1.1em]">
-                  <span class="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{stage.title}</span>
-                  <span class="hidden text-pink transition-transform duration-500 ease-out-expo group-hover:-translate-y-full sm:block" aria-hidden="true">
-                    {stage.title}
-                  </span>
-                </span>
-                <span class="label col-start-2 mt-2 text-paper/50 tabular-nums sm:col-start-3 sm:mt-0 sm:text-right">{stage.time}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-    </nav>
-
-    <!--
-      Wordmark caps as tall as the mark: the caps fill ~76% of the wordmark's box
-      (the rest is the y/p descenders), hence 11.6vw x 1.32. Both fit in ~94vw.
-    -->
-    <div class="flex items-start justify-between gap-[1.5vw] text-pink" aria-hidden="true" data-footer-logo>
-      <Logomark class="h-[11.6vw] w-auto shrink-0" />
-      <Logotype class="-mt-[0.4vw] h-[15.3vw] w-auto shrink-0 [&_.growth]:text-pink" />
-    </div>
-
-    <div class="label flex flex-col gap-3 text-[11px] text-paper/50 sm:flex-row sm:justify-between lg:pr-40">
-      <p>© {year} · HyperGrowth™ · <span class="text-pink">{t.footer.line}</span></p>
-      <p class="flex gap-6">
-        <span>{t.footer.legal}</span>
-        <span>{t.footer.rights}</span>
-      </p>
-      <a href="#top" class="hover:text-pink">{t.a11y.backToTop} ↑</a>
     </div>
   </div>
 </footer>
