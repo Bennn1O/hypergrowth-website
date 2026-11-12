@@ -1,7 +1,7 @@
 ---
 /**
- * Navbar row from Figma (HYPERGROWTH, node 376:446): logo (pink mark, black wordmark),
- * language pill, pink « Un café ? ». Used inside the hero card and in the sticky header.
+ * Navbar row from Figma (HYPERGROWTH, node 376:446): logo (wordmark; HG symbol on the compact phone bar),
+ * language pill, primary « Un café ? ». Used inside the hero card and in the sticky header.
  */
 import Logomark from '../../assets/brand/logomark.svg';
 import Logotype from '../../assets/brand/logotype.svg';
@@ -22,7 +22,7 @@ const home = localizePath('/', locale);
 <div class:list={['flex items-center justify-between gap-6 font-helvetica', className]}>
   <!-- Wordmark alone; the HG symbol only stands in on the compact bar on phones, where room is short. -->
   <a href={home} aria-label={t.a11y.home} class:list={['flex items-center leading-none', compact ? 'text-[30px]' : 'text-[31px] sm:text-[40px]']}>
-    {compact && <Logomark class="h-[0.74em] w-auto shrink-0 text-pink sm:hidden" aria-hidden="true" />}
+    {compact && <Logomark class="h-[0.74em] w-auto shrink-0 text-primary sm:hidden" aria-hidden="true" />}
     <Logotype class:list={['h-[1em] w-auto shrink-0 text-ink [&_.growth]:text-ink', compact && 'hidden sm:block']} aria-hidden="true" />
   </a>
   <div class="flex items-center gap-3">
@@ -31,7 +31,7 @@ const home = localizePath('/', locale);
     />
     <a
       href="#cafe"
-      class="rounded-[4px] bg-pink px-3 py-2 text-xs leading-3 font-bold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
+      class="rounded-[4px] bg-primary px-3 py-2 text-xs leading-3 font-bold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
     >
       {t.timeline.contact}
     </a>

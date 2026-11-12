@@ -27,7 +27,7 @@ const c = t.cases;
         class="section-title text-black"
       >
         <SplitText text={c.title} />{' '}
-        <SplitText text={c.accent} class="font-serif font-semibold tracking-[-0.03em] text-pink italic" />{c.titleEnd}
+        <SplitText text={c.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />{c.titleEnd}
       </h2>
     </div>
 
@@ -45,7 +45,7 @@ const c = t.cases;
     </dl>
 
     <figure class="mx-auto flex max-w-[1241px] items-start gap-4 sm:gap-8" data-fade>
-      <svg class="hidden shrink-0 text-pink sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
+      <svg class="hidden shrink-0 text-primary sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
       <div class="flex flex-col items-center gap-8">
         <blockquote class="text-center text-[clamp(1.5rem,2.55vw,2.4rem)] leading-[1.15] font-bold tracking-[-0.04em] text-black">
           {c.quote.parts.map((part, i) => (i % 2 ? <span class="text-blush">{part}</span> : part))}
@@ -58,7 +58,7 @@ const c = t.cases;
           </span>
         </figcaption>
       </div>
-      <svg class="hidden shrink-0 rotate-180 text-pink sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
+      <svg class="hidden shrink-0 rotate-180 text-primary sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
     </figure>
 
     <!-- Phones: a swipeable row; larger screens: a grid. -->
@@ -83,7 +83,7 @@ const c = t.cases;
               <dl class="flex justify-between gap-4 border-t border-black/15 pt-4">
                 {item.metrics.map((metric) => (
                   <div class="flex flex-col gap-1">
-                    <dt class="text-[32px] leading-6 font-bold tracking-[-0.03em] whitespace-nowrap text-pink">{metric.value}</dt>
+                    <dt class="text-[32px] leading-6 font-bold tracking-[-0.03em] whitespace-nowrap text-primary">{metric.value}</dt>
                     <dd class="text-[11.5px] leading-[1.4] font-bold tracking-[-0.01em] text-black/70">{metric.label}</dd>
                   </div>
                 ))}
@@ -96,11 +96,11 @@ const c = t.cases;
 
     <div class="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-[32px] leading-none tracking-[-0.0625em] text-ink">
-        {c.closingBefore}<span class="text-pink">{c.closingAccent}</span>{c.closingAfter}
+        {c.closingBefore}<span class="text-primary">{c.closingAccent}</span>{c.closingAfter}
       </p>
       <a
         href="#cafe"
-        class="flex items-center gap-2 rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-bold tracking-[0.034em] text-paper uppercase transition-colors hover:bg-pink"
+        class="flex items-center gap-2 rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-bold tracking-[0.034em] text-paper uppercase transition-colors hover:bg-primary"
         data-magnetic
       >
         {c.cta}

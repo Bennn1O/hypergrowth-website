@@ -20,7 +20,7 @@ const [first, ...rest] = m.steps;
       </div>
       <h2 id="method-title" class="section-title lg:col-span-11">
         <SplitText text={m.title} class="block" />
-        <SplitText text={m.accent} class="voice block text-pink" />
+        <SplitText text={m.accent} class="voice block text-primary" />
       </h2>
       <p class="text-lead font-medium lg:col-span-5 lg:col-start-8">{m.intro}</p>
     </div>
@@ -29,7 +29,7 @@ const [first, ...rest] = m.steps;
   <!-- The whole relationship in one horizontal track (pinned on desktop, stacked on mobile). -->
   <div class="relative overflow-hidden" data-hscroll>
     <div class="absolute inset-x-0 bottom-0 z-10 h-[3px] bg-ink/10" aria-hidden="true">
-      <div class="h-full origin-left scale-x-0 bg-pink" data-hscroll-progress></div>
+      <div class="h-full origin-left scale-x-0 bg-primary" data-hscroll-progress></div>
     </div>
     <div class="flex h-[100svh] w-max flex-row lg:h-dvh" data-hscroll-track>
       {
@@ -47,7 +47,7 @@ const [first, ...rest] = m.steps;
                 {m.steps.indexOf(step) + 1}
               </span>
               <header class="flex items-start justify-between gap-6">
-                <p class="label text-pink">{step.label}</p>
+                <p class="label text-primary">{step.label}</p>
                 <p class="label tabular-nums">{step.time}</p>
               </header>
               <div class="grid gap-8 lg:grid-cols-12">

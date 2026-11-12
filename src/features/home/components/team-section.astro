@@ -30,7 +30,7 @@ const photos: Record<string, string> = { Killian: '/team/killian.webp' };
       <h2 id="team-title" class="section-title text-ink">
         <SplitText text={`${titleLine1},`} class="block" />
         <SplitText text={titleLine2} />{' '}
-        <SplitText text={team.accent} class="font-serif font-semibold tracking-[-0.03em] text-pink italic" />
+        <SplitText text={team.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />
       </h2>
       <ChapterBar prefix={t.chapter.prefix} chapter={team.chapter} index={5} class="rounded-[6px] lg:w-[593px]" />
     </div>
@@ -63,9 +63,9 @@ const photos: Record<string, string> = { Killian: '/team/killian.webp' };
         ))
       }
       <li class="col-span-2 flex flex-col justify-end gap-3 lg:col-span-1">
-        <Logomark class="h-5 w-auto text-pink" aria-hidden="true" />
+        <Logomark class="h-5 w-auto text-primary" aria-hidden="true" />
         <p class="text-[clamp(1.4rem,1.85vw,1.75rem)] leading-[1.14] tracking-[-0.005em] text-ink">
-          {team.moreLead}<span class="text-pink">{team.moreAccent}</span>{team.moreEnd}
+          {team.moreLead}<span class="text-primary">{team.moreAccent}</span>{team.moreEnd}
         </p>
       </li>
     </ul>

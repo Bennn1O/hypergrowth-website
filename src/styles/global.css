@@ -9,6 +9,8 @@
 @theme {
   /* Brand */
   --color-blush: #ffb6f4;
+  /* Primary accent: violet (decision 12/11/2026). Pink stays for accents on dark backgrounds. */
+  --color-primary: #842cb4;
   --color-pink: #ff61a7;
   --color-purple: #842cb4;
   --color-ink: #111111;
@@ -72,7 +74,7 @@
   }
 
   ::selection {
-    background: var(--color-pink);
+    background: var(--color-blush);
     color: var(--color-ink);
   }
 
@@ -220,7 +222,7 @@ html.rail-on::-webkit-scrollbar {
 }
 
 .rail-tick[data-active]::after {
-  background: var(--color-pink);
+  background: var(--color-primary);
   opacity: 1;
 }
 
