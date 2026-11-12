@@ -20,9 +20,10 @@ const home = localizePath('/', locale);
 ---
 
 <div class:list={['flex items-center justify-between gap-6 font-helvetica', className]}>
-  <a href={home} aria-label={t.a11y.home} class="flex items-center gap-3">
-    <Logomark class:list={['w-auto shrink-0 text-pink', compact ? 'h-6' : 'h-6 sm:h-[30px]']} aria-hidden="true" />
-    <Logotype class:list={['w-auto shrink-0 text-ink [&_.growth]:text-ink', compact ? 'h-[30px]' : 'h-[31px] sm:h-10']} aria-hidden="true" />
+  <!-- Symbol height = cap height of the wordmark (≈74% of its box, the rest is the y/p descenders), tops aligned. -->
+  <a href={home} aria-label={t.a11y.home} class:list={["flex items-start gap-[0.22em] leading-none", compact ? "text-[30px]" : "text-[31px] sm:text-[40px]"]}>
+    <Logomark class="mt-[0.02em] h-[0.74em] w-auto shrink-0 text-pink" aria-hidden="true" />
+    <Logotype class="h-[1em] w-auto shrink-0 text-ink [&_.growth]:text-ink" aria-hidden="true" />
   </a>
   <div class="flex items-center gap-3">
     <LanguageSwitcher
