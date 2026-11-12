@@ -418,7 +418,8 @@ function setupHeader() {
       },
     });
   };
-  watch(document.querySelector('[data-opening]'), 'top top', 'bottom 15%');
+  // 'top bottom' keeps the hero active right up to scroll 0 (with 'top top', scrolling back to the very top deactivated it).
+  watch(document.querySelector('[data-opening]'), 'top bottom', 'bottom 15%');
   watch(document.querySelector('footer'), 'top 30%', 'bottom top');
 }
 
