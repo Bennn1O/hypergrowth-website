@@ -488,30 +488,6 @@ function setupOpeningNappes() {
   });
 }
 
-function setupEcosystemPreview() {
-  if (!window.matchMedia(FINE_POINTER).matches) return;
-  const preview = document.querySelector<HTMLElement>('[data-eco-preview]');
-  const label = document.querySelector<HTMLElement>('[data-eco-preview-label]');
-  const list = document.querySelector<HTMLElement>('[data-eco]');
-  if (!preview || !label || !list) return;
-
-  preview.classList.remove('hidden');
-  const xTo = gsap.quickTo(preview, 'x', { duration: 0.6, ease: 'expo.out' });
-  const yTo = gsap.quickTo(preview, 'y', { duration: 0.6, ease: 'expo.out' });
-  list.addEventListener('pointermove', (event) => {
-    xTo(event.clientX + 32);
-    yTo(event.clientY - preview.offsetHeight / 2);
-  });
-  for (const item of all('[data-eco-item]', list)) {
-    item.addEventListener('pointerenter', () => {
-      label.textContent = item.querySelector('[data-eco-name]')?.textContent?.trim() ?? '';
-      gsap.to(preview, { opacity: 1, scale: 1, rotate: -3, duration: 0.5, ease: 'expo.out' });
-    });
-  }
-  list.addEventListener('pointerleave', () => {
-    gsap.to(preview, { opacity: 0, scale: 0.85, rotate: 0, duration: 0.4, ease: 'power2.out' });
-  });
-}
 
 /* ------------------------------------------------------------------ */
 /* Intro: the hero title comes in word by word.                       */
@@ -556,7 +532,6 @@ export function initHomeMotion() {
   setupCursor();
   setupMagnetic();
   setupOpeningNappes();
-  setupEcosystemPreview();
   playIntro();
 
   document.fonts?.ready.then(() => ScrollTrigger.refresh());
