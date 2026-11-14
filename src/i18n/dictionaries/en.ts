@@ -284,7 +284,7 @@ export const en: Dictionary = {
       { name: 'Louise', role: 'Head of Event & Brand', text: 'Events, for HyperGrowth and for its clients.' },
       { name: 'Ulysse', role: 'Head Sphère 51', text: 'Introductions: an expert, a provider, a peer.' },
       { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
-      { name: 'Léa', role: 'Head of Design', text: 'Identities, mock-ups, websites.' },
+      { name: 'Léa', role: 'Head of Design & Web', text: 'Identities, mock-ups, websites.' },
     ],
     ops: [
       { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
