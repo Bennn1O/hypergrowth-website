@@ -306,14 +306,9 @@ export const en: Dictionary = {
       { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identities, mock-ups, websites.' },
     ],
-    // The expert network, as listed on hypergrowth.fr and in the HG brain (cartographie des expertises).
-    experts: [
-      { name: 'Gabriel Girardon', photo: '/team/expert-gabriel-girardon.webp' },
-      { name: 'Anthony Diochon', photo: '/team/expert-anthony-diochon.webp' },
-      { name: 'Elise Hetsch', photo: '/team/expert-elise-hetsch.webp' },
-      { name: 'Samuel Fernandes', photo: '/team/expert-samuel-fernandes.webp' },
-      { name: 'Guillaume Pesnel', photo: '/team/expert-guillaume-pesnel.webp' },
-    ],
+    // Expert network faces: empty until HG confirms the current roster (Marlay Traoré, Elsa…).
+    // Shape: { name: 'Prénom Nom', photo: '/team/expert-prenom-nom.webp' }. The row hides while empty.
+    experts: [] as { name: string; photo: string }[],
     moreLead: 'And our network of ',
     moreAccent: 'experts',
     moreEnd: ', brought in when a job needs a specialist.',
