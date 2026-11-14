@@ -19,6 +19,8 @@ const floating = [
   { src: '/photos/bordeaux-2740.webp', x: 104, y: 682, speed: -0.15 },
   { src: '/photos/bordeaux-2592.webp', x: 1125, y: 682, speed: 0.25 },
 ];
+// From sm up, pull each photo's centre toward the middle of the stage (1 = Figma positions); phones keep the Figma spread.
+const pull = (centre: number, k: number) => 50 + (centre - 50) * k;
 const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/photos/bordeaux-2801.webp'];
 ---
 
@@ -39,8 +41,8 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
         {
           floating.map((p) => (
             <figure
-              class="absolute w-[20%] overflow-hidden rounded-[1.6px] bg-ink sm:w-[13.4%]"
-              style={`left:${((p.x - 32) / 1448) * 100}%; top:${((p.y + 0) / 930) * 100}%; aspect-ratio:195/244;`}
+              class="absolute top-[var(--y)] left-[var(--x)] w-[20%] overflow-hidden rounded-[1.6px] bg-ink sm:top-[var(--yc)] sm:left-[var(--xc)] sm:w-[13.4%]"
+              style={`--x:${((p.x - 32) / 1448) * 100}%; --y:${(p.y / 930) * 100}%; --xc:${pull(((p.x - 32 + 97.5) / 1448) * 100, 0.82) - 6.7}%; --yc:${pull(((p.y + 122) / 930) * 100, 0.86) - 13.1}%; aspect-ratio:195/244;`}
               data-parallax={p.speed}
             >
               <img src={p.src} alt="" loading="lazy" class="h-full w-full object-cover grayscale" />
@@ -54,7 +56,7 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
 
       <h2
         id="before-title"
-        class="absolute inset-x-0 top-1/2 mx-auto max-w-[1000px] -translate-y-1/2 px-6 text-center sm:top-[39.5%] sm:translate-y-0 font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink"
+        class="absolute inset-x-0 top-1/2 z-10 mx-auto max-w-[1000px] -translate-y-1/2 px-6 text-center sm:top-[39.5%] sm:translate-y-0 font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink"
       >
         {
           b.titleLines.map((line) => (
