@@ -26,15 +26,10 @@
   --color-ghost: #c9c9c9;
 
   /* Type */
-  /*
-   * Helvetica Neue where the system has it (Mac, iPhone: real 500 Medium, nothing to download).
-   * Elsewhere (Windows, Android, Linux) "HG Sans" takes over: Inter, self-hosted under our own
-   * name so a locally installed Inter of another version never stands in. 500 is a true medium
-   * there too, and the browser only downloads it when it is actually used.
-   */
-  --font-sans: "Helvetica Neue", "HG Sans", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  /* HG Sans (TeX Gyre Heros, self-hosted) everywhere; system Helvetica only while it loads. */
+  --font-sans: "HG Sans", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
   /* Hero (Figma « Header / Hero - Exploration », 376:435): Helvetica + IBM Plex Serif italic. */
-  --font-helvetica: "Helvetica Neue", "HG Sans", Helvetica, Arial, ui-sans-serif, sans-serif;
+  --font-helvetica: "HG Sans", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
 
   /*
@@ -68,21 +63,18 @@
   --container-site: 96rem;
 }
 
-/* Inter 4 (SIL OFL 1.1, see src/assets/fonts/LICENSE-inter.txt), latin subset. */
+/*
+ * TeX Gyre Heros (GUST Font License, see src/assets/fonts/LICENSE-tex-gyre.txt), a free Helvetica,
+ * subset to Latin and renamed HG Sans as the licence asks for modified versions. Same font on
+ * every device. It only exists in Regular and Bold, so the 500 "medium" is the Regular with a
+ * hairline stroke (see .font-medium below), never the Bold.
+ */
 @font-face {
   font-family: "HG Sans";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 500;
   font-display: swap;
   src: url("../assets/fonts/hg-sans-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "HG Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../assets/fonts/hg-sans-500.woff2") format("woff2");
 }
 
 @layer base {
@@ -365,4 +357,14 @@ html.rail-on .max-w-site {
   html.rail-on .max-w-site {
     padding-right: 3.5rem;
   }
+}
+
+/*
+ * Medium weight for HG Sans (Heros has no Medium): the Regular, thickened by a hairline stroke.
+ * Applies wherever the site asks for 500 (labels, badges, buttons, figures).
+ */
+.font-medium,
+.label,
+.rail-tick > span {
+  -webkit-text-stroke: 0.022em currentColor;
 }

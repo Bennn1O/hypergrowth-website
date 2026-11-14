@@ -3,6 +3,7 @@ import '@fontsource/ibm-plex-serif/latin-600-italic.css';
 import '../styles/global.css';
 // The hero accent (IBM Plex Serif 600 italic) is above the fold: fetch it with the HTML.
 import serifAccent from '@fontsource/ibm-plex-serif/files/ibm-plex-serif-latin-600-italic.woff2?url';
+import sansText from '../assets/fonts/hg-sans-400.woff2?url';
 
 import SiteFooter from '../components/layout/site-footer.astro';
 import SiteHeader from '../components/layout/site-header.astro';
@@ -63,6 +64,7 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="theme-color" content="#842cb4" />
+    <link rel="preload" href={sansText} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={serifAccent} as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
