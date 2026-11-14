@@ -54,14 +54,14 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
 
       <h2
         id="before-title"
-        class="relative mx-auto mt-20 mb-16 max-w-[1180px] text-center text-[clamp(2.4rem,5.95vw,5.625rem)] leading-[1.1] tracking-[-0.038em] text-black lg:absolute lg:inset-x-0 lg:top-[39.5%] lg:my-0"
+        class="relative mx-auto mt-20 mb-16 max-w-[1000px] text-center font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink lg:absolute lg:inset-x-0 lg:top-[39.5%] lg:my-0"
       >
         {
           b.titleLines.map((line) => (
             <span class="block">
               {line.lead && <SplitText text={line.lead.trim()} />}
               {line.lead && line.accent && ' '}
-              {line.accent && <SplitText text={line.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />}
+              {line.accent && <SplitText text={line.accent} class="font-serif font-medium tracking-[-0.03em] text-primary italic" />}
               {line.end}
             </span>
           ))
@@ -71,9 +71,9 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
 
     <!-- Statement, two intro lines, three photos. -->
     <div class="mt-4 flex flex-col gap-8 lg:mt-[68px]">
-      <p class="max-w-[980px] text-[clamp(2.4rem,6.03vw,5.7rem)] leading-none tracking-[-0.055em] text-black">
+      <p class="max-w-[790px] font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink">
         <SplitText text={b.statementLead.trim()} />{' '}
-        <SplitText text={b.statementAccent} class="text-primary" />
+        <SplitText text={b.statementAccent} class="font-serif font-medium tracking-[-0.03em] text-primary italic" />
       </p>
       <div class="flex flex-col gap-4 text-[clamp(1.05rem,1.47vw,1.39rem)] leading-[1.4] text-ink sm:flex-row sm:items-center sm:justify-between">
         <p class="max-w-[580px]">{b.introLeft}</p>
