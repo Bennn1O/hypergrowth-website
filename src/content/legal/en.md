@@ -35,9 +35,9 @@ Any unauthorised use of the site or of any of its elements will be considered in
 
 ## Cookies and audience measurement
 
-The site measures its audience with a tool hosted by HyperGrowth (tracking.hypergrowth.fr). This measurement only starts after you agree to it in the banner shown on your first visit. Your choice is kept in your browser.
+The site measures its audience with Rybbit, a tool hosted by HyperGrowth (tracking.hypergrowth.fr), to understand which pages are read.
 
-You can change your mind at any time by clearing the site’s data in your browser settings: the banner will show again.
+The choice you make in the banner shown on your first visit is kept in your browser. You can disable cookies at any time in your browser settings.
 
 ## Personal data
 

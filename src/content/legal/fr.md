@@ -35,9 +35,9 @@ Toute exploitation non autorisée du site ou de l’un quelconque des éléments
 
 ## Cookies et mesure d’audience
 
-Le site mesure son audience avec un outil hébergé par HyperGrowth (tracking.hypergrowth.fr). Cette mesure n’est activée qu’après votre accord, donné via le bandeau affiché lors de votre première visite. Votre choix est conservé dans votre navigateur.
+Le site mesure son audience avec Rybbit, un outil hébergé par HyperGrowth (tracking.hypergrowth.fr), qui sert à comprendre quelles pages sont consultées.
 
-Vous pouvez revenir sur ce choix à tout moment en effaçant les données du site dans les paramètres de votre navigateur : le bandeau s’affichera de nouveau.
+Le choix que vous faites dans le bandeau affiché lors de votre première visite est conservé dans votre navigateur. Vous pouvez désactiver les cookies à tout moment via les paramètres de votre navigateur.
 
 ## Données personnelles
 

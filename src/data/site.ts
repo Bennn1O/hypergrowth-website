@@ -10,8 +10,8 @@ export const site = {
   booking: 'https://meetings-eu1.hubspot.com/kpalermo' as string | null,
   phone: null as string | null,
   address: '9 Rue de Condé, 33000 Bordeaux' as string | null,
-  /** Self-hosted audience measurement, same script and site id as the previous site. */
-  tracking: { src: 'https://tracking.hypergrowth.fr/api/script.js', siteId: '01be6295df26' },
+  /** Rybbit, self-hosted audience measurement (same site id as the previous site). */
+  tracking: { src: 'https://tracking.hypergrowth.fr/api/script.js?siteId=01be6295df26', siteId: '01be6295df26' },
   socials: [
     { label: 'LinkedIn', href: null as string | null },
     { label: 'Instagram', href: null as string | null },

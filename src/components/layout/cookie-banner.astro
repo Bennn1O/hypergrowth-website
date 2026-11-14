@@ -1,10 +1,9 @@
 ---
 /**
- * Consent banner, same mechanics as the previous hypergrowth.fr: the choice is stored in
+ * Cookie banner, same mechanics as the previous hypergrowth.fr: the choice is stored in
  * localStorage under `hpg-cookie-consent` ("accepted" | "declined"), so visitors who already
- * answered on the old site are not asked again. The audience script only loads once accepted.
+ * answered on the old site are not asked again. Rybbit itself loads from BaseLayout.
  */
-import { site } from '../../data/site';
 import { getDictionary, localizePath, resolveLocale } from '../../i18n';
 
 const locale = resolveLocale(Astro.currentLocale);
@@ -15,8 +14,6 @@ const legalHref = localizePath('/mentions-legales', locale);
 <div
   class="fixed inset-x-0 bottom-4 z-[60] hidden justify-center px-4 font-helvetica data-[open]:flex"
   data-cookie-banner
-  data-tracking-src={site.tracking.src}
-  data-tracking-site={site.tracking.siteId}
 >
   <div
     role="region"
@@ -50,19 +47,7 @@ const legalHref = localizePath('/mentions-legales', locale);
     }
   }
 
-  function loadTracking() {
-    const src = banner?.dataset.trackingSrc;
-    if (!src || document.querySelector(`script[src="${src}"]`)) return;
-    const script = document.createElement('script');
-    script.src = src;
-    script.defer = true;
-    script.dataset.siteId = banner?.dataset.trackingSite;
-    document.head.append(script);
-  }
-
-  const consent = read();
-  if (consent === 'accepted') loadTracking();
-  else if (consent === null) banner?.setAttribute('data-open', '');
+  if (read() === null) banner?.setAttribute('data-open', '');
 
   banner?.addEventListener('click', (event) => {
     const choice = (event.target as HTMLElement).closest<HTMLElement>('[data-consent]')?.dataset.consent;
@@ -73,6 +58,5 @@ const legalHref = localizePath('/mentions-legales', locale);
       /* private mode: the choice holds for this page only */
     }
     banner.removeAttribute('data-open');
-    if (choice === 'accepted') loadTracking();
   });
 </script>

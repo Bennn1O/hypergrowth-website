@@ -10,6 +10,7 @@ import SiteHeader from '../components/layout/site-header.astro';
 import LogotypeSymbol from '../components/ui/logotype-symbol.astro';
 import CookieBanner from '../components/layout/cookie-banner.astro';
 import StructuredData from '../components/seo/structured-data.astro';
+import { site } from '../data/site';
 import { getDictionary, localeLabels, localizePath, locales, pagePath, resolveLocale, stripLocale } from '../i18n';
 
 interface Props {
@@ -69,6 +70,8 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <StructuredData />
+    <!-- Rybbit audience measurement, on every page as on the previous site. -->
+    <script is:inline defer src={site.tracking.src} data-site-id={site.tracking.siteId}></script>
     <meta name="generator" content={Astro.generator} />
     <script is:inline>
       document.documentElement.classList.add('js');
