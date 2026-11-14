@@ -112,6 +112,8 @@ function setupRail(getMarkers: () => Marker[]) {
   const stageLabels = rail ? all('[data-rail-stage]', rail) : [];
   const pill = rail?.querySelector<HTMLElement>('[data-rail-pill]');
   if (!rail || !ruler || !ticksRoot || !needle || !readout || !stageLabels.length) return () => {};
+  // Phones and tablets keep their native scrollbar: the ruler only runs on desktop.
+  if (!window.matchMedia(DESKTOP).matches) return () => {};
 
   const stageTitles: Record<string, string> = JSON.parse(rail.dataset.stageTitles ?? '{}');
   document.documentElement.classList.add('rail-on');

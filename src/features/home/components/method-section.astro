@@ -33,7 +33,7 @@ const [first, ...rest] = m.steps;
     </div>
     <div class="flex h-[100svh] w-max flex-row lg:h-dvh" data-hscroll-track>
       {
-        [first, null, ...rest].map((step, i) =>
+        [first, null, ...rest].map((step) =>
           step ? (
             <article
               class="relative isolate flex h-full w-screen flex-col overflow-hidden bg-white px-5 pt-24 pb-10 font-helvetica sm:px-8 lg:w-[72vw] lg:px-[49px] lg:pt-[112px] lg:pb-[56px]"
@@ -72,8 +72,17 @@ const [first, ...rest] = m.steps;
               data-panel
               data-dark
             >
-              <div class="absolute inset-0 -z-10 opacity-45" aria-hidden="true"><div class="nappes" /></div>
-              <div class="grain absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
+              <img
+                src="/photos/diner.webp"
+                srcset="/photos/diner-sm.webp 900w, /photos/diner.webp 2000w"
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 -z-20 h-full w-full object-cover"
+                aria-hidden="true"
+              />
+              <div class="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-b from-transparent to-ink/70" aria-hidden="true" />
               <p class="mb-auto text-xs leading-3 font-medium tracking-[0.04em] text-blush uppercase">{m.interlude.label}</p>
               <p class="max-w-[874px] text-big font-normal">
                 {m.interlude.title} <span class="font-serif font-medium tracking-[-0.03em] text-pink italic">{m.interlude.accent}</span>

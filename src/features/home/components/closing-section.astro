@@ -67,17 +67,17 @@ const external = Boolean(site.booking);
 
     <div class="flex flex-col gap-5 pt-6">
       <p class="label text-paper/50">{c.meetLabel}</p>
-      <ul class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <ul class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
         {
           c.meet.map((item, index) => (
-            <li class="group flex min-h-36 flex-col justify-between gap-6 rounded-xl border border-paper/12 bg-ink/40 p-4 sm:p-5 transition-colors duration-500 hover:bg-paper hover:text-ink">
+            <li class="group flex flex-col gap-3 rounded-xl border border-paper/12 bg-ink/40 p-4 transition-colors duration-500 hover:bg-paper hover:text-ink sm:min-h-36 sm:justify-between sm:gap-6 sm:p-5">
               <span class="flex items-center justify-between">
                 <span class="label text-paper/45 group-hover:text-ink/45">{String(index + 1).padStart(2, '0')}</span>
                 <span class="block size-2 rounded-full bg-pink" />
               </span>
               <span class="flex flex-col gap-2">
-                <span class="display text-xl leading-none tracking-[-0.045em] sm:text-2xl">{item.name}</span>
-                <span class="text-xs leading-snug font-medium opacity-70 sm:text-sm">{item.text}</span>
+                <span class="display text-xl leading-tight tracking-[-0.045em] sm:text-2xl sm:leading-none">{item.name}</span>
+                <span class="text-sm leading-snug font-medium opacity-70">{item.text}</span>
               </span>
             </li>
           ))
