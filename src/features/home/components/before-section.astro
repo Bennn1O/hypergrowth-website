@@ -32,19 +32,19 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
 >
   <div class="mx-auto flex max-w-[1448px] flex-col">
     <!-- Stage: centred statement among floating photos. -->
-    <div class="relative lg:aspect-[1448/930]">
+    <div class="relative aspect-[3/4] sm:aspect-[1448/930]">
       <ChapterBar prefix={t.chapter.prefix} chapter={b.chapter} index={1} class="relative z-10 lg:ml-auto lg:w-[41%]" />
 
-      <div class="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden="true">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
         {
           floating.map((p) => (
             <figure
-              class="absolute w-[13.4%] overflow-hidden rounded-[1.6px] bg-ink"
+              class="absolute w-[20%] overflow-hidden rounded-[1.6px] bg-ink sm:w-[13.4%]"
               style={`left:${((p.x - 32) / 1448) * 100}%; top:${((p.y + 0) / 930) * 100}%; aspect-ratio:195/244;`}
               data-parallax={p.speed}
             >
               <img src={p.src} alt="" loading="lazy" class="h-full w-full object-cover grayscale" />
-              <figcaption class="absolute bottom-2 left-2 text-[7px] leading-none font-medium tracking-[0.04em] text-white/85 uppercase">
+              <figcaption class="absolute bottom-2 left-2 hidden text-[7px] sm:block leading-none font-medium tracking-[0.04em] text-white/85 uppercase">
                 {b.photoCaption}
               </figcaption>
             </figure>
@@ -54,7 +54,7 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
 
       <h2
         id="before-title"
-        class="relative mx-auto mt-20 mb-16 max-w-[1000px] text-center font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink lg:absolute lg:inset-x-0 lg:top-[39.5%] lg:my-0"
+        class="absolute inset-x-0 top-1/2 mx-auto max-w-[1000px] -translate-y-1/2 px-6 text-center sm:top-[39.5%] sm:translate-y-0 font-helvetica text-[clamp(2.25rem,3.84vw,3.625rem)] leading-none font-normal tracking-[-0.0345em] text-ink"
       >
         {
           b.titleLines.map((line) => (
