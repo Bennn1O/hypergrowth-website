@@ -26,7 +26,7 @@
   --color-ghost: #c9c9c9;
 
   /* Type */
-  /* HG Sans (TeX Gyre Heros, self-hosted) everywhere; system Helvetica only while it loads. */
+  /* HG Sans (Inter Display, self-hosted) everywhere; system sans only while it loads. */
   --font-sans: "HG Sans", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
   /* Hero (Figma « Header / Hero - Exploration », 376:435): Helvetica + IBM Plex Serif italic. */
   --font-helvetica: "HG Sans", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
@@ -64,17 +64,16 @@
 }
 
 /*
- * TeX Gyre Heros (GUST Font License, see src/assets/fonts/LICENSE-tex-gyre.txt), a free Helvetica,
- * subset to Latin and renamed HG Sans as the licence asks for modified versions. Same font on
- * every device. It only exists in Regular and Bold, so the 500 "medium" is the Regular with a
- * hairline stroke (see .font-medium below), never the Bold.
+ * Inter Display (Inter 4, SIL OFL 1.1, see src/assets/fonts/LICENSE-inter.txt), self-hosted as
+ * HG Sans: optical size pinned to Display, weights 400 to 500 only (real Medium), Latin subset.
+ * Same font on every device.
  */
 @font-face {
   font-family: "HG Sans";
   font-style: normal;
   font-weight: 400 500;
   font-display: swap;
-  src: url("../assets/fonts/hg-sans-400.woff2") format("woff2");
+  src: url("../assets/fonts/hg-sans.woff2") format("woff2");
 }
 
 @layer base {
@@ -359,12 +358,3 @@ html.rail-on .max-w-site {
   }
 }
 
-/*
- * Medium weight for HG Sans (Heros has no Medium): the Regular, thickened by a hairline stroke.
- * Applies wherever the site asks for 500 (labels, badges, buttons, figures).
- */
-.font-medium,
-.label,
-.rail-tick > span {
-  -webkit-text-stroke: 0.022em currentColor;
-}
