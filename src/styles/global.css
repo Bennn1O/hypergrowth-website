@@ -180,8 +180,10 @@
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
+  /* Room for the serif italic's ascenders (f), descenders (p, q) and slant, cancelled by the
+     negative margins so spacing and line height stay as set. */
+  padding: 0.14em 0.1em 0.2em;
+  margin: -0.14em -0.1em -0.2em;
 }
 
 .split-word > span {
