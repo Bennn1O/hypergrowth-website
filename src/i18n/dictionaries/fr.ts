@@ -287,7 +287,7 @@ export const fr = {
       { name: 'Louise', role: 'Head of Event & Brand', text: 'Les événements, pour HyperGrowth et pour ses clients.' },
       { name: 'Ulysse', role: 'Head Sphère 51', text: 'La mise en relation : un expert, un prestataire, un pair.' },
       { name: 'Julie', role: 'Head Donna', text: 'L’assistanat de dirigeant.' },
-      { name: 'Léa', role: 'Design et web', text: 'Identités, maquettes, sites.' },
+      { name: 'Léa', role: 'Head of Design', text: 'Identités, maquettes, sites.' },
     ],
     ops: [
       { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
