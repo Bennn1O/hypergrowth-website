@@ -53,11 +53,11 @@ const [first, ...rest] = m.steps;
               <div class="my-auto flex max-w-[1180px] flex-col gap-4">
                 <ol class="flex flex-wrap items-center gap-2">
                   {step.points.map((point) => (
-                    <li class="rounded-full border border-lilac bg-lilac px-[13px] py-[7px] text-[13px] leading-5 font-bold tracking-[-0.01em] text-primary">{point}</li>
+                    <li class="rounded-full border border-lilac bg-lilac px-[11px] py-[3px] text-xs leading-[18px] font-bold tracking-[-0.01em] text-primary">{point}</li>
                   ))}
                 </ol>
-                <h3 class="text-[clamp(2.75rem,7.94vw,7.5rem)] leading-none font-bold tracking-[-0.06em] text-black uppercase">
-                  {step.titleLead}<span class="text-primary">{step.titleAccent}</span>
+                <h3 class="text-[clamp(2.6rem,5.95vw,5.625rem)] leading-[1.02] font-normal tracking-[-0.0345em] text-ink">
+                  {step.titleLead}<span class="font-serif font-medium tracking-[-0.03em] text-primary italic">{step.titleAccent}</span>
                 </h3>
                 <p class="max-w-[719px] text-[clamp(1.05rem,1.49vw,1.4rem)] leading-[1.39] tracking-[-0.02em] text-black">{step.text}</p>
               </div>
@@ -75,8 +75,8 @@ const [first, ...rest] = m.steps;
               <div class="absolute inset-0 -z-10 opacity-45" aria-hidden="true"><div class="nappes" /></div>
               <div class="grain absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
               <p class="mb-auto text-xs leading-3 font-medium tracking-[0.04em] text-blush uppercase">{m.interlude.label}</p>
-              <p class="max-w-[874px] text-[clamp(2.75rem,8.73vw,8.25rem)] leading-[0.92] font-medium tracking-[-0.055em] uppercase">
-                {m.interlude.title} <span class="text-pink">{m.interlude.accent}</span>
+              <p class="max-w-[874px] text-[clamp(2.6rem,5.95vw,5.625rem)] leading-[1.02] font-normal tracking-[-0.0345em]">
+                {m.interlude.title} <span class="font-serif font-medium tracking-[-0.03em] text-pink italic">{m.interlude.accent}</span>
               </p>
               <p class="mt-10 max-w-[417px] text-[clamp(1.05rem,1.47vw,1.39rem)] leading-[1.4] tracking-[-0.02em] text-paper/70">{m.interlude.text}</p>
             </article>
