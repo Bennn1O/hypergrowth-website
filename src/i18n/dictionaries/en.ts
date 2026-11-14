@@ -323,8 +323,6 @@ export const en: Dictionary = {
     ],
     cta: 'Grab a coffee',
     navLabel: 'The journey',
-    navLabelLead: 'The ',
-    navLabelAccent: 'journey',
     contactLabel: 'Write',
     followLabel: 'Follow',
     pending: 'Contact details coming soon',

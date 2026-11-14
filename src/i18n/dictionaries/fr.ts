@@ -326,8 +326,6 @@ export const fr = {
     ],
     cta: 'Prendre un café',
     navLabel: 'Le parcours',
-    navLabelLead: 'Le ',
-    navLabelAccent: 'parcours',
     contactLabel: 'Écrire',
     followLabel: 'Suivre',
     pending: 'Coordonnées à venir',

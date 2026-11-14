@@ -65,10 +65,7 @@ const socials = site.socials.filter((social) => social.href);
           </div>
         </div>
 
-        <nav aria-label={f.navLabel} class="flex flex-col gap-8">
-          <p class="text-2xl leading-3 font-bold tracking-[0.02em] text-[#818181] uppercase">
-            {f.navLabelLead}<span class="text-pink">{f.navLabelAccent}</span>
-          </p>
+        <nav aria-label={f.navLabel}>
           <ol class="border-t border-[#818181]">
             {
               t.timeline.stages.map((stage, index) => (
