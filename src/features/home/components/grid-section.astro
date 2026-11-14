@@ -10,56 +10,68 @@ interface Props {
 const { t } = Astro.props;
 const g = t.grid;
 
-// Where each card lands on the "table" (desktop): left/top in % of the stage, rotation in deg.
-// A ring around the big words, leaving the centre-bottom clear for the accent.
+// Card spots from Figma (HYPERGROWTH, « Post Header - Exploration », node 418:1063), on a 1512 x 994 stage.
 const spots = [
-  { x: 1, y: 6, r: -6 },
-  { x: 18, y: 1, r: 4 },
-  { x: 63, y: 2, r: -3 },
-  { x: 81, y: 8, r: 6 },
-  { x: 1, y: 52, r: 3 },
-  { x: 13, y: 71, r: -5 },
-  { x: 70, y: 71, r: 5 },
-  { x: 83, y: 50, r: -4 },
+  { x: 181, y: 25 },
+  { x: 37, y: 225 },
+  { x: 1006, y: 25 },
+  { x: 1144, y: 224 },
+  { x: 35, y: 585 },
+  { x: 173, y: 785 },
+  { x: 1144, y: 585 },
+  { x: 996, y: 785 },
 ];
 ---
 
-<section class="relative" data-stage="methode" data-clock={g.clock} aria-labelledby="grid-title">
-  <div class="mx-auto grid max-w-site gap-10 px-4 pt-16 sm:px-6 lg:grid-cols-12">
-    <div class="lg:col-span-5 lg:col-start-8">
-      <ChapterBar prefix={t.chapter.prefix} chapter={g.chapter} index={3} />
+<section class="relative bg-white font-helvetica" data-stage="methode" data-clock={g.clock} aria-labelledby="grid-title">
+  <div class="mx-auto flex max-w-[1432px] flex-col gap-8 px-4 pt-10 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-0">
+    <div class="flex max-w-[578px] flex-col gap-4">
+      <p class="text-[clamp(1.4rem,1.85vw,1.75rem)] leading-[1.5] tracking-[-0.023em] text-ink">
+        {g.introLead}<span class="text-primary">{g.introAccent}</span>{g.introEnd}
+      </p>
+      <p class="text-[clamp(1.05rem,1.49vw,1.4rem)] leading-[1.39] tracking-[-0.02em] text-ink">{g.introText}</p>
     </div>
-    <p class="text-lead text-ink/80 lg:col-span-6">{g.intro}</p>
+    <ChapterBar prefix={t.chapter.prefix} chapter={g.chapter} index={3} class="lg:w-[583px]" />
   </div>
 
-  <!-- Stop-scroll moment (desktop): the stage pins, the cards are dealt one by one over the big words. -->
-  <div class="relative flex h-[100svh] flex-col overflow-hidden pt-20 pr-12 pb-6 pl-4 sm:pl-6 lg:block lg:h-dvh lg:p-0" data-deck>
-    <h2
-      id="grid-title"
-      class="section-title mx-auto max-w-site lg:absolute lg:inset-0 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center"
+  <!-- Stop-scroll stage: the cards are dealt one by one around the title. -->
+  <div class="relative flex h-[100svh] flex-col overflow-hidden pt-20 pr-12 pb-6 pl-4 sm:pl-6 lg:block lg:h-dvh lg:px-0 lg:pt-16 lg:pb-3" data-deck>
+   <!-- Desktop: a 1512 x 994 box (the Figma stage), as large as the screen below the header allows. -->
+   <div class="contents lg:relative lg:mx-auto lg:block lg:aspect-[1512/994] lg:h-full lg:max-w-full" data-deck-box>
+   <!-- The Figma canvas at its native 1512 x 994, scaled to the box by the motion script (--s). -->
+   <div class="contents lg:absolute lg:top-0 lg:left-0 lg:block lg:h-[994px] lg:w-[1512px] lg:origin-top-left lg:scale-(--s)">
+    <div
+      class="mx-auto flex max-w-[698px] flex-col items-center gap-5 text-center lg:absolute lg:top-0 lg:bottom-0 lg:left-[407px] lg:w-[698px] lg:justify-center"
       data-deck-title
     >
-      <span>{g.title}</span>{' '}
-      <span class="voice text-primary">{g.accent}</span>
-    </h2>
+      <h2 id="grid-title" class="text-[clamp(2.4rem,5.95vw,5.625rem)] leading-[1.02] tracking-[-0.0345em] text-ink lg:text-[90px]">
+        <SplitText text={g.title} />{' '}
+        <SplitText text={g.accent} class="font-serif font-medium tracking-[-0.03em] text-primary italic" />
+      </h2>
+      <p class="hidden text-[19.7px] leading-snug tracking-[-0.005em] text-ink lg:block" data-deck-aside>{g.aside}</p>
+    </div>
 
-    <ul class="relative mt-6 flex-1 lg:absolute lg:inset-y-0 lg:right-16 lg:left-0 lg:mt-0" data-cards>
+    <ul class="relative mt-6 flex-1 lg:absolute lg:inset-0 lg:mt-0" data-cards>
       {
         g.items.map((item, index) => (
           <li
-            class="group absolute inset-x-0 top-2 flex flex-col justify-between gap-4 rounded-xl bg-white p-5 lg:right-auto lg:aspect-square lg:gap-3 shadow-[0_30px_60px_-30px_rgb(17_17_17/0.5),0_0_0_1px_rgb(17_17_17/0.06)] transition-colors duration-500 hover:bg-ink hover:text-paper lg:absolute lg:top-[var(--y)] lg:left-[var(--x)] lg:w-[min(15.5rem,15vw)]"
-            style={`--x: ${spots[index].x}%; --y: ${spots[index].y}%; --r: ${spots[index].r}deg;`}
+            class="absolute inset-x-0 top-2 flex h-[168px] flex-col justify-between rounded-[3px] bg-ink p-[18px] text-white shadow-[inset_0_0_16px_rgb(255_255_255/0.05),0_20px_40px_-24px_rgb(17_17_17/0.5)] lg:right-auto lg:left-[var(--x)] lg:top-[var(--y)] lg:h-[168px] lg:w-[333px]"
+            style={`--x: ${spots[index].x}px; --y: ${spots[index].y}px;`}
             data-card
-            data-r={spots[index].r}
+            data-r="0"
           >
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="shout text-xl leading-[1.05] xl:text-2xl">{item.name}</h3>
-              <span class="display text-2xl leading-none text-primary">{String(index + 1).padStart(2, '0')}</span>
+            <div class="flex flex-col gap-[9px]">
+              <div class="flex items-center justify-between gap-4 font-serif text-[19px] leading-[0.9] font-medium tracking-[-0.04em] italic">
+                <h3>{item.name}</h3>
+                <span class="text-pink">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <p class="max-w-[205px] text-[11px] leading-none tracking-[-0.04em]">{item.text}</p>
             </div>
-            <p class="text-sm leading-snug opacity-75">{item.text}</p>
-            <ul class="flex flex-wrap gap-1.5">
+            <ul class="flex max-w-[180px] flex-wrap gap-x-[9px] gap-y-[9px] pt-6">
               {item.tags.map((tag) => (
-                <li class="border border-current/25 px-2 py-1 text-xs">{tag}</li>
+                <li class="rounded-[3px] bg-pink/40 px-1 py-[3px] text-[12.6px] leading-[0.9] tracking-[-0.04em] shadow-[inset_0_0_2.5px_rgb(255_255_255/0.2)]">
+                  {tag}
+                </li>
               ))}
             </ul>
           </li>
@@ -67,6 +79,8 @@ const spots = [
       }
     </ul>
 
-    <p class="voice mt-4 text-center text-base text-ink/60 lg:absolute lg:inset-x-0 lg:bottom-6 lg:mt-0 lg:text-lg" data-deck-aside>{g.aside}</p>
+    <p class="mt-4 text-center text-base text-ink/60 lg:hidden" data-deck-aside>{g.aside}</p>
+   </div>
+   </div>
   </div>
 </section>

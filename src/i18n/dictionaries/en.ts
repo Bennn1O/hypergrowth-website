@@ -113,8 +113,10 @@ export const en: Dictionary = {
     chapter: 'about our expertise',
     title: 'Every workstream has its',
     accent: 'experts.',
-    intro:
-      'The immersion runs the company through a grid. Whatever is empty or fragile becomes a workstream, and every workstream has its people: our team when we run it ourselves, our expert network when it takes a specific trade. The Operating Partner stays your single counterpart.',
+    introLead: 'The ',
+    introAccent: 'Operating Partner',
+    introEnd: ' stays your single counterpart.',
+    introText: 'Our team when we run it ourselves, our expert network when it takes a specific trade.',
     aside: 'We share our experts’ names in a meeting, not on a website.',
     items: [
       {
@@ -148,14 +150,14 @@ export const en: Dictionary = {
         tags: ['UX and UI', 'Development', 'Conversion'],
       },
       {
-        name: 'Tech and AI',
-        text: 'CRM, automation, AI agents and data, wired into the way you work.',
-        tags: ['Applied AI', 'Automation', 'Data'],
-      },
-      {
         name: 'Product and SaaS',
         text: 'Add a software layer to your offer, or build the product, with our studio.',
         tags: ['Product', 'Development', 'Fractional CTO'],
+      },
+      {
+        name: 'Tech and AI',
+        text: 'CRM, automation, AI agents and data, wired into the way you work.',
+        tags: ['Applied AI', 'Automation', 'Data'],
       },
     ],
   },

@@ -116,8 +116,10 @@ export const fr = {
     chapter: 'sur nos expertises',
     title: 'Chaque chantier a ses',
     accent: 'experts.',
-    intro:
-      'L’immersion passe l’entreprise au crible. Ce qui est vide ou fragile devient un chantier, et chaque chantier a ses gens : notre équipe quand on le tient nous-mêmes, notre réseau d’experts quand il faut un métier précis. L’Operating Partner reste votre seul interlocuteur.',
+    introLead: 'L’',
+    introAccent: 'Operating Partner',
+    introEnd: ' reste votre seul interlocuteur.',
+    introText: 'Notre équipe quand on le tient nous-mêmes, notre réseau d’experts quand il faut un métier précis.',
     aside: 'Les noms de nos experts se donnent en rendez-vous, pas sur un site.',
     items: [
       {
@@ -151,14 +153,14 @@ export const fr = {
         tags: ['UX et UI', 'Développement', 'Conversion'],
       },
       {
-        name: 'Tech et IA',
-        text: 'CRM, automatisations, agents IA et données, branchés sur votre façon de travailler.',
-        tags: ['IA appliquée', 'Automatisation', 'Data'],
-      },
-      {
         name: 'Produit et SaaS',
         text: 'Ajouter une couche logicielle à votre offre, ou construire le produit, avec notre studio.',
         tags: ['Produit', 'Développement', 'CTO externalisé'],
+      },
+      {
+        name: 'Tech et IA',
+        text: 'CRM, automatisations, agents IA et données, branchés sur votre façon de travailler.',
+        tags: ['IA appliquée', 'Automatisation', 'Data'],
       },
     ],
   },

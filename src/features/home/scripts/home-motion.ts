@@ -350,6 +350,15 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
   const cards = all('[data-card]');
 
   mm.add(DESKTOP, () => {
+    // Expertise stage: scale the 1512 x 994 Figma canvas to its box.
+    const box = document.querySelector<HTMLElement>('[data-deck-box]');
+    let observer: ResizeObserver | undefined;
+    if (box) {
+      const fit = () => box.style.setProperty('--s', String(box.clientWidth / 1512));
+      fit();
+      observer = new ResizeObserver(fit);
+      observer.observe(box);
+    }
     const tween = makeHorizontal();
 
     // Expertises: stop-scroll moment, the cards are dealt one by one around the big words.
