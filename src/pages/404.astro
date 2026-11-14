@@ -8,12 +8,12 @@ const t = getDictionary('fr');
 <BaseLayout title={t.notFound.title} staticHeader noindex>
   <section class="flex min-h-[80svh] items-center bg-[linear-gradient(180deg,#ffb6f4_0%,#ffffff_70%)] px-5 pt-24 font-helvetica sm:px-[78px]">
     <div class="mx-auto flex w-full max-w-[1356px] flex-col items-start gap-6">
-      <p class="text-xs font-bold tracking-[0.04em] text-primary uppercase">{t.notFound.label}</p>
+      <p class="text-xs font-medium tracking-[0.04em] text-primary uppercase">{t.notFound.label}</p>
       <h1 class="text-h2 text-ink">
         {t.notFound.lead}<span class="font-serif font-semibold tracking-[-0.03em] text-primary italic">{t.notFound.accent}</span>
       </h1>
       <p class="max-w-[520px] text-lead text-ink/80">{t.notFound.text}</p>
-      <a href="/" class="rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-bold tracking-[0.034em] text-paper uppercase hover:bg-primary">{t.notFound.back} →</a>
+      <a href="/" class="rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-medium tracking-[0.034em] text-paper uppercase hover:bg-primary">{t.notFound.back} →</a>
     </div>
   </section>
 </BaseLayout>

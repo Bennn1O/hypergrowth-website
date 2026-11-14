@@ -116,10 +116,10 @@
   text-transform: uppercase;
 }
 
-/* Geist medium, tight: every big type on the site. */
+/* Big Helvetica type: regular weight, like every title on the site (Figma). */
 @utility display {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.045em;
 }
 

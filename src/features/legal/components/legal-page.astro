@@ -15,7 +15,7 @@ const { Content } = await render(entry);
     <article class="mx-auto max-w-[1452px] rounded-[24px] bg-white px-5 py-14 sm:px-[59px] sm:py-20">
       <div class="mx-auto flex max-w-[760px] flex-col gap-12">
         <header class="flex flex-col gap-4">
-          <p class="text-xs font-bold tracking-[0.04em] text-primary uppercase">{t.legalPage.label}</p>
+          <p class="text-xs font-medium tracking-[0.04em] text-primary uppercase">{t.legalPage.label}</p>
           <h1 class="text-h2 text-ink">{entry.data.title}</h1>
         </header>
         <div
@@ -23,7 +23,7 @@ const { Content } = await render(entry);
         >
           <Content />
         </div>
-        <a href={localizePath('/', locale)} class="self-start rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-bold tracking-[0.034em] text-paper uppercase hover:bg-primary">
+        <a href={localizePath('/', locale)} class="self-start rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-medium tracking-[0.034em] text-paper uppercase hover:bg-primary">
           ← {t.legalPage.back}
         </a>
       </div>

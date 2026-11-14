@@ -25,10 +25,10 @@ const legalHref = localizePath('/mentions-legales', locale);
       <a href={legalHref} class="text-white/50 underline underline-offset-2 hover:text-white">{t.more}</a>
     </p>
     <div class="flex shrink-0 items-center gap-2">
-      <button type="button" class="rounded-[4px] border border-white/15 px-3 py-2 text-xs font-bold tracking-[0.04em] text-white/70 uppercase hover:text-white" data-consent="declined">
+      <button type="button" class="rounded-[4px] border border-white/15 px-3 py-2 text-xs font-medium tracking-[0.04em] text-white/70 uppercase hover:text-white" data-consent="declined">
         {t.decline}
       </button>
-      <button type="button" class="rounded-[4px] bg-primary px-3 py-2 text-xs font-bold tracking-[0.04em] text-white uppercase hover:bg-pink" data-consent="accepted">
+      <button type="button" class="rounded-[4px] bg-primary px-3 py-2 text-xs font-medium tracking-[0.04em] text-white uppercase hover:bg-pink" data-consent="accepted">
         {t.accept}
       </button>
     </div>

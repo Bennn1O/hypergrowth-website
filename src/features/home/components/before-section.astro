@@ -63,7 +63,7 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
             <span class="block">
               {line.lead && <SplitText text={line.lead.trim()} />}
               {line.lead && line.accent && ' '}
-              {line.accent && <SplitText text={line.accent} class="font-serif font-medium tracking-[-0.03em] text-primary italic" />}
+              {line.accent && <SplitText text={line.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />}
               {line.end}
             </span>
           ))
@@ -75,7 +75,7 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
     <div class="mt-16 flex flex-col gap-8 sm:mt-28 lg:mt-40">
       <p class="max-w-[790px] font-helvetica text-h2 font-normal text-ink">
         <SplitText text={b.statementLead.trim()} />{' '}
-        <SplitText text={b.statementAccent} class="font-serif font-medium tracking-[-0.03em] text-primary italic" />
+        <SplitText text={b.statementAccent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />
       </p>
       <div class="flex flex-col gap-4 text-lead leading-[1.4] text-ink sm:flex-row sm:items-center sm:justify-between">
         <p class="max-w-[580px]">{b.introLeft}</p>
