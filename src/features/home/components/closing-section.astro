@@ -15,12 +15,12 @@ const contactHref = site.email ? `mailto:${site.email}` : null;
 <section
   id="cafe"
   data-dark
-  class="relative isolate flex min-h-dvh flex-col justify-center overflow-hidden bg-ink px-4 py-32 text-paper sm:px-6"
+  class="relative isolate flex min-h-svh flex-col justify-center overflow-hidden bg-ink px-4 py-32 text-paper sm:px-6"
   data-stage="maison"
   data-clock={c.clock}
   aria-labelledby="closing-title"
 >
-  <img src="/photos/bordeaux-2592.webp" alt="" loading="lazy" class="absolute inset-0 -z-20 h-full w-full object-cover opacity-45 grayscale" aria-hidden="true" />
+  <img src="/photos/bordeaux-2592.webp" alt="" loading="lazy" decoding="async" class="absolute inset-0 -z-20 h-full w-full object-cover opacity-45 grayscale" aria-hidden="true" />
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/70 to-ink/30" aria-hidden="true"></div>
   <div class="absolute inset-0 -z-10 opacity-40 mix-blend-screen" aria-hidden="true"><div class="nappes"></div></div>
   <div class="grain absolute inset-0 -z-10 opacity-50" aria-hidden="true"></div>
@@ -48,7 +48,7 @@ const contactHref = site.email ? `mailto:${site.email}` : null;
       <ul class="grid grid-cols-2 gap-3 lg:grid-cols-4">
         {
           c.meet.map((item, index) => (
-            <li class="group flex min-h-36 flex-col justify-between gap-6 rounded-xl border border-paper/12 bg-paper/6 p-4 backdrop-blur-sm sm:p-5 transition-colors duration-500 hover:bg-paper hover:text-ink">
+            <li class="group flex min-h-36 flex-col justify-between gap-6 rounded-xl border border-paper/12 bg-ink/40 p-4 sm:p-5 transition-colors duration-500 hover:bg-paper hover:text-ink">
               <span class="flex items-center justify-between">
                 <span class="label text-paper/45 group-hover:text-ink/45">{String(index + 1).padStart(2, '0')}</span>
                 <span class="block size-2 rounded-full bg-pink" />

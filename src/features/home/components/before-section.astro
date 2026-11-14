@@ -45,7 +45,7 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
               style={`--x:${((p.x - 32) / 1448) * 100}%; --y:${(p.y / 930) * 100}%; --xc:${pull(((p.x - 32 + 97.5) / 1448) * 100, 0.82) - 6.7}%; --yc:${pull(((p.y + 122) / 930) * 100, 0.86) - 13.1}%; aspect-ratio:195/244;`}
               data-parallax={p.speed}
             >
-              <img src={p.src} alt="" loading="lazy" class="h-full w-full object-cover grayscale" />
+              <img src={p.src} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover grayscale" />
               <figcaption class="absolute bottom-2 left-2 hidden text-2xs sm:block leading-none font-medium tracking-[0.04em] text-white/85 uppercase">
                 {b.photoCaption}
               </figcaption>
@@ -85,7 +85,7 @@ const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/pho
         {
           strip.map((src) => (
             <figure class="relative aspect-[465/620] overflow-hidden rounded-lg bg-mist" data-fade>
-              <img src={src} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover grayscale" />
+              <img src={src} alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover grayscale" />
               <figcaption class="absolute bottom-3 left-3 hidden text-2xs leading-none font-medium tracking-[0.04em] text-white/85 uppercase sm:block">
                 {b.photoCaption}
               </figcaption>

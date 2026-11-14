@@ -5,6 +5,8 @@ import Lenis from 'lenis';
 gsap.registerPlugin(ScrollTrigger);
 
 const DESKTOP = '(min-width: 1024px)';
+/** Shortest time the loading screen stays up, from navigation start. */
+const LOADER_MIN_MS = 700;
 const FINE_POINTER = '(hover: hover) and (pointer: fine)';
 
 type ClockSetter = (value: string | undefined, animate?: boolean) => void;
@@ -488,6 +490,7 @@ export function initHomeMotion() {
     markers = setupClockMarkers((value) => setClock(value, false));
     onClock = setupRail(() => markers);
     setupHeader();
+    document.documentElement.classList.add('is-ready');
     return;
   }
 
@@ -501,13 +504,28 @@ export function initHomeMotion() {
     if (!first) ScrollTrigger.refresh();
     first = false;
   });
-  setupReveals();
   setupHeader();
   onClock = setupRail(() => markers);
-  setupMarquee();
-  setupMagnetic();
-  setupOpeningNappes();
-  playIntro();
 
-  document.fonts?.ready.then(() => ScrollTrigger.refresh());
+  // Everything below the fold is prepared in later tasks, so the first paint and the hero intro
+  // are not held behind one long task (Total Blocking Time). The animations themselves are unchanged.
+  afterNextTask(() => {
+    setupReveals();
+    afterNextTask(() => {
+      setupMarquee();
+      setupMagnetic();
+      setupOpeningNappes();
+      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+      // The loader shows the symbol for at least 0.7s, then lifts and the hero intro plays.
+      setTimeout(() => {
+        document.documentElement.classList.add('is-ready');
+        playIntro();
+      }, Math.max(0, LOADER_MIN_MS - performance.now()));
+    });
+  });
+}
+
+/** Run `fn` in a new task, letting the browser paint and handle input in between. */
+function afterNextTask(fn: () => void) {
+  setTimeout(fn, 0);
 }

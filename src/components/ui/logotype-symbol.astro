@@ -1,0 +1,10 @@
+---
+import source from '../../assets/brand/logotype.svg?raw';
+
+// Keep only the drawing (the <g> groups), wrapped in a reusable symbol.
+const inner = source.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+---
+
+<svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+  <symbol id="hg-logotype" viewBox="0 0 340 62" set:html={inner} />
+</svg>

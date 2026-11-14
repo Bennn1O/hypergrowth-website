@@ -1,0 +1,12 @@
+---
+import Logomark from '../../../assets/brand/logomark.svg';
+---
+
+<!--
+  Light loading screen: the HG symbol fades in while the motion is being prepared, then the
+  screen fades out (html.is-ready, set by home-motion). Without JS it never shows; if the script
+  fails it still clears itself after 3s (CSS fallback in global.css).
+-->
+<div class="page-loader" aria-hidden="true" data-loader>
+  <Logomark class="page-loader-mark h-12 w-auto text-primary sm:h-14" />
+</div>

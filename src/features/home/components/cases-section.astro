@@ -51,7 +51,7 @@ const c = t.cases;
           {c.quote.parts.map((part, i) => (i % 2 ? <span class="text-blush">{part}</span> : part))}
         </blockquote>
         <figcaption class="flex items-center gap-3">
-          <img src="/cases/pureva-founders.webp" alt={c.quote.avatarAlt} width="40" height="40" loading="lazy" class="size-10 rounded-[2.5px] object-cover" />
+          <img src="/cases/pureva-founders.webp" alt={c.quote.avatarAlt} width="40" height="40" loading="lazy" decoding="async" class="size-10 rounded-[2.5px] object-cover" />
           <span class="flex max-w-[175px] flex-col gap-1 text-xs leading-3 font-bold tracking-[0.04em] uppercase">
             <span class="text-black">{c.quote.author}</span>
             <span class="text-blush">{c.quote.role}</span>
@@ -71,7 +71,7 @@ const c = t.cases;
             class="flex w-[84%] shrink-0 snap-center flex-col gap-[23px] overflow-hidden rounded-xl bg-white pb-5 shadow-[0_1px_3px_rgb(17_17_17/0.06),0_24px_50px_-28px_rgb(17_17_17/0.3)] md:w-auto"
             data-fade
           >
-            <img src={item.image} alt="" loading="lazy" class="h-[148px] w-full object-cover" />
+            <img src={item.image} alt="" loading="lazy" decoding="async" class="h-[148px] w-full object-cover" />
             <div class="flex flex-1 flex-col justify-between gap-4 px-4">
               <div class="flex flex-col gap-3">
                 <p class="text-xs leading-3 text-ink/50 uppercase">{item.sector}</p>

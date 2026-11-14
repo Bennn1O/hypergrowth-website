@@ -168,11 +168,13 @@
 .nappes {
   position: absolute;
   inset: -20%;
-  filter: blur(60px);
+  /* No filter: blur(): the radial stops already fade out, and a 60px blur on a moving layer
+     forced a full repaint every frame. The layer is composited instead. */
+  will-change: transform;
   background:
-    radial-gradient(40% 45% at 22% 30%, var(--color-blush) 0%, transparent 70%),
-    radial-gradient(38% 42% at 75% 25%, var(--color-pink) 0%, transparent 70%),
-    radial-gradient(45% 50% at 60% 80%, var(--color-purple) 0%, transparent 72%);
+    radial-gradient(40% 45% at 22% 30%, var(--color-blush) 0%, transparent 78%),
+    radial-gradient(38% 42% at 75% 25%, var(--color-pink) 0%, transparent 78%),
+    radial-gradient(45% 50% at 60% 80%, var(--color-purple) 0%, transparent 80%);
   animation: nappes 18s ease-in-out infinite alternate;
 }
 
@@ -185,6 +187,47 @@
   }
   100% {
     transform: translate3d(-3%, 4%, 0) rotate(-6deg) scale(1.02);
+  }
+}
+
+/* Light loading screen (home). Hidden without JS; html.is-ready fades it out. */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--color-paper);
+  transition:
+    opacity 0.6s var(--ease-out-expo),
+    visibility 0.6s;
+  /* Safety net: clears itself even if the motion script never runs. */
+  animation: page-loader-out 0.6s 3s forwards;
+}
+
+html:not(.js) .page-loader,
+html.is-ready .page-loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page-loader-mark {
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  animation: page-loader-in 0.8s 0.05s var(--ease-out-expo) forwards;
+}
+
+@keyframes page-loader-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes page-loader-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

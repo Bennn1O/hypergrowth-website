@@ -11,12 +11,14 @@ import MethodSection from './method-section.astro';
 import CasesSection from './cases-section.astro';
 import OpeningSection from './opening-section.astro';
 import TeamSection from './team-section.astro';
+import PageLoader from './page-loader.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
 ---
 
 <BaseLayout>
+  <PageLoader />
   <ScrollRail t={t} />
   <OpeningSection t={t} />
   <BeforeSection t={t} />

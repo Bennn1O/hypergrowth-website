@@ -1,0 +1,18 @@
+---
+/**
+ * The HyperGrowth wordmark, drawn from the single <symbol> that BaseLayout
+ * inlines once (`#hg-logotype`), so the 28 KB of paths are not repeated per use.
+ * Colour follows `currentColor`.
+ */
+interface Props {
+  class?: string;
+  'class:list'?: unknown;
+  'aria-hidden'?: 'true' | 'false';
+}
+
+const { class: className, 'aria-hidden': ariaHidden } = Astro.props;
+---
+
+<svg viewBox="0 0 340 62" class={className} aria-hidden={ariaHidden} role={ariaHidden ? undefined : 'img'} aria-label={ariaHidden ? undefined : 'HyperGrowth'}>
+  <use href="#hg-logotype" />
+</svg>
