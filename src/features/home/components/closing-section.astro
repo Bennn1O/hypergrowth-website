@@ -46,8 +46,18 @@ const external = Boolean(site.booking);
       <p class="max-w-lg text-lead text-paper/85">{c.text}</p>
       {
         contactHref ? (
-          <a href={contactHref} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined} class="label bg-paper px-6 py-5 text-sm text-ink transition-colors hover:bg-pink">
-            {c.cta} →
+          <a
+            href={contactHref}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noopener' : undefined}
+            class="flex items-center gap-2 self-start rounded-[4px] bg-paper px-3 py-2 text-sm leading-3 font-bold tracking-[0.034em] whitespace-nowrap text-ink uppercase transition-colors hover:bg-pink hover:text-white sm:self-auto"
+            data-magnetic
+          >
+            {c.cta}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="2.5" cy="8" r="1" stroke="currentColor" />
+              <path d="M5 8h9m0 0-2.5-2.2M14 8l-2.5 2.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </a>
         ) : (
           <p class="label border border-paper/40 px-6 py-5 text-sm text-paper/70">{c.pending}</p>

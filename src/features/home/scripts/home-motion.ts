@@ -28,7 +28,8 @@ function all<T extends Element = HTMLElement>(selector: string, root: ParentNode
 let lenis: Lenis | undefined;
 
 function setupLenis() {
-  lenis = new Lenis({ lerp: 0.09, anchors: true });
+  // Smooth but responsive: catches up with the wheel quickly (higher lerp), a bit more travel per notch.
+  lenis = new Lenis({ lerp: 0.14, wheelMultiplier: 1.15, anchors: true });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => lenis?.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
