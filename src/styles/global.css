@@ -90,6 +90,17 @@
     height: auto;
   }
 
+  /*
+   * Small text (16px and under) a touch heavier than the 400 of the titles: Inter Display is thin
+   * at small sizes. In the base layer, so an explicit font-medium / font-semibold still wins.
+   */
+  .text-2xs,
+  .text-xs,
+  .text-sm,
+  .text-base {
+    font-weight: 450;
+  }
+
   /* Decorative layers (gradients, skewed bands) must never widen the page on phones. */
   body {
     overflow-x: clip;
