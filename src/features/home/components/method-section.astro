@@ -10,6 +10,51 @@ interface Props {
 const { t } = Astro.props;
 const m = t.method;
 const [first, ...rest] = m.steps;
+
+/*
+ * The panels alternate colours so the track is not a row of white cards:
+ * white, (dark dinner), lilac, violet, white. Each theme keeps its own contrast.
+ */
+const themes = {
+  white: {
+    panel: 'bg-white',
+    label: 'text-primary',
+    time: 'text-black',
+    pill: 'border-lilac bg-lilac text-primary',
+    title: 'text-ink',
+    accent: 'text-primary',
+    text: 'text-black',
+    step: 'text-ink/40',
+    numeral: 'text-lilac',
+    dark: false,
+  },
+  lilac: {
+    panel: 'bg-lilac',
+    label: 'text-primary',
+    time: 'text-black',
+    pill: 'border-white bg-white text-primary',
+    title: 'text-ink',
+    accent: 'text-primary',
+    text: 'text-black',
+    step: 'text-ink/50',
+    numeral: 'text-white/70',
+    dark: false,
+  },
+  violet: {
+    panel: 'bg-primary',
+    label: 'text-blush',
+    time: 'text-white',
+    pill: 'border-white/25 bg-white/15 text-white',
+    title: 'text-white',
+    accent: 'text-blush',
+    text: 'text-white/85',
+    step: 'text-white/55',
+    numeral: 'text-white/12',
+    dark: true,
+  },
+} as const;
+const stepTheme = ['white', 'lilac', 'violet', 'white'] as const;
+const themeOf = (step: (typeof m.steps)[number]) => themes[stepTheme[m.steps.indexOf(step)] ?? 'white'];
 ---
 
 <section id="methode" class="relative" data-stage="methode" data-clock={first.time} aria-labelledby="method-title">
@@ -36,32 +81,39 @@ const [first, ...rest] = m.steps;
         [first, null, ...rest].map((step) =>
           step ? (
             <article
-              class="relative isolate flex h-full w-screen flex-col overflow-hidden bg-white px-5 pt-24 pb-10 font-helvetica sm:px-8 lg:w-[72vw] lg:px-[49px] lg:pt-[112px] lg:pb-[56px]"
+              class:list={[
+                'relative isolate flex h-full w-screen flex-col overflow-hidden px-5 pt-24 pb-10 font-helvetica sm:px-8 lg:w-[72vw] lg:px-[49px] lg:pt-[112px] lg:pb-[56px]',
+                themeOf(step).panel,
+              ]}
               data-clock={step.time}
               data-panel
+              data-dark={themeOf(step).dark ? '' : undefined}
             >
               <span
-                class="pointer-events-none absolute right-[3%] -bottom-[0.25em] -z-10 text-[clamp(16rem,39.6vw,37.5rem)] lg:text-[31vw] leading-[0.75] font-medium tracking-[-0.045em] text-lilac select-none lg:right-[4.3%]"
+                class:list={[
+                  'pointer-events-none absolute right-[3%] -bottom-[0.25em] -z-10 text-[clamp(16rem,39.6vw,37.5rem)] leading-[0.75] font-medium tracking-[-0.045em] select-none lg:right-[4.3%] lg:text-[31vw]',
+                  themeOf(step).numeral,
+                ]}
                 aria-hidden="true"
               >
                 {m.steps.indexOf(step) + 1}
               </span>
               <header class="flex items-start justify-between gap-6 text-xs leading-3 font-medium tracking-[0.04em] uppercase">
-                <p class="text-primary">{step.label}</p>
-                <p class="text-black tabular-nums">{step.time}</p>
+                <p class={themeOf(step).label}>{step.label}</p>
+                <p class:list={['tabular-nums', themeOf(step).time]}>{step.time}</p>
               </header>
               <div class="my-auto flex max-w-[1180px] flex-col gap-4">
                 <ol class="flex flex-wrap items-center gap-2">
                   {step.points.map((point) => (
-                    <li class="rounded-full border border-lilac bg-lilac px-[11px] py-[3px] text-xs leading-[18px] font-medium tracking-[-0.01em] text-primary">{point}</li>
+                    <li class:list={['rounded-full border px-[11px] py-[3px] text-xs leading-[18px] font-medium tracking-[-0.01em]', themeOf(step).pill]}>{point}</li>
                   ))}
                 </ol>
-                <h3 class="text-big font-normal text-ink">
-                  {step.titleLead}<span class="font-serif font-semibold tracking-[-0.03em] text-primary italic">{step.titleAccent}</span>
+                <h3 class:list={['text-big font-normal', themeOf(step).title]}>
+                  {step.titleLead}<span class:list={['font-serif font-semibold tracking-[-0.03em] italic', themeOf(step).accent]}>{step.titleAccent}</span>
                 </h3>
-                <p class="max-w-[719px] text-lead tracking-[-0.02em] text-black">{step.text}</p>
+                <p class:list={['max-w-[719px] text-lead tracking-[-0.02em]', themeOf(step).text]}>{step.text}</p>
               </div>
-              <p class="text-xs leading-3 font-medium tracking-[0.04em] text-ink/40 uppercase">
+              <p class:list={['text-xs leading-3 font-medium tracking-[0.04em] uppercase', themeOf(step).step]}>
                 {m.stepLabel} {m.steps.indexOf(step) + 1} / {m.steps.length}
               </p>
             </article>
