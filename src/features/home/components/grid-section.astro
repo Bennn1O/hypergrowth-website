@@ -11,15 +11,17 @@ const { t } = Astro.props;
 const g = t.grid;
 
 // Card spots from Figma (HYPERGROWTH, « Post Header - Exploration », node 418:1063), on a 1512 x 994 stage.
+// Cards are a notch larger than in Figma (380 x 186 instead of 333 x 168); the right column
+// moves left accordingly so every card stays inside the stage and clear of the title.
 const spots = [
-  { x: 181, y: 25 },
-  { x: 37, y: 225 },
-  { x: 1006, y: 25 },
-  { x: 1144, y: 224 },
-  { x: 35, y: 585 },
-  { x: 173, y: 785 },
-  { x: 1144, y: 585 },
-  { x: 996, y: 785 },
+  { x: 165, y: 8 },
+  { x: 32, y: 222 },
+  { x: 975, y: 8 },
+  { x: 1108, y: 222 },
+  { x: 30, y: 586 },
+  { x: 158, y: 800 },
+  { x: 1108, y: 586 },
+  { x: 965, y: 800 },
 ];
 ---
 
@@ -55,21 +57,21 @@ const spots = [
       {
         g.items.map((item, index) => (
           <li
-            class="relative flex flex-col justify-between gap-4 rounded-[3px] bg-ink p-3 sm:p-4 lg:absolute lg:gap-0 lg:p-[18px] text-white shadow-[inset_0_0_16px_rgb(255_255_255/0.05),0_20px_40px_-24px_rgb(17_17_17/0.5)] lg:right-auto lg:left-[var(--x)] lg:top-[var(--y)] lg:h-[168px] lg:w-[333px]"
+            class="relative flex flex-col justify-between gap-4 rounded-[3px] bg-ink p-3 sm:p-4 lg:absolute lg:gap-0 lg:p-5 text-white shadow-[inset_0_0_16px_rgb(255_255_255/0.05),0_20px_40px_-24px_rgb(17_17_17/0.5)] lg:right-auto lg:left-[var(--x)] lg:top-[var(--y)] lg:h-[186px] lg:w-[380px]"
             style={`--x: ${spots[index].x}px; --y: ${spots[index].y}px;`}
             data-card
             data-r="0"
           >
             <div class="flex flex-col gap-[9px]">
-              <div class="flex items-start justify-between gap-2 font-serif text-lg leading-[0.95] sm:text-xl lg:items-center lg:gap-4 font-semibold tracking-[-0.04em] italic">
+              <div class="flex items-start justify-between gap-2 font-serif text-lg leading-[0.95] sm:text-xl lg:items-center lg:gap-4 lg:text-[23px] font-semibold tracking-[-0.04em] italic">
                 <h3>{item.name}</h3>
                 <span class="text-pink">{String(index + 1).padStart(2, '0')}</span>
               </div>
-              <p class="text-xs leading-[1.2] tracking-[-0.02em] text-white/80 lg:max-w-[205px] lg:text-white lg:leading-[1.1] lg:tracking-[-0.04em]">{item.text}</p>
+              <p class="text-[13px] leading-[1.25] tracking-[-0.02em] text-white/80 lg:max-w-[245px] lg:text-[14px] lg:leading-[1.15] lg:tracking-[-0.03em] lg:text-white">{item.text}</p>
             </div>
-            <ul class="flex flex-wrap gap-1 lg:max-w-[180px] lg:gap-[9px] lg:pt-6">
+            <ul class="flex flex-wrap gap-1 lg:max-w-[220px] lg:gap-[9px] lg:pt-6">
               {item.tags.map((tag) => (
-                <li class="rounded-[3px] bg-pink/40 px-1 py-[3px] text-2xs leading-[0.9] lg:text-xs tracking-[-0.04em] shadow-[inset_0_0_2.5px_rgb(255_255_255/0.2)]">
+                <li class="rounded-[3px] bg-pink/40 px-[5px] py-[3px] text-xs leading-[0.9] tracking-[-0.03em] lg:text-[14px] shadow-[inset_0_0_2.5px_rgb(255_255_255/0.2)]">
                   {tag}
                 </li>
               ))}
