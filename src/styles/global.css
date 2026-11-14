@@ -146,8 +146,8 @@
   letter-spacing: var(--text-h2--letter-spacing);
 }
 @utility grain {
-  background-image: url('/textures/grain.svg');
-  background-size: 240px 240px;
+  background-image: url('/textures/grain.png');
+  background-size: 200px 200px;
 }
 
 /* Words are split server-side; JS lifts each one in. Visible by default without JS. */
@@ -215,6 +215,34 @@ html.is-ready .page-loader {
   opacity: 0;
   transform: translateY(8px) scale(0.96);
   animation: page-loader-in 0.8s 0.05s var(--ease-out-expo) forwards;
+}
+
+/* Violet rises inside the grey symbol, again and again until the page is ready
+   (data-loaded then freezes it full). Pure CSS, so it runs before any script. */
+@property --loader-progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.page-loader-fill {
+  clip-path: inset(calc((1 - var(--loader-progress)) * 100%) 0 0 0);
+  animation: page-loader-fill 1.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.page-loader[data-loaded] .page-loader-fill {
+  --loader-progress: 1;
+  animation: none;
+}
+
+@keyframes page-loader-fill {
+  0% {
+    --loader-progress: 0;
+  }
+  70%,
+  100% {
+    --loader-progress: 1;
+  }
 }
 
 @keyframes page-loader-in {

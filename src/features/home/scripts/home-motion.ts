@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DESKTOP = '(min-width: 1024px)';
 /** Shortest time the loading screen stays up, from navigation start. */
-const LOADER_MIN_MS = 700;
+const LOADER_MIN_MS = 900;
 const FINE_POINTER = '(hover: hover) and (pointer: fine)';
 
 type ClockSetter = (value: string | undefined, animate?: boolean) => void;
@@ -494,6 +494,7 @@ export function initHomeMotion() {
     return;
   }
 
+  startAtTop();
   setupLenis();
   const mm = gsap.matchMedia();
   let first = true;
@@ -516,13 +517,61 @@ export function initHomeMotion() {
       setupMagnetic();
       setupOpeningNappes();
       document.fonts?.ready.then(() => ScrollTrigger.refresh());
-      // The loader shows the symbol for at least 0.7s, then lifts and the hero intro plays.
-      setTimeout(() => {
-        document.documentElement.classList.add('is-ready');
-        playIntro();
-      }, Math.max(0, LOADER_MIN_MS - performance.now()));
+      // The symbol keeps filling in a loop while this runs; show at least one full cycle, then the
+      // screen lifts, the hero intro plays, and a section link (#methode…) is honoured.
+      setTimeout(
+        () =>
+          liftLoader(() => {
+            playIntro();
+            scrollToLinkedSection();
+          }),
+        Math.max(0, LOADER_MIN_MS - performance.now()),
+      );
     });
   });
+}
+
+/** A refresh lands at the top of the page, never where the previous visit left off. */
+function startAtTop() {
+  window.scrollTo(0, 0);
+}
+
+/**
+ * A first visit to /#section (e.g. an old URL redirected to its section) scrolls there once the
+ * pins exist. On a refresh the hash is dropped and the page stays at the top.
+ */
+function scrollToLinkedSection() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+  if (navigation?.type === 'reload') {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+    return;
+  }
+  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (target) scrollToY(target.getBoundingClientRect().top + window.scrollY, true);
+}
+
+/**
+ * Lift the loading screen: wait for the symbol to end its current fill cycle (it is full then),
+ * freeze it full, and fade the screen out. Resolves once the screen starts lifting.
+ */
+function liftLoader(onLift: () => void) {
+  const loader = document.querySelector<HTMLElement>('[data-loader]');
+  const fill = loader?.querySelector<HTMLElement>('.page-loader-fill');
+  let done = false;
+  const lift = () => {
+    if (done) return;
+    done = true;
+    loader?.setAttribute('data-loaded', '');
+    setTimeout(() => {
+      document.documentElement.classList.add('is-ready');
+      onLift();
+    }, 180);
+  };
+  if (!fill) return lift();
+  fill.addEventListener('animationiteration', lift, { once: true });
+  setTimeout(lift, 1400); // safety net if the animation is not running
 }
 
 /** Run `fn` in a new task, letting the browser paint and handle input in between. */

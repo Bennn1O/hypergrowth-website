@@ -3,10 +3,13 @@ import Logomark from '../../../assets/brand/logomark.svg';
 ---
 
 <!--
-  Light loading screen: the HG symbol fades in while the motion is being prepared, then the
-  screen fades out (html.is-ready, set by home-motion). Without JS it never shows; if the script
-  fails it still clears itself after 3s (CSS fallback in global.css).
+  Loading screen: the HG symbol starts empty (light grey) and fills with violet from the bottom
+  as the motion gets ready (home-motion sets --loader-progress from 0 to 1, then html.is-ready).
+  Without JS it never shows; if the script fails it clears itself after 3s (global.css).
 -->
 <div class="page-loader" aria-hidden="true" data-loader>
-  <Logomark class="page-loader-mark h-12 w-auto text-primary sm:h-14" />
+  <span class="page-loader-mark relative block h-12 sm:h-14">
+    <Logomark class="h-full w-auto text-line" />
+    <Logomark class="page-loader-fill absolute inset-0 h-full w-auto text-primary" />
+  </span>
 </div>
