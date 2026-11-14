@@ -449,24 +449,6 @@ function setupMarquee() {
   });
 }
 
-function setupCursor() {
-  if (!window.matchMedia(FINE_POINTER).matches) return;
-  const cursor = document.querySelector<HTMLElement>('[data-cursor]');
-  if (!cursor) return;
-  cursor.classList.remove('hidden');
-  gsap.set(cursor, { xPercent: -50, yPercent: -50 });
-  const xTo = gsap.quickTo(cursor, 'x', { duration: 0.35, ease: 'power3.out' });
-  const yTo = gsap.quickTo(cursor, 'y', { duration: 0.35, ease: 'power3.out' });
-  window.addEventListener('pointermove', (event) => {
-    xTo(event.clientX);
-    yTo(event.clientY);
-  });
-  document.addEventListener('pointerover', (event) => {
-    const target = event.target instanceof Element ? event.target : null;
-    const interactive = target?.closest('a, button, [data-card], [data-eco-item], [data-doors] li, .rail-tick, [data-rail-thumb]');
-    gsap.to(cursor, { scale: interactive ? 4 : 1, duration: 0.4, ease: 'expo.out' });
-  });
-}
 
 function setupMagnetic() {
   if (!window.matchMedia(FINE_POINTER).matches) return;
@@ -538,7 +520,6 @@ export function initHomeMotion() {
   setupHeader();
   onClock = setupRail(() => markers);
   setupMarquee();
-  setupCursor();
   setupMagnetic();
   setupOpeningNappes();
   playIntro();
