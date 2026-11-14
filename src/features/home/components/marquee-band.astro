@@ -1,5 +1,5 @@
 ---
-/** Rules of the immersion, looping horizontally; speeds up and leans with the scroll. */
+/** Rules of the immersion, looping horizontally at a constant speed. Hidden on phones. */
 interface Props {
   items: string[];
 }
@@ -8,7 +8,7 @@ const { items } = Astro.props;
 const run = [...items, ...items];
 ---
 
-<div class="overflow-hidden border-y border-ink/15 py-6 text-ink" aria-hidden="true" data-marquee>
+<div class="hidden overflow-hidden border-y border-ink/15 py-6 text-ink sm:block" aria-hidden="true" data-marquee>
   <div class="flex w-max will-change-transform" data-marquee-track>
     {
       [0, 1].map(() => (

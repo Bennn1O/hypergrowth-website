@@ -13,9 +13,10 @@ const { prefix, chapter, index, class: className } = Astro.props;
 ---
 
 <div
-  class:list={['chapter-bar flex w-full max-w-[594px] origin-left items-center justify-between gap-6 bg-primary px-3 py-2 font-helvetica text-white', className]}
+  class:list={['chapter-bar flex w-full max-w-[594px] origin-left items-center justify-between gap-3 bg-primary px-3 py-2 font-helvetica text-white sm:gap-6', className]}
   data-chapter-bar
 >
-  <p class="text-xs leading-3 font-bold tracking-[0.04em] uppercase">{prefix} {chapter}</p>
-  <p class="text-xl leading-5 font-bold tracking-[-0.045em]">{String(index).padStart(2, '0')}</p>
+  <!-- One line on phones too: smaller and tighter there, ellipsis as a last resort. -->
+  <p class="min-w-0 truncate text-[9.5px] leading-3 font-bold tracking-[0.01em] uppercase sm:text-xs sm:tracking-[0.04em]">{prefix} {chapter}</p>
+  <p class="shrink-0 text-base leading-5 font-bold tracking-[-0.045em] sm:text-xl">{String(index).padStart(2, '0')}</p>
 </div>

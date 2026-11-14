@@ -427,7 +427,7 @@ function setupHeader() {
 
 function setupMarquee() {
   const track = document.querySelector<HTMLElement>('[data-marquee-track]');
-  if (!track) return;
+  if (!track || !track.offsetParent) return; // absent, or hidden (phones)
   // Constant speed: the band does not react to scrolling.
   let x = 0;
   let half = track.scrollWidth / 2;
