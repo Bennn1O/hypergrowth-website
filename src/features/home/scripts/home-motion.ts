@@ -425,17 +425,16 @@ function setupHeader() {
 function setupMarquee() {
   const track = document.querySelector<HTMLElement>('[data-marquee-track]');
   if (!track) return;
+  // Constant speed: the band does not react to scrolling.
   let x = 0;
-  let boost = 0;
-  lenis?.on('scroll', (instance: Lenis) => {
-    boost = gsap.utils.clamp(-40, 40, instance.velocity);
-  });
+  let half = track.scrollWidth / 2;
+  new ResizeObserver(() => {
+    half = track.scrollWidth / 2;
+  }).observe(track);
   gsap.ticker.add((_time, delta) => {
-    const half = track.scrollWidth / 2;
-    boost *= 0.92;
-    x -= (0.05 + Math.abs(boost) * 0.03) * delta;
+    x -= 0.05 * delta;
     if (half > 0 && -x >= half) x += half;
-    gsap.set(track, { x, skewX: gsap.utils.clamp(-8, 8, -boost * 0.25) });
+    track.style.transform = `translate3d(${x}px, 0, 0)`;
   });
 }
 
