@@ -244,7 +244,7 @@ function setupRail(getMarkers: () => Marker[]) {
 function revealWords(block: Element) {
   return gsap.fromTo(
     all('.split-word > span', block),
-    { yPercent: 115, rotate: 4 },
+    { yPercent: 150, rotate: 4 },
     {
       yPercent: 0,
       rotate: 0,
@@ -259,7 +259,7 @@ function revealWords(block: Element) {
 
 function setupReveals() {
   for (const block of all('[data-split]')) {
-    gsap.set(all('.split-word > span', block), { yPercent: 115 });
+    gsap.set(all('.split-word > span', block), { yPercent: 150 });
     if (block.closest('[data-intro-title]')) continue;
     ScrollTrigger.create({ trigger: block, start: 'top 88%', once: true, onEnter: () => revealWords(block) });
   }

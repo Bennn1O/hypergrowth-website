@@ -181,8 +181,8 @@
   vertical-align: top;
   /* Room for the serif italic's ascenders (f), descenders (p, q) and slant, cancelled by the
      negative margins so spacing and line height stay as set. */
-  padding: 0.14em 0.1em 0.2em;
-  margin: -0.14em -0.1em -0.2em;
+  padding: 0.4em 0.2em 0.35em;
+  margin: -0.4em -0.2em -0.35em;
 }
 
 /*
