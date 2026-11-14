@@ -26,7 +26,7 @@ const [first, ...rest] = m.steps;
     </div>
   </div>
 
-  <!-- The whole relationship in one horizontal track (pinned on desktop, stacked on mobile). -->
+  <!-- Step panels: Figma (HYPERGROWTH, node 422:1539). The whole relationship in one horizontal track (pinned on desktop, stacked on mobile). -->
   <div class="relative overflow-hidden" data-hscroll>
     <div class="absolute inset-x-0 bottom-0 z-10 h-[3px] bg-ink/10" aria-hidden="true">
       <div class="h-full origin-left scale-x-0 bg-primary" data-hscroll-progress></div>
@@ -36,50 +36,49 @@ const [first, ...rest] = m.steps;
         [first, null, ...rest].map((step, i) =>
           step ? (
             <article
-              class="relative isolate flex h-full w-screen flex-col justify-between gap-6 overflow-hidden border-l border-ink/15 px-5 pt-24 pb-10 sm:px-8 lg:w-[72vw] lg:gap-10 lg:px-12 lg:pt-28 lg:pb-14"
+              class="relative isolate flex h-full w-screen flex-col overflow-hidden bg-white px-5 pt-24 pb-10 font-helvetica sm:px-8 lg:w-[91.4vw] lg:px-[49px] lg:pt-[112px] lg:pb-[56px]"
               data-clock={step.time}
               data-panel
             >
               <span
-                class="outline-text display pointer-events-none absolute right-6 bottom-0 -z-10 text-[clamp(10rem,28vw,30rem)] leading-[0.75] select-none lg:right-12"
+                class="pointer-events-none absolute right-[3%] -bottom-[0.25em] -z-10 text-[clamp(16rem,39.6vw,37.5rem)] leading-[0.75] font-bold tracking-[-0.045em] text-lilac select-none lg:right-[4.3%]"
                 aria-hidden="true"
               >
                 {m.steps.indexOf(step) + 1}
               </span>
-              <header class="flex items-start justify-between gap-6">
-                <p class="label text-primary">{step.label}</p>
-                <p class="label tabular-nums">{step.time}</p>
+              <header class="flex items-start justify-between gap-6 text-xs leading-3 font-medium tracking-[0.04em] uppercase">
+                <p class="text-primary">{step.label}</p>
+                <p class="text-black tabular-nums">{step.time}</p>
               </header>
-              <div class="grid gap-8 lg:grid-cols-12">
-                <h3 class="section-title lg:col-span-11">{step.title}</h3>
-                <p class="text-lead font-medium lg:col-span-6">{step.text}</p>
-                <ol class="flex flex-wrap gap-2 self-end lg:col-span-5 lg:col-start-8">
+              <div class="my-auto flex max-w-[1180px] flex-col gap-4">
+                <ol class="flex flex-wrap items-center gap-2">
                   {step.points.map((point) => (
-                    <li class="rounded-full border border-ink/20 px-3 py-1.5 text-sm font-medium">{point}</li>
+                    <li class="rounded-full border border-lilac bg-lilac px-[13px] py-[7px] text-[13px] leading-5 font-bold tracking-[-0.01em] text-primary">{point}</li>
                   ))}
                 </ol>
+                <h3 class="text-[clamp(2.75rem,7.94vw,7.5rem)] leading-none font-bold tracking-[-0.06em] text-black uppercase">
+                  {step.titleLead}<span class="text-primary">{step.titleAccent}</span>
+                </h3>
+                <p class="max-w-[719px] text-[clamp(1.05rem,1.49vw,1.4rem)] leading-[1.39] tracking-[-0.02em] text-black">{step.text}</p>
               </div>
-              <p class="label text-ink/40">
+              <p class="text-xs leading-3 font-medium tracking-[0.04em] text-ink/40 uppercase">
                 {m.stepLabel} {m.steps.indexOf(step) + 1} / {m.steps.length}
               </p>
             </article>
           ) : (
             <article
-              class="relative isolate flex h-full w-screen flex-col justify-end overflow-hidden bg-ink px-5 pt-24 pb-12 text-paper sm:px-8 lg:w-[52vw] lg:px-12 lg:pb-16"
+              class="relative isolate flex h-full w-screen flex-col justify-end overflow-hidden bg-ink px-5 pt-24 pb-12 font-helvetica text-paper sm:px-8 lg:w-[66vw] lg:px-12 lg:pb-[66px]"
               data-clock={m.interlude.time}
               data-panel
               data-dark
             >
               <div class="absolute inset-0 -z-10 opacity-45" aria-hidden="true"><div class="nappes" /></div>
               <div class="grain absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
-              <p class="label mb-auto flex justify-between text-blush">
-                <span>{m.interlude.label}</span>
-                <span class="tabular-nums">{m.interlude.time}</span>
+              <p class="mb-auto text-xs leading-3 font-medium tracking-[0.04em] text-blush uppercase">{m.interlude.label}</p>
+              <p class="max-w-[874px] text-[clamp(2.75rem,8.73vw,8.25rem)] leading-[0.92] font-medium tracking-[-0.055em] uppercase">
+                {m.interlude.title} <span class="text-pink">{m.interlude.accent}</span>
               </p>
-              <p class="section-title mt-16">
-                {m.interlude.title} <span class="voice text-pink">{m.interlude.accent}</span>
-              </p>
-              <p class="mt-8 max-w-md text-lead text-paper/70">{m.interlude.text}</p>
+              <p class="mt-10 max-w-[417px] text-[clamp(1.05rem,1.47vw,1.39rem)] leading-[1.4] tracking-[-0.02em] text-paper/70">{m.interlude.text}</p>
             </article>
           ),
         )
