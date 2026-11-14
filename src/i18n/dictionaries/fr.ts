@@ -120,7 +120,6 @@ export const fr = {
     introAccent: 'Operating Partner',
     introEnd: ' reste votre seul interlocuteur.',
     introText: 'Notre équipe quand on le tient nous-mêmes, notre réseau d’experts quand il faut un métier précis.',
-    aside: 'Les noms de nos experts se donnent en rendez-vous, pas sur un site.',
     items: [
       {
         name: 'Structuration',
@@ -289,6 +288,14 @@ export const fr = {
       { name: 'Ulysse', role: 'Head Sphère 51', text: 'La mise en relation : un expert, un prestataire, un pair.' },
       { name: 'Julie', role: 'Head Donna', text: 'L’assistanat de dirigeant.' },
       { name: 'Léa', role: 'Design et web', text: 'Identités, maquettes, sites.' },
+    ],
+    ops: [
+      { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
+      { name: 'Manon Werquin', photo: '/team/op-manon.webp' },
+      { name: 'Evan Riquelme', photo: '/team/op-evan.webp' },
+      { name: 'Benjamin Brémont', photo: '/team/op-benjamin.webp' },
+      { name: 'Julie Simon', photo: '/team/op-julie-simon.webp' },
+      { name: 'Julie Ducourau', photo: '/team/op-julie-ducourau.webp' },
     ],
     moreLead: 'Et les ',
     moreAccent: 'Operating Partners',

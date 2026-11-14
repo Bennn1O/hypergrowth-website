@@ -117,7 +117,6 @@ export const en: Dictionary = {
     introAccent: 'Operating Partner',
     introEnd: ' stays your single counterpart.',
     introText: 'Our team when we run it ourselves, our expert network when it takes a specific trade.',
-    aside: 'We share our experts’ names in a meeting, not on a website.',
     items: [
       {
         name: 'Structuring',
@@ -286,6 +285,14 @@ export const en: Dictionary = {
       { name: 'Ulysse', role: 'Head Sphère 51', text: 'Introductions: an expert, a provider, a peer.' },
       { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
       { name: 'Léa', role: 'Design and web', text: 'Identities, mock-ups, websites.' },
+    ],
+    ops: [
+      { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
+      { name: 'Manon Werquin', photo: '/team/op-manon.webp' },
+      { name: 'Evan Riquelme', photo: '/team/op-evan.webp' },
+      { name: 'Benjamin Brémont', photo: '/team/op-benjamin.webp' },
+      { name: 'Julie Simon', photo: '/team/op-julie-simon.webp' },
+      { name: 'Julie Ducourau', photo: '/team/op-julie-ducourau.webp' },
     ],
     moreLead: 'And the ',
     moreAccent: 'Operating Partners',

@@ -376,7 +376,7 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
           0.4 + i * 0.75,
         );
       });
-      deal.fromTo('[data-deck-aside]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '>-0.2').to({}, { duration: 0.8 });
+      deal.to({}, { duration: 0.8 });
     }
     onReady(tween);
   });

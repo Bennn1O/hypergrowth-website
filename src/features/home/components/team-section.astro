@@ -14,7 +14,7 @@ const team = t.team;
 const [titleLine1, titleLine2 = ''] = team.title.split(', ');
 
 // Portraits we have so far (Figma). Others show the card without a photo until HG sends them.
-const photos: Record<string, string> = { Killian: '/team/killian.webp' };
+const photos: Record<string, string> = { Killian: '/team/killian.webp', Ulysse: '/team/op-ulysse.webp' };
 ---
 
 <!-- From Figma (HYPERGROWTH, node 376:717): « Les gens ». -->
@@ -63,7 +63,23 @@ const photos: Record<string, string> = { Killian: '/team/killian.webp' };
         ))
       }
       <li class="col-span-2 flex flex-col justify-end gap-3 lg:col-span-1">
-        <Logomark class="h-5 w-auto text-primary" aria-hidden="true" />
+        <ul class="flex -space-x-3" aria-label={team.moreAccent}>
+          {
+            team.ops.map((op) => (
+              <li>
+                <img
+                  src={op.photo}
+                  alt={op.name}
+                  title={op.name}
+                  loading="lazy"
+                  width="56"
+                  height="56"
+                  class="size-12 rounded-full object-cover ring-2 ring-paper transition-transform duration-300 hover:-translate-y-1 sm:size-14"
+                />
+              </li>
+            ))
+          }
+        </ul>
         <p class="text-h3 tracking-[-0.005em] text-ink">
           {team.moreLead}<span class="text-primary">{team.moreAccent}</span>{team.moreEnd}
         </p>
