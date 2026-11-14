@@ -26,9 +26,15 @@
   --color-ghost: #c9c9c9;
 
   /* Type */
-  --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  /*
+   * Helvetica Neue where the system has it (Mac, iPhone: real 500 Medium, nothing to download).
+   * Elsewhere (Windows, Android, Linux) "HG Sans" takes over: Inter, self-hosted under our own
+   * name so a locally installed Inter of another version never stands in. 500 is a true medium
+   * there too, and the browser only downloads it when it is actually used.
+   */
+  --font-sans: "Helvetica Neue", "HG Sans", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
   /* Hero (Figma « Header / Hero - Exploration », 376:435): Helvetica + IBM Plex Serif italic. */
-  --font-helvetica: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
+  --font-helvetica: "Helvetica Neue", "HG Sans", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
 
   /*
@@ -60,6 +66,23 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
   --container-site: 96rem;
+}
+
+/* Inter 4 (SIL OFL 1.1, see src/assets/fonts/LICENSE-inter.txt), latin subset. */
+@font-face {
+  font-family: "HG Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/hg-sans-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "HG Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/hg-sans-500.woff2") format("woff2");
 }
 
 @layer base {
