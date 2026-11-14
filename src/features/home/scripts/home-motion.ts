@@ -3,6 +3,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
+// On phones the address bar shows and hides while scrolling, which resizes the viewport: don't
+// recompute every pin and trigger for that (it made the page jump, notably right after a refresh).
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 const DESKTOP = '(min-width: 1024px)';
 /** Shortest time the loading screen stays up, from navigation start. */
