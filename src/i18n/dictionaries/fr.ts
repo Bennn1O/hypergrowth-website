@@ -48,17 +48,15 @@ export const fr = {
     photoCaption: 'Bordeaux, 2025',
     clock: 'J-10',
     chapter: 'sur nous',
-    title: 'Si vous êtes ici, quelqu’un vous a sûrement parlé de',
-    accent: 'nous.',
-    card: [
-      'Le plus souvent, tout commence comme ça : un café, un dîner, un dirigeant qui en parle à un autre.',
-      'Ce qu’on fait ne tient pas dans une plaquette.',
-      'Alors voici, dans l’ordre, ce qui se passe quand on travaille ensemble.',
+    titleLines: [
+      { lead: 'Si vous ', accent: 'êtes ici', end: ',' },
+      { lead: 'quelqu’un vous a sûrement' },
+      { accent: 'parlé de nous', end: '.' },
     ],
-    posture:
-      'Ni agence, ni cabinet. Un bras droit opérationnel, qui pose le diagnostic avec vous puis avance comme s’il faisait partie de la maison.',
-    whoLabel: 'Pour qui',
-    who: 'Pas un secteur, un moment : celui où l’entreprise grossit plus vite que son organisation. Un nouveau pays, un rachat, une levée, ou simplement un fondateur par qui tout passe encore.',
+    statementLead: 'Ce qu’on fait ne tient pas dans ',
+    statementAccent: 'une plaquette',
+    introLeft: 'Le plus souvent, tout commence comme ça : un café, un dîner, un dirigeant qui en parle à un autre.',
+    introRight: 'Alors voici, dans l’ordre, ce qui se passe quand on travaille ensemble.',
   },
   method: {
     chapter: 'sur notre façon de travailler',

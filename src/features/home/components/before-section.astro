@@ -1,6 +1,5 @@
 ---
 import ChapterBar from '../../../components/ui/chapter-bar.astro';
-import PhotoSlot from '../../../components/ui/photo-slot.astro';
 import SplitText from '../../../components/ui/split-text.astro';
 import type { Dictionary } from '../../../i18n';
 
@@ -10,55 +9,88 @@ interface Props {
 
 const { t } = Astro.props;
 const b = t.before;
+
+// Floating photos (Figma « Post Header - Exploration », 422:2399): positions on a 1512 x 960 stage.
+const floating = [
+  { src: '/photos/bordeaux-2613.webp', x: 81, y: 50, speed: -0.25 },
+  { src: '/photos/bordeaux-2637.webp', x: 1037, y: -9, speed: 0.2 },
+  { src: '/photos/bordeaux-2658.webp', x: -74, y: 411, speed: 0.35 },
+  { src: '/photos/bordeaux-2728.webp', x: 1391, y: 235, speed: -0.3 },
+  { src: '/photos/bordeaux-2740.webp', x: 104, y: 682, speed: -0.15 },
+  { src: '/photos/bordeaux-2592.webp', x: 1125, y: 682, speed: 0.25 },
+];
+const strip = ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/photos/bordeaux-2801.webp'];
 ---
 
-<section id="avant" class="relative px-4 pt-24 pb-32 sm:px-6" data-stage="avant" data-clock={b.clock} aria-labelledby="before-title">
-  <div class="mx-auto flex max-w-site flex-col gap-24 sm:gap-36">
-    <ChapterBar prefix={t.chapter.prefix} chapter={b.chapter} index={1} class="lg:ml-auto lg:w-5/12" />
+<!-- From Figma (HYPERGROWTH, « Post Header - Exploration », node 422:2399). -->
+<section
+  id="avant"
+  class="relative overflow-hidden bg-white px-4 pt-8 pb-16 font-helvetica sm:px-8"
+  data-stage="avant"
+  data-clock={b.clock}
+  aria-labelledby="before-title"
+>
+  <div class="mx-auto flex max-w-[1448px] flex-col">
+    <!-- Stage: centred statement among floating photos. -->
+    <div class="relative lg:aspect-[1448/930]">
+      <ChapterBar prefix={t.chapter.prefix} chapter={b.chapter} index={1} class="relative z-10 lg:ml-auto lg:w-[41%]" />
 
-    <!-- Centered statement flanked by photos, as on a studio cover. -->
-    <div class="relative py-6 lg:py-24">
-      <PhotoSlot label={t.a11y.photo} caption={b.photoCaption} src="/photos/bordeaux-2613.webp" class="absolute top-0 left-0 hidden aspect-[4/5] w-[14vw] lg:block" />
-      <PhotoSlot label={t.a11y.photo} caption={b.photoCaption} src="/photos/bordeaux-2592.webp" class="absolute right-0 bottom-0 hidden aspect-[3/2] w-[20vw] lg:block" />
-      <h2 id="before-title" class="section-title relative mx-auto max-w-4xl text-center">
-        <SplitText text={b.title} />{' '}
-        <SplitText text={b.accent} class="voice text-primary" />
+      <div class="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden="true">
+        {
+          floating.map((p) => (
+            <figure
+              class="absolute w-[13.4%] overflow-hidden rounded-[1.6px] bg-ink"
+              style={`left:${((p.x - 32) / 1448) * 100}%; top:${((p.y + 0) / 930) * 100}%; aspect-ratio:195/244;`}
+              data-parallax={p.speed}
+            >
+              <img src={p.src} alt="" loading="lazy" class="h-full w-full object-cover grayscale" />
+              <figcaption class="absolute bottom-2 left-2 text-[7px] leading-none font-medium tracking-[0.04em] text-white/85 uppercase">
+                {b.photoCaption}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+
+      <h2
+        id="before-title"
+        class="relative mx-auto mt-20 mb-16 max-w-[1180px] text-center text-[clamp(2.4rem,5.95vw,5.625rem)] leading-[1.1] tracking-[-0.038em] text-black lg:absolute lg:inset-x-0 lg:top-[39.5%] lg:my-0"
+      >
+        {
+          b.titleLines.map((line) => (
+            <span class="block">
+              {line.lead && <SplitText text={line.lead.trim()} />}
+              {line.lead && line.accent && ' '}
+              {line.accent && <SplitText text={line.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />}
+              {line.end}
+            </span>
+          ))
+        }
       </h2>
     </div>
 
-    <!-- A strip of the room, between the card and the rest. -->
-    <div class="grid grid-cols-3 gap-3 sm:gap-4" data-fade>
-      {
-        ['/photos/bordeaux-2660.webp', '/photos/bordeaux-2706.webp', '/photos/bordeaux-2801.webp'].map((src, i) => (
-          <PhotoSlot
-            label={t.a11y.photo}
-            caption={b.photoCaption}
-            src={src}
-            class:list={['relative aspect-[3/4]', i === 1 && 'sm:translate-y-10']}
-          />
-        ))
-      }
-    </div>
-
-    <div
-      class="relative isolate mx-auto max-w-md overflow-hidden rounded-xl bg-ink p-6 text-paper shadow-[0_24px_60px_-20px_rgb(17_17_17/0.35),0_2px_6px_rgb(17_17_17/0.08)] sm:p-8"
-      data-fade
-    >
-      <div class="grain absolute inset-0 -z-10 opacity-25 mix-blend-soft-light" aria-hidden="true"></div>
-      {
-        b.card.map((line, index) => (
-          <p class:list={['text-lead font-medium tracking-[-0.025em]', index > 0 && 'mt-4', index === 1 && 'text-blush']}>{line}</p>
-        ))
-      }
-    </div>
-
-    <div class="grid gap-12 lg:grid-cols-12">
-      <p class="text-lead lg:col-span-5">{b.posture}</p>
-      <div class="flex flex-col gap-3 lg:col-span-5 lg:col-start-8">
-        <p class="label text-primary">{b.whoLabel}</p>
-        <p class="text-lead text-ink/75">{b.who}</p>
+    <!-- Statement, two intro lines, three photos. -->
+    <div class="mt-4 flex flex-col gap-8 lg:mt-[68px]">
+      <p class="max-w-[980px] text-[clamp(2.4rem,6.03vw,5.7rem)] leading-none tracking-[-0.055em] text-black">
+        <SplitText text={b.statementLead.trim()} />{' '}
+        <SplitText text={b.statementAccent} class="text-primary" />
+      </p>
+      <div class="flex flex-col gap-4 text-[clamp(1.05rem,1.47vw,1.39rem)] leading-[1.4] text-ink sm:flex-row sm:items-center sm:justify-between">
+        <p class="max-w-[580px]">{b.introLeft}</p>
+        <p class="max-w-[390px] sm:text-right">{b.introRight}</p>
+      </div>
+      <div class="grid grid-cols-3 gap-2 sm:gap-4">
+        {
+          strip.map((src) => (
+            <figure class="relative aspect-[465/620] overflow-hidden rounded-lg bg-mist" data-fade>
+              <img src={src} alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover grayscale" />
+              <figcaption class="absolute bottom-3 left-3 hidden text-[10px] leading-none font-medium tracking-[0.04em] text-white/85 uppercase sm:block">
+                {b.photoCaption}
+              </figcaption>
+            </figure>
+          ))
+        }
       </div>
     </div>
-
   </div>
 </section>

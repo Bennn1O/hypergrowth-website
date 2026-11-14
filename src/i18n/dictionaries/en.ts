@@ -45,17 +45,15 @@ export const en: Dictionary = {
     photoCaption: 'Bordeaux, 2025',
     clock: 'D-10',
     chapter: 'about us',
-    title: 'If you are here, someone probably told you about',
-    accent: 'us.',
-    card: [
-      'It usually starts like this: a coffee, a dinner, one founder telling another.',
-      'What we do does not fit in a brochure.',
-      'So here is, in order, what happens when we work together.',
+    titleLines: [
+      { lead: 'If you ', accent: 'are here', end: ',' },
+      { lead: 'someone has probably' },
+      { accent: 'told you about us', end: '.' },
     ],
-    posture:
-      'Not an agency, not a consulting firm. An operational right hand that makes the diagnosis with you, then moves as if it were part of the house.',
-    whoLabel: 'Who for',
-    who: 'Not a sector, a moment: when the company grows faster than its organisation. A new country, an acquisition, a fundraise, or simply a founder everything still goes through.',
+    statementLead: 'What we do doesn’t fit in ',
+    statementAccent: 'a brochure',
+    introLeft: 'It usually starts like this: a coffee, a dinner, one founder telling another.',
+    introRight: 'So here is, in order, what happens when we work together.',
   },
   method: {
     chapter: 'about how we work',
