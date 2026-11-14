@@ -35,7 +35,7 @@ const spots = [
   </div>
 
   <!-- Stop-scroll stage: the cards are dealt one by one around the title. -->
-  <div class="relative flex h-[100svh] flex-col overflow-hidden pt-20 pr-12 pb-6 pl-4 sm:pl-6 lg:block lg:h-dvh lg:px-0 lg:pt-16 lg:pb-3" data-deck>
+  <div class="relative flex flex-col px-4 pt-16 pb-20 sm:px-6 lg:block lg:h-dvh lg:overflow-hidden lg:px-0 lg:pt-16 lg:pb-3" data-deck>
    <!-- Desktop: a 1512 x 994 box (the Figma stage), as large as the screen below the header allows. -->
    <div class="contents lg:relative lg:mx-auto lg:block lg:aspect-[1512/994] lg:h-full lg:max-w-full" data-deck-box>
    <!-- The Figma canvas at its native 1512 x 994, scaled to the box by the motion script (--s). -->
@@ -51,23 +51,24 @@ const spots = [
       <p class="hidden text-[19.7px] leading-snug tracking-[-0.005em] text-ink lg:block" data-deck-aside>{g.aside}</p>
     </div>
 
-    <ul class="relative mt-6 flex-1 lg:absolute lg:inset-0 lg:mt-0" data-cards>
+    <!-- Phones: a swipeable row of cards; desktop: the dealt stage. -->
+    <ul class="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-4 [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:absolute lg:inset-0 lg:mx-0 lg:mt-0 lg:block lg:overflow-visible lg:p-0" data-cards>
       {
         g.items.map((item, index) => (
           <li
-            class="absolute inset-x-0 top-2 flex h-[168px] flex-col justify-between rounded-[3px] bg-ink p-[18px] text-white shadow-[inset_0_0_16px_rgb(255_255_255/0.05),0_20px_40px_-24px_rgb(17_17_17/0.5)] lg:right-auto lg:left-[var(--x)] lg:top-[var(--y)] lg:h-[168px] lg:w-[333px]"
+            class="relative flex min-h-[210px] w-[80%] shrink-0 snap-center flex-col justify-between rounded-[3px] bg-ink p-5 sm:w-[46%] lg:absolute lg:min-h-0 lg:shrink lg:p-[18px] text-white shadow-[inset_0_0_16px_rgb(255_255_255/0.05),0_20px_40px_-24px_rgb(17_17_17/0.5)] lg:right-auto lg:left-[var(--x)] lg:top-[var(--y)] lg:h-[168px] lg:w-[333px]"
             style={`--x: ${spots[index].x}px; --y: ${spots[index].y}px;`}
             data-card
             data-r="0"
           >
             <div class="flex flex-col gap-[9px]">
-              <div class="flex items-center justify-between gap-4 font-serif text-[19px] leading-[0.9] font-medium tracking-[-0.04em] italic">
+              <div class="flex items-center justify-between gap-4 font-serif text-[24px] leading-[0.9] lg:text-[19px] font-medium tracking-[-0.04em] italic">
                 <h3>{item.name}</h3>
                 <span class="text-pink">{String(index + 1).padStart(2, '0')}</span>
               </div>
-              <p class="max-w-[205px] text-[11px] leading-none tracking-[-0.04em]">{item.text}</p>
+              <p class="max-w-[240px] text-[14px] leading-[1.15] tracking-[-0.02em] lg:max-w-[205px] lg:text-[11px] lg:leading-none lg:tracking-[-0.04em]">{item.text}</p>
             </div>
-            <ul class="flex max-w-[180px] flex-wrap gap-x-[9px] gap-y-[9px] pt-6">
+            <ul class="flex max-w-[240px] flex-wrap gap-2 pt-6 lg:max-w-[180px] lg:gap-[9px]">
               {item.tags.map((tag) => (
                 <li class="rounded-[3px] bg-pink/40 px-1 py-[3px] text-[12.6px] leading-[0.9] tracking-[-0.04em] shadow-[inset_0_0_2.5px_rgb(255_255_255/0.2)]">
                   {tag}
@@ -79,7 +80,7 @@ const spots = [
       }
     </ul>
 
-    <p class="mt-4 text-center text-base text-ink/60 lg:hidden" data-deck-aside>{g.aside}</p>
+    <p class="mt-6 text-center text-base text-ink/60 lg:hidden">{g.aside}</p>
    </div>
    </div>
   </div>

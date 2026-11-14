@@ -384,22 +384,7 @@ function setupLayout(mm: gsap.MatchMedia, onReady: (tween?: gsap.core.Tween) => 
   mm.add(`not ${DESKTOP}`, () => {
     const tween = makeHorizontal();
 
-    // Expertises on phones: the cards stack up one by one in the middle of the screen.
-    if (deck && cards.length) {
-      const deal = gsap.timeline({
-        scrollTrigger: { trigger: deck, start: 'top top', end: () => `+=${cards.length * 55}%`, pin: true, scrub: 0.6 },
-      });
-      cards.forEach((card, i) => {
-        const r = i % 2 ? 3 : -3;
-        deal.fromTo(
-          card,
-          { yPercent: 130, rotate: r * 4, opacity: 0 },
-          { yPercent: i * -2, rotate: r, opacity: 1, duration: 1, ease: 'power3.out' },
-          i * 0.8,
-        );
-      });
-      deal.fromTo('[data-deck-aside]', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '>-0.2').to({}, { duration: 0.6 });
-    }
+    // Expertises on phones: a native swipe row, no pinned animation.
     onReady(tween);
   });
 }
