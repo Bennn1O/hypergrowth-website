@@ -2,6 +2,7 @@
 import ChapterBar from '../../../components/ui/chapter-bar.astro';
 import SplitText from '../../../components/ui/split-text.astro';
 import type { Dictionary } from '../../../i18n';
+import { site } from '../../../data/site';
 
 interface Props {
   t: Dictionary;
@@ -99,7 +100,9 @@ const c = t.cases;
         {c.closingBefore}<span class="text-primary">{c.closingAccent}</span>{c.closingAfter}
       </p>
       <a
-        href="#cafe"
+        href={site.booking ?? '#cafe'}
+        target={site.booking ? '_blank' : undefined}
+        rel={site.booking ? 'noopener' : undefined}
         class="flex items-center gap-2 rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-bold tracking-[0.034em] text-paper uppercase transition-colors hover:bg-primary"
         data-magnetic
       >

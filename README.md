@@ -10,7 +10,7 @@ Site vitrine HyperGrowth : Astro (statique), Tailwind v4, Bun, FR/EN. Déployé 
 | `bun run dev`     | Serveur local (`astro dev --background` pour un agent) |
 | `bun run check`   | Types Astro + TS (TypeScript 6 requis par `astro check`) |
 | `bun run test`    | Tests unitaires (`bun test`)                 |
-| `bun run build`   | Build statique dans `dist/` + sitemap        |
+| `bun run build`   | Build statique dans `dist/` (pages, robots.txt, sitemap.xml) |
 | `bun run preview` | Sert `dist/` en local                        |
 
 ## Structure
@@ -49,3 +49,11 @@ src/
 - Polices définitives, logo SVG source, photos (hero, équipe, services, projets).
 - Logos clients autorisés, chiffres réels (les valeurs marquées `provisoire` dans `fr.ts` viennent du template).
 - Coordonnées et réseaux dans `src/data/site.ts`, pages mentions légales et confidentialité.
+
+## SEO et migration depuis l'ancien hypergrowth.fr
+
+- Domaine canonique : `https://www.hypergrowth.fr`, URLs sans slash final (`/mentions-legales`, `/en`), comme l'ancien site.
+- `src/pages/robots.txt.ts` et `src/pages/sitemap.xml.ts` : même adresse de sitemap que l'ancien site, avec les versions FR/EN (hreflang).
+- `public/vercel.json` : redirections 301 de toutes les anciennes URLs (concept, communauté, écurie, études de cas, OP, ressources, contact) vers la section correspondante de la home, plus les formulaires Cockpit. `tests/redirects.test.ts` vérifie que chaque URL de l'ancien sitemap atterrit sur une page ou une section existante.
+- Mesure d'audience : même script et même identifiant que l'ancien site (`src/data/site.ts`), chargé seulement après accord dans la bannière cookies (clé `hpg-cookie-consent`, reprise de l'ancien site).
+- Mentions légales : `src/content/legal/{fr,en}.md`.

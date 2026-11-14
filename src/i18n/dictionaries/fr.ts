@@ -4,10 +4,31 @@
  * Lines marked "à valider" need Killian's go before launch.
  */
 export const fr = {
+  // Title, description and keywords kept from the previous hypergrowth.fr: the pages rank on them.
   meta: {
-    title: 'HyperGrowth · Le bras droit opérationnel des dirigeants',
+    title: 'Scaling stratégique et conseil pour dirigeants ambitieux | HyperGrowth',
     description:
-      'Quand une entreprise grossit plus vite que son organisation : 48 heures d’immersion avec le dirigeant, une feuille de route à dix jours, puis des opérationnels qui tiennent les chantiers jusqu’à ce qu’ils tournent sans eux.',
+      'Accélérez la croissance de votre entreprise avec un Operating Partner dédié. Structuration, méthodologie OP-X, réseau d’élite : entrez dans l’écurie HyperGrowth.',
+    keywords: 'scaling, hypercroissance, operating partner, conseil stratégique, dirigeants',
+    ogAlt: 'HyperGrowth, OP-X : accompagner les dirigeants ambitieux vers un scaling contrôlé.',
+  },
+  cookies: {
+    text: 'On mesure l’audience du site pour l’améliorer.',
+    more: 'En savoir plus',
+    decline: 'Refuser',
+    accept: 'Accepter',
+  },
+  notFound: {
+    title: 'Page introuvable | HyperGrowth',
+    label: 'Erreur 404',
+    lead: 'Cette page a ',
+    accent: 'changé de place.',
+    text: 'Le site a été refait : tout HyperGrowth tient désormais sur une seule page.',
+    back: 'Revenir à l’accueil',
+  },
+  legalPage: {
+    label: 'Légal',
+    back: 'Revenir à l’accueil',
   },
   a11y: {
     skipToContent: 'Aller au contenu',

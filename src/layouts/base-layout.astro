@@ -8,19 +8,27 @@ import serifAccent from '@fontsource/ibm-plex-serif/files/ibm-plex-serif-latin-6
 import SiteFooter from '../components/layout/site-footer.astro';
 import SiteHeader from '../components/layout/site-header.astro';
 import LogotypeSymbol from '../components/ui/logotype-symbol.astro';
-import { getDictionary, localeLabels, localizePath, locales, resolveLocale, stripLocale } from '../i18n';
+import CookieBanner from '../components/layout/cookie-banner.astro';
+import StructuredData from '../components/seo/structured-data.astro';
+import { getDictionary, localeLabels, localizePath, locales, pagePath, resolveLocale, stripLocale } from '../i18n';
 
 interface Props {
   title?: string;
   description?: string;
+  /** Pages without the home motion show the sticky header from the start. */
+  staticHeader?: boolean;
+  /** Keep a page out of search results (404). */
+  noindex?: boolean;
 }
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
-const { title = t.meta.title, description = t.meta.description } = Astro.props;
+const { title = t.meta.title, description = t.meta.description, staticHeader = false, noindex = false } = Astro.props;
+const ogImage = new URL('/og.jpg', Astro.site).href;
 
-const basePath = stripLocale(Astro.url.pathname);
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = pagePath(Astro.url.pathname);
+const basePath = stripLocale(path);
+const canonical = new URL(path, Astro.site);
 const alternates = locales.map((target) => ({
   hreflang: localeLabels[target].htmlLang,
   href: new URL(localizePath(basePath, target), Astro.site).href,
@@ -35,6 +43,8 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={t.meta.keywords} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical.href} />
     {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
     <link rel="alternate" hreflang="x-default" href={xDefault} />
@@ -43,10 +53,22 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
     <meta property="og:locale" content={localeLabels[locale].og} />
+    <meta property="og:site_name" content="HyperGrowth" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t.meta.ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="theme-color" content="#842cb4" />
     <link rel="preload" href={serifAccent} as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <StructuredData />
     <meta name="generator" content={Astro.generator} />
     <script is:inline>
       document.documentElement.classList.add('js');
@@ -62,10 +84,11 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     >
       {t.a11y.skipToContent}
     </a>
-    <SiteHeader />
+    <SiteHeader visible={staticHeader} />
     <main id="main">
       <slot />
     </main>
     <SiteFooter />
+    <CookieBanner />
   </body>
 </html>

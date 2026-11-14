@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test';
 import { en } from '../src/i18n/dictionaries/en';
 import { fr } from '../src/i18n/dictionaries/fr';
-import { localizePath, resolveLocale, stripLocale } from '../src/i18n/config';
+import { localizePath, pagePath, resolveLocale, stripLocale } from '../src/i18n/config';
 
 function shape(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(shape);
@@ -33,24 +33,35 @@ describe('dictionaries', () => {
 describe('routing helpers', () => {
   test('default locale has no prefix', () => {
     expect(localizePath('/', 'fr')).toBe('/');
-    expect(localizePath('/work/', 'fr')).toBe('/work/');
+    expect(localizePath('/work/', 'fr')).toBe('/work');
   });
 
   test('english is prefixed', () => {
-    expect(localizePath('/', 'en')).toBe('/en/');
-    expect(localizePath('work/', 'en')).toBe('/en/work/');
+    expect(localizePath('/', 'en')).toBe('/en');
+    expect(localizePath('work/', 'en')).toBe('/en/work');
   });
 
   test('stripLocale round-trips', () => {
     expect(stripLocale('/en/')).toBe('/');
-    expect(stripLocale('/en/work/')).toBe('/work/');
-    expect(stripLocale('/work/')).toBe('/work/');
-    expect(localizePath(stripLocale('/en/work/'), 'fr')).toBe('/work/');
+    expect(stripLocale('/en')).toBe('/');
+    expect(stripLocale('/en/work/')).toBe('/work');
+    expect(stripLocale('/work/')).toBe('/work');
+    expect(localizePath(stripLocale('/en/work/'), 'fr')).toBe('/work');
   });
 
   test('unknown locale falls back to french', () => {
     expect(resolveLocale(undefined)).toBe('fr');
     expect(resolveLocale('de')).toBe('fr');
     expect(resolveLocale('en')).toBe('en');
+  });
+
+  test('pagePath drops the built file name', () => {
+    expect(pagePath('/index.html')).toBe('/');
+    expect(pagePath('/')).toBe('/');
+    expect(pagePath('/en.html')).toBe('/en');
+    expect(pagePath('/en')).toBe('/en');
+    expect(pagePath('/mentions-legales.html')).toBe('/mentions-legales');
+    expect(pagePath('/en/mentions-legales.html')).toBe('/en/mentions-legales');
+    expect(stripLocale(pagePath('/en.html'))).toBe('/');
   });
 });

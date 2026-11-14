@@ -9,7 +9,9 @@ interface Props {
 
 const { t } = Astro.props;
 const c = t.closing;
-const contactHref = site.email ? `mailto:${site.email}` : null;
+// Same « book a call » as the previous site (HubSpot calendar), else an email.
+const contactHref = site.booking ?? (site.email ? `mailto:${site.email}` : null);
+const external = Boolean(site.booking);
 ---
 
 <section
@@ -34,7 +36,7 @@ const contactHref = site.email ? `mailto:${site.email}` : null;
       <p class="max-w-lg text-lead text-paper/85">{c.text}</p>
       {
         contactHref ? (
-          <a href={contactHref} class="label bg-paper px-6 py-5 text-sm text-ink transition-colors hover:bg-pink">
+          <a href={contactHref} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined} class="label bg-paper px-6 py-5 text-sm text-ink transition-colors hover:bg-pink">
             {c.cta} →
           </a>
         ) : (

@@ -1,13 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hypergrowth.fr',
-  // One small stylesheet: inline it so the first paint does not wait on a CSS request.
-  build: { inlineStylesheets: 'always' },
+  // Same canonical host as the previous hypergrowth.fr (www), so indexed URLs keep their signals.
+  site: 'https://www.hypergrowth.fr',
+  // URLs without a trailing slash, like the previous site: /mentions-legales, /en.
+  trailingSlash: 'never',
+  build: {
+    format: 'file',
+    // One small stylesheet: inline it so the first paint does not wait on a CSS request.
+    inlineStylesheets: 'always',
+  },
   i18n: {
     locales: ['fr', 'en'],
     defaultLocale: 'fr',
@@ -15,14 +20,6 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  integrations: [
-    sitemap({
-      i18n: {
-        defaultLocale: 'fr',
-        locales: { fr: 'fr-FR', en: 'en-US' },
-      },
-    }),
-  ],
   vite: {
     plugins: [tailwindcss()],
   },

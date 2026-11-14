@@ -18,19 +18,34 @@ export function resolveLocale(value: string | undefined): Locale {
 
 /**
  * Builds a path for a locale. The default locale is served without prefix:
- * localizePath('/', 'fr') -> '/', localizePath('/', 'en') -> '/en/'.
+ * URLs never end with a slash (same scheme as the previous hypergrowth.fr, so indexed URLs hold):
+ * localizePath('/', 'fr') -> '/', localizePath('/', 'en') -> '/en', localizePath('/x', 'en') -> '/en/x'.
  */
 export function localizePath(path: string, locale: Locale): string {
-  const clean = `/${path.replace(/^\/+/, '')}`;
+  const trimmed = path.replace(/^\/+/, '').replace(/\/+$/, '');
+  const clean = `/${trimmed}`;
   if (locale === defaultLocale) return clean;
-  return clean === '/' ? `/${locale}/` : `/${locale}${clean}`;
+  return trimmed ? `/${locale}${clean}` : `/${locale}`;
 }
 
-/** Removes the locale prefix from a pathname: '/en/work/' -> '/work/'. */
+/**
+ * The public path of the page being rendered. Pages are built as files (`/en.html`,
+ * `/mentions-legales.html`) and served without the extension, so drop `.html` and `index`:
+ * '/index.html' -> '/', '/en.html' -> '/en', '/en/mentions-legales.html' -> '/en/mentions-legales'.
+ */
+export function pagePath(pathname: string): string {
+  const path = pathname
+    .replace(/\.html$/, '')
+    .replace(/\/index$/, '/')
+    .replace(/(.)\/+$/, '$1');
+  return path === '' || path === '/index' ? '/' : path;
+}
+
+/** Removes the locale prefix from a pathname: '/en/work' -> '/work', '/en' -> '/'. */
 export function stripLocale(pathname: string): string {
   const [, first, ...rest] = pathname.split('/');
   if (isLocale(first) && first !== defaultLocale) {
-    return `/${rest.join('/')}`;
+    return `/${rest.join('/')}`.replace(/\/+$/, '') || '/';
   }
-  return pathname || '/';
+  return pathname.replace(/(.)\/+$/, '$1') || '/';
 }

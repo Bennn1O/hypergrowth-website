@@ -2,9 +2,29 @@ import type { Dictionary } from './fr';
 
 export const en: Dictionary = {
   meta: {
-    title: 'HyperGrowth · The operational right hand of founders',
+    title: 'Strategic scaling and advisory for ambitious founders | HyperGrowth',
     description:
-      'When a company grows faster than its organisation: 48 hours of immersion with the founder, a roadmap ten days later, then operators who run the workstreams until they hold without them.',
+      'Grow your company faster with a dedicated Operating Partner. Structuring, the OP-X method, an elite network: join the HyperGrowth stable.',
+    keywords: 'scaling, hypergrowth, operating partner, strategic advisory, founders',
+    ogAlt: 'HyperGrowth, OP-X: helping ambitious founders turn hypergrowth into controlled scaling.',
+  },
+  cookies: {
+    text: 'We measure the site’s audience to improve it.',
+    more: 'Learn more',
+    decline: 'Decline',
+    accept: 'Accept',
+  },
+  notFound: {
+    title: 'Page not found | HyperGrowth',
+    label: 'Error 404',
+    lead: 'This page has ',
+    accent: 'moved.',
+    text: 'The site has been rebuilt: all of HyperGrowth now fits on a single page.',
+    back: 'Back to the home page',
+  },
+  legalPage: {
+    label: 'Legal',
+    back: 'Back to the home page',
   },
   a11y: {
     skipToContent: 'Skip to content',

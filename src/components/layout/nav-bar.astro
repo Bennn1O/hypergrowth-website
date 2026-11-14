@@ -5,7 +5,7 @@
  */
 import Logomark from '../../assets/brand/logomark.svg';
 import Logotype from '../ui/logotype.astro';
-import { getDictionary, localizePath, resolveLocale } from '../../i18n';
+import { getDictionary, localizePath, pagePath, resolveLocale, stripLocale } from '../../i18n';
 import LanguageSwitcher from './language-switcher.astro';
 
 interface Props {
@@ -17,6 +17,8 @@ const { compact = false, class: className } = Astro.props;
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
 const home = localizePath('/', locale);
+// On the home page an anchor is enough; elsewhere it goes through the home page.
+const toHome = (hash: string) => (stripLocale(pagePath(Astro.url.pathname)) === '/' ? hash : `${home}${hash}`);
 ---
 
 <div class:list={['flex items-center justify-between gap-6 font-helvetica', className]}>
@@ -30,7 +32,7 @@ const home = localizePath('/', locale);
       class="hidden gap-[3px] rounded-[8px] bg-mist/90 p-[3px] backdrop-blur-xl sm:flex [&_a]:rounded-[5px] [&_a]:px-[5px] [&_a]:py-[3px] [&_a]:text-xs [&_a]:leading-4 [&_a]:font-normal [&_a]:tracking-[-0.01em]"
     />
     <a
-      href="#cafe"
+      href={toHome('#cafe')}
       class="rounded-[4px] bg-primary px-3 py-2 text-xs leading-3 font-bold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
     >
       {t.timeline.contact}

@@ -2,7 +2,7 @@
 import Logomark from '../../assets/brand/logomark.svg';
 import Logotype from '../ui/logotype.astro';
 import { site } from '../../data/site';
-import { getDictionary, resolveLocale } from '../../i18n';
+import { getDictionary, localizePath, pagePath, resolveLocale, stripLocale } from '../../i18n';
 import LanguageSwitcher from './language-switcher.astro';
 
 const locale = resolveLocale(Astro.currentLocale);
@@ -10,6 +10,9 @@ const t = getDictionary(locale);
 const f = t.footer;
 const year = new Date().getFullYear();
 const socials = site.socials.filter((social) => social.href);
+const home = localizePath('/', locale);
+const toHome = (hash: string) => (stripLocale(pagePath(Astro.url.pathname)) === '/' ? hash : `${home}${hash}`);
+const legalHref = localizePath('/mentions-legales', locale);
 ---
 
 <!--
@@ -38,7 +41,7 @@ const socials = site.socials.filter((social) => social.href);
               {f.statement.map((part, i) => (i % 2 ? <span class="text-pink">{part}</span> : part))}
             </p>
             <a
-              href="#cafe"
+              href={toHome('#cafe')}
               class="rounded-[4px] bg-pink px-3 py-2 text-xs leading-3 font-bold tracking-[0.04em] text-white uppercase transition-colors hover:bg-white hover:text-ink"
               data-magnetic
             >
@@ -69,7 +72,7 @@ const socials = site.socials.filter((social) => social.href);
             {
               t.timeline.stages.map((stage, index) => (
                 <li class="border-b border-[#818181]">
-                  <a href={`#${stage.id}`} class="group flex items-center justify-between gap-6 py-5">
+                  <a href={toHome(`#${stage.id}`)} class="group flex items-center justify-between gap-6 py-5">
                     <span class="flex items-center gap-4 sm:gap-8">
                       <span class="text-base leading-3 font-bold tracking-[0.03em] text-[#818181]">{String(index + 1).padStart(2, '0')}</span>
                       <span class="text-h2 tracking-[-0.05em] transition-transform duration-500 ease-out-expo group-hover:translate-x-2">
@@ -88,7 +91,7 @@ const socials = site.socials.filter((social) => social.href);
       <div class="flex flex-col gap-4 text-sm leading-[11px] font-bold tracking-[0.03em] uppercase sm:flex-row sm:items-center sm:justify-between">
         <p class="text-[#818181]">© {year} · HyperGrowth™ · <span class="text-pink">{f.line}</span></p>
         <p class="flex gap-6 text-[#818181]">
-          <span>{f.legal}</span>
+          <a href={legalHref} class="hover:text-white">{f.legal}</a>
           <span>{f.rights}</span>
         </p>
         <a href="#top" class="flex items-center gap-1 text-white hover:text-pink">
