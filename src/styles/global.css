@@ -178,12 +178,29 @@
 /* Words are split server-side; JS lifts each one in. Visible by default without JS. */
 .split-word {
   display: inline-block;
-  overflow: hidden;
   vertical-align: top;
   /* Room for the serif italic's ascenders (f), descenders (p, q) and slant, cancelled by the
      negative margins so spacing and line height stay as set. */
   padding: 0.14em 0.1em 0.2em;
   margin: -0.14em -0.1em -0.2em;
+}
+
+/*
+ * The mask only exists while a word rises: with the motion script, until its block is revealed.
+ * After that nothing is clipped, whatever the browser's font metrics.
+ */
+html.js .split-word {
+  overflow: hidden;
+}
+
+html.js [data-revealed] .split-word {
+  overflow: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .split-word {
+    overflow: visible;
+  }
 }
 
 .split-word > span {

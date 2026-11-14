@@ -245,7 +245,15 @@ function revealWords(block: Element) {
   return gsap.fromTo(
     all('.split-word > span', block),
     { yPercent: 115, rotate: 4 },
-    { yPercent: 0, rotate: 0, duration: 1.2, ease: 'expo.out', stagger: 0.05 },
+    {
+      yPercent: 0,
+      rotate: 0,
+      duration: 1.2,
+      ease: 'expo.out',
+      stagger: 0.05,
+      // Words are in place: drop the mask so no ascender or descender stays clipped.
+      onComplete: () => block.setAttribute('data-revealed', ''),
+    },
   );
 }
 
