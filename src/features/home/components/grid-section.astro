@@ -26,10 +26,10 @@ const spots = [
 <section class="relative bg-white font-helvetica" data-stage="methode" data-clock={g.clock} aria-labelledby="grid-title">
   <div class="mx-auto flex max-w-[1432px] flex-col gap-8 px-4 pt-10 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-0">
     <div class="flex max-w-[578px] flex-col gap-4">
-      <p class="text-[clamp(1.4rem,1.85vw,1.75rem)] leading-[1.5] tracking-[-0.023em] text-ink">
+      <p class="text-h3 tracking-[-0.023em] text-ink">
         {g.introLead}<span class="text-primary">{g.introAccent}</span>{g.introEnd}
       </p>
-      <p class="text-[clamp(1.05rem,1.49vw,1.4rem)] leading-[1.39] tracking-[-0.02em] text-ink">{g.introText}</p>
+      <p class="text-lead tracking-[-0.02em] text-ink">{g.introText}</p>
     </div>
     <ChapterBar prefix={t.chapter.prefix} chapter={g.chapter} index={3} class="lg:w-[583px]" />
   </div>
@@ -44,11 +44,11 @@ const spots = [
       class="mx-auto flex max-w-[698px] flex-col items-center gap-5 text-center lg:absolute lg:top-0 lg:bottom-0 lg:left-[407px] lg:w-[698px] lg:justify-center"
       data-deck-title
     >
-      <h2 id="grid-title" class="text-[clamp(2.4rem,5.95vw,5.625rem)] leading-[1.02] tracking-[-0.0345em] text-ink lg:text-[90px]">
+      <h2 id="grid-title" class="text-big text-ink">
         <SplitText text={g.title} />{' '}
         <SplitText text={g.accent} class="font-serif font-medium tracking-[-0.03em] text-primary italic" />
       </h2>
-      <p class="hidden text-[19.7px] leading-snug tracking-[-0.005em] text-ink lg:block" data-deck-aside>{g.aside}</p>
+      <p class="hidden text-lead tracking-[-0.005em] text-ink lg:block" data-deck-aside>{g.aside}</p>
     </div>
 
     <!-- Phones and tablets: a compact two-column grid; desktop: the dealt stage. -->
@@ -62,15 +62,15 @@ const spots = [
             data-r="0"
           >
             <div class="flex flex-col gap-[9px]">
-              <div class="flex items-start justify-between gap-2 font-serif text-[17px] leading-[0.95] sm:text-[20px] lg:items-center lg:gap-4 lg:text-[19px] font-medium tracking-[-0.04em] italic">
+              <div class="flex items-start justify-between gap-2 font-serif text-lg leading-[0.95] sm:text-xl lg:items-center lg:gap-4 font-medium tracking-[-0.04em] italic">
                 <h3>{item.name}</h3>
                 <span class="text-pink">{String(index + 1).padStart(2, '0')}</span>
               </div>
-              <p class="text-[11.5px] leading-[1.2] tracking-[-0.02em] text-white/80 lg:max-w-[205px] lg:text-white lg:text-[11px] lg:leading-none lg:tracking-[-0.04em]">{item.text}</p>
+              <p class="text-xs leading-[1.2] tracking-[-0.02em] text-white/80 lg:max-w-[205px] lg:text-white lg:leading-[1.1] lg:tracking-[-0.04em]">{item.text}</p>
             </div>
             <ul class="flex flex-wrap gap-1 lg:max-w-[180px] lg:gap-[9px] lg:pt-6">
               {item.tags.map((tag) => (
-                <li class="rounded-[3px] bg-pink/40 px-1 py-[3px] text-[10.5px] leading-[0.9] lg:text-[12.6px] tracking-[-0.04em] shadow-[inset_0_0_2.5px_rgb(255_255_255/0.2)]">
+                <li class="rounded-[3px] bg-pink/40 px-1 py-[3px] text-2xs leading-[0.9] lg:text-xs tracking-[-0.04em] shadow-[inset_0_0_2.5px_rgb(255_255_255/0.2)]">
                   {tag}
                 </li>
               ))}

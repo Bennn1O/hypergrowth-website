@@ -36,12 +36,12 @@ const [first, ...rest] = m.steps;
         [first, null, ...rest].map((step, i) =>
           step ? (
             <article
-              class="relative isolate flex h-full w-screen flex-col overflow-hidden bg-white px-5 pt-24 pb-10 font-helvetica sm:px-8 lg:w-[91.4vw] lg:px-[49px] lg:pt-[112px] lg:pb-[56px]"
+              class="relative isolate flex h-full w-screen flex-col overflow-hidden bg-white px-5 pt-24 pb-10 font-helvetica sm:px-8 lg:w-[72vw] lg:px-[49px] lg:pt-[112px] lg:pb-[56px]"
               data-clock={step.time}
               data-panel
             >
               <span
-                class="pointer-events-none absolute right-[3%] -bottom-[0.25em] -z-10 text-[clamp(16rem,39.6vw,37.5rem)] leading-[0.75] font-bold tracking-[-0.045em] text-lilac select-none lg:right-[4.3%]"
+                class="pointer-events-none absolute right-[3%] -bottom-[0.25em] -z-10 text-[clamp(16rem,39.6vw,37.5rem)] lg:text-[31vw] leading-[0.75] font-bold tracking-[-0.045em] text-lilac select-none lg:right-[4.3%]"
                 aria-hidden="true"
               >
                 {m.steps.indexOf(step) + 1}
@@ -56,10 +56,10 @@ const [first, ...rest] = m.steps;
                     <li class="rounded-full border border-lilac bg-lilac px-[11px] py-[3px] text-xs leading-[18px] font-bold tracking-[-0.01em] text-primary">{point}</li>
                   ))}
                 </ol>
-                <h3 class="text-[clamp(2.6rem,5.95vw,5.625rem)] leading-[1.02] font-normal tracking-[-0.0345em] text-ink">
+                <h3 class="text-big font-normal text-ink">
                   {step.titleLead}<span class="font-serif font-medium tracking-[-0.03em] text-primary italic">{step.titleAccent}</span>
                 </h3>
-                <p class="max-w-[719px] text-[clamp(1.05rem,1.49vw,1.4rem)] leading-[1.39] tracking-[-0.02em] text-black">{step.text}</p>
+                <p class="max-w-[719px] text-lead tracking-[-0.02em] text-black">{step.text}</p>
               </div>
               <p class="text-xs leading-3 font-medium tracking-[0.04em] text-ink/40 uppercase">
                 {m.stepLabel} {m.steps.indexOf(step) + 1} / {m.steps.length}
@@ -67,7 +67,7 @@ const [first, ...rest] = m.steps;
             </article>
           ) : (
             <article
-              class="relative isolate flex h-full w-screen flex-col justify-end overflow-hidden bg-ink px-5 pt-24 pb-12 font-helvetica text-paper sm:px-8 lg:w-[66vw] lg:px-12 lg:pb-[66px]"
+              class="relative isolate flex h-full w-screen flex-col justify-end overflow-hidden bg-ink px-5 pt-24 pb-12 font-helvetica text-paper sm:px-8 lg:w-[56vw] lg:px-12 lg:pb-[66px]"
               data-clock={m.interlude.time}
               data-panel
               data-dark
@@ -75,10 +75,10 @@ const [first, ...rest] = m.steps;
               <div class="absolute inset-0 -z-10 opacity-45" aria-hidden="true"><div class="nappes" /></div>
               <div class="grain absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
               <p class="mb-auto text-xs leading-3 font-medium tracking-[0.04em] text-blush uppercase">{m.interlude.label}</p>
-              <p class="max-w-[874px] text-[clamp(2.6rem,5.95vw,5.625rem)] leading-[1.02] font-normal tracking-[-0.0345em]">
+              <p class="max-w-[874px] text-big font-normal">
                 {m.interlude.title} <span class="font-serif font-medium tracking-[-0.03em] text-pink italic">{m.interlude.accent}</span>
               </p>
-              <p class="mt-10 max-w-[417px] text-[clamp(1.05rem,1.47vw,1.39rem)] leading-[1.4] tracking-[-0.02em] text-paper/70">{m.interlude.text}</p>
+              <p class="mt-10 max-w-[417px] text-lead text-paper/70">{m.interlude.text}</p>
             </article>
           ),
         )

@@ -53,10 +53,10 @@ const photos: Record<string, string> = { Killian: '/team/killian.webp' };
             <div class="absolute inset-x-2 bottom-2 flex h-[52px] items-center overflow-hidden rounded-[3.5px] bg-ink/84 px-3 shadow-[inset_0_0_20px_rgb(255_255_255/0.06)] backdrop-blur-md sm:inset-x-3 sm:bottom-3 sm:h-[60px]">
               <Logomark class="absolute -right-3 -bottom-8 h-[64px] w-auto text-[#252028]" aria-hidden="true" />
               <div class="relative flex flex-col items-start gap-[3px]">
-                <span class="rounded-[4px] bg-pink/40 px-[5px] py-[4px] text-[12.9px] leading-[0.9] tracking-[-0.04em] text-white shadow-[inset_0_0_3px_rgb(255_255_255/0.2)]">
+                <span class="rounded-[4px] bg-pink/40 px-[5px] py-[4px] text-xs leading-[0.9] tracking-[-0.04em] text-white shadow-[inset_0_0_3px_rgb(255_255_255/0.2)]">
                   {member.name}
                 </span>
-                <span class="px-[5px] font-serif text-[9px] leading-none font-medium tracking-[-0.04em] text-white italic">{member.role}</span>
+                <span class="px-[5px] font-serif text-2xs leading-none font-medium tracking-[-0.04em] text-white italic">{member.role}</span>
               </div>
             </div>
           </li>
@@ -64,7 +64,7 @@ const photos: Record<string, string> = { Killian: '/team/killian.webp' };
       }
       <li class="col-span-2 flex flex-col justify-end gap-3 lg:col-span-1">
         <Logomark class="h-5 w-auto text-primary" aria-hidden="true" />
-        <p class="text-[clamp(1.4rem,1.85vw,1.75rem)] leading-[1.14] tracking-[-0.005em] text-ink">
+        <p class="text-h3 tracking-[-0.005em] text-ink">
           {team.moreLead}<span class="text-primary">{team.moreAccent}</span>{team.moreEnd}
         </p>
       </li>
