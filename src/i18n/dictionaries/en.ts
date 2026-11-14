@@ -306,12 +306,17 @@ export const en: Dictionary = {
       { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identities, mock-ups, websites.' },
     ],
-    // Expert network faces: empty until HG confirms the current roster (Marlay Traoré, Elsa…).
-    // Shape: { name: 'Prénom Nom', photo: '/team/expert-prenom-nom.webp' }. The row hides while empty.
-    experts: [] as { name: string; photo: string }[],
-    moreLead: 'And our network of ',
-    moreAccent: 'experts',
-    moreEnd: ', brought in when a job needs a specialist.',
+    ops: [
+      { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
+      { name: 'Manon Werquin', photo: '/team/op-manon.webp' },
+      { name: 'Evan Riquelme', photo: '/team/op-evan.webp' },
+      { name: 'Benjamin Brémont', photo: '/team/op-benjamin.webp' },
+      { name: 'Julie Simon', photo: '/team/op-julie-simon.webp' },
+      { name: 'Julie Ducourau', photo: '/team/op-julie-ducourau.webp' },
+    ],
+    moreLead: 'And the ',
+    moreAccent: 'Operating Partners',
+    moreEnd: ', who carry the missions day to day.',
   },
   closing: {
     meetLabel: 'Where we meet',

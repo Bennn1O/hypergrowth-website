@@ -310,12 +310,17 @@ export const fr = {
       { name: 'Julie', role: 'Head Donna', text: 'L’assistanat de dirigeant.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identités, maquettes, sites.' },
     ],
-    // Expert network faces: empty until HG confirms the current roster (Marlay Traoré, Elsa…).
-    // Shape: { name: 'Prénom Nom', photo: '/team/expert-prenom-nom.webp' }. The row hides while empty.
-    experts: [] as { name: string; photo: string }[],
-    moreLead: 'Et notre réseau d’',
-    moreAccent: 'experts',
-    moreEnd: ', mobilisés quand il faut un métier précis.',
+    ops: [
+      { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
+      { name: 'Manon Werquin', photo: '/team/op-manon.webp' },
+      { name: 'Evan Riquelme', photo: '/team/op-evan.webp' },
+      { name: 'Benjamin Brémont', photo: '/team/op-benjamin.webp' },
+      { name: 'Julie Simon', photo: '/team/op-julie-simon.webp' },
+      { name: 'Julie Ducourau', photo: '/team/op-julie-ducourau.webp' },
+    ],
+    moreLead: 'Et les ',
+    moreAccent: 'Operating Partners',
+    moreEnd: ', qui portent les missions au quotidien.',
   },
   closing: {
     meetLabel: 'Où l’on se croise',
