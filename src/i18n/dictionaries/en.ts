@@ -306,17 +306,17 @@ export const en: Dictionary = {
       { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identities, mock-ups, websites.' },
     ],
-    ops: [
-      { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
-      { name: 'Manon Werquin', photo: '/team/op-manon.webp' },
-      { name: 'Evan Riquelme', photo: '/team/op-evan.webp' },
-      { name: 'Benjamin Brémont', photo: '/team/op-benjamin.webp' },
-      { name: 'Julie Simon', photo: '/team/op-julie-simon.webp' },
-      { name: 'Julie Ducourau', photo: '/team/op-julie-ducourau.webp' },
+    // The expert network, as listed on hypergrowth.fr and in the HG brain (cartographie des expertises).
+    experts: [
+      { name: 'Gabriel Girardon', photo: '/team/expert-gabriel-girardon.webp' },
+      { name: 'Anthony Diochon', photo: '/team/expert-anthony-diochon.webp' },
+      { name: 'Elise Hetsch', photo: '/team/expert-elise-hetsch.webp' },
+      { name: 'Samuel Fernandes', photo: '/team/expert-samuel-fernandes.webp' },
+      { name: 'Guillaume Pesnel', photo: '/team/expert-guillaume-pesnel.webp' },
     ],
-    moreLead: 'And the ',
-    moreAccent: 'Operating Partners',
-    moreEnd: ', who carry the missions day to day.',
+    moreLead: 'And our network of ',
+    moreAccent: 'experts',
+    moreEnd: ', brought in when a job needs a specialist.',
   },
   closing: {
     meetLabel: 'Where we meet',
