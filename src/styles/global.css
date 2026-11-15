@@ -8,10 +8,12 @@
  */
 @theme {
   /* Brand */
-  --color-blush: #ffb6f4;
   /* Primary accent: violet (decision 12/11/2026). Pink stays for accents on dark backgrounds. */
   --color-primary: #842cb4;
-  /* Light violet: big numerals and soft pills (Figma used blush #ffb6f4 when pink was primary). */
+  /*
+   * Brand palette, four colours (14/11/2026): violet (primary, on light), pink (accents on dark only),
+   * lilac (soft backgrounds, pills, big numerals), ink and paper. No other tint.
+   */
   --color-lilac: #e4c8f2;
   --color-pink: #ff82fd;
   --color-purple: #842cb4;
@@ -111,7 +113,7 @@
   }
 
   ::selection {
-    background: var(--color-blush);
+    background: var(--color-lilac);
     color: var(--color-ink);
   }
 
@@ -216,7 +218,7 @@ html.js [data-revealed] .split-word {
      forced a full repaint every frame. The layer is composited instead. */
   will-change: transform;
   background:
-    radial-gradient(40% 45% at 22% 30%, var(--color-blush) 0%, transparent 78%),
+    radial-gradient(40% 45% at 22% 30%, var(--color-lilac) 0%, transparent 78%),
     radial-gradient(38% 42% at 75% 25%, var(--color-pink) 0%, transparent 78%),
     radial-gradient(45% 50% at 60% 80%, var(--color-purple) 0%, transparent 80%);
   animation: nappes 18s ease-in-out infinite alternate;
