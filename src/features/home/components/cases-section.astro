@@ -49,7 +49,7 @@ const c = t.cases;
       <svg class="hidden shrink-0 text-primary sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
       <div class="flex flex-col items-center gap-8">
         <blockquote class="text-center text-h3 font-medium tracking-[-0.04em] text-black">
-          {c.quote.parts.map((part, i) => (i % 2 ? <span class="text-primary">{part}</span> : part))}
+          {c.quote.parts.map((part, i) => (i % 2 ? <span class="rounded-[3px] bg-pink/55 px-1 box-decoration-clone">{part}</span> : part))}
         </blockquote>
         <figcaption class="flex items-center gap-3">
           <img src="/cases/pureva-founders.webp" alt={c.quote.avatarAlt} width="40" height="40" loading="lazy" decoding="async" class="size-10 rounded-[2.5px] object-cover" />

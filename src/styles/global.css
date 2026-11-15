@@ -11,8 +11,9 @@
   /* Primary accent: violet (decision 12/11/2026). Pink stays for accents on dark backgrounds. */
   --color-primary: #842cb4;
   /*
-   * Brand palette, four colours (14/11/2026): violet (primary, on light), pink (accents on dark only),
-   * lilac (soft backgrounds, pills, big numerals), ink and paper. No other tint.
+   * Brand palette, four colours (15/11/2026): violet (primary, text accents on light), pink (accents on
+   * dark; on light only as a surface or highlighter under ink text, never as text), lilac (soft
+   * backgrounds, pills, big numerals), ink and paper.
    */
   --color-lilac: #e4c8f2;
   --color-pink: #ff82fd;
@@ -113,7 +114,7 @@
   }
 
   ::selection {
-    background: var(--color-lilac);
+    background: var(--color-pink);
     color: var(--color-ink);
   }
 
