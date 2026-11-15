@@ -306,8 +306,6 @@ export const fr = {
       { name: 'Benjamin', role: 'CTO et CPO', text: 'Ferme et tient le rythme en immersion. Tech, produit, données.' },
       { name: 'Caroline', role: 'Head of Quality', text: 'Les process communs, et leur amélioration.' },
       { name: 'Louise', role: 'Head of Event & Brand', text: 'Les événements, pour HyperGrowth et pour ses clients.' },
-      { name: 'Ulysse', role: 'Head Sphère 51', text: 'La mise en relation : un expert, un prestataire, un pair.' },
-      { name: 'Julie', role: 'Head Donna', text: 'L’assistanat de dirigeant.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identités, maquettes, sites.' },
     ],
     ops: [

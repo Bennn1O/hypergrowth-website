@@ -302,8 +302,6 @@ export const en: Dictionary = {
       { name: 'Benjamin', role: 'CTO and CPO', text: 'Closes and keeps the pace during immersions. Tech, product, data.' },
       { name: 'Caroline', role: 'Head of Quality', text: 'Shared processes, and how they improve.' },
       { name: 'Louise', role: 'Head of Event & Brand', text: 'Events, for HyperGrowth and for its clients.' },
-      { name: 'Ulysse', role: 'Head Sphère 51', text: 'Introductions: an expert, a provider, a peer.' },
-      { name: 'Julie', role: 'Head Donna', text: 'Executive assistance.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identities, mock-ups, websites.' },
     ],
     ops: [
