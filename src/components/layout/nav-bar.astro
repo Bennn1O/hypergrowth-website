@@ -25,7 +25,7 @@ const toHome = (hash: string) => (stripLocale(pagePath(Astro.url.pathname)) === 
 <div class:list={['flex items-center justify-between gap-6 font-helvetica', className]}>
   <!-- Wordmark alone; the HG symbol only stands in on the compact bar on phones, where room is short. -->
   <a href={home} aria-label={t.a11y.home} class:list={['flex items-center leading-none', compact ? 'text-[30px]' : 'text-[36px] sm:text-[40px]']}>
-    {compact && <Logomark class="h-7 w-auto shrink-0 text-primary sm:hidden" aria-hidden="true" />}
+    {compact && <Logomark class="h-7 w-auto shrink-0 text-ink sm:hidden" aria-hidden="true" />}
     <!-- The wordmark's box includes the descenders of « Hyper »: nudge it down so the button
          centres on the capitals (« Growth » spans the top 79% of the drawing). -->
     <Logotype class:list={['h-[1em] w-auto shrink-0 translate-y-[0.1em] text-ink', compact && 'hidden sm:block']} aria-hidden="true" />
@@ -39,7 +39,11 @@ const toHome = (hash: string) => (stripLocale(pagePath(Astro.url.pathname)) === 
       target={site.booking ? '_blank' : undefined}
       rel={site.booking ? 'noopener' : undefined}
       data-cta={compact ? 'header' : 'navbar'}
-      class="rounded-[4px] bg-primary px-3 py-2 text-xs leading-3 font-medium tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
+      class:list={[
+        'rounded-[4px] px-3 py-2 text-xs leading-3 font-medium tracking-[0.04em] text-paper uppercase transition-colors',
+        // Sticky bar on phones: black, like the HG symbol next to it; violet everywhere else.
+        compact ? 'bg-ink hover:bg-primary sm:bg-primary sm:hover:bg-ink' : 'bg-primary hover:bg-ink',
+      ]}
     >
       {t.timeline.contact}
     </a>
