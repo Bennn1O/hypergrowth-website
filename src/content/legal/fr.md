@@ -37,7 +37,9 @@ Toute exploitation non autorisée du site ou de l’un quelconque des éléments
 
 Le site mesure son audience avec Rybbit, un outil hébergé par HyperGrowth (tracking.hypergrowth.fr), qui sert à comprendre quelles pages sont consultées.
 
-Le choix que vous faites dans le bandeau affiché lors de votre première visite est conservé dans votre navigateur. Vous pouvez désactiver les cookies à tout moment via les paramètres de votre navigateur.
+Si vous l’acceptez dans le bandeau affiché lors de votre première visite, le site utilise aussi le pixel Meta (Meta Platforms Ireland Ltd.) pour mesurer l’efficacité de nos publicités : il enregistre les pages vues et les clics vers la prise de rendez-vous, et dépose des cookies publicitaires. Sans votre accord, il n’est pas chargé.
+
+Votre choix est conservé dans votre navigateur. Vous pouvez le modifier à tout moment en effaçant les données du site dans les paramètres de votre navigateur : le bandeau s’affichera de nouveau.
 
 ## Données personnelles
 

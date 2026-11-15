@@ -13,7 +13,7 @@ export const fr = {
     ogAlt: 'HyperGrowth, OP-X : accompagner les dirigeants ambitieux vers un scaling contrôlé.',
   },
   cookies: {
-    text: 'On mesure l’audience du site pour l’améliorer.',
+    text: 'On mesure l’audience du site et l’efficacité de nos publicités.',
     more: 'En savoir plus',
     decline: 'Refuser',
     accept: 'Accepter',

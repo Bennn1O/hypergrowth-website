@@ -2,8 +2,12 @@
 /**
  * Cookie banner, same mechanics as the previous hypergrowth.fr: the choice is stored in
  * localStorage under `hpg-cookie-consent` ("accepted" | "declined"), so visitors who already
- * answered on the old site are not asked again. Rybbit itself loads from BaseLayout.
+ * answered on the old site are not asked again. Rybbit (cookieless) loads from BaseLayout.
+ *
+ * The Meta pixel only loads once the visitor has accepted, on the production hosts: PageView on
+ * load, then Contact on each click towards the booking calendar (with where the click came from).
  */
+import { site } from '../../data/site';
 import { getDictionary, localizePath, resolveLocale } from '../../i18n';
 
 const locale = resolveLocale(Astro.currentLocale);
@@ -14,6 +18,9 @@ const legalHref = localizePath('/mentions-legales', locale);
 <div
   class="fixed inset-x-0 bottom-4 z-[60] hidden justify-center px-4 font-helvetica data-[open]:flex"
   data-cookie-banner
+  data-pixel-id={site.metaPixel.id}
+  data-pixel-hosts={site.metaPixel.hosts.join(',')}
+  data-booking={site.booking ?? undefined}
 >
   <div
     role="region"
@@ -47,7 +54,46 @@ const legalHref = localizePath('/mentions-legales', locale);
     }
   }
 
-  if (read() === null) banner?.setAttribute('data-open', '');
+  type Fbq = ((...args: unknown[]) => void) & { callMethod?: (...args: unknown[]) => void; queue?: unknown[][]; loaded?: boolean; version?: string; push?: unknown };
+  const w = window as typeof window & { fbq?: Fbq; _fbq?: Fbq };
+
+  /** Meta's base code, written out: queue calls until fbevents.js arrives. */
+  function loadPixel() {
+    const id = banner?.dataset.pixelId;
+    const hosts = (banner?.dataset.pixelHosts ?? '').split(',');
+    if (!id || w.fbq || !hosts.includes(location.hostname)) return;
+    const fbq: Fbq = (...args: unknown[]) => {
+      if (fbq.callMethod) fbq.callMethod(...args);
+      else fbq.queue!.push(args);
+    };
+    fbq.push = fbq;
+    fbq.loaded = true;
+    fbq.version = '2.0';
+    fbq.queue = [];
+    w.fbq = fbq;
+    w._fbq = fbq;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.append(script);
+    fbq('init', id);
+    fbq('track', 'PageView');
+  }
+
+  // Each click towards Killian's calendar counts as a Contact, tagged with the section it came from.
+  const booking = banner?.dataset.booking;
+  if (booking) {
+    document.addEventListener('click', (event) => {
+      const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href]');
+      if (!link || !link.href.startsWith(booking) || !w.fbq) return;
+      const from = link.closest<HTMLElement>('[data-stage], section[id], footer')?.id || 'page';
+      w.fbq('track', 'Contact', { content_name: 'booking', content_category: from });
+    });
+  }
+
+  const consent = read();
+  if (consent === 'accepted') loadPixel();
+  else if (consent === null) banner?.setAttribute('data-open', '');
 
   banner?.addEventListener('click', (event) => {
     const choice = (event.target as HTMLElement).closest<HTMLElement>('[data-consent]')?.dataset.consent;
@@ -58,5 +104,6 @@ const legalHref = localizePath('/mentions-legales', locale);
       /* private mode: the choice holds for this page only */
     }
     banner.removeAttribute('data-open');
+    if (choice === 'accepted') loadPixel();
   });
 </script>

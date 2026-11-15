@@ -9,7 +9,7 @@ export const en: Dictionary = {
     ogAlt: 'HyperGrowth, OP-X: helping ambitious founders turn hypergrowth into controlled scaling.',
   },
   cookies: {
-    text: 'We measure the site’s audience to improve it.',
+    text: 'We measure the site’s audience and how our ads perform.',
     more: 'Learn more',
     decline: 'Decline',
     accept: 'Accept',
