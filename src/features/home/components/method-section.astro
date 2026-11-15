@@ -13,7 +13,7 @@ const [first, ...rest] = m.steps;
 
 /*
  * The panels alternate colours so the track is not a row of white cards:
- * white, (dark dinner), pink, violet, white. Each theme keeps its own contrast.
+ * white, (dark dinner), lilac, violet, white. Each theme keeps its own contrast.
  */
 const themes = {
   white: {
@@ -40,18 +40,6 @@ const themes = {
     numeral: 'text-white/70',
     dark: false,
   },
-  pink: {
-    panel: 'bg-pink',
-    label: 'text-ink',
-    time: 'text-ink',
-    pill: 'border-white/70 bg-white/70 text-ink',
-    title: 'text-ink',
-    accent: 'text-primary',
-    text: 'text-ink',
-    step: 'text-ink/55',
-    numeral: 'text-white/45',
-    dark: false,
-  },
   violet: {
     panel: 'bg-primary',
     label: 'text-lilac',
@@ -65,7 +53,7 @@ const themes = {
     dark: true,
   },
 } as const;
-const stepTheme = ['white', 'pink', 'violet', 'white'] as const;
+const stepTheme = ['white', 'lilac', 'violet', 'white'] as const;
 const themeOf = (step: (typeof m.steps)[number]) => themes[stepTheme[m.steps.indexOf(step)] ?? 'white'];
 ---
 
