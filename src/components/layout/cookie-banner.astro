@@ -86,7 +86,7 @@ const legalHref = localizePath('/mentions-legales', locale);
     document.addEventListener('click', (event) => {
       const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href]');
       if (!link || !link.href.startsWith(booking) || !w.fbq) return;
-      const from = link.closest<HTMLElement>('[data-stage], section[id], footer')?.id || 'page';
+      const from = link.dataset.cta || link.closest<HTMLElement>('section[id]')?.id || 'page';
       w.fbq('track', 'Contact', { content_name: 'booking', content_category: from });
     });
   }

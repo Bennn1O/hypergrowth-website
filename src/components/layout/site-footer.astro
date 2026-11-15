@@ -41,7 +41,10 @@ const legalHref = localizePath('/mentions-legales', locale);
               {f.statement.map((part, i) => (i % 2 ? <span class="text-pink">{part}</span> : part))}
             </p>
             <a
-              href={toHome('#cafe')}
+              href={site.booking ?? toHome('#cafe')}
+              target={site.booking ? '_blank' : undefined}
+              rel={site.booking ? 'noopener' : undefined}
+              data-cta="footer"
               class="rounded-[4px] bg-pink px-3 py-2 text-xs leading-3 font-medium tracking-[0.04em] text-white uppercase transition-colors hover:bg-white hover:text-ink"
               data-magnetic
             >

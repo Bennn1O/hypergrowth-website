@@ -5,6 +5,7 @@
  */
 import Logomark from '../../assets/brand/logomark.svg';
 import Logotype from '../ui/logotype.astro';
+import { site } from '../../data/site';
 import { getDictionary, localizePath, pagePath, resolveLocale, stripLocale } from '../../i18n';
 import LanguageSwitcher from './language-switcher.astro';
 
@@ -34,7 +35,10 @@ const toHome = (hash: string) => (stripLocale(pagePath(Astro.url.pathname)) === 
       class="hidden gap-[3px] rounded-[8px] bg-mist/90 p-[3px] backdrop-blur-xl sm:flex [&_a]:rounded-[5px] [&_a]:px-[5px] [&_a]:py-[3px] [&_a]:text-xs [&_a]:leading-4 [&_a]:font-normal [&_a]:tracking-[-0.01em]"
     />
     <a
-      href={toHome('#cafe')}
+      href={site.booking ?? toHome('#cafe')}
+      target={site.booking ? '_blank' : undefined}
+      rel={site.booking ? 'noopener' : undefined}
+      data-cta={compact ? 'header' : 'navbar'}
       class="rounded-[4px] bg-primary px-3 py-2 text-xs leading-3 font-medium tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
     >
       {t.timeline.contact}
