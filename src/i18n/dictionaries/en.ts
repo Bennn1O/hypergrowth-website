@@ -300,7 +300,6 @@ export const en: Dictionary = {
     members: [
       { name: 'Killian', role: 'CEO', text: 'Opens the subjects during immersions. Strategy, sales, founder relationships.' },
       { name: 'Benjamin', role: 'CTO and CPO', text: 'Closes and keeps the pace during immersions. Tech, product, data.' },
-      { name: 'Caroline', role: 'Head of Quality', text: 'Shared processes, and how they improve.' },
       { name: 'Louise', role: 'Head of Event & Brand', text: 'Events, for HyperGrowth and for its clients.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identities, mock-ups, websites.' },
     ],
