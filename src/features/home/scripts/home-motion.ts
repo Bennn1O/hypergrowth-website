@@ -554,15 +554,16 @@ function startAtTop() {
  * pins exist. On a refresh the hash is dropped and the page stays at the top.
  */
 function scrollToLinkedSection() {
-  const hash = window.location.hash;
-  if (!hash) return;
+  // Set by the inline head script, which also removed the hash so the browser did not jump early.
+  const id = (window as typeof window & { __hgSection?: string }).__hgSection;
+  if (!id) return;
   const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
-  if (navigation?.type === 'reload') {
-    history.replaceState(null, '', window.location.pathname + window.location.search);
-    return;
-  }
-  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
-  if (target) scrollToY(target.getBoundingClientRect().top + window.scrollY, true);
+  if (navigation?.type === 'reload') return;
+  const target = document.getElementById(decodeURIComponent(id));
+  if (!target) return;
+  ScrollTrigger.refresh();
+  scrollToY(target.getBoundingClientRect().top + window.scrollY, true);
+  history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${id}`);
 }
 
 /**
