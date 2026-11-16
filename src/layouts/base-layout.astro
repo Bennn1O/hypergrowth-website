@@ -27,7 +27,7 @@ interface Props {
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
 const { title = t.meta.title, description = t.meta.description, staticHeader = false, noindex = false, home = false } = Astro.props;
-const ogImage = new URL('/og.jpg', Astro.site).href;
+const ogImage = new URL('/og-hg.jpg', Astro.site).href;
 
 const path = pagePath(Astro.url.pathname);
 const basePath = stripLocale(path);
