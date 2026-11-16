@@ -299,7 +299,7 @@ export const fr = {
   },
   team: {
     clock: 'Au quotidien',
-    chapter: 'sur les gens',
+    chapter: 'sur notre équipe',
     title: 'Une petite équipe, qui',
     accent: 'se déplace',
     members: [
