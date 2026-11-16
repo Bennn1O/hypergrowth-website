@@ -132,10 +132,10 @@ const themeOf = (step: (typeof m.steps)[number]) => themes[stepTheme[m.steps.ind
                 loading="eager"
                 fetchpriority="low"
                 decoding="async"
-                class="absolute inset-0 -z-20 h-full w-full object-cover object-[50%_15%]"
+                class="absolute inset-0 -z-20 h-full w-full object-cover object-[50%_15%] brightness-[0.78] contrast-[0.95]"
                 aria-hidden="true"
               />
-              <div class="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-b from-transparent to-ink/70" aria-hidden="true" />
+              <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgb(17_17_17/0.4)_0%,rgb(17_17_17/0.3)_30%,rgb(17_17_17/0.62)_55%,rgb(17_17_17/0.9)_100%)]" aria-hidden="true" />
               <p class="mb-auto text-xs leading-3 font-medium tracking-[0.04em] text-pink uppercase">{m.interlude.label}</p>
               <p class="max-w-[874px] text-big font-normal">
                 {m.interlude.title} <span class="font-serif font-semibold tracking-[-0.03em] text-pink italic">{m.interlude.accent}</span>
