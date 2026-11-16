@@ -2,11 +2,13 @@ import type { Dictionary } from './fr';
 
 export const en: Dictionary = {
   meta: {
-    title: 'Strategic scaling and advisory for ambitious founders | HyperGrowth',
+    title: 'HyperGrowth | Operating Partners for fast-scaling companies',
     description:
-      'Grow your company faster with a dedicated Operating Partner. Structuring, the OP-X method, an elite network: join the HyperGrowth stable.',
-    keywords: 'scaling, hypergrowth, operating partner, strategic advisory, founders',
-    ogAlt: 'HyperGrowth, OP-X: helping ambitious founders turn hypergrowth into controlled scaling.',
+      'A team of operators for companies growing faster than their organisation: 48 hours of immersion, a roadmap ten days later, then Operating Partners who see it through.',
+    keywords: 'operating partner, hypergrowth, scaling, operations, structuring, founders, Bordeaux',
+    ogAlt: 'HyperGrowth: a team of operators for companies growing faster than their organisation.',
+    organization:
+      'Bordeaux-based Operating Partners firm: 48 hours of immersion, a roadmap ten days later, then operators who run the workstreams of fast-scaling companies.',
   },
   cookies: {
     text: 'We measure the site’s audience and how our ads perform.',

@@ -1,29 +1,60 @@
 ---
-/** Organization + WebSite JSON-LD, so search engines tie the brand, logo and contact together. */
+/**
+ * JSON-LD: the firm (ProfessionalService, a kind of Organization), the website and the current page,
+ * so search engines tie the brand, logo, address, contact and page language together.
+ */
 import { site } from '../../data/site';
-import { localeLabels, resolveLocale } from '../../i18n';
+import { getDictionary, localeLabels, resolveLocale } from '../../i18n';
 
+interface Props {
+  url: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { url, title, description, image } = Astro.props;
 const locale = resolveLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+const lang = localeLabels[locale].htmlLang;
+const sameAs = site.socials.map((s) => s.href).filter((href): href is string => Boolean(href));
+
 const graph = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': 'ProfessionalService',
       '@id': `${site.url}/#organization`,
       name: site.name,
       url: site.url,
-      logo: `${site.url}/apple-touch-icon.png`,
+      description: t.meta.organization,
+      logo: { '@type': 'ImageObject', url: `${site.url}/favicon-192.png`, width: 192, height: 192 },
+      image: `${site.url}/og-hg.jpg`,
       email: site.email ?? undefined,
       address: { '@type': 'PostalAddress', streetAddress: '9 Rue de Condé', postalCode: '33000', addressLocality: 'Bordeaux', addressCountry: 'FR' },
+      areaServed: { '@type': 'Country', name: 'France' },
       founder: { '@type': 'Person', name: 'Killian Palermo' },
+      knowsAbout: ['Operating Partner', 'Scaling', 'Hypergrowth', 'Organisation', 'Operations'],
+      ...(sameAs.length ? { sameAs } : {}),
     },
     {
       '@type': 'WebSite',
       '@id': `${site.url}/#website`,
       url: site.url,
       name: site.name,
-      inLanguage: localeLabels[locale].htmlLang,
+      inLanguage: ['fr', 'en'],
       publisher: { '@id': `${site.url}/#organization` },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: title,
+      description,
+      inLanguage: lang,
+      isPartOf: { '@id': `${site.url}/#website` },
+      about: { '@id': `${site.url}/#organization` },
+      primaryImageOfPage: { '@type': 'ImageObject', url: image, width: 1200, height: 630 },
     },
   ],
 };

@@ -6,11 +6,13 @@
 export const fr = {
   // Title, description and keywords kept from the previous hypergrowth.fr: the pages rank on them.
   meta: {
-    title: 'Scaling stratégique et conseil pour dirigeants ambitieux | HyperGrowth',
+    title: 'HyperGrowth | Operating Partners pour entreprises en hypercroissance',
     description:
-      'Accélérez la croissance de votre entreprise avec un Operating Partner dédié. Structuration, méthodologie OP-X, réseau d’élite : entrez dans l’écurie HyperGrowth.',
-    keywords: 'scaling, hypercroissance, operating partner, conseil stratégique, dirigeants',
-    ogAlt: 'HyperGrowth, OP-X : accompagner les dirigeants ambitieux vers un scaling contrôlé.',
+      'Une équipe d’opérationnels pour les entreprises qui grossissent plus vite que leur organisation : 48 h d’immersion, une feuille de route à 10 jours, des Operating Partners jusqu’au bout.',
+    keywords: 'operating partner, hypercroissance, scaling, structuration, conseil opérationnel, dirigeants, Bordeaux',
+    ogAlt: 'HyperGrowth : une équipe d’opérationnels pour les entreprises qui grossissent plus vite que leur organisation.',
+    organization:
+      'Cabinet d’Operating Partners basé à Bordeaux : 48 h d’immersion, une feuille de route à 10 jours, puis des opérationnels qui tiennent les chantiers des entreprises en hypercroissance.',
   },
   cookies: {
     text: 'On mesure l’audience du site et l’efficacité de nos publicités.',
