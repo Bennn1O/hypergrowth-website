@@ -66,7 +66,6 @@ export const fr = {
     cta: 'Le parcours',
   },
   before: {
-    photoCaption: 'Bordeaux, 2025',
     clock: 'J-10',
     chapter: 'sur nous',
     titleLines: [
