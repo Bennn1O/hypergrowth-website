@@ -46,9 +46,15 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
     <meta name="description" content={description} />
     <meta name="keywords" content={t.meta.keywords} />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={canonical.href} />
-    {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
-    <link rel="alternate" hreflang="x-default" href={xDefault} />
+    {
+      !noindex && (
+        <>
+          <link rel="canonical" href={canonical.href} />
+          {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
+          <link rel="alternate" hreflang="x-default" href={xDefault} />
+        </>
+      )
+    }
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
