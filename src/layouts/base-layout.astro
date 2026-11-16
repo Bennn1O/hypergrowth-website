@@ -20,11 +20,13 @@ interface Props {
   staticHeader?: boolean;
   /** Keep a page out of search results (404). */
   noindex?: boolean;
+  /** The one-page home (motion, anchored sections). */
+  home?: boolean;
 }
 
 const locale = resolveLocale(Astro.currentLocale);
 const t = getDictionary(locale);
-const { title = t.meta.title, description = t.meta.description, staticHeader = false, noindex = false } = Astro.props;
+const { title = t.meta.title, description = t.meta.description, staticHeader = false, noindex = false, home = false } = Astro.props;
 const ogImage = new URL('/og.jpg', Astro.site).href;
 
 const path = pagePath(Astro.url.pathname);
@@ -38,7 +40,7 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
 ---
 
 <!doctype html>
-<html lang={localeLabels[locale].htmlLang} id="top">
+<html lang={localeLabels[locale].htmlLang} id="top" data-page={home ? 'home' : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -87,6 +89,12 @@ const xDefault = new URL(localizePath(basePath, 'fr'), Astro.site).href;
       document.documentElement.classList.add('js');
       // A refresh always starts at the top (the browser would otherwise restore the old position).
       if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      // Keep the browser from jumping to /#section before the motion is ready (it breaks the pins):
+      // remember the section, drop it from the URL; the motion script scrolls there once set up.
+      if (location.hash && document.documentElement.dataset.page === 'home') {
+        window.__hgSection = location.hash.slice(1);
+        history.replaceState(null, '', location.pathname + location.search);
+      }
     </script>
   </head>
   <body class="min-h-svh bg-paper tracking-[-0.01em]">
