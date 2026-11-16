@@ -295,7 +295,7 @@ export const en: Dictionary = {
   },
   team: {
     clock: 'Day to day',
-    chapter: 'about the people',
+    chapter: 'about our team',
     title: 'A small team, that',
     accent: 'travels',
     members: [
