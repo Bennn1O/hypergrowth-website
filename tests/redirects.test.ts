@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import vercel from '../public/vercel.json';
+import vercel from '../vercel.json';
 
 /**
  * Every URL listed in the previous hypergrowth.fr sitemap (14/11/2026) must land somewhere:

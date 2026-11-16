@@ -54,6 +54,6 @@ src/
 
 - Domaine canonique : `https://www.hypergrowth.fr`, URLs sans slash final (`/mentions-legales`, `/en`), comme l'ancien site.
 - `src/pages/robots.txt.ts` et `src/pages/sitemap.xml.ts` : même adresse de sitemap que l'ancien site, avec les versions FR/EN (hreflang).
-- `public/vercel.json` : redirections 301 de toutes les anciennes URLs (concept, communauté, écurie, études de cas, OP, ressources, contact) vers la section correspondante de la home, plus les formulaires Cockpit. `tests/redirects.test.ts` vérifie que chaque URL de l'ancien sitemap atterrit sur une page ou une section existante.
+- `vercel.json` : redirections 301 de toutes les anciennes URLs (concept, communauté, écurie, études de cas, OP, ressources, contact) vers la section correspondante de la home, plus les formulaires Cockpit. `tests/redirects.test.ts` vérifie que chaque URL de l'ancien sitemap atterrit sur une page ou une section existante.
 - Mesure d'audience : Rybbit, même script et même identifiant que l'ancien site (`src/data/site.ts`), chargé sur toutes les pages depuis `base-layout`. Bannière cookies reprise de l'ancien site (clé `hpg-cookie-consent`). Pixel Meta (`site.metaPixel`) chargé seulement après « Accepter » et sur le domaine de production : PageView, puis Contact à chaque clic vers le calendrier de Killian.
 - Mentions légales : `src/content/legal/{fr,en}.md`.
