@@ -1,0 +1,32 @@
+---
+/** Organization + WebSite JSON-LD, so search engines tie the brand, logo and contact together. */
+import { site } from '../../data/site';
+import { localeLabels, resolveLocale } from '../../i18n';
+
+const locale = resolveLocale(Astro.currentLocale);
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${site.url}/#organization`,
+      name: site.name,
+      url: site.url,
+      logo: `${site.url}/apple-touch-icon.png`,
+      email: site.email ?? undefined,
+      address: { '@type': 'PostalAddress', streetAddress: '9 Rue de Condé', postalCode: '33000', addressLocality: 'Bordeaux', addressCountry: 'FR' },
+      founder: { '@type': 'Person', name: 'Killian Palermo' },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      inLanguage: localeLabels[locale].htmlLang,
+      publisher: { '@id': `${site.url}/#organization` },
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(graph)} />

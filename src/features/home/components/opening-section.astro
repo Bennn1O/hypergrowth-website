@@ -1,0 +1,61 @@
+---
+import NavBar from '../../../components/layout/nav-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const o = t.opening;
+---
+
+<!--
+  Hero, from Figma « Header / Hero - Exploration » (HYPERGROWTH, node 376:435).
+  A white card inset 30px in a pink-to-white frame, top corners rounded 24px.
+  The header (logo, langue, « Un café ? ») is the site header, laid over the card.
+-->
+<section
+  class="relative bg-[linear-gradient(180deg,#ff82fd_0%,#ffffff_82%)] bg-[length:100%_720px] bg-no-repeat p-3 sm:p-[30px]"
+  data-stage="avant"
+  data-clock={o.clock}
+  data-opening
+  aria-labelledby="opening-title"
+>
+  <div
+    class="mx-auto flex min-h-[calc(100svh-24px)] max-w-[1452px] flex-col justify-between gap-16 rounded-t-[24px] bg-white px-5 pt-5 pb-8 sm:min-h-[calc(100svh-60px)] sm:px-12 sm:pt-11 sm:pb-[50px] lg:min-h-[640px]"
+  >
+    <NavBar />
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+      <div class="flex max-w-[790px] flex-col items-start gap-8">
+        <h1
+          id="opening-title"
+          class="font-helvetica text-h2 font-normal text-ink"
+          data-intro-title
+        >
+          <SplitText text={o.statementAccent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />{' '}
+          <SplitText text={o.statement} />
+        </h1>
+        <a
+          href="#avant"
+          class="flex items-center gap-2 rounded-[4px] bg-ink px-3 py-2 font-helvetica text-sm leading-3 font-medium tracking-[0.034em] text-paper uppercase transition-colors hover:bg-primary"
+          data-magnetic
+          data-fade
+        >
+          {o.cta}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="2.5" cy="8" r="1" stroke="currentColor" />
+            <path d="M5 8h9m0 0-2.5-2.2M14 8l-2.5 2.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+      <p
+        class="max-w-[440px] font-helvetica text-lead text-ink/80 lg:text-right"
+        data-fade
+      >
+        {o.note}
+      </p>
+    </div>
+  </div>
+</section>

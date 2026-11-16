@@ -1,0 +1,203 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "installCommand": "bun install",
+  "buildCommand": "bun run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/concept/methode-op-x",
+      "destination": "/#methode",
+      "statusCode": 301
+    },
+    {
+      "source": "/concept/vsl",
+      "destination": "/#methode",
+      "statusCode": 301
+    },
+    {
+      "source": "/concept/case-studies",
+      "destination": "/#resultats",
+      "statusCode": 301
+    },
+    {
+      "source": "/concept/case-studies/:slug*",
+      "destination": "/#resultats",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/:slug*",
+      "destination": "/#resultats",
+      "statusCode": 301
+    },
+    {
+      "source": "/concept/test-de-scalabilite",
+      "destination": "/#cafe",
+      "statusCode": 301
+    },
+    {
+      "source": "/concept/test-scalabilite",
+      "destination": "/#cafe",
+      "statusCode": 301
+    },
+    {
+      "source": "/concept",
+      "destination": "/#methode",
+      "statusCode": 301
+    },
+    {
+      "source": "/communaute/evenements",
+      "destination": "/#cafe",
+      "statusCode": 301
+    },
+    {
+      "source": "/evenements/:slug*",
+      "destination": "/#cafe",
+      "statusCode": 301
+    },
+    {
+      "source": "/communaute/hyperclub",
+      "destination": "/#ecosysteme",
+      "statusCode": 301
+    },
+    {
+      "source": "/communaute/temoignages",
+      "destination": "/#resultats",
+      "statusCode": 301
+    },
+    {
+      "source": "/communaute",
+      "destination": "/#ecosysteme",
+      "statusCode": 301
+    },
+    {
+      "source": "/lecurie/a-propos",
+      "destination": "/#avant",
+      "statusCode": 301
+    },
+    {
+      "source": "/ecurie/a-propos",
+      "destination": "/#avant",
+      "statusCode": 301
+    },
+    {
+      "source": "/lecurie/les-op",
+      "destination": "/#maison",
+      "statusCode": 301
+    },
+    {
+      "source": "/ecurie/les-op",
+      "destination": "/#maison",
+      "statusCode": 301
+    },
+    {
+      "source": "/operating-partners/:slug*",
+      "destination": "/#maison",
+      "statusCode": 301
+    },
+    {
+      "source": "/lecurie/ressources",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ecurie/ressources",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ressources/:slug*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lecurie",
+      "destination": "/#maison",
+      "statusCode": 301
+    },
+    {
+      "source": "/ecurie",
+      "destination": "/#maison",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/#cafe",
+      "statusCode": 301
+    },
+    {
+      "source": "/images/68df88f9c3bc25774b700adf_1cbfc1f48d56e188805ab8fc77bb484c_HPG_website_open-graph.png",
+      "destination": "/og.jpg",
+      "statusCode": 301
+    },
+    {
+      "source": "/images/68df88f650217f54f596a7c6_HPG_website_webclip.png",
+      "destination": "/apple-touch-icon.png",
+      "statusCode": 301
+    },
+    {
+      "source": "/images/68df88f2746392ab1ec9141b_HPG_website_fav-icon.png",
+      "destination": "/favicon-32.png",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/questionnaire-immersion",
+      "destination": "https://cockpit.hypergrowth.fr/forms/immersion",
+      "statusCode": 301
+    },
+    {
+      "source": "/onboarding-client",
+      "destination": "https://cockpit.hypergrowth.fr/forms/onboarding",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(photos|cases|team|textures)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(favicon.svg|favicon-32.png|favicon-48.png|favicon-96.png|favicon-192.png|apple-touch-icon.png|og.jpg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const b = t.before;
+
+// Floating photos (Figma « Post Header - Exploration », 422:2399): positions on a 1512 x 960 stage.
+const floating = [
+  { src: '/photos/bureau-chien.webp', x: 81, y: 50, speed: -0.25 },
+  { src: '/photos/bordeaux-2637.webp', x: 1037, y: -9, speed: 0.2 },
+  { src: '/photos/neon-hg.webp', x: -74, y: 411, speed: 0.35 },
+  { src: '/photos/accueil-neon.webp', x: 1391, y: 235, speed: -0.3 },
+  { src: '/photos/photobooth.webp', x: 104, y: 682, speed: -0.15 },
+  { src: '/photos/killian-sourire.webp', x: 1125, y: 682, speed: 0.25 },
+];
+// From sm up, pull each photo's centre toward the middle of the stage (1 = Figma positions); phones keep the Figma spread.
+const pull = (centre: number, k: number) => 50 + (centre - 50) * k;
+const strip = ['/photos/killian-neon.webp', '/photos/gateau.webp', '/photos/champagne.webp'];
+---
+
+<!-- From Figma (HYPERGROWTH, « Post Header - Exploration », node 422:2399). -->
+<section
+  id="avant"
+  class="relative overflow-hidden bg-white px-4 pt-8 pb-16 font-helvetica sm:px-8"
+  data-stage="avant"
+  data-clock={b.clock}
+  aria-labelledby="before-title"
+>
+  <div class="mx-auto flex max-w-[1448px] flex-col">
+    <!-- Stage: centred statement among floating photos. -->
+    <div class="relative aspect-[3/4] sm:aspect-[1448/930]">
+      <ChapterBar prefix={t.chapter.prefix} chapter={b.chapter} index={1} class="relative z-10 lg:ml-auto lg:w-[41%]" />
+
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        {
+          floating.map((p) => (
+            <figure
+              class="absolute top-[var(--y)] left-[var(--x)] w-[20%] overflow-hidden rounded-[1.6px] bg-ink sm:top-[var(--yc)] sm:left-[var(--xc)] sm:w-[13.4%]"
+              style={`--x:${((p.x - 32) / 1448) * 100}%; --y:${(p.y / 930) * 100}%; --xc:${pull(((p.x - 32 + 97.5) / 1448) * 100, 0.82) - 6.7}%; --yc:${pull(((p.y + 122) / 930) * 100, 0.86) - 13.1}%; aspect-ratio:195/244;`}
+              data-parallax={p.speed}
+            >
+              <img src={p.src} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover grayscale" />
+            </figure>
+          ))
+        }
+      </div>
+
+      <h2
+        id="before-title"
+        class="absolute inset-x-0 top-1/2 z-10 mx-auto max-w-[1000px] -translate-y-1/2 px-6 text-center sm:top-[39.5%] sm:translate-y-0 font-helvetica text-h2 font-normal text-ink"
+      >
+        {
+          b.titleLines.map((line) => (
+            <span class="block">
+              {line.lead && <SplitText text={line.lead.trim()} />}
+              {line.lead && line.accent && ' '}
+              {line.accent && <SplitText text={line.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />}
+              {line.end}
+            </span>
+          ))
+        }
+      </h2>
+    </div>
+
+    <!-- Statement, two intro lines, three photos. -->
+    <div class="mt-16 flex flex-col gap-8 sm:mt-28 lg:mt-40">
+      <p class="max-w-[790px] font-helvetica text-h2 font-normal text-ink">
+        <SplitText text={b.statementLead.trim()} />{' '}
+        <SplitText text={b.statementAccent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />
+      </p>
+      <div class="flex flex-col gap-4 text-lead leading-[1.4] text-ink sm:flex-row sm:items-center sm:justify-between">
+        <p class="max-w-[580px]">{b.introLeft}</p>
+        <p class="max-w-[390px] sm:text-right">{b.introRight}</p>
+      </div>
+      <div class="grid grid-cols-3 gap-2 sm:gap-4">
+        {
+          strip.map((src) => (
+            <figure class="relative aspect-[465/620] overflow-hidden rounded-lg bg-mist" data-fade>
+              <img src={src} alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover grayscale" />
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import { getDictionary, localeLabels, localizePath, locales, pagePath, resolveLocale, stripLocale } from '../../i18n';
+
+interface Props {
+  class?: string;
+}
+
+const locale = resolveLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+// The 404 page exists once: its switcher leads to each home page.
+const stripped = stripLocale(pagePath(Astro.url.pathname));
+const basePath = stripped === '/404' ? '/' : stripped;
+---
+
+<nav aria-label={t.a11y.languageSwitcher} class:list={['flex items-center gap-1', Astro.props.class]}>
+  {
+    locales.map((target) => (
+      <a
+        href={localizePath(basePath, target)}
+        hreflang={localeLabels[target].htmlLang}
+        lang={localeLabels[target].htmlLang}
+        aria-current={target === locale ? 'true' : undefined}
+        title={localeLabels[target].name}
+        class:list={[
+          'rounded-md px-2 py-1 text-sm font-medium transition-colors',
+          target === locale ? 'bg-ink text-white' : 'text-ink/60 hover:text-ink',
+        ]}
+      >
+        {localeLabels[target].short}
+      </a>
+    ))
+  }
+</nav>

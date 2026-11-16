@@ -1,0 +1,43 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const e = t.ecosystem;
+---
+
+<section id="ecosysteme" data-dark class="relative bg-ink px-4 pt-24 pb-32 text-paper sm:px-6" data-stage="maison" data-clock={e.clock} aria-labelledby="eco-title">
+  <div class="mx-auto flex max-w-site flex-col gap-16 sm:gap-20">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <ChapterBar prefix={t.chapter.prefix} chapter={e.chapter} index={6} />
+      </div>
+      <h2 id="eco-title" class="section-title lg:col-span-11">
+        <SplitText text={e.title} />{' '}
+        <SplitText text={e.accent} class="voice text-pink" />
+      </h2>
+    </div>
+
+    <ul class="border-t border-paper/25" data-eco>
+      {
+        e.items.map((item) => (
+          <li class="group border-b border-paper/25" data-eco-item>
+            <div class="grid grid-cols-1 gap-2 py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6">
+              <span class="label text-pink sm:col-span-2">{item.kind}</span>
+              <span data-eco-name class="display text-big transition-[color,transform] duration-500 ease-out-expo group-hover:translate-x-3 group-hover:text-pink  sm:col-span-6">
+                {item.name}
+              </span>
+              <span class="text-sm text-paper/65 sm:col-span-4">{item.text}</span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+</section>

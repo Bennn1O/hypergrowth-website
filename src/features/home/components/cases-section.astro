@@ -1,0 +1,117 @@
+---
+import ChapterBar from '../../../components/ui/chapter-bar.astro';
+import SplitText from '../../../components/ui/split-text.astro';
+import type { Dictionary } from '../../../i18n';
+import { site } from '../../../data/site';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const c = t.cases;
+---
+
+<!-- From Figma (HYPERGROWTH, node 376:593): « Ce que ça donne ». -->
+<section
+  id="resultats"
+  class="relative px-4 pt-24 pb-28 font-helvetica sm:px-6 lg:px-[75px]"
+  data-stage="resultats"
+  data-clock={c.clock}
+  aria-labelledby="cases-title"
+>
+  <div class="mx-auto flex max-w-[1366px] flex-col gap-16">
+    <div class="flex flex-col gap-16">
+      <ChapterBar prefix={t.chapter.prefix} chapter={c.chapter} index={4} />
+      <h2
+        id="cases-title"
+        class="section-title text-black"
+      >
+        <SplitText text={c.title} />{' '}
+        <SplitText text={c.accent} class="font-serif font-semibold tracking-[-0.03em] text-primary italic" />{c.titleEnd}
+      </h2>
+    </div>
+
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-10 border-y border-[#dbdbdb] py-16 lg:flex lg:justify-between">
+      {
+        c.stats.map((stat) => (
+          <div class="flex flex-col gap-3">
+            <dt class="font-serif text-big leading-none font-semibold tracking-[-0.06em] whitespace-nowrap text-purple italic tabular-nums">
+              <span data-count>{stat.value}</span>
+            </dt>
+            <dd class="text-xs leading-3 tracking-[0.04em] text-ink uppercase">{stat.label}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <figure class="mx-auto flex max-w-[1241px] items-start gap-4 sm:gap-8" data-fade>
+      <svg class="hidden shrink-0 text-primary sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
+      <div class="flex flex-col items-center gap-8">
+        <blockquote class="text-center text-h3 leading-[1.4] font-medium tracking-[-0.04em] text-black">
+          {c.quote.parts.map((part, i) => (i % 2 ? <span class="rounded-[3px] bg-pink/55 px-1 box-decoration-clone">{part}</span> : part))}
+        </blockquote>
+        <figcaption class="flex items-center gap-3">
+          <img src="/cases/pureva-founders.webp" alt={c.quote.avatarAlt} width="40" height="40" loading="lazy" decoding="async" class="size-10 rounded-[2.5px] object-cover" />
+          <span class="flex max-w-[175px] flex-col gap-1 text-xs leading-3 font-medium tracking-[0.04em] uppercase">
+            <span class="text-black">{c.quote.author}</span>
+            <span class="text-primary">{c.quote.role}</span>
+          </span>
+        </figcaption>
+      </div>
+      <svg class="hidden shrink-0 rotate-180 text-primary sm:block" width="47" height="35" viewBox="0 0 47.44 35.13" fill="currentColor" aria-hidden="true"><path d="M29.625 21.9375C29.625 15.6042 31.1458 10.6458 34.1875 7.0625C37.2708 3.47917 41.5833 1.125 47.125 0L47.125 6.5C42.9167 7.79167 40.0833 10.125 38.625 13.5C37.7917 15.2917 37.4583 17.0208 37.625 18.6875L47.4375 18.6875L47.4375 35.125L29.625 35.125L29.625 21.9375ZM0 21.9375C0 15.6875 1.47917 10.75 4.4375 7.125C7.4375 3.5 11.7917 1.125 17.5 0L17.5 6.5C13.25 7.83333 10.3958 10.125 8.9375 13.375C8.1875 15.0833 7.875 16.8542 8 18.6875L17.8125 18.6875L17.8125 35.125L0 35.125L0 21.9375Z" /></svg>
+    </figure>
+
+    <!-- Phones: a swipeable row; larger screens: a grid. -->
+    <ul
+      class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 [scrollbar-width:none] sm:-mx-6 sm:px-6 md:mx-auto md:grid md:max-w-[1247px] md:grid-cols-2 md:gap-[34px] md:overflow-visible md:px-0 lg:grid-cols-3"
+    >
+      {
+        c.items.map((item) => (
+          <li
+            class="flex w-[84%] shrink-0 snap-center flex-col gap-[23px] overflow-hidden rounded-xl bg-white pb-5 shadow-[0_1px_3px_rgb(17_17_17/0.06),0_24px_50px_-28px_rgb(17_17_17/0.3)] md:w-auto"
+            data-fade
+          >
+            <img src={item.image} alt="" loading="lazy" decoding="async" class="h-[148px] w-full object-cover" />
+            <div class="flex flex-1 flex-col justify-between gap-4 px-4">
+              <div class="flex flex-col gap-3">
+                <p class="text-xs leading-3 text-ink/50 uppercase">{item.sector}</p>
+                <div class="flex flex-col gap-2">
+                  <h3 class="font-serif text-4xl leading-none font-semibold tracking-[-0.055em] text-ink italic">{item.name}</h3>
+                  <p class="text-sm leading-none font-medium text-ink/70">{item.text}</p>
+                </div>
+              </div>
+              <dl class="flex justify-between gap-4 border-t border-black/15 pt-4">
+                {item.metrics.map((metric) => (
+                  <div class="flex flex-col gap-1">
+                    <dt class="text-3xl leading-6 font-medium tracking-[-0.03em] whitespace-nowrap text-primary">{metric.value}</dt>
+                    <dd class="text-xs leading-[1.4] font-medium tracking-[-0.01em] text-black/70">{metric.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-3xl leading-none tracking-[-0.0625em] text-ink">
+        {c.closingBefore}<span class="text-primary">{c.closingAccent}</span>{c.closingAfter}
+      </p>
+      <a
+        href={site.booking ?? '#cafe'}
+        target={site.booking ? '_blank' : undefined}
+        rel={site.booking ? 'noopener' : undefined}
+        class="flex items-center gap-2 rounded-[4px] bg-ink px-3 py-2 text-sm leading-3 font-medium tracking-[0.034em] text-paper uppercase transition-colors hover:bg-primary"
+        data-magnetic
+      >
+        {c.cta}
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="2.5" cy="8" r="1" stroke="currentColor" />
+          <path d="M5 8h9m0 0-2.5-2.2M14 8l-2.5 2.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

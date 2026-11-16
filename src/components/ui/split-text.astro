@@ -1,0 +1,26 @@
+---
+/**
+ * Splits a sentence into words wrapped for the word-by-word reveal.
+ * Renders plain readable text: the animation is added by the home motion script.
+ */
+interface Props {
+  text: string;
+  class?: string;
+}
+
+const { text, class: className } = Astro.props;
+const words = text.split(/\s+/).filter(Boolean);
+---
+
+<span class={className} data-split>
+  {
+    words.map((word, index) => (
+      <>
+        <span class="split-word">
+          <span>{word}</span>
+        </span>
+        {index < words.length - 1 && ' '}
+      </>
+    ))
+  }
+</span>

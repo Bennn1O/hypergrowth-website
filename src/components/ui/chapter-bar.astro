@@ -1,0 +1,22 @@
+---
+/**
+ * Chapter marker, from Figma (HYPERGROWTH): « Ce qu'il faut savoir … » + number, white on the primary (violet) bar.
+ */
+interface Props {
+  prefix: string;
+  chapter: string;
+  index: number;
+  class?: string;
+}
+
+const { prefix, chapter, index, class: className } = Astro.props;
+---
+
+<div
+  class:list={['chapter-bar flex w-full max-w-[594px] origin-left items-center justify-between gap-3 bg-primary px-3 py-2 font-helvetica text-white sm:gap-6', className]}
+  data-chapter-bar
+>
+  <!-- One line on phones too: smaller and tighter there, ellipsis as a last resort. -->
+  <p class="min-w-0 truncate text-[9.5px] leading-3 font-medium tracking-[0.01em] uppercase sm:text-xs sm:tracking-[0.04em]">{prefix} {chapter}</p>
+  <p class="shrink-0 text-base leading-5 font-medium tracking-[-0.045em] sm:text-xl">{String(index).padStart(2, '0')}</p>
+</div>

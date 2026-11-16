@@ -1,0 +1,51 @@
+---
+/**
+ * Navbar row from Figma (HYPERGROWTH, node 376:446): logo (wordmark; HG symbol on the compact phone bar),
+ * language pill, primary « Un café ? ». Used inside the hero card and in the sticky header.
+ */
+import Logomark from '../../assets/brand/logomark.svg';
+import Logotype from '../ui/logotype.astro';
+import { site } from '../../data/site';
+import { getDictionary, localizePath, pagePath, resolveLocale, stripLocale } from '../../i18n';
+import LanguageSwitcher from './language-switcher.astro';
+
+interface Props {
+  compact?: boolean;
+  class?: string;
+}
+
+const { compact = false, class: className } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+const home = localizePath('/', locale);
+// On the home page an anchor is enough; elsewhere it goes through the home page.
+const toHome = (hash: string) => (stripLocale(pagePath(Astro.url.pathname)) === '/' ? hash : `${home}${hash}`);
+---
+
+<div class:list={['flex items-center justify-between gap-6 font-helvetica', className]}>
+  <!-- Wordmark alone; the HG symbol only stands in on the compact bar on phones, where room is short. -->
+  <a href={home} aria-label={t.a11y.home} class:list={['flex items-center leading-none', compact ? 'text-[30px]' : 'text-[36px] sm:text-[40px]']}>
+    {compact && <Logomark class="h-7 w-auto shrink-0 text-ink sm:hidden" aria-hidden="true" />}
+    <!-- The wordmark's box includes the descenders of « Hyper »: nudge it down so the button
+         centres on the capitals (« Growth » spans the top 79% of the drawing). -->
+    <Logotype class:list={['h-[1em] w-auto shrink-0 translate-y-[0.1em] text-ink', compact && 'hidden sm:block']} aria-hidden="true" />
+  </a>
+  <div class="flex items-center gap-3">
+    <LanguageSwitcher
+      class="hidden gap-[3px] rounded-[8px] bg-mist/90 p-[3px] backdrop-blur-xl sm:flex [&_a]:rounded-[5px] [&_a]:px-[5px] [&_a]:py-[3px] [&_a]:text-xs [&_a]:leading-4 [&_a]:font-normal [&_a]:tracking-[-0.01em]"
+    />
+    <a
+      href={site.booking ?? toHome('#cafe')}
+      target={site.booking ? '_blank' : undefined}
+      rel={site.booking ? 'noopener' : undefined}
+      data-cta={compact ? 'header' : 'navbar'}
+      class:list={[
+        'rounded-[4px] px-3 py-2 text-xs leading-3 font-medium tracking-[0.04em] text-paper uppercase transition-colors',
+        // Sticky bar on phones: black, like the HG symbol next to it; violet everywhere else.
+        compact ? 'bg-ink hover:bg-primary sm:bg-primary sm:hover:bg-ink' : 'bg-primary hover:bg-ink',
+      ]}
+    >
+      {t.timeline.contact}
+    </a>
+  </div>
+</div>

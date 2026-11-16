@@ -1,0 +1,88 @@
+---
+import SplitText from '../../../components/ui/split-text.astro';
+import { site } from '../../../data/site';
+import type { Dictionary } from '../../../i18n';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const c = t.closing;
+// Same « book a call » as the previous site (HubSpot calendar), else an email.
+const contactHref = site.booking ?? (site.email ? `mailto:${site.email}` : null);
+const external = Boolean(site.booking);
+---
+
+<section
+  id="cafe"
+  data-dark
+  class="relative isolate flex min-h-svh flex-col justify-end overflow-hidden bg-ink px-4 pt-[40svh] pb-16 text-paper sm:px-6 sm:pb-20"
+  data-stage="maison"
+  data-clock={c.clock}
+  aria-labelledby="closing-title"
+>
+  <!-- One flattened image from Figma (photo, lilac wash, violet to ink fade): no live filters or blends. -->
+  <img
+    src="/photos/cafe.webp"
+    srcset="/photos/cafe-sm.webp 900w, /photos/cafe.webp 2000w"
+    sizes="100vw"
+    alt=""
+    loading="lazy"
+    decoding="async"
+    class="absolute inset-x-0 top-0 -z-20 h-[78svh] w-full object-cover object-[22%_0%] sm:inset-0 sm:h-full sm:object-top"
+    aria-hidden="true"
+  />
+  <!-- Phones: the photo keeps a readable crop at the top and melts into ink below. -->
+  <div class="absolute inset-x-0 top-[40svh] -z-10 h-[38svh] bg-gradient-to-b from-transparent to-ink sm:hidden" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 hidden h-1/3 bg-gradient-to-b from-transparent to-ink sm:block" aria-hidden="true"></div>
+
+  <div class="mx-auto flex w-full max-w-site flex-col gap-12">
+    <h2 id="closing-title" class="section-title">
+      <SplitText text={c.title} class="block" />
+      <SplitText text={c.accent} class="voice block text-pink" />
+    </h2>
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+      <p class="max-w-lg text-lead text-paper/85">{c.text}</p>
+      {
+        contactHref ? (
+          <a
+            href={contactHref}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noopener' : undefined}
+            class="flex items-center gap-2 self-start rounded-[4px] bg-paper px-3 py-2 text-sm leading-3 font-medium tracking-[0.034em] whitespace-nowrap text-ink uppercase transition-colors hover:bg-pink hover:text-white sm:self-auto"
+            data-magnetic
+          >
+            {c.cta}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="2.5" cy="8" r="1" stroke="currentColor" />
+              <path d="M5 8h9m0 0-2.5-2.2M14 8l-2.5 2.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        ) : (
+          <p class="label border border-paper/40 px-6 py-5 text-sm text-paper/70">{c.pending}</p>
+        )
+      }
+    </div>
+
+    <div class="flex flex-col gap-5 pt-6">
+      <p class="label text-paper/50">{c.meetLabel}</p>
+      <ul class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
+        {
+          c.meet.map((item, index) => (
+            <li class="group flex flex-col gap-3 rounded-xl border border-paper/12 bg-ink/40 p-4 transition-colors duration-500 hover:bg-paper hover:text-ink sm:min-h-36 sm:justify-between sm:gap-6 sm:p-5">
+              <span class="flex items-center justify-between">
+                <span class="label text-paper/45 group-hover:text-ink/45">{String(index + 1).padStart(2, '0')}</span>
+                <span class="block size-2 rounded-full bg-pink" />
+              </span>
+              <span class="flex flex-col gap-2">
+                <span class="display text-xl leading-tight tracking-[-0.045em] sm:text-2xl sm:leading-none">{item.name}</span>
+                <span class="text-sm leading-snug font-medium opacity-70">{item.text}</span>
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
