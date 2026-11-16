@@ -308,7 +308,6 @@ export const en: Dictionary = {
       { name: 'Ulysse El Sherbeeny', photo: '/team/op-ulysse.webp' },
       { name: 'Manon Werquin', photo: '/team/op-manon.webp' },
       { name: 'Evan Riquelme', photo: '/team/op-evan.webp' },
-      { name: 'Benjamin Brémont', photo: '/team/op-benjamin.webp' },
       { name: 'Julie Simon', photo: '/team/op-julie-simon.webp' },
       { name: 'Julie Ducourau', photo: '/team/op-julie-ducourau.webp' },
     ],
