@@ -305,6 +305,7 @@ export const fr = {
     members: [
       { name: 'Killian', role: 'CEO', text: 'Ouvre les sujets en immersion. Stratégie, commercial, relation avec les dirigeants.' },
       { name: 'Benjamin', role: 'CTO et CPO', text: 'Ferme et tient le rythme en immersion. Tech, produit, données.' },
+      { name: 'Caroline', role: 'Head of Quality', text: 'Les process communs, et leur amélioration.' },
       { name: 'Louise', role: 'Head of Event & Brand', text: 'Les événements, pour HyperGrowth et pour ses clients.' },
       { name: 'Léa', role: 'Head of Design & Web', text: 'Identités, maquettes, sites.' },
     ],
